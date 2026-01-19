@@ -1,0 +1,736 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Montis Clinic — Where Confidence Begins</title>
+  <meta name="description" content="Doctor-led medical aesthetics, anti-aging & diagnostic screening in Johor. Book via WhatsApp or call +60 10 201 8685." />
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Brand colors */
+      --gold: #d4b05f;
+      --green: #087b5d;
+
+      /* Neutrals */
+      --bg: #070a0f;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.58);
+
+      /* UI */
+      --shadow: 0 24px 80px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(212,176,95,.16), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(8,123,93,.14), transparent 60%),
+        radial-gradient(900px 500px at 30% 90%, rgba(8,123,93,.10), transparent 60%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{ width:min(var(--max), 92vw); margin:0 auto; }
+    .section{ padding: 84px 0; }
+    .section.tight{ padding: 60px 0; }
+    .muted{ color: var(--muted); }
+    .muted2{ color: var(--muted2); }
+
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 10px 14px;
+      border:1px solid rgba(212,176,95,.35);
+      border-radius: 999px;
+      background: rgba(8,123,93,.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: 13px;
+      color: rgba(255,255,255,.80);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .dot{ width:7px; height:7px; border-radius:999px; background: var(--gold); }
+
+    /* Navbar */
+    .nav{
+      position: sticky; top:0; z-index: 50;
+      background: rgba(7,10,15,.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,176,95,.18);
+    }
+    .nav-inner{
+      height: 72px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{ display:flex; align-items:center; gap: 10px; font-weight: 650; letter-spacing:.2px; }
+    .logo{
+      width:34px; height:34px; border-radius: 12px;
+      border:1px solid rgba(212,176,95,.35);
+      background: linear-gradient(180deg, rgba(212,176,95,.18), rgba(8,123,93,.10));
+      display:grid; place-items:center;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .logo span{ font-size: 14px; color: rgba(255,255,255,.95); font-weight: 700; }
+
+    .nav-links{ display:flex; gap: 18px; align-items:center; }
+    .nav-links a{
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+      padding: 10px 10px;
+      border-radius: 10px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover{
+      background: rgba(8,123,93,.12);
+      color: var(--text);
+      outline: 1px solid rgba(212,176,95,.22);
+    }
+
+    .nav-cta{ display:flex; gap: 10px; align-items:center; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(212,176,95,.28);
+      background: linear-gradient(180deg, rgba(212,176,95,.92), rgba(212,176,95,.78));
+      color: #0b0f14;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      cursor: pointer;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 22px 70px rgba(0,0,0,.45);
+      filter: brightness(1.02);
+    }
+
+    .btn.secondary{
+      background: rgba(8,123,93,.14);
+      color: var(--text);
+      border: 1px solid rgba(8,123,93,.45);
+      box-shadow: none;
+    }
+    .btn.secondary:hover{ transform: translateY(-1px); background: rgba(8,123,93,.20); }
+
+    /* Mobile nav */
+    .hamburger{
+      display:none;
+      width:44px; height:44px;
+      border-radius: 14px;
+      border:1px solid rgba(8,123,93,.45);
+      background: rgba(8,123,93,.12);
+      color: var(--text);
+      cursor:pointer;
+      font-weight: 700;
+    }
+    .mobile-menu{
+      display:none;
+      border-top:1px solid rgba(212,176,95,.16);
+      padding: 14px 0 18px;
+    }
+    .mobile-menu a{
+      display:block;
+      padding: 12px 8px;
+      color: rgba(255,255,255,.78);
+      border-radius: 12px;
+    }
+    .mobile-menu a:hover{
+      background: rgba(8,123,93,.12);
+      outline: 1px solid rgba(212,176,95,.20);
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero{ padding: 72px 0 56px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 26px;
+      align-items: start;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(36px, 4.2vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .subhead{
+      font-size: clamp(15px, 1.55vw, 18px);
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 0 18px;
+    }
+    .cta-row{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+
+    .trust-row{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .mini-card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(8,123,93,.28);
+      border-radius: 16px;
+      padding: 14px;
+      display:flex; gap: 10px; align-items:flex-start;
+    }
+    .mini-ico{
+      width: 28px; height: 28px; border-radius: 12px;
+      background: rgba(8,123,93,.16);
+      border: 1px solid rgba(212,176,95,.25);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .mini-card b{ display:block; font-size: 14px; }
+    .mini-card span{ display:block; font-size: 13px; color: var(--muted2); }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(8,123,93,.18), rgba(255,255,255,.05));
+      border: 1px solid rgba(212,176,95,.22);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .hero-card h3{ margin: 0 0 10px; font-size: 18px; }
+    .hero-card .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .kpi .box{
+      border: 1px solid rgba(212,176,95,.18);
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(0,0,0,.18);
+    }
+    .kpi .box .num{ font-weight: 800; font-size: 18px; letter-spacing: -.2px; }
+    .kpi .box .lab{ color: var(--muted2); font-size: 13px; margin-top: 2px; }
+
+    .divider{ height:1px; background: rgba(212,176,95,.14); margin: 18px 0; }
+
+    /* Sections / cards */
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+
+    .card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(212,176,95,.16);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .card h3{ margin: 0 0 8px; font-size: 18px; }
+    .card p{ margin: 0; color: var(--muted); }
+
+    .kicker{
+      color: rgba(212,176,95,.86);
+      font-size: 12px;
+      letter-spacing: .22px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .title{
+      font-size: clamp(26px, 2.8vw, 34px);
+      margin: 0 0 12px;
+      letter-spacing: -0.4px;
+      line-height: 1.12;
+    }
+    .lead{ margin: 0 0 16px; color: var(--muted); max-width: 78ch; }
+
+    ul.clean{
+      margin: 10px 0 0; padding: 0; list-style: none;
+      display:grid; gap: 8px;
+    }
+    ul.clean li{
+      display:flex; gap: 10px; align-items:flex-start;
+      color: var(--muted);
+    }
+    .check{
+      width: 18px; height: 18px; border-radius: 8px;
+      background: rgba(8,123,93,.18);
+      border: 1px solid rgba(212,176,95,.22);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+      font-size: 12px;
+      color: rgba(255,255,255,.92);
+    }
+
+    /* Packages image */
+    .image-frame{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(212,176,95,.22);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .image-frame img{
+      width: 100%;
+      height: auto;
+      display:block;
+    }
+    .package-actions{
+      display:flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    /* Timeline */
+    .timeline{ display:grid; gap: 10px; margin-top: 14px; }
+    .step{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(8,123,93,.28);
+      background: rgba(0,0,0,.18);
+    }
+    .badge{
+      width: 30px; height: 30px;
+      border-radius: 12px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(212,176,95,.25);
+      background: rgba(8,123,93,.16);
+      font-weight: 800;
+      flex: 0 0 auto;
+      color: rgba(255,255,255,.92);
+    }
+    .step b{ display:block; }
+    .step span{ display:block; color: var(--muted2); font-size: 13px; margin-top: 2px; }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items:start;
+    }
+    .contact-box{
+      background: linear-gradient(180deg, rgba(8,123,93,.18), rgba(255,255,255,.05));
+      border: 1px solid rgba(212,176,95,.22);
+      border-radius: var(--radius2);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .contact-row{
+      display:grid; gap: 10px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact-row a{ color: rgba(255,255,255,.92); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 40px;
+      border-top: 1px solid rgba(212,176,95,.14);
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .footer-inner{
+      display:flex; gap: 14px; justify-content:space-between; align-items:center;
+      flex-wrap: wrap;
+    }
+
+    /* Sticky WhatsApp */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .wa-pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(8,123,93,.95), rgba(8,123,93,.80));
+      color: rgba(255,255,255,.95);
+      border: 1px solid rgba(212,176,95,.28);
+      box-shadow: 0 16px 60px rgba(0,0,0,.40);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .wa-icon{
+      width: 30px; height: 30px;
+      border-radius: 999px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(212,176,95,.25);
+      background: rgba(212,176,95,.18);
+      font-size: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .contact-grid{ grid-template-columns: 1fr; }
+      .trust-row{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+      .hamburger{ display:inline-grid; place-items:center; }
+      .mobile-menu{ display:none; }
+      .mobile-menu.open{ display:block; }
+    }
+
+    html{ scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Montis Clinic home">
+          <div class="logo"><span>M</span></div>
+          <div>
+            Montis Clinic<br><span class="muted2" style="font-weight:500;font-size:12px;">Where Confidence Begins</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#packages">Screening Packages</a>
+          <a href="#longevity">Longevity</a>
+          <a href="#services">Services</a>
+          <a href="#doctors">Our Doctors</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn secondary" href="tel:+60102018685">Call</a>
+          <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20a%20consultation%20%2F%20health%20screening." target="_blank" rel="noopener">WhatsApp Booking</a>
+          <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+        <a href="#packages">Screening Packages</a>
+        <a href="#longevity">Longevity</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Our Doctors</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <section>
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Comprehensive | Premium Care</span>
+            <span style="opacity:.7">•</span>
+            <span><b>Up to 65% OFF</b> (Limited Slots)</span>
+          </div>
+
+          <h1>Welcome to Montis Clinic<br/>Where Confidence Begins</h1>
+          <p class="subhead">
+            Located in the heart of Johor, we combine <b>advanced medical aesthetics</b>, <b>anti-aging medicine</b>,
+            and <b>personalized diagnostics</b> to help you look younger, feel better, and age gracefully — safely and naturally.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20a%20consultation%20%2F%20health%20screening." target="_blank" rel="noopener">
+              📲 Book via WhatsApp
+            </a>
+            <a class="btn secondary" href="tel:+60102018685">📞 Call: +60 10 201 8685</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="mini-card">
+              <div class="mini-ico">🧑‍⚕️</div>
+              <div><b>Doctor-led</b><span>Consultations & care</span></div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-ico">🧪</div>
+              <div><b>Evidence-based</b><span>Safe, measurable outcomes</span></div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-ico">🏥</div>
+              <div><b>Private & Premium</b><span>Refined clinical environment</span></div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-ico">📍</div>
+              <div><b>Johor</b><span>Eco Botanic, Iskandar Puteri</span></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="hero-card" aria-label="Quick info">
+          <h3>Fast Booking. Clear Guidance.</h3>
+          <p class="muted">
+            Not sure which package fits you? Message us — our team will help you choose the right screening or program.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="kpi">
+            <div class="box">
+              <div class="num">300+</div>
+              <div class="lab">Indicators (Premium)</div>
+            </div>
+            <div class="box">
+              <div class="num">Doctor</div>
+              <div class="lab">Consultation Focused</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="cta-row" style="margin-top:0;">
+            <a class="btn" style="width:100%;" href="#packages">View Packages ↓</a>
+            <a class="btn secondary" style="width:100%;" href="#contact">Visit / Contact</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- WHY SCREENING -->
+  <section class="section tight">
+    <div class="container">
+      <div class="kicker">Prevention First</div>
+      <h2 class="title">Why We Recommend a Comprehensive Health Screening</h2>
+      <p class="lead">
+        Many medical conditions do not show obvious symptoms in their early stages. Comprehensive screening enables early detection,
+        timely treatment, and reduces long-term complications.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>What comprehensive screening helps you do</h3>
+          <ul class="clean">
+            <li><span class="check">✓</span><span>Detect hidden risks early before symptoms appear</span></li>
+            <li><span class="check">✓</span><span>Reduce complications, long-term suffering, and serious outcomes</span></li>
+            <li><span class="check">✓</span><span>Understand root causes and risk factors — not just symptoms</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Conditions that require proper screening</h3>
+          <ul class="clean">
+            <li><span class="check">✓</span><span>Diabetes • Hypertension • High cholesterol</span></li>
+            <li><span class="check">✓</span><span>Fatty liver • Hormonal imbalances</span></li>
+            <li><span class="check">✓</span><span>Breast • Prostate • Colorectal cancer risks</span></li>
+          </ul>
+          <div class="divider"></div>
+          <p class="muted"><b>Basic tests may miss future risks.</b> Comprehensive screening finds them earlier.</p>
+        </div>
+      </div>
+
+      <div class="package-actions">
+        <a class="btn" href="#packages">Check Screening Packages</a>
+        <a class="btn secondary" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20which%20screening%20package%20fits%20me%3F" target="_blank" rel="noopener">
+          Ask a Doctor on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="section">
+    <div class="container">
+      <div class="kicker">Packages</div>
+      <h2 class="title">Choose Your Full Body Screening Package</h2>
+      <p class="lead">Basic for essentials, Comprehensive for deeper prevention, and Premium for advanced biomarkers and hormone profiling.</p>
+
+      <div class="image-frame" aria-label="Screening packages image">
+        <img src="Studio-Project-1.webp" alt="Montis Clinic screening packages comparison table (Basic, Comprehensive, Premium)" />
+      </div>
+
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="card">
+          <h3>Premium <span class="muted2">• Recommended</span></h3>
+          <p class="muted">Advanced coverage for full insight, including hormone and deeper risk detection.</p>
+        </div>
+        <div class="card">
+          <h3>Comprehensive</h3>
+          <p class="muted">Strong prevention-focused screening with broad coverage for early detection.</p>
+        </div>
+        <div class="card">
+          <h3>Basic</h3>
+          <p class="muted">Entry-level essentials to understand your baseline health status.</p>
+        </div>
+      </div>
+
+      <div class="package-actions">
+        <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20the%20Premium%20Screening." target="_blank" rel="noopener">Book Premium</a>
+        <a class="btn secondary" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20the%20Comprehensive%20Screening." target="_blank" rel="noopener">Book Comprehensive</a>
+        <a class="btn secondary" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20please%20advise%20which%20screening%20package%20fits%20me." target="_blank" rel="noopener">Ask Which One Fits Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LONGEVITY -->
+  <section id="longevity" class="section">
+    <div class="container">
+      <div class="kicker">Anti-Aging & Longevity</div>
+      <h2 class="title">Anti-Aging & Longevity Medicine</h2>
+      <p class="lead">
+        Aging is biological — and measurable. We use advanced diagnostics to create personalized plans to help you look better, feel better, and age gracefully.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>What we assess</h3>
+          <ul class="clean">
+            <li><span class="check">✓</span><span>Hormone Profiling (Male & Female)</span></li>
+            <li><span class="check">✓</span><span>Metabolic & Nutritional Panels</span></li>
+            <li><span class="check">✓</span><span>Inflammation & Oxidative Stress Markers</span></li>
+            <li><span class="check">✓</span><span>Cellular & Mitochondrial Biomarkers</span></li>
+            <li><span class="check">✓</span><span>Skin Ageing Scan</span></li>
+            <li><span class="check">✓</span><span>Hair Follicle Health Analysis</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Goals you can expect</h3>
+          <ul class="clean">
+            <li><span class="check">✓</span><span>Younger-looking skin & improved texture</span></li>
+            <li><span class="check">✓</span><span>Stronger hair growth & density</span></li>
+            <li><span class="check">✓</span><span>Better energy, sleep, and focus</span></li>
+            <li><span class="check">✓</span><span>Hormone balance & metabolic support</span></li>
+            <li><span class="check">✓</span><span>Slower biological aging with safe optimization</span></li>
+          </ul>
+
+          <div class="divider"></div>
+          <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20explore%20your%20Longevity%20Programs." target="_blank" rel="noopener">
+            Explore Longevity Programs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section tight">
+    <div class="container">
+      <div class="kicker">Signature Services</div>
+      <h2 class="title">Premium, Private & Doctor-Led</h2>
+      <p class="lead">A refined environment where aesthetics meets science-backed wellness — with safe, natural-looking results.</p>
+
+      <div class="grid-3">
+        <div class="card"><h3>Anti-aging programs</h3><p class="muted">Regenerative and optimization-focused plans.</p></div>
+        <div class="card"><h3>Hair restoration</h3><p class="muted">Protocols to support scalp & follicle health.</p></div>
+        <div class="card"><h3>Laser & medical facials</h3><p class="muted">Skin clarity, texture, and radiance support.</p></div>
+        <div class="card"><h3>Injectables & contouring</h3><p class="muted">Natural refinement with medical precision.</p></div>
+        <div class="card"><h3>Metabolic optimization</h3><p class="muted">Support energy, weight, and wellness goals.</p></div>
+        <div class="card"><h3>Hormone balancing</h3><p class="muted">Personalized evaluation and safe guidance.</p></div>
+      </div>
+
+      <div class="package-actions">
+        <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20talk%20to%20a%20doctor%20about%20your%20services." target="_blank" rel="noopener">Talk to Our Team on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-box">
+          <div class="kicker">Contact Us</div>
+          <h2 class="title" style="margin-top:0;">Better Yet, See Us in Person!</h2>
+          <p class="lead" style="margin-bottom:0;">We love welcoming our patients — feel free to visit us during normal business hours.</p>
+
+          <div class="package-actions">
+            <a class="btn" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Now</a>
+            <a class="btn secondary" href="tel:+60102018685">Call Us</a>
+          </div>
+
+          <div class="contact-row">
+            <div>📞 Phone: <a href="tel:+60102018685">+60 10 201 8685</a></div>
+            <div>📧 Email: <a href="mailto:info@jb.montis-clinic.com">info@jb.montis-clinic.com</a></div>
+            <div>📍 Address: 24, Jalan Eko Botani 3/6, Taman Persiaran Eko Botani, 79100 Iskandar Puteri, Johor Darul Ta’zim</div>
+          </div>
+        </div>
+
+        <div class="card" style="border-radius: var(--radius2); padding:22px;">
+          <div class="kicker">Quick Options</div>
+          <h3 style="margin:0 0 8px;">Complete Care on Your Schedule</h3>
+          <p class="muted">Choose what you want to do now:</p>
+
+          <div class="timeline" style="margin-top:12px;">
+            <div class="step"><div class="badge">✓</div><div><b>Doctor Consultation</b><span>Online via WhatsApp — quick guidance.</span></div></div>
+            <div class="step"><div class="badge">✓</div><div><b>Past Medical Reports</b><span>Share reports to personalize your plan.</span></div></div>
+            <div class="step"><div class="badge">✓</div><div><b>Book Screening</b><span>Premium / Comprehensive / Basic.</span></div></div>
+          </div>
+
+          <div class="divider"></div>
+          <a class="btn" style="width:100%;" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20and%20I%20have%20questions." target="_blank" rel="noopener">
+            Book an Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Montis Clinic — All Rights Reserved</div>
+        <div class="muted2">💬 Need Help? <a href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20need%20help." target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">Chat with us</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="wa-float" aria-label="Sticky WhatsApp">
+    <a class="wa-pill" href="https://wa.me/60102018685?text=Hi%20Montis%20Clinic%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+      <span class="wa-icon">💬</span>
+      WhatsApp Montis
+    </a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '✕' : '☰';
+    });
+
+    menu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
