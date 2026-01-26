@@ -6,40 +6,41 @@ import { ArrowRight, Check } from "lucide-react";
 
 const registrationOptions = [
   {
-    title: "Early Bird Physical",
-    price: "USD 2,500",
-    deadline: "By 28 Feb 2026",
+    title: "Package I: Stem Cell Scholar",
+    price: "USD 2,500 / 3,000",
+    deadline: "Early Bird by 28 Feb 2026",
     features: [
-      "4 nights accommodation",
-      "Full symposium access",
-      "All meals & refreshments",
-      "Certificate of Participation",
-      "OXYZ Academy Membership",
+      "4 nights hotel accommodation with daily breakfast",
+      "Full access to 3-day scientific sessions",
+      "All meals, refreshments, and Gala Dinner",
+      "Joint Certificate from OXYZ Academy & DFGTT",
+      "Exclusive hamper with full trial series",
     ],
     highlight: true,
   },
   {
-    title: "Standard Physical",
-    price: "USD 3,000",
-    deadline: "After 28 Feb 2026",
+    title: "Package II: Immersive Experience",
+    price: "USD 10,000",
+    deadline: "Total Value: USD 15,500",
     features: [
-      "4 nights accommodation",
-      "Full symposium access",
-      "All meals & refreshments",
-      "Certificate of Participation",
-      "OXYZ Academy Membership",
+      "All Package I benefits included",
+      "Personal Stem Cell Suite and BioSeries",
+      "VIP clinical screening and HRV",
+      "1-on-1 Cellular Reset protocol design",
+      "Referral agreement (15-20% commission)",
     ],
     highlight: false,
   },
   {
-    title: "Online Scientific",
-    price: "USD 1,000",
-    deadline: "Limited spots",
+    title: "Package III: Global Elite Partner",
+    price: "USD 25,000",
+    deadline: "Total Value: USD 51,400",
     features: [
-      "Online session access",
-      "Live/on-demand viewing",
-      "Digital Certificate",
-      "OXYZ Academy Membership",
+      "All Package I & II benefits included",
+      "Root Cause BR Scan Machine + SOPs",
+      "Inventory suite and Mega+ Cell set",
+      "Licensing & regional expansion consult",
+      "Dealership status (30-35% margin)",
     ],
     highlight: false,
   },
@@ -50,12 +51,6 @@ export function RegistrationCTASection() {
     <section className="py-24 bg-teal-dark text-secondary-foreground">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-2">
-            Registration
-          </p>
-          <p className="text-xs uppercase tracking-widest text-secondary-foreground/70 mb-4">
-            Step 4: Apply
-          </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6 text-balance">
             Secure Your Place at Symposium 2026
           </h2>
@@ -76,7 +71,9 @@ export function RegistrationCTASection() {
                 option.highlight
                   ? "bg-gold text-foreground ring-4 ring-gold-light md:col-span-2 xl:col-span-1"
                   : "bg-secondary-foreground/10 text-secondary-foreground"
-              } group transition-transform duration-300 hover:-translate-y-1`}
+              } group transition-transform duration-300 hover:-translate-y-1 transition-colors ${
+                option.highlight ? "hover:bg-gold/90" : "hover:bg-secondary-foreground/20"
+              }`}
             >
               {option.highlight && (
                 <span className="inline-block bg-teal text-secondary-foreground text-xs font-semibold px-3 py-1 rounded-full mb-4">
@@ -130,8 +127,8 @@ export function RegistrationCTASection() {
                 <Button
                   className={`w-full font-semibold ${
                     option.highlight
-                      ? "bg-teal hover:bg-teal-dark text-[#007A59]"
-                      : "bg-gold hover:bg-gold-dark text-[#007A59]"
+                      ? "bg-teal hover:bg-teal-dark text-white"
+                      : "bg-gold hover:bg-gold-dark text-white"
                   } transition-transform duration-300 hover:-translate-y-0.5`}
                 >
                   Register Now
@@ -143,8 +140,8 @@ export function RegistrationCTASection() {
         </div>
 
         <p className="text-center text-secondary-foreground/70 text-sm">
-          Online registration does not include accommodation, meals, or physical
-          access. All registrations are subject to approval.
+          Early Bird rates apply to Package I only. All registrations are
+          subject to approval.
         </p>
       </div>
     </section>

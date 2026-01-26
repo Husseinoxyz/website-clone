@@ -11,27 +11,36 @@ import {
   Info,
 } from "lucide-react";
 
-const physicalFeatures = [
+const packageIFeatures = [
   "4 nights hotel accommodation (single occupancy with daily breakfast)",
-  "Full access to on-site symposium programs",
-  "Scientific sessions, clinical discussions, strategic presentations",
-  "All official symposium meals & refreshments",
-  "Certificate of Participation",
-  "OXYZ Academy Membership",
+  "All 3-day on-site scientific sessions, clinical discussions, and strategic presentations",
+  "All official symposium meals, refreshments, and Gala Dinner",
+  "Joint Certificate from OXYZ Academy & DFGTT (Germany)",
+  "Exclusive hamper with full trial series of OXYZ products",
 ];
 
-const onlineFeatures = [
-  "Access to selected scientific & medical sessions (online)",
-  "Live or scheduled on-demand viewing",
-  "Digital Certificate of Participation",
-  "OXYZ Academy Membership",
+const packageIIFeatures = [
+  "All Package I benefits included",
+  "Personal Stem Cell Suite: 10 Boxes Oral MSC, 1 Box BioSeries (Hair/Skin), 4 vials 4-in-1 Micro Cells",
+  "VIP clinical screening: Live Blood Analysis, HRV, and Bio-Resonance",
+  "1-on-1 Cellular Reset protocol design with an OXYZ Lead Scientist",
+  "Direct referral agreement with 15-20% commission scheme",
+];
+
+const packageIIIFeatures = [
+  "All Package I & II benefits included",
+  "Root Cause BR Scan Machine with full operating SOPs",
+  "Inventory suite: 20 sets Oral MSC, 20 boxes Gut+, 1 Regenerative Anti-Aging Mega+ Cell set",
+  "1-day dedicated licensing and regional expansion consultation",
+  "3-6 post-event training sessions for lead staff/nurses",
+  "Dealership status (30-35% margin) and waived security deposit",
 ];
 
 const importantInfo = [
-  "This is a professionally curated symposium, not open to mass registration",
-  "All registrations are subject to review and confirmation",
-  "Seats are allocated to ensure medical relevance and alignment",
-  "Online registration does not include accommodation, meals, or physical access",
+  "Curated attendance: all registrations are subject to review and confirmation",
+  "Selection criteria prioritize medical relevance and clinical alignment",
+  "Early Bird rates apply to Package I only",
+  "Packages II and III are priced based on equipment and product value",
 ];
 
 export default function ProgramPage() {
@@ -87,7 +96,8 @@ export default function ProgramPage() {
                   18 - 20 April 2026
                 </p>
                 <p className="text-muted-foreground">
-                  4 nights accommodation included for physical participants
+                  4 nights accommodation included for Package I, II, and III
+                  participants
                 </p>
               </div>
               <div className="bg-muted rounded-lg p-8">
@@ -100,9 +110,14 @@ export default function ProgramPage() {
                 <p className="text-3xl font-bold text-teal mb-2">
                   80 - 100 Selected Professionals
                 </p>
-                <p className="text-muted-foreground">
-                  Intentionally limited to ensure quality exchange
+                <p className="text-muted-foreground mb-4">
+                  Intentionally limited to ensure:
                 </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>High-quality scientific exchange</li>
+                  <li>Meaningful professional networking</li>
+                  <li>Direct engagement with faculty and OXYZ leadership</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -121,20 +136,25 @@ export default function ProgramPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {/* Early Bird */}
-              <div className="bg-gold rounded-lg p-8 text-foreground ring-4 ring-gold-light relative">
+              {/* Package I */}
+              <div className="bg-gold rounded-lg p-8 text-foreground ring-4 ring-gold-light relative transition-colors hover:bg-gold/90">
                 <span className="absolute -top-3 left-8 inline-block bg-teal text-secondary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                  Best Value
+                  Early Bird
                 </span>
                 <h3 className="text-xl font-bold mb-2">
-                  Early Bird - Physical
+                  Package I: OXYZ Stem Cell Scholar Series
                 </h3>
-                <p className="text-4xl font-bold mb-2">USD 2,500</p>
+                <div className="mb-4">
+                  <p className="text-4xl font-bold">USD 2,500</p>
+                  <p className="text-sm text-foreground/80">
+                    Early Bird | USD 3,000 Standard
+                  </p>
+                </div>
                 <p className="text-sm text-foreground/70 mb-6">
-                  Deadline: 28 February 2026
+                  Early Bird Deadline: 28 February 2026
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {physicalFeatures.map((feature) => (
+                  {packageIFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-foreground/80">
@@ -143,27 +163,30 @@ export default function ProgramPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/register?type=early-bird" className="block">
+                <Link
+                  href="/register?type=package-i-early-bird"
+                  className="block"
+                >
                   <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Register Early Bird
+                    Apply for Package I
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
 
-              {/* Standard */}
-              <div className="bg-muted rounded-lg p-8 border border-border">
+              {/* Package II */}
+              <div className="bg-muted rounded-lg p-8 border border-border transition-colors hover:bg-muted/80">
                 <h3 className="text-xl font-bold text-gold mb-2">
-                  Standard - Physical
+                  Package II: OXYZ Immersive Experience Program
                 </h3>
                 <p className="text-4xl font-bold text-foreground mb-2">
-                  USD 3,000
+                  USD 10,000
                 </p>
                 <p className="text-sm text-muted-foreground mb-6">
-                  After 28 February 2026
+                  Total Value: USD 15,500
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {physicalFeatures.map((feature) => (
+                  {packageIIFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-muted-foreground">
@@ -172,27 +195,27 @@ export default function ProgramPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/register?type=standard" className="block">
+                <Link href="/register?type=package-ii" className="block">
                   <Button className="w-full bg-gold hover:bg-gold-dark text-foreground font-semibold">
-                    Register Standard
+                    Apply for Package II
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
 
-              {/* Online */}
-              <div className="bg-muted rounded-lg p-8 border border-border">
+              {/* Package III */}
+              <div className="bg-muted rounded-lg p-8 border border-border transition-colors hover:bg-muted/80">
                 <h3 className="text-xl font-bold text-gold mb-2">
-                  Online Scientific Program
+                  Package III: OXYZ Global Elite Partners Program
                 </h3>
                 <p className="text-4xl font-bold text-foreground mb-2">
-                  USD 1,000
+                  USD 25,000
                 </p>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Limited spots available
+                  Total Value: USD 51,400
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {onlineFeatures.map((feature) => (
+                  {packageIIIFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-muted-foreground">
@@ -201,22 +224,18 @@ export default function ProgramPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/register?type=online" className="block">
+                <Link href="/register?type=package-iii" className="block">
                   <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Register Online
+                    Apply for Package III
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <p className="text-xs text-muted-foreground mt-4 text-center">
-                  Networking and on-site activities exclusive to physical
-                  attendees
-                </p>
               </div>
             </div>
 
             <p className="text-center text-sm text-muted-foreground">
-              Early Bird rates apply to approved registrations completed by 28
-              February 2026.
+              Early Bird rates apply to Package I only and must be completed by
+              28 February 2026.
             </p>
           </div>
         </section>
@@ -224,103 +243,53 @@ export default function ProgramPage() {
         {/* What's Included */}
         <section className="py-24 bg-teal-dark text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Physical Attendance
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
-                  What&apos;s Included
-                </h2>
-                <p className="text-secondary-foreground/80 mb-8">
-                  Physical attendance (USD 2,500 / USD 3,000) includes:
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Accommodation
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      4 nights hotel accommodation, single occupancy with daily
-                      breakfast
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Full Symposium Access
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      Scientific sessions, clinical discussions, and strategic
-                      presentations
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Meals & Refreshments
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      All official symposium meals and refreshments included
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Certification & Membership
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      Certificate of Participation and OXYZ Academy Membership
-                    </p>
-                  </div>
-                </div>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
+                What&apos;s Included
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground">
+                Package Benefits
+              </h2>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-3">
+              <div className="bg-secondary-foreground/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-gold mb-3">
+                  Package I: Stem Cell Scholar (The Foundation)
+                </h3>
+                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
+                  {packageIFeatures.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Online Participation
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
-                  Online Scientific Program
-                </h2>
-                <p className="text-secondary-foreground/80 mb-8">
-                  Online participation (USD 1,000) includes:
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Scientific Sessions
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      Access to selected scientific and medical sessions online
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Flexible Viewing
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      Live or scheduled on-demand viewing as applicable
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Digital Certificate
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      Digital Certificate of Participation included
-                    </p>
-                  </div>
-                  <div className="bg-secondary-foreground/10 rounded-lg p-5">
-                    <h3 className="font-semibold text-gold mb-2">
-                      Academy Access
-                    </h3>
-                    <p className="text-secondary-foreground/80 text-sm">
-                      OXYZ Academy Membership for continued learning
-                    </p>
-                  </div>
-                </div>
-                <p className="text-xs text-secondary-foreground/60 mt-6">
-                  Note: Online participation is limited to scientific content
-                  only. Networking sessions, private meetings, and on-site
-                  activities are exclusive to physical attendees.
-                </p>
+              <div className="bg-secondary-foreground/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-gold mb-3">
+                  Package II: Immersive Experience (The Clinical Track)
+                </h3>
+                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
+                  {packageIIFeatures.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-secondary-foreground/10 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-gold mb-3">
+                  Package III: Global Elite Partner (The Business Track)
+                </h3>
+                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
+                  {packageIIIFeatures.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -359,26 +328,35 @@ export default function ProgramPage() {
                 Next Steps
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Ready to secure your place? Choose your registration option and
-                begin your application.
+                Ready to secure your place? Choose your package and begin your
+                application.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/register?type=early-bird">
+                <Link href="/register?type=package-i-early-bird">
                   <Button
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8"
                   >
-                    Apply for Early Bird
+                    Apply for Early Bird (Package I)
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/register?type=online">
+                <Link href="/register?type=package-ii">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold px-8 bg-transparent"
                   >
-                    Register for Online Program
+                    Apply for Immersive/Elite Tracks
+                  </Button>
+                </Link>
+                <Link
+                  href="https://wa.me/16466478616"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button size="lg" variant="ghost" className="px-8">
+                    Request Full Partnership & Program Details
                   </Button>
                 </Link>
               </div>

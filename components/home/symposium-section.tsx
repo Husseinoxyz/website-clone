@@ -26,12 +26,6 @@ export function SymposiumSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-2">
-              Upcoming Event
-            </p>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
-              Step 3: Align at the Symposium
-            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-4 text-balance">
               OXYZ International Symposium 2026
             </h2>

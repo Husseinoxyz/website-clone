@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
@@ -24,7 +25,13 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-3xl font-bold text-gold">OXYZ</span>
+              <Image
+                src="/logo.png"
+                alt="OXYZ Health International"
+                width={180}
+                height={45}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm text-secondary-foreground/80 leading-relaxed">
               OXYZ Health International is a globally positioned regenerative

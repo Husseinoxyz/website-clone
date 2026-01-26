@@ -6,17 +6,21 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 const registrationPrices: Record<string, { amount: number; name: string }> = {
-  "early-bird": {
+  "package-i-early-bird": {
     amount: 250000, // $2,500 in cents
-    name: "Early Bird - Physical Attendance",
+    name: "Package I: Stem Cell Scholar Series (Early Bird)",
   },
-  standard: {
+  "package-i-standard": {
     amount: 300000, // $3,000 in cents
-    name: "Standard - Physical Attendance",
+    name: "Package I: Stem Cell Scholar Series (Standard)",
   },
-  online: {
-    amount: 100000, // $1,000 in cents
-    name: "Online Scientific Program",
+  "package-ii": {
+    amount: 1000000, // $10,000 in cents
+    name: "Package II: Immersive Experience Program",
+  },
+  "package-iii": {
+    amount: 2500000, // $25,000 in cents
+    name: "Package III: Global Elite Partners Program",
   },
 };
 

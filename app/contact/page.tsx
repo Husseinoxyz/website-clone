@@ -4,6 +4,7 @@ import React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -17,13 +18,86 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
+import { Clock, Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react"
+
+const countryCodes = [
+  { code: "+1", label: "USA/Canada" },
+  { code: "+7", label: "Russia" },
+  { code: "+20", label: "Egypt" },
+  { code: "+27", label: "South Africa" },
+  { code: "+30", label: "Greece" },
+  { code: "+31", label: "Netherlands" },
+  { code: "+32", label: "Belgium" },
+  { code: "+33", label: "France" },
+  { code: "+34", label: "Spain" },
+  { code: "+36", label: "Hungary" },
+  { code: "+39", label: "Italy" },
+  { code: "+40", label: "Romania" },
+  { code: "+41", label: "Switzerland" },
+  { code: "+43", label: "Austria" },
+  { code: "+44", label: "United Kingdom" },
+  { code: "+45", label: "Denmark" },
+  { code: "+46", label: "Sweden" },
+  { code: "+47", label: "Norway" },
+  { code: "+48", label: "Poland" },
+  { code: "+49", label: "Germany" },
+  { code: "+51", label: "Peru" },
+  { code: "+52", label: "Mexico" },
+  { code: "+53", label: "Cuba" },
+  { code: "+54", label: "Argentina" },
+  { code: "+55", label: "Brazil" },
+  { code: "+56", label: "Chile" },
+  { code: "+57", label: "Colombia" },
+  { code: "+58", label: "Venezuela" },
+  { code: "+60", label: "Malaysia" },
+  { code: "+61", label: "Australia" },
+  { code: "+62", label: "Indonesia" },
+  { code: "+63", label: "Philippines" },
+  { code: "+64", label: "New Zealand" },
+  { code: "+65", label: "Singapore" },
+  { code: "+66", label: "Thailand" },
+  { code: "+81", label: "Japan" },
+  { code: "+82", label: "South Korea" },
+  { code: "+84", label: "Vietnam" },
+  { code: "+86", label: "China" },
+  { code: "+90", label: "Turkey" },
+  { code: "+91", label: "India" },
+  { code: "+92", label: "Pakistan" },
+  { code: "+93", label: "Afghanistan" },
+  { code: "+94", label: "Sri Lanka" },
+  { code: "+95", label: "Myanmar" },
+  { code: "+98", label: "Iran" },
+  { code: "+212", label: "Morocco" },
+  { code: "+213", label: "Algeria" },
+  { code: "+216", label: "Tunisia" },
+  { code: "+218", label: "Libya" },
+  { code: "+220", label: "Gambia" },
+  { code: "+221", label: "Senegal" },
+  { code: "+233", label: "Ghana" },
+  { code: "+234", label: "Nigeria" },
+  { code: "+251", label: "Ethiopia" },
+  { code: "+254", label: "Kenya" },
+  { code: "+256", label: "Uganda" },
+  { code: "+260", label: "Zambia" },
+  { code: "+263", label: "Zimbabwe" },
+  { code: "+971", label: "UAE" },
+  { code: "+972", label: "Israel" },
+  { code: "+973", label: "Bahrain" },
+  { code: "+974", label: "Qatar" },
+  { code: "+975", label: "Bhutan" },
+  { code: "+976", label: "Mongolia" },
+  { code: "+977", label: "Nepal" },
+  { code: "+994", label: "Azerbaijan" },
+  { code: "+995", label: "Georgia" },
+  { code: "+998", label: "Uzbekistan" },
+];
 
 export default function ContactPage() {
   const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "+1",
     phone: "",
     subject: "",
     message: "",
@@ -32,36 +106,42 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState("submitting")
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+
+    const whatsappMessage = [
+      "OXYZ Contact Form",
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.countryCode} ${formData.phone}`.trim(),
+      `Subject: ${formData.subject}`,
+      `Message: ${formData.message}`,
+    ].join("\n")
+
+    const encodedMessage = encodeURIComponent(whatsappMessage)
+    window.open(`https://wa.me/16466478616?text=${encodedMessage}`, "_blank", "noopener,noreferrer")
     setFormState("success")
   }
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
             <div className="relative flex items-center bg-teal px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-white">
               <div className="mx-auto max-w-2xl text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Contact Us
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">
+                  Get in touch with our team to learn more about OXYZ Health
+                  International and our upcoming symposium
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                  Get in touch with our team to learn more about OXYZ Health International
-                  and our upcoming symposium
-                </p>
               </div>
             </div>
 
             <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
                 src="/images/contact-hero.jpg"
-                alt="Contact OXYZ Health International"
+                alt="OXYZ Health International contact"
                 fill
                 className="object-cover"
                 priority
@@ -73,28 +153,35 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Info & Form */}
-        <section className="py-20">
+        <section className="py-20 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Information */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
                   Get In Touch
                 </h2>
                 <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                  Whether you have questions about the symposium, partnership opportunities, 
-                  or want to learn more about our regenerative medicine ecosystem, we&apos;re here to help.
+                  Whether you have questions about the symposium, partnership
+                  opportunities, or want to learn more about our regenerative
+                  medicine ecosystem, we&apos;re here to help.
                 </p>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@oxyzhealth.com</p>
-                      <p className="text-muted-foreground">symposium@oxyzhealth.com</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Email
+                      </h3>
+                      <a
+                        href="mailto:global@oxyzhealth.com"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        global@oxyzhealth.com
+                      </a>
                     </div>
                   </div>
 
@@ -103,9 +190,17 @@ export default function ContactPage() {
                       <Phone className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                      <p className="text-muted-foreground">+1 (555) 987-6543</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Phone / WhatsApp
+                      </h3>
+                      <a
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        href="https://wa.me/16466478616"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        +1 646 647 8616
+                      </a>
                     </div>
                   </div>
 
@@ -114,11 +209,11 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Headquarters</h3>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Headquarters
+                      </h3>
                       <p className="text-muted-foreground">
-                        123 Medical Innovation Drive<br />
-                        Suite 500<br />
-                        Miami, FL 33131
+                        USA | Singapore | Malaysia
                       </p>
                     </div>
                   </div>
@@ -128,35 +223,57 @@ export default function ContactPage() {
                       <Clock className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Business Hours</h3>
-                      <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                      <p className="text-muted-foreground">Saturday - Sunday: Closed</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Business Hours
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Monday - Sunday: 9:00 AM - 6:00 PM
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick Links */}
-                <div className="mt-12 p-6 bg-muted rounded-xl">
-                  <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    <a href="/register" className="text-teal hover:text-teal-dark transition-colors">
+                <div className="mt-10 p-6 bg-muted rounded-xl">
+                  <h3 className="font-semibold text-foreground mb-4">
+                    Quick Links
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <Link
+                      href="/register"
+                      className="text-muted-foreground hover:text-gold transition-colors"
+                    >
                       Register for Symposium
-                    </a>
-                    <a href="/program" className="text-teal hover:text-teal-dark transition-colors">
+                    </Link>
+                    <a
+                      href="https://wa.me/16466478616"
+                      className="text-muted-foreground hover:text-gold transition-colors"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       View Program
                     </a>
-                    <a href="/about" className="text-teal hover:text-teal-dark transition-colors">
+                    <Link
+                      href="/about"
+                      className="text-muted-foreground hover:text-gold transition-colors"
+                    >
                       About OXYZ
-                    </a>
-                    <a href="/why-work-with-us" className="text-teal hover:text-teal-dark transition-colors">
+                    </Link>
+                    <Link
+                      href="/why-work-with-us"
+                      className="text-muted-foreground hover:text-gold transition-colors"
+                    >
                       Partnership Info
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
 
               {/* Contact Form */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
+              <div
+                id="contact-form"
+                className="bg-white p-8 rounded-2xl shadow-lg border border-border"
+              >
                 {formState === "success" ? (
                   <div className="text-center py-12">
                     <div className="w-20 h-20 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-6">
@@ -166,12 +283,19 @@ export default function ContactPage() {
                       Message Sent!
                     </h3>
                     <p className="text-muted-foreground mb-8">
-                      Thank you for reaching out. Our team will get back to you within 24-48 hours.
+                      We have received your message and will get back to you shortly.
                     </p>
                     <Button
                       onClick={() => {
                         setFormState("idle")
-                        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+                        setFormData({
+                          name: "",
+                          email: "",
+                          countryCode: "+1",
+                          phone: "",
+                          subject: "",
+                          message: "",
+                        })
                       }}
                       className="bg-teal hover:bg-teal-dark text-white"
                     >
@@ -217,14 +341,35 @@ export default function ContactPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <Label htmlFor="phone">Phone Number</Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="+1 (555) 000-0000"
-                            className="border-border focus:border-gold focus:ring-gold"
-                          />
+                          <div className="flex gap-3">
+                            <Select
+                              value={formData.countryCode}
+                              onValueChange={(value) =>
+                                setFormData({ ...formData, countryCode: value })
+                              }
+                            >
+                              <SelectTrigger className="w-28 border-border focus:border-gold focus:ring-gold">
+                                <SelectValue placeholder="+1" />
+                              </SelectTrigger>
+                            <SelectContent>
+                              {countryCodes.map((item) => (
+                                <SelectItem key={item.code} value={item.code}>
+                                  {item.code} {item.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                            </Select>
+                            <Input
+                              id="phone"
+                              type="tel"
+                              value={formData.phone}
+                              onChange={(e) =>
+                                setFormData({ ...formData, phone: e.target.value })
+                              }
+                              placeholder="(555) 000-0000"
+                              className="border-border focus:border-gold focus:ring-gold"
+                            />
+                          </div>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="subject">Subject *</Label>
@@ -236,11 +381,10 @@ export default function ContactPage() {
                               <SelectValue placeholder="Select a topic" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="symposium">Symposium Inquiry</SelectItem>
-                              <SelectItem value="registration">Registration Help</SelectItem>
-                              <SelectItem value="partnership">Partnership Opportunity</SelectItem>
-                              <SelectItem value="media">Media & Press</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
+                              <SelectItem value="symposium">Symposium Enquiry</SelectItem>
+                              <SelectItem value="program">Program Request</SelectItem>
+                              <SelectItem value="partnership">Partnership Enquiry</SelectItem>
+                              <SelectItem value="general">General Enquiry</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -280,72 +424,6 @@ export default function ContactPage() {
                   </>
                 )}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-20 bg-muted">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Our Location
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Visit our headquarters in Miami, Florida
-              </p>
-            </div>
-            <div className="aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.8424813090717!2d-80.19179492392847!3d25.76168767734631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b69c2f4f0001%3A0x5e1d4e9d6d1e5b5a!2sMiami%2C%20FL%2033131!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="OXYZ Health International Location"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Quick answers to common inquiries
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  question: "How do I register for the symposium?",
-                  answer: "You can register online through our registration page. Select your preferred package (Standard, Premium, or VIP) and complete the secure checkout process.",
-                },
-                {
-                  question: "What is included in the registration fee?",
-                  answer: "All registration packages include full symposium access, networking sessions, materials, and refreshments. Premium and VIP packages include additional benefits like exclusive workshops and priority seating.",
-                },
-                {
-                  question: "Can I get a refund if I can't attend?",
-                  answer: "Yes, we offer full refunds up to 30 days before the event. Within 30 days, we can transfer your registration to another attendee or provide a credit for future events.",
-                },
-                {
-                  question: "Are there partnership opportunities available?",
-                  answer: "Absolutely! We offer various sponsorship and partnership packages. Contact our partnerships team for more information about exhibiting, speaking, or sponsoring the symposium.",
-                },
-              ].map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

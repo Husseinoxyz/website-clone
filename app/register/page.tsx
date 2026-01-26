@@ -23,51 +23,71 @@ import Loading from "./loading";
 
 const registrationTypes = [
   {
-    id: "early-bird",
-    name: "Early Bird - Physical Attendance",
+    id: "package-i-early-bird",
+    name: "Package I: Stem Cell Scholar Series (Early Bird)",
     price: 2500,
-    priceId: "price_early_bird",
-    deadline: "By 28 February 2026",
+    priceId: "price_package_i_early_bird",
+    deadline: "Early Bird by 28 February 2026",
     features: [
-      "4 nights hotel accommodation",
-      "Full symposium access",
-      "All meals & refreshments",
-      "Certificate of Participation",
-      "OXYZ Academy Membership",
+      "4 nights hotel accommodation with daily breakfast",
+      "All 3-day on-site scientific sessions",
+      "All meals, refreshments, and Gala Dinner",
+      "Joint Certificate from OXYZ Academy & DFGTT",
+      "Exclusive hamper with full trial series",
     ],
   },
   {
-    id: "standard",
-    name: "Standard - Physical Attendance",
+    id: "package-i-standard",
+    name: "Package I: Stem Cell Scholar Series (Standard)",
     price: 3000,
-    priceId: "price_standard",
+    priceId: "price_package_i_standard",
     deadline: "After 28 February 2026",
     features: [
-      "4 nights hotel accommodation",
-      "Full symposium access",
-      "All meals & refreshments",
-      "Certificate of Participation",
-      "OXYZ Academy Membership",
+      "4 nights hotel accommodation with daily breakfast",
+      "All 3-day on-site scientific sessions",
+      "All meals, refreshments, and Gala Dinner",
+      "Joint Certificate from OXYZ Academy & DFGTT",
+      "Exclusive hamper with full trial series",
     ],
   },
   {
-    id: "online",
-    name: "Online Scientific Program",
-    price: 1000,
-    priceId: "price_online",
-    deadline: "Limited spots",
+    id: "package-ii",
+    name: "Package II: Immersive Experience Program",
+    price: 10000,
+    priceId: "price_package_ii",
+    deadline: "Total Value: USD 15,500",
     features: [
-      "Online session access",
-      "Live/on-demand viewing",
-      "Digital Certificate",
-      "OXYZ Academy Membership",
+      "All Package I benefits included",
+      "Personal Stem Cell Suite + BioSeries",
+      "VIP clinical screening (LBA, HRV, Bio-Resonance)",
+      "1-on-1 Cellular Reset protocol design",
+      "Referral agreement (15-20% commission)",
+    ],
+  },
+  {
+    id: "package-iii",
+    name: "Package III: Global Elite Partners Program",
+    price: 25000,
+    priceId: "price_package_iii",
+    deadline: "Total Value: USD 51,400",
+    features: [
+      "All Package I & II benefits included",
+      "Root Cause BR Scan Machine + SOPs",
+      "Inventory suite and Mega+ Cell set",
+      "Licensing & regional expansion consult",
+      "Clinic training (3-6 sessions)",
+      "Dealership status (30-35% margin)",
     ],
   },
 ];
 
 function RegistrationContent() {
   const searchParams = useSearchParams();
-  const initialType = searchParams.get("type") || "early-bird";
+  const requestedType = searchParams.get("type");
+  const initialType =
+    registrationTypes.some((type) => type.id === requestedType) && requestedType
+      ? requestedType
+      : "package-i-early-bird";
   
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
@@ -174,7 +194,7 @@ function RegistrationContent() {
                   <h2 className="text-xl font-bold text-foreground mb-4">
                     Select Registration Type
                   </h2>
-                  <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
                     {registrationTypes.map((type) => (
                       <button
                         key={type.id}

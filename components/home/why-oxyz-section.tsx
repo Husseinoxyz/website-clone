@@ -19,12 +19,6 @@ export function WhyOXYZSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-2">
-              Partnership
-            </p>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
-              Step 1: Partnership Fit
-            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
               Why Professionals Choose OXYZ
             </h2>
