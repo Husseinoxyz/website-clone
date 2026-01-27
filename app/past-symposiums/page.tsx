@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { GalleryGrid } from "@/components/symposium/gallery-grid";
 import { ArrowRight, Globe, Users, BookOpen, Handshake } from "lucide-react";
 
 const highlights = [
@@ -28,23 +29,15 @@ const emphases = [
   "Long-term professional collaboration",
 ];
 
-const galleryImages = [
-  {
-    src: "/images/gallery/symposium-1.jpg",
-    alt: "International doctors networking",
-  },
-  {
-    src: "/images/gallery/symposium-2.jpg",
-    alt: "Clinical discussion session",
-  },
-  { src: "/images/gallery/symposium-3.jpg", alt: "Professional networking" },
-  { src: "/images/gallery/symposium-4.jpg", alt: "Medical presentation" },
-  {
-    src: "/images/gallery/symposium-5.jpg",
-    alt: "Strategic collaboration meeting",
-  },
-  { src: "/images/gallery/symposium-6.jpg", alt: "Symposium attendees" },
-];
+const gallery2024 = Array.from({ length: 12 }, (_, index) => ({
+  src: `/images/gallery-1/${index + 1}.jpg`,
+  alt: "2024 symposium highlight",
+}));
+
+const gallery2023 = Array.from({ length: 12 }, (_, index) => ({
+  src: `/images/gallery-1/${String(index + 1).padStart(2, "0")}.jpg`,
+  alt: "2023 symposium highlight",
+}));
 
 export default function PastSymposiumsPage() {
   return (
@@ -68,12 +61,32 @@ export default function PastSymposiumsPage() {
                   professionals, clinic owners, and healthcare leaders from
                   different regions.
                 </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link href="/register">
+                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                    >
+                      Request Scientific Program
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
-                src="/images/past-symposium-featured.jpg"
+                src="/images/gallery-1/2.jpg"
                 alt="Past OXYZ symposium highlights"
                 fill
                 className="object-cover"
@@ -121,7 +134,7 @@ export default function PastSymposiumsPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/images/past-symposium-featured.jpg"
+                  src="/images/gallery-1/8.jpg"
                   alt="Past symposium"
                   width={600}
                   height={450}
@@ -134,8 +147,9 @@ export default function PastSymposiumsPage() {
 
         {/* Gallery */}
         <section className="py-24 bg-muted">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="w-full">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
                 Gallery
               </p>
@@ -143,26 +157,30 @@ export default function PastSymposiumsPage() {
                 Previous Symposium Highlights
               </h2>
             </div>
+            </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="relative overflow-hidden rounded-lg group aspect-[4/3]"
-                >
-                  <Image
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-teal-dark/0 group-hover:bg-teal-dark/60 transition-colors duration-300 flex items-center justify-center">
-                    <span className="text-secondary-foreground font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
-                      {image.alt}
-                    </span>
-                  </div>
-                </div>
-              ))}
+            <div className="mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  2024 Symposium
+                </h3>
+              </div>
+              <GalleryGrid
+                alt="2024 symposium highlight"
+                images={gallery2024.map((image) => image.src)}
+              />
+            </div>
+
+            <div>
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  2023 Symposium
+                </h3>
+              </div>
+              <GalleryGrid
+                alt="2023 symposium highlight"
+                images={gallery2023.map((image) => image.src)}
+              />
             </div>
           </div>
         </section>
@@ -291,16 +309,26 @@ export default function PastSymposiumsPage() {
         </section>
 
         {/* Looking Ahead */}
-        <section className="py-24 bg-muted">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="bg-background rounded-2xl p-12 text-center">
+        <section className="py-24 text-secondary-foreground relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Future outlook background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl p-12 text-center">
               <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
                 The Future
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 Looking Ahead
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-secondary-foreground/85 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Building on previous editions, the OXYZ International Symposium
                 2026 will continue to strengthen medical credibility,
                 professional networks, and structured collaboration pathways.
@@ -309,7 +337,7 @@ export default function PastSymposiumsPage() {
                 <Link href="/symposium">
                   <Button
                     size="lg"
-                    className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8"
+                    className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
                     Explore Symposium 2026
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -319,9 +347,9 @@ export default function PastSymposiumsPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold px-8 bg-transparent"
+                    className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
                   >
-                    Apply to Attend
+                    Register Now
                   </Button>
                 </Link>
               </div>

@@ -150,7 +150,7 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/images/about-philosophy.jpg"
+                  src="/images/about/Our_Philosophy.jpg"
                   alt="OXYZ Philosophy"
                   width={600}
                   height={450}
@@ -162,7 +162,16 @@ export default function AboutPage() {
         </section>
 
         {/* Global Structure */}
-        <section className="py-24 bg-muted">
+        <section className="py-24 bg-muted relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/about/Global_Presence.jpg"
+              alt="Global Presence background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
@@ -265,7 +274,7 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  src="/images/about-ecosystem.jpg"
+                  src="/images/about/Our_Ecosystem.jpg"
                   alt="OXYZ Ecosystem"
                   width={600}
                   height={450}
@@ -346,7 +355,7 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/images/about-difference.jpg"
+                  src="/images/about/What_Sets.jpg"
                   alt="OXYZ Difference"
                   width={600}
                   height={450}
@@ -358,8 +367,18 @@ export default function AboutPage() {
         </section>
 
         {/* Direction */}
-        <section className="py-24 bg-teal-dark text-secondary-foreground">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-24 text-secondary-foreground relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Future direction background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
                 The Future

@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { FloatingActions } from "@/components/ui/floating-actions";
 import './globals.css'
 
 const poppins = Poppins({ 
@@ -15,21 +16,8 @@ export const metadata: Metadata = {
   description: 'OXYZ International Regenerative Medicine & Strategic Collaboration Symposium 2026. Advancing Regenerative Medicine. Structuring the Future of Medical Practice.',
   keywords: ['regenerative medicine', 'symposium', 'medical conference', 'OXYZ Health', 'integrative medicine'],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/Logo1.png',
+    apple: '/Logo1.png',
   },
     generator: 'v0.app'
 }
@@ -47,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
         {children}
+        <FloatingActions />
         <Analytics />
       </body>
     </html>

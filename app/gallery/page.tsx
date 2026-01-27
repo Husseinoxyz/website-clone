@@ -3,43 +3,18 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
+import { GalleryGrid } from "@/components/symposium/gallery-grid";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const galleryImages = [
-  {
-    src: "/images/gallery/symposium-1.jpg",
-    alt: "International doctors at symposium",
-  },
-  {
-    src: "/images/gallery/symposium-2.jpg",
-    alt: "Clinical discussion session",
-  },
-  {
-    src: "/images/gallery/symposium-3.jpg",
-    alt: "Professional networking event",
-  },
-  {
-    src: "/images/gallery/symposium-4.jpg",
-    alt: "Medical presentation",
-  },
-  {
-    src: "/images/gallery/symposium-5.jpg",
-    alt: "Strategic collaboration meeting",
-  },
-  {
-    src: "/images/gallery/symposium-6.jpg",
-    alt: "Symposium attendees",
-  },
-];
+const gallery2024 = Array.from({ length: 12 }, (_, index) => ({
+  src: `/images/gallery-1/${index + 1}.jpg`,
+  alt: "2024 symposium highlight",
+}));
 
-const mosaicLayout = [
-  { index: 0, className: "lg:col-span-2 lg:row-span-2" },
-  { index: 1, className: "lg:col-span-1" },
-  { index: 2, className: "lg:col-span-1" },
-  { index: 3, className: "lg:col-span-1" },
-  { index: 4, className: "lg:col-span-1" },
-  { index: 5, className: "lg:col-span-2" },
-];
+const gallery2023 = Array.from({ length: 12 }, (_, index) => ({
+  src: `/images/gallery-1/${String(index + 1).padStart(2, "0")}.jpg`,
+  alt: "2023 symposium highlight",
+}));
 
 export default function GalleryPage() {
   return (
@@ -66,13 +41,35 @@ export default function GalleryPage() {
                   alignment, and the global community shaping regenerative
                   medicine.
                 </p>
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Link href="/past-symposiums">
-                    <Button className="bg-gold text-foreground hover:bg-gold-dark font-semibold">
-                      View Past Symposiums
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
+                <div className="mt-10 flex flex-col gap-4">
+                  <div className="flex flex-wrap gap-3">
+                    <Link href="/register">
+                      <Button className="bg-gold text-white hover:bg-gold-dark font-semibold">
+                        Register Now
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                    <Link
+                      href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button
+                        variant="outline"
+                        className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                      >
+                        Request Scientific Program
+                      </Button>
+                    </Link>
+                    <Link href="/past-symposiums">
+                      <Button
+                        variant="outline"
+                        className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                      >
+                        View Past Symposiums
+                      </Button>
+                    </Link>
+                  </div>
                   <div className="text-sm text-secondary-foreground/70">
                     6 continents • 100+ professionals • 20+ countries
                   </div>
@@ -82,7 +79,7 @@ export default function GalleryPage() {
 
             <div className="relative min-h-[300px] sm:min-h-[420px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
-                src="/images/gallery/symposium-2.jpg"
+                src="/images/gallery-1/1.jpg"
                 alt="OXYZ symposium gathering"
                 fill
                 className="object-cover"
@@ -95,7 +92,8 @@ export default function GalleryPage() {
         </section>
 
         <section className="py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="w-full">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
@@ -114,28 +112,30 @@ export default function GalleryPage() {
                 Updated with the latest symposium highlights.
               </div>
             </div>
+            </div>
 
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[220px]">
-              {mosaicLayout.map((item) => {
-                const image = galleryImages[item.index];
-                return (
-                  <div
-                    key={image.src}
-                    className={`group relative overflow-hidden rounded-2xl ${item.className}`}
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-teal-dark/80 via-teal-dark/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <div className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-secondary-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      {image.alt}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="mt-16">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  2024 Symposium
+                </h3>
+              </div>
+              <GalleryGrid
+                alt="2024 symposium highlight"
+                images={gallery2024.map((image) => image.src)}
+              />
+            </div>
+
+            <div className="mt-16">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  2023 Symposium
+                </h3>
+              </div>
+              <GalleryGrid
+                alt="2023 symposium highlight"
+                images={gallery2023.map((image) => image.src)}
+              />
             </div>
           </div>
         </section>
@@ -175,7 +175,7 @@ export default function GalleryPage() {
                 <div className="absolute -top-6 -left-6 h-24 w-24 rounded-2xl bg-gold/30 blur-2xl" />
                 <div className="relative overflow-hidden rounded-2xl shadow-xl">
                   <Image
-                    src="/images/gallery/symposium-5.jpg"
+                    src="/images/gallery-1/2.jpg"
                     alt="Strategic collaboration meeting"
                     width={640}
                     height={480}
@@ -183,7 +183,7 @@ export default function GalleryPage() {
                   />
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  {["/images/gallery/symposium-3.jpg", "/images/gallery/symposium-6.jpg"].map(
+                  {["/images/gallery-1/03.jpg", "/images/gallery-1/04.jpg"].map(
                     (src) => (
                       <div
                         key={src}
@@ -204,8 +204,18 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-teal-dark text-secondary-foreground">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-16 text-secondary-foreground relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Next chapter background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-2">
@@ -219,7 +229,7 @@ export default function GalleryPage() {
                 </p>
               </div>
               <Link href="/register">
-                <Button className="bg-gold text-foreground hover:bg-gold-dark font-semibold px-8">
+                <Button className="bg-gold text-white hover:bg-gold-dark font-semibold px-8">
                   Register Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

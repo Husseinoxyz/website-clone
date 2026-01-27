@@ -105,7 +105,7 @@ export function HeroSection() {
                   variant="outline"
                   className="w-full sm:w-auto border-2 border-white/70 text-white/90 hover:bg-white/10 hover:border-white font-semibold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base bg-transparent transition-all"
                 >
-                  Apply to Work With OXYZ
+                  Apply to Partnership With OXYZ
                 </Button>
               </Link>
             </div>

@@ -135,12 +135,31 @@ export default function ContactPage() {
                   Get in touch with our team to learn more about OXYZ Health
                   International and our upcoming symposium
                 </h1>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/register">
+                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                      Register Now
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                    >
+                      Request Scientific Program
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
-                src="/images/contact-hero.jpg"
+                src="/images/about-hero.jpg"
                 alt="OXYZ Health International contact"
                 fill
                 className="object-cover"
@@ -195,7 +214,7 @@ export default function ContactPage() {
                       </h3>
                       <a
                         className="text-muted-foreground hover:text-foreground transition-colors"
-                        href="https://wa.me/16466478616"
+                        href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -246,7 +265,7 @@ export default function ContactPage() {
                       Register for Symposium
                     </Link>
                     <a
-                      href="https://wa.me/16466478616"
+                      href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                       className="text-muted-foreground hover:text-gold transition-colors"
                       target="_blank"
                       rel="noreferrer"

@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { CountdownSection } from "@/components/symposium/countdown-section";
+import { GalleryGrid } from "@/components/symposium/gallery-grid";
 import {
   ArrowRight,
   Calendar,
@@ -92,17 +94,21 @@ export default function SymposiumPage() {
                   <Link href="/register">
                     <Button
                       size="lg"
-                      className="bg-gold hover:bg-gold-dark text-teal font-semibold"
+                      className="bg-gold hover:bg-gold-dark text-white font-semibold"
                     >
-                      Apply to Attend
+                      Register Now
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
-                  <Link href="/program">
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
                     >
                       Request Scientific Program
                     </Button>
@@ -125,47 +131,7 @@ export default function SymposiumPage() {
           </div>
         </section>
 
-        {/* Event Details */}
-        <section className="py-16 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid sm:grid-cols-3 gap-6">
-              <div className="flex items-center gap-4 bg-muted rounded-lg p-6">
-                <Calendar className="h-10 w-10 text-gold" />
-                <div>
-                  <p className="text-sm text-muted-foreground">Dates</p>
-                  <p className="text-xl font-bold text-teal">
-                    18 - 20 April 2026
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    4 nights accommodation included
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 bg-muted rounded-lg p-6">
-                <MapPin className="h-10 w-10 text-gold" />
-                <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-xl font-bold text-teal">Malaysia</p>
-                  <p className="text-sm text-muted-foreground">
-                    Premium venue TBA
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 bg-muted rounded-lg p-6">
-                <Users className="h-10 w-10 text-gold" />
-                <div>
-                  <p className="text-sm text-muted-foreground">Capacity</p>
-                  <p className="text-xl font-bold text-teal">
-                    80 - 100 Participants
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Limited to ensure quality
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CountdownSection />
 
         {/* Medical Imperative */}
         <section className="py-24 bg-muted">
@@ -195,31 +161,62 @@ export default function SymposiumPage() {
                     trend, but as a sustainable medical framework.
                   </p>
                 </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link href="/register">
+                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
+                    >
+                      Request More Details
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <div className="relative">
+              <div className="relative aspect-square">
                 <Image
-                  src="/images/medical-imperative.jpg"
+                  src="/images/about/Our_Philosophy.jpg"
                   alt="Medical imperative"
                   width={600}
-                  height={450}
-                  className="rounded-lg shadow-xl"
+                  height={520}
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </div>
             </div>
           </div>
         </section>
 
+
         {/* Who Is This For */}
-        <section className="py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/about/Global_Presence.jpg"
+              alt="Ideal Participants background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
                 Ideal Participants
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
                 Who This Symposium Is For
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-white/80 leading-relaxed">
                 This symposium is curated for professionals who meet both
                 medical and strategic readiness.
               </p>
@@ -238,8 +235,29 @@ export default function SymposiumPage() {
                 </div>
               ))}
             </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/register">
+                <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                  Register Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                >
+                  Request More Details
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
+
 
         {/* Scientific Focus */}
         <section className="py-24 bg-teal-dark text-secondary-foreground">
@@ -276,7 +294,7 @@ export default function SymposiumPage() {
                 </h2>
                 <div className="space-y-4">
                   <div className="bg-secondary-foreground/10 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-teal mb-2">
+                    <h3 className="text-xl font-semibold text-gold mb-2">
                       Physical Symposium
                     </h3>
                     <ul className="space-y-2 text-secondary-foreground/80">
@@ -290,7 +308,7 @@ export default function SymposiumPage() {
                     </p>
                   </div>
                   <div className="bg-secondary-foreground/10 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-teal mb-2">
+                    <h3 className="text-xl font-semibold text-gold mb-2">
                       Participants Will Gain
                     </h3>
                     <ul className="space-y-2 text-secondary-foreground/80">
@@ -301,10 +319,31 @@ export default function SymposiumPage() {
                     </ul>
                   </div>
                 </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link href="/register">
+                    <Button className="bg-gold hover:bg-gold-dark text-foreground font-semibold">
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                    >
+                      Request More Details
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Strategic Pathways */}
         <section className="py-24 bg-background">
@@ -336,17 +375,170 @@ export default function SymposiumPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <Link href="/register">
+                <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                  Register Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
+                >
+                  Request More Details
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* CTA */}
+
+        {/* Symposium 2024 Overview */}
         <section className="py-24 bg-muted">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="bg-teal-dark rounded-2xl p-12 text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6 text-balance">
+          <div className="w-full">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+              <div>
+                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
+                  2024 Symposium
+                </p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
+                  2024 Symposium Overview
+                </h2>
+                <p className="text-muted-foreground max-w-2xl">
+                  A look back at our 2024 medical alignment forum, featuring
+                  focused clinical sessions, international collaboration, and
+                  practical regenerative discussions.
+                </p>
+              </div>
+              <Link href="/past-symposiums">
+                <Button variant="outline" className="border-teal text-teal">
+                  View Full Gallery
+                </Button>
+              </Link>
+            </div>
+            </div>
+
+            <GalleryGrid
+              alt="Symposium 2024 gallery"
+              images={[
+                "/images/gallery-1/1.jpg",
+                "/images/gallery-1/2.jpg",
+                "/images/gallery-1/3.jpg",
+                "/images/gallery-1/4.jpg",
+                "/images/gallery-1/5.jpg",
+                "/images/gallery-1/6.jpg",
+              ]}
+            />
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <Link href="/register">
+                <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                  Register Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
+                >
+                  Request More Details
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Symposium 2023 Overview */}
+        <section className="py-24 bg-background">
+          <div className="w-full">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+              <div>
+                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
+                  2023 Symposium
+                </p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
+                  2023 Symposium Overview
+                </h2>
+                <p className="text-muted-foreground max-w-2xl">
+                  Highlights from the 2023 symposium focused on medical
+                  governance, structured clinical frameworks, and ecosystem
+                  building.
+                </p>
+              </div>
+              <Link href="/past-symposiums">
+                <Button variant="outline" className="border-teal text-teal">
+                  View Full Gallery
+                </Button>
+              </Link>
+            </div>
+            </div>
+
+            <GalleryGrid
+              alt="Symposium 2023 gallery"
+              images={[
+                "/images/gallery-1/01.jpg",
+                "/images/gallery-1/02.jpg",
+                "/images/gallery-1/03.jpg",
+                "/images/gallery-1/04.jpg",
+                "/images/gallery-1/05.jpg",
+                "/images/gallery-1/06.jpg",
+              ]}
+            />
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <Link href="/register">
+                <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                  Register Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
+                >
+                  Request More Details
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+
+        {/* CTA */}
+        <section className="py-24 text-secondary-foreground relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Symposium CTA background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl p-12 text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
                 Ready to Join Symposium 2026?
               </h2>
-              <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-foreground/85 mb-8 max-w-2xl mx-auto">
                 This symposium is intended for professionals seeking depth,
                 alignment, and long-term impact. Apply now to secure your place.
               </p>
@@ -354,19 +546,23 @@ export default function SymposiumPage() {
                 <Link href="/register">
                   <Button
                     size="lg"
-                    className="bg-gold hover:bg-gold-dark text-teal font-semibold px-8"
+                    className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Apply / Register for Symposium
+                    Register Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/program">
+                <Link
+                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
+                    className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
                   >
-                    Request Program Information
+                    Request More Details
                   </Button>
                 </Link>
               </div>

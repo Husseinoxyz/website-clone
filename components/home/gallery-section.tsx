@@ -57,13 +57,13 @@ export function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12 w-screen mx-[calc(50%-50vw)] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 mb-12 w-screen mx-[calc(50%-50vw)]">
           {galleryImages.map((image, index) => (
             <button
               key={index}
               type="button"
               onClick={() => setSelectedImage(image)}
-              className={`relative overflow-hidden rounded-lg group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+              className={`relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                 index === 0 || index === 5 ? "md:col-span-1 md:row-span-1" : ""
               }`}
             >

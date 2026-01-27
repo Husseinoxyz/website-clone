@@ -78,7 +78,7 @@ export function SymposiumSection() {
                   variant="outline"
                   className="border-teal text-[#007A59] hover:bg-teal hover:text-secondary-foreground font-semibold bg-transparent"
                 >
-                  Apply to Attend
+                  Register Now
                 </Button>
               </Link>
             </div>

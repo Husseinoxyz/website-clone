@@ -51,19 +51,39 @@ export default function ProgramPage() {
         {/* Hero */}
         <section className="relative w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-            <div className="relative flex items-center bg-muted px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
+            <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
               <div className="mx-auto max-w-2xl">
                 <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">
                   Program Details
                 </p>
-                <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+                <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
                   Program Overview
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-xl text-secondary-foreground/80 leading-relaxed">
                   Comprehensive details about the OXYZ International Symposium
                   2026, including registration options, fees, and what is
                   included.
                 </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link href="/register">
+                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                    >
+                      Request Scientific Program
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -168,7 +188,7 @@ export default function ProgramPage() {
                   className="block"
                 >
                   <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Apply for Package I
+                    Register for Package I
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -197,7 +217,7 @@ export default function ProgramPage() {
                 </ul>
                 <Link href="/register?type=package-ii" className="block">
                   <Button className="w-full bg-gold hover:bg-gold-dark text-foreground font-semibold">
-                    Apply for Package II
+                    Register for Package II
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -226,7 +246,7 @@ export default function ProgramPage() {
                 </ul>
                 <Link href="/register?type=package-iii" className="block">
                   <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Apply for Package III
+                    Register for Package III
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -248,48 +268,26 @@ export default function ProgramPage() {
                 What&apos;s Included
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground">
-                Package Benefits
+                Program Overview
               </h2>
             </div>
-            <div className="grid gap-8 lg:grid-cols-3">
-              <div className="bg-secondary-foreground/10 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gold mb-3">
-                  Package I: Stem Cell Scholar (The Foundation)
-                </h3>
-                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
-                  {packageIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-secondary-foreground/10 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gold mb-3">
-                  Package II: Immersive Experience (The Clinical Track)
-                </h3>
-                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
-                  {packageIIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-secondary-foreground/10 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gold mb-3">
-                  Package III: Global Elite Partner (The Business Track)
-                </h3>
-                <ul className="space-y-3 text-secondary-foreground/85 text-sm">
-                  {packageIIIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-secondary-foreground/80 text-lg leading-relaxed">
+                Full package inclusions are available upon request. Our team
+                will provide the most current program details, benefits, and
+                eligibility guidance based on your profile.
+              </p>
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="bg-gold hover:bg-gold-dark text-foreground font-semibold">
+                    Request More Details
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -321,13 +319,23 @@ export default function ProgramPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt="Program next steps background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/55" />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 Next Steps
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-white/80 mb-8">
                 Ready to secure your place? Choose your package and begin your
                 application.
               </p>
@@ -335,9 +343,9 @@ export default function ProgramPage() {
                 <Link href="/register?type=package-i-early-bird">
                   <Button
                     size="lg"
-                    className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8"
+                    className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Apply for Early Bird (Package I)
+                    Register for Package I
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -345,18 +353,18 @@ export default function ProgramPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold px-8 bg-transparent"
+                    className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
                   >
-                    Apply for Immersive/Elite Tracks
+                    Register for Package II
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616"
+                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button size="lg" variant="ghost" className="px-8">
-                    Request Full Partnership & Program Details
+                  <Button size="lg" variant="ghost" className="px-8 text-white">
+                    Request More Details
                   </Button>
                 </Link>
               </div>

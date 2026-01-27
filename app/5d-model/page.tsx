@@ -343,7 +343,7 @@ export default function FiveDModelPage() {
                     variant="outline"
                     className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold px-8 bg-transparent"
                   >
-                    Apply to Attend Symposium 2026
+                    Register Now
                   </Button>
                 </Link>
               </div>
