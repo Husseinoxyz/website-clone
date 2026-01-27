@@ -1,6 +1,5 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { SymposiumPopup } from "@/components/about/symposium-popup";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -420,7 +419,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <SymposiumPopup />
       <Footer />
     </>
   );
