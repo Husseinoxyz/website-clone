@@ -5,35 +5,76 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  Check,
   Calendar,
   Clock,
   Info,
+  Scan,
+  ClipboardCheck,
+  Users,
+  ShieldCheck,
+  BadgeCheck,
+  LineChart,
 } from "lucide-react";
 
 const packageIFeatures = [
-  "4 nights hotel accommodation (single occupancy with daily breakfast)",
-  "All 3-day on-site scientific sessions, clinical discussions, and strategic presentations",
-  "All official symposium meals, refreshments, and Gala Dinner",
-  "Joint Certificate from OXYZ Academy & DFGTT (Germany)",
-  "Exclusive hamper with full trial series of OXYZ products",
+  {
+    icon: Calendar,
+    text: "4 nights hotel stay (single occupancy, breakfast included)",
+  },
+  {
+    icon: Users,
+    text: "Full access to all 3-day symposium sessions",
+  },
+  {
+    icon: ClipboardCheck,
+    text: "All official meals and Gala Dinner",
+  },
+  {
+    icon: BadgeCheck,
+    text: "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
+  },
 ];
 
 const packageIIFeatures = [
-  "All Package I benefits included",
-  "Personal Stem Cell Suite: 10 Boxes Oral MSC, 1 Box BioSeries (Hair/Skin), 4 vials 4-in-1 Micro Cells",
-  "VIP clinical screening: Live Blood Analysis, HRV, and Bio-Resonance",
-  "1-on-1 Cellular Reset protocol design with an OXYZ Lead Scientist",
-  "Direct referral agreement with 15-20% commission scheme",
+  {
+    icon: LineChart,
+    text: "Advanced OXYZ product suite",
+  },
+  {
+    icon: Scan,
+    text: "VIP on-site diagnostics",
+  },
+  {
+    icon: Users,
+    text: "1-on-1 clinical protocol consultation",
+  },
+  {
+    icon: BadgeCheck,
+    text: "Referral partnership",
+  },
 ];
 
 const packageIIIFeatures = [
-  "All Package I & II benefits included",
-  "Root Cause BR Scan Machine with full operating SOPs",
-  "Inventory suite: 20 sets Oral MSC, 20 boxes Gut+, 1 Regenerative Anti-Aging Mega+ Cell set",
-  "1-day dedicated licensing and regional expansion consultation",
-  "3-6 post-event training sessions for lead staff/nurses",
-  "Dealership status (30-35% margin) and waived security deposit",
+  {
+    icon: Scan,
+    text: "Root Cause BR Scan Machine with SOPs",
+  },
+  {
+    icon: LineChart,
+    text: "Executive strategy and regional expansion planning",
+  },
+  {
+    icon: ShieldCheck,
+    text: "Security deposit waived",
+  },
+  {
+    icon: Users,
+    text: "Post-event clinical and staff training",
+  },
+  {
+    icon: BadgeCheck,
+    text: "Elite business associate status",
+  },
 ];
 
 const importantInfo = [
@@ -53,9 +94,6 @@ export default function ProgramPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
             <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
               <div className="mx-auto max-w-2xl">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">
-                  Program Details
-                </p>
                 <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
                   Program Overview
                 </h1>
@@ -147,109 +185,136 @@ export default function ProgramPage() {
         <section className="py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Pricing
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
-                Registration Options & Fees
+                Secure Your Place at Symposium 2026
               </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                This is a professionally curated symposium, not open to mass
+                registration. All registrations are subject to review and
+                confirmation. Seats are allocated to ensure medical relevance
+                and alignment.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid gap-8 md:grid-cols-3 mb-12">
               {/* Package I */}
-              <div className="bg-gold rounded-lg p-8 text-foreground ring-4 ring-gold-light relative transition-colors hover:bg-gold/90">
-                <span className="absolute -top-3 left-8 inline-block bg-teal text-secondary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                  Early Bird
-                </span>
-                <h3 className="text-xl font-bold mb-2">
-                  Package I: OXYZ Stem Cell Scholar Series
-                </h3>
-                <div className="mb-4">
-                  <p className="text-4xl font-bold">USD 2,500</p>
-                  <p className="text-sm text-foreground/80">
-                    Early Bird | USD 3,000 Standard
-                  </p>
+              <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-gold text-foreground">
+                <div className="absolute inset-0 bg-[url('/images/symposium-hero.jpg')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/95 via-gold/90 to-gold/70" />
+                <div className="relative flex flex-col gap-6 p-8">
+                  <div className="flex-1">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                      Early Bird
+                    </span>
+                    <p className="mt-2 text-sm font-semibold text-foreground/90">
+                      Includes Symposium Access + Hospitality:
+                    </p>
+                    <ul className="mt-4 grid gap-4">
+                      {packageIFeatures.map((feature) => (
+                        <li key={feature.text} className="flex items-start gap-3">
+                          <feature.icon className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground/80">
+                            {feature.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex flex-col gap-4">
+                      <div>
+                        <p className="text-3xl font-bold">USD 2,500</p>
+                        <p className="text-sm text-foreground/80">
+                          Early Bird | USD 3,000 Standard
+                        </p>
+                        <p className="text-xs text-foreground/70">
+                          Early Bird Deadline: 28 February 2026
+                        </p>
+                      </div>
+                      <Link
+                        href="/register?type=package-i-early-bird"
+                        className="block"
+                      >
+                        <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
+                          Register for Package I
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm text-foreground/70 mb-6">
-                  Early Bird Deadline: 28 February 2026
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {packageIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/register?type=package-i-early-bird"
-                  className="block"
-                >
-                  <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Register for Package I
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
               </div>
 
               {/* Package II */}
-              <div className="bg-muted rounded-lg p-8 border border-border transition-colors hover:bg-muted/80">
-                <h3 className="text-xl font-bold text-gold mb-2">
-                  Package II: OXYZ Immersive Experience Program
-                </h3>
-                <p className="text-4xl font-bold text-foreground mb-2">
-                  USD 10,000
-                </p>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Total Value: USD 15,500
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {packageIIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/register?type=package-ii" className="block">
-                  <Button className="w-full bg-gold hover:bg-gold-dark text-foreground font-semibold">
-                    Register for Package II
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+              <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-[#d1a654] text-foreground">
+                <div className="absolute inset-0 bg-[url('/images/symposium-preview.jpg')] bg-cover bg-center opacity-15" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#d1a654]/95 via-[#d1a654]/90 to-[#d1a654]/70" />
+                <div className="relative flex flex-col gap-6 p-8">
+                  <div className="flex-1">
+                    <p className="mt-2 text-sm font-semibold text-foreground/90">
+                      Includes Package 1, Plus:
+                    </p>
+                    <ul className="mt-4 grid gap-4">
+                      {packageIIFeatures.map((feature) => (
+                        <li key={feature.text} className="flex items-start gap-3">
+                          <feature.icon className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground/80">
+                            {feature.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex flex-col gap-4">
+                      <div>
+                        <p className="text-3xl font-bold">USD 10,000</p>
+                        <p className="text-sm text-foreground/80">
+                          Total Value: USD 15,500
+                        </p>
+                      </div>
+                      <Link href="/register?type=package-ii" className="block">
+                        <Button className="w-full bg-white text-foreground hover:bg-white/90 font-semibold">
+                          Register for Package II
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Package III */}
-              <div className="bg-muted rounded-lg p-8 border border-border transition-colors hover:bg-muted/80">
-                <h3 className="text-xl font-bold text-gold mb-2">
-                  Package III: OXYZ Global Elite Partners Program
-                </h3>
-                <p className="text-4xl font-bold text-foreground mb-2">
-                  USD 25,000
-                </p>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Total Value: USD 51,400
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {packageIIIFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/register?type=package-iii" className="block">
-                  <Button className="w-full bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                    Register for Package III
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+              <div className="relative overflow-hidden rounded-3xl border border-teal/30 bg-teal-dark text-secondary-foreground">
+                <div className="absolute inset-0 bg-[url('/images/world-map.jpg')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-dark/95 via-teal-dark/90 to-teal-dark/70" />
+                <div className="relative flex flex-col gap-6 p-8">
+                  <div className="flex-1">
+                    <p className="mt-2 text-sm font-semibold text-secondary-foreground/90">
+                      Includes Packages 1 & 2, Plus:
+                    </p>
+                    <ul className="mt-4 grid gap-4">
+                      {packageIIIFeatures.map((feature) => (
+                        <li key={feature.text} className="flex items-start gap-3">
+                          <feature.icon className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-secondary-foreground/85">
+                            {feature.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex flex-col gap-4">
+                      <div>
+                        <p className="text-3xl font-bold">USD 25,000</p>
+                        <p className="text-sm text-secondary-foreground/80">
+                          Total Value: USD 51,400
+                        </p>
+                      </div>
+                      <Link href="/register?type=package-iii" className="block">
+                        <Button className="w-full bg-gold hover:bg-gold-dark text-foreground font-semibold">
+                          Register for Package III
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -264,9 +329,6 @@ export default function ProgramPage() {
         <section className="py-24 bg-teal-dark text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                What&apos;s Included
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground">
                 Program Overview
               </h2>

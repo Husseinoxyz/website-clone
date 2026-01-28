@@ -107,9 +107,6 @@ export default function FiveDModelPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
             <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
               <div className="mx-auto max-w-2xl">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">
-                  Our Framework
-                </p>
                 <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
                   The OXYZ 5D Regenerative Medical Model
                 </h1>
@@ -159,9 +156,6 @@ export default function FiveDModelPage() {
         <section className="py-24 bg-muted">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                The Framework
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 The Five Dimensions
               </h2>
@@ -237,9 +231,6 @@ export default function FiveDModelPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Standardization
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   A Model Built for Medical Consistency
                 </h2>
@@ -264,9 +255,6 @@ export default function FiveDModelPage() {
                 </p>
               </div>
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Beyond Patient Care
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   A Platform for Growth
                 </h2>
@@ -297,9 +285,6 @@ export default function FiveDModelPage() {
         <section className="py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Our Promise
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 Our Commitment
               </h2>

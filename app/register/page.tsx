@@ -24,59 +24,55 @@ import Loading from "./loading";
 const registrationTypes = [
   {
     id: "package-i-early-bird",
-    name: "Package I: Stem Cell Scholar Series (Early Bird)",
+    name: "Package 1: Stem Cell Scholar Series (Early Bird)",
     price: 2500,
     priceId: "price_package_i_early_bird",
     deadline: "Early Bird by 28 February 2026",
     features: [
-      "4 nights hotel accommodation with daily breakfast",
-      "All 3-day on-site scientific sessions",
-      "All meals, refreshments, and Gala Dinner",
-      "Joint Certificate from OXYZ Academy & DFGTT",
-      "Exclusive hamper with full trial series",
+      "4 nights hotel stay (single occupancy, breakfast included)",
+      "Full access to all 3-day symposium sessions",
+      "All official meals and Gala Dinner",
+      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
   },
   {
     id: "package-i-standard",
-    name: "Package I: Stem Cell Scholar Series (Standard)",
+    name: "Package 1: Stem Cell Scholar Series (Standard)",
     price: 3000,
     priceId: "price_package_i_standard",
     deadline: "After 28 February 2026",
     features: [
-      "4 nights hotel accommodation with daily breakfast",
-      "All 3-day on-site scientific sessions",
-      "All meals, refreshments, and Gala Dinner",
-      "Joint Certificate from OXYZ Academy & DFGTT",
-      "Exclusive hamper with full trial series",
+      "4 nights hotel stay (single occupancy, breakfast included)",
+      "Full access to all 3-day symposium sessions",
+      "All official meals and Gala Dinner",
+      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
   },
   {
     id: "package-ii",
-    name: "Package II: Immersive Experience Program",
+    name: "Package 2: OXYZ Immersive Experience",
     price: 10000,
     priceId: "price_package_ii",
     deadline: "Total Value: USD 15,500",
     features: [
-      "All Package I benefits included",
-      "Personal Stem Cell Suite + BioSeries",
-      "VIP clinical screening (LBA, HRV, Bio-Resonance)",
-      "1-on-1 Cellular Reset protocol design",
-      "Referral agreement (15-20% commission)",
+      "Advanced OXYZ product suite",
+      "VIP on-site diagnostics",
+      "1-on-1 clinical protocol consultation",
+      "Referral partnership",
     ],
   },
   {
     id: "package-iii",
-    name: "Package III: Global Elite Partners Program",
+    name: "Package 3: OXYZ Global Elite Partner",
     price: 25000,
     priceId: "price_package_iii",
     deadline: "Total Value: USD 51,400",
     features: [
-      "All Package I & II benefits included",
-      "Root Cause BR Scan Machine + SOPs",
-      "Inventory suite and Mega+ Cell set",
-      "Licensing & regional expansion consult",
-      "Clinic training (3-6 sessions)",
-      "Dealership status (30-35% margin)",
+      "Root Cause BR Scan Machine with SOPs",
+      "Executive strategy and regional expansion planning",
+      "Security deposit waived",
+      "Post-event clinical and staff training",
+      "Elite business associate status",
     ],
   },
 ];
@@ -155,9 +151,6 @@ function RegistrationContent() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
           <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
             <div className="mx-auto max-w-2xl">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">
-                Registration
-              </p>
               <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
                 Register for Symposium 2026
               </h1>

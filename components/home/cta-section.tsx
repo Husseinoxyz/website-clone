@@ -20,9 +20,6 @@ export function CTASection() {
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-            Get Started
-          </p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
             Begin the Conversation
           </h2>

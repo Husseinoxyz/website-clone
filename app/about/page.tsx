@@ -67,9 +67,6 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
             <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
               <div className="mx-auto max-w-2xl">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">
-                  About Us
-                </p>
                 <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
                   About OXYZ Health International
                 </h1>
@@ -118,9 +115,6 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Our Philosophy
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Future of Medicine
                 </h2>
@@ -173,9 +167,6 @@ export default function AboutPage() {
           </div>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Global Presence
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 A Globally Structured Organization
               </h2>
@@ -215,9 +206,6 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Clinical Approach
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Our Medical Foundation
                 </h2>
@@ -239,9 +227,6 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Guiding Principles
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Clinical Pathways
                 </h2>
@@ -281,9 +266,6 @@ export default function AboutPage() {
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Our Ecosystem
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   Beyond Clinics: A Medical Ecosystem
                 </h2>
@@ -308,9 +290,6 @@ export default function AboutPage() {
         <section className="py-24 bg-muted">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Our Promise
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6">
                 Our Commitment
               </h2>
@@ -329,9 +308,6 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  What Sets Us Apart
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6">
                   The OXYZ Difference
                 </h2>
@@ -379,9 +355,6 @@ export default function AboutPage() {
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                The Future
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                 Our Direction
               </h2>

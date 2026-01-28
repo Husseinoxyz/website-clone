@@ -138,9 +138,6 @@ export default function SymposiumPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  The Purpose
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Medical Imperative
                 </h2>
@@ -210,9 +207,6 @@ export default function SymposiumPage() {
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Ideal Participants
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
                 Who This Symposium Is For
               </h2>
@@ -264,9 +258,6 @@ export default function SymposiumPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Content
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Scientific & Medical Focus
                 </h2>
@@ -286,9 +277,6 @@ export default function SymposiumPage() {
                 </ul>
               </div>
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Format
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Symposium Format
                 </h2>
@@ -349,9 +337,6 @@ export default function SymposiumPage() {
         <section className="py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                Opportunities
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 Strategic Pathways Exploration
               </h2>
@@ -405,9 +390,6 @@ export default function SymposiumPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  2024 Symposium
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                   2024 Symposium Overview
                 </h2>
@@ -466,9 +448,6 @@ export default function SymposiumPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  2023 Symposium
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                   2023 Symposium Overview
                 </h2>

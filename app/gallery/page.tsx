@@ -96,9 +96,6 @@ export default function GalleryPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-                  Curated Gallery
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                   Clinical depth meets strategic connection
                 </h2>
@@ -144,9 +141,6 @@ export default function GalleryPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-6">
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider">
-                  Symposium Atmosphere
-                </p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
                   Where strategy, science, and trust converge
                 </h2>
@@ -218,9 +212,6 @@ export default function GalleryPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-2">
-                  Next Chapter
-                </p>
                 <h2 className="text-2xl sm:text-3xl font-bold">
                   Be part of Symposium 2026
                 </h2>

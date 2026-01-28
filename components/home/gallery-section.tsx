@@ -43,9 +43,6 @@ export function GallerySection() {
     <section className="py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-            Past Events
-          </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
             Past OXYZ International Symposiums
           </h2>

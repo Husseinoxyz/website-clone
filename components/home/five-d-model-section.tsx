@@ -11,9 +11,6 @@ export function FiveDModelSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] mb-16">
           <div className="max-w-2xl">
-            <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-              Our Framework
-            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
               One Model. Consistent Outcomes.
             </h2>

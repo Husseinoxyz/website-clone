@@ -38,9 +38,6 @@ export function GlobalSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">
-              International Presence
-            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6 text-balance">
               Global by Design
             </h2>
