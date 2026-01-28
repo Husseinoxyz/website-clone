@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { GalleryGrid } from "@/components/symposium/gallery-grid";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const gallery2024 = Array.from({ length: 12 }, (_, index) => ({
+const gallery2025 = Array.from({ length: 12 }, (_, index) => ({
   src: `/images/gallery-1/${index + 1}.jpg`,
-  alt: "2024 symposium highlight",
+  alt: "2025 symposium highlight",
 }));
 
 const gallery2023 = Array.from({ length: 12 }, (_, index) => ({
@@ -114,12 +114,12 @@ export default function GalleryPage() {
             <div className="mt-16">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2024 Symposium
+                  2025 Symposium
                 </h3>
               </div>
               <GalleryGrid
-                alt="2024 symposium highlight"
-                images={gallery2024.map((image) => image.src)}
+                alt="2025 symposium highlight"
+                images={gallery2025.map((image) => image.src)}
               />
             </div>
 

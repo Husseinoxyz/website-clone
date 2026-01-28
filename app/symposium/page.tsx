@@ -384,17 +384,17 @@ export default function SymposiumPage() {
         </section>
 
 
-        {/* Symposium 2024 Overview */}
+        {/* Symposium 2025 Overview */}
         <section className="py-24 bg-muted">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                  2024 Symposium Overview
+                  2025 Symposium Overview
                 </h2>
                 <p className="text-muted-foreground max-w-2xl">
-                  A look back at our 2024 medical alignment forum, featuring
+                  A look back at our 2025 medical alignment forum, featuring
                   focused clinical sessions, international collaboration, and
                   practical regenerative discussions.
                 </p>
@@ -408,7 +408,7 @@ export default function SymposiumPage() {
             </div>
 
             <GalleryGrid
-              alt="Symposium 2024 gallery"
+              alt="Symposium 2025 gallery"
               images={[
                 "/images/gallery-1/1.jpg",
                 "/images/gallery-1/2.jpg",
