@@ -52,7 +52,7 @@ export function HeroSection() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-2xl w-full mx-auto">
+          <div className="relative z-10 max-w-2xl w-full mx-auto pt-6 sm:pt-8 lg:pt-10">
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
               <span className="block overflow-hidden">

@@ -71,11 +71,7 @@ export function GallerySection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-teal-dark/0 group-hover:bg-teal-dark/60 transition-colors duration-300 flex items-center justify-center">
-                  <span className="text-secondary-foreground font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
-                    {image.alt}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-teal-dark/0 group-hover:bg-teal-dark/60 transition-colors duration-300" />
               </div>
             </button>
           ))}
