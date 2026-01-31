@@ -34,10 +34,23 @@ const gallery2025 = Array.from({ length: 12 }, (_, index) => ({
   alt: "2025 symposium highlight",
 }));
 
-const gallery2023 = Array.from({ length: 12 }, (_, index) => ({
-  src: `/images/gallery-1/${String(index + 1).padStart(2, "0")}.jpg`,
-  alt: "2023 symposium highlight",
-}));
+const gallery2023 = Array.from({ length: 12 }, (_, index) => {
+  const value = index + 1;
+  const number = String(value).padStart(2, "0");
+  const padded =
+    value >= 10 && value <= 12 ? `0${value}` : number;
+  const src =
+    value === 11
+      ? "/images/gallery-1/011.png"
+      : value === 12
+        ? "/images/gallery-1/012.png"
+        : `/images/gallery-1/${padded}.jpg`;
+
+  return {
+    src,
+    alt: "2023 symposium highlight",
+  };
+});
 
 export default function PastSymposiumsPage() {
   return (

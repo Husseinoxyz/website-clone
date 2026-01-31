@@ -23,7 +23,7 @@ export function FiveDModelSection() {
           </div>
           <div className="relative h-80 sm:h-96 lg:h-[26rem] bg-muted/30">
             <Image
-              src="/images/5d-hero.png"
+              src="/images/5D.png"
               alt="5D regenerative medical model visualization"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"

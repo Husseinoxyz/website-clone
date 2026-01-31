@@ -468,7 +468,7 @@ export default function SymposiumPage() {
             <GalleryGrid
               alt="Symposium 2023 gallery"
               images={[
-                "/images/gallery-1/01.jpg",
+                "/images/gallery-1/012.png",
                 "/images/gallery-1/02.jpg",
                 "/images/gallery-1/03.jpg",
                 "/images/gallery-1/04.jpg",

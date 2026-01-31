@@ -199,10 +199,12 @@ export default function ProgramPage() {
             <div className="grid gap-8 md:grid-cols-3 mb-12">
               {/* Package I */}
               <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-gold text-foreground">
-                <div className="absolute inset-0 bg-[url('/images/symposium-hero.jpg')] bg-cover bg-center opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-r from-gold/95 via-gold/90 to-gold/70" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/80 via-gold/70 to-gold/55" />
                 <div className="relative flex flex-col gap-6 p-8">
                   <div className="flex-1">
+                    <h3 className="mt-2 text-2xl font-bold text-foreground">
+                      Package I: Stem Cell Scholar (The Foundation)
+                    </h3>
                     <span className="inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
                       Early Bird
                     </span>
@@ -245,10 +247,12 @@ export default function ProgramPage() {
 
               {/* Package II */}
               <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-[#d1a654] text-foreground">
-                <div className="absolute inset-0 bg-[url('/images/symposium-preview.jpg')] bg-cover bg-center opacity-15" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#d1a654]/95 via-[#d1a654]/90 to-[#d1a654]/70" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#d1a654]/80 via-[#d1a654]/70 to-[#d1a654]/55" />
                 <div className="relative flex flex-col gap-6 p-8">
                   <div className="flex-1">
+                    <h3 className="mt-2 text-2xl font-bold text-foreground">
+                      Package II: Immersive Experience (The Clinical Track)
+                    </h3>
                     <p className="mt-2 text-sm font-semibold text-foreground/90">
                       Includes Package 1, Plus:
                     </p>
@@ -281,11 +285,13 @@ export default function ProgramPage() {
               </div>
 
               {/* Package III */}
-              <div className="relative overflow-hidden rounded-3xl border border-teal/30 bg-teal-dark text-secondary-foreground">
-                <div className="absolute inset-0 bg-[url('/images/world-map.jpg')] bg-cover bg-center opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-dark/95 via-teal-dark/90 to-teal-dark/70" />
+              <div className="relative overflow-hidden rounded-3xl border border-gold/70 bg-teal-dark text-secondary-foreground">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-dark/80 via-teal-dark/70 to-teal-dark/55" />
                 <div className="relative flex flex-col gap-6 p-8">
                   <div className="flex-1">
+                    <h3 className="mt-2 text-2xl font-bold text-secondary-foreground">
+                      Package III: Global Elite Partner (The Business Track)
+                    </h3>
                     <p className="mt-2 text-sm font-semibold text-secondary-foreground/90">
                       Includes Packages 1 & 2, Plus:
                     </p>

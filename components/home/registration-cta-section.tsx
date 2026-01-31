@@ -17,6 +17,7 @@ const registrationOptions = [
   {
     key: "package-i",
     registerType: "package-i-early-bird",
+    name: "Package I: Stem Cell Scholar (The Foundation)",
     price: "USD 2,500",
     subPrice: "Early Bird | USD 3,000 Standard",
     deadline: "Early Bird Deadline: 28 February 2026",
@@ -40,7 +41,7 @@ const registrationOptions = [
       },
     ],
     backgroundImage: "/images/symposium-hero.jpg",
-    gradient: "from-gold/95 via-gold/90 to-gold/70",
+    gradient: "from-gold/80 via-gold/70 to-gold/55",
     bg: "bg-gold",
     text: "text-foreground",
     button: "bg-teal hover:bg-teal-dark text-secondary-foreground",
@@ -49,6 +50,7 @@ const registrationOptions = [
   {
     key: "package-ii",
     registerType: "package-ii",
+    name: "Package II: Immersive Experience (The Clinical Track)",
     price: "USD 10,000",
     subPrice: "Total Value: USD 15,500",
     deadline: null,
@@ -60,7 +62,7 @@ const registrationOptions = [
       { icon: BadgeCheck, text: "Referral partnership" },
     ],
     backgroundImage: "/images/symposium-preview.jpg",
-    gradient: "from-[#d1a654]/95 via-[#d1a654]/90 to-[#d1a654]/70",
+    gradient: "from-[#d1a654]/80 via-[#d1a654]/70 to-[#d1a654]/55",
     bg: "bg-[#d1a654]",
     text: "text-foreground",
     button: "bg-white text-foreground hover:bg-white/90",
@@ -69,6 +71,7 @@ const registrationOptions = [
   {
     key: "package-iii",
     registerType: "package-iii",
+    name: "Package III: Global Elite Partner (The Business Track)",
     price: "USD 25,000",
     subPrice: "Total Value: USD 51,400",
     deadline: null,
@@ -84,7 +87,7 @@ const registrationOptions = [
       { icon: BadgeCheck, text: "Elite business associate status" },
     ],
     backgroundImage: "/images/world-map.jpg",
-    gradient: "from-teal-dark/95 via-teal-dark/90 to-teal-dark/70",
+    gradient: "from-teal-dark/80 via-teal-dark/70 to-teal-dark/55",
     bg: "bg-teal-dark",
     text: "text-secondary-foreground",
     button: "bg-gold hover:bg-gold-dark text-foreground",
@@ -115,18 +118,15 @@ export function RegistrationCTASection() {
               key={option.key}
               className={`relative overflow-hidden rounded-3xl border ${
                 option.key === "package-iii"
-                  ? "border-teal/30"
+                  ? "border-gold/70"
                   : "border-gold/40"
               } ${option.bg} ${option.text}`}
             >
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-20"
-                style={{ backgroundImage: `url('${option.backgroundImage}')` }}
-              />
-              <div
                 className={`absolute inset-0 bg-gradient-to-r ${option.gradient}`}
               />
               <div className="relative flex flex-col gap-6 p-8">
+                <h3 className="text-2xl font-bold">{option.name}</h3>
                 {option.key === "package-i" && (
                   <span className="inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
                     Early Bird

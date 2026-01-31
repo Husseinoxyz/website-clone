@@ -20,6 +20,8 @@ const stages = [
     ],
     color: "bg-gold",
     textColor: "text-gold",
+    image: "/images/5D/1.png",
+    imageAlt: "Clinical assessment and diagnostics",
   },
   {
     number: "02",
@@ -35,6 +37,8 @@ const stages = [
     ],
     color: "bg-gold-light",
     textColor: "text-gold",
+    image: "/images/5D/2.png",
+    imageAlt: "Clinical optimization and cleansing",
   },
   {
     number: "03",
@@ -50,6 +54,8 @@ const stages = [
     ],
     color: "bg-teal-light",
     textColor: "text-teal",
+    image: "/images/5D/3.png",
+    imageAlt: "Immune support and resilience",
   },
   {
     number: "04",
@@ -65,6 +71,8 @@ const stages = [
     ],
     color: "bg-teal",
     textColor: "text-teal",
+    image: "/images/5D/4.png",
+    imageAlt: "Cellular regeneration and activation",
   },
   {
     number: "05",
@@ -80,6 +88,8 @@ const stages = [
     ],
     color: "bg-teal-dark",
     textColor: "text-teal-dark",
+    image: "/images/5D/5.png",
+    imageAlt: "Nutrition and longevity planning",
   },
 ];
 
@@ -103,19 +113,19 @@ export default function FiveDModelPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative w-full">
+        <section className="relative w-full pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
-            <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
+            <div className="relative flex items-center bg-gold px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
               <div className="mx-auto max-w-2xl">
-                <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
+                <h1 className="text-4xl sm:text-5xl font-bold text-teal mb-6">
                   The OXYZ 5D Regenerative Medical Model
                 </h1>
-                <p className="text-xl text-secondary-foreground/90 leading-relaxed mb-6">
+                <p className="text-xl text-white/90 leading-relaxed mb-6">
                   At the core of OXYZ lies the 5D Regenerative Medical Model — a
                   structured framework guiding patient care, clinical decisions,
                   and operational consistency.
                 </p>
-                <p className="text-lg text-gold font-semibold">
+                <p className="text-lg text-teal font-semibold">
                   Discovery · Detox · Defence · Dynamic · Dietary
                 </p>
               </div>
@@ -123,7 +133,7 @@ export default function FiveDModelPage() {
 
             <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[80vh] order-1 lg:order-2">
               <Image
-                src="/images/5d-hero.jpg"
+                src="/images/5d_hero.png"
                 alt="The OXYZ 5D Regenerative Medical Model"
                 fill
                 className="object-cover"
@@ -153,7 +163,7 @@ export default function FiveDModelPage() {
         </section>
 
         {/* The 5 Stages */}
-        <section className="py-24 bg-muted">
+        <section className="py-24 bg-[#F7F4ED]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
@@ -161,68 +171,71 @@ export default function FiveDModelPage() {
               </h2>
             </div>
 
-            <div className="space-y-8">
-              {stages.map((stage, index) => (
+          </div>
+          <div className="space-y-10">
+            {stages.map((stage, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
                 <div
                   key={stage.title}
-                  className={`grid lg:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+                  className="grid gap-0 overflow-hidden bg-[#FCFBF8] border-y border-[#E9E1CF] lg:grid-cols-12"
                 >
                   <div
-                    className={`order-2 ${
-                      index % 2 === 1 ? "lg:order-1" : "lg:order-2"
+                    className={`relative min-h-[220px] sm:min-h-[260px] ${
+                      isEven
+                        ? "order-2 lg:order-1 lg:col-span-5 lg:col-start-1"
+                        : "order-2 lg:order-3 lg:col-span-5 lg:col-start-8"
                     }`}
                   >
-                    <div className="bg-background rounded-lg p-8 shadow-lg border-t-4 border-gold">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span
-                          className={`text-6xl font-bold ${stage.textColor}/20`}
-                        >
-                          {stage.number}
-                        </span>
-                        <div>
-                          <h3 className={`text-2xl font-bold ${stage.textColor}`}>
-                            {stage.title}
-                          </h3>
-                          <p className="text-muted-foreground">
-                            {stage.subtitle}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {stage.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {stage.details.map((detail) => (
-                          <li key={detail} className="flex items-center gap-3">
-                            <CheckCircle2
-                              className={`h-5 w-5 ${stage.textColor} flex-shrink-0`}
-                            />
-                            <span className="text-foreground text-sm">
-                              {detail}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Image
+                      src={stage.image}
+                      alt={stage.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                    <div className="absolute inset-0 bg-teal/20 mix-blend-multiply" />
                   </div>
                   <div
-                    className={`relative order-1 ${
-                      index % 2 === 1 ? "lg:order-2" : "lg:order-1"
+                    className={`order-3 lg:order-2 px-6 py-8 sm:px-10 sm:py-10 ${
+                      isEven
+                        ? "lg:col-span-5 lg:col-start-6"
+                        : "lg:col-span-5 lg:col-start-3"
                     }`}
                   >
-                    <div
-                      className={`w-32 h-32 ${stage.color} rounded-full flex items-center justify-center mx-auto`}
-                    >
-                      <span className="text-4xl font-bold text-foreground">
-                        {stage.number}
-                      </span>
-                    </div>
+                    <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+                      {stage.title}
+                    </p>
+                    <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-teal">
+                      {stage.subtitle}
+                    </h3>
+                    <p className="mt-4 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                      {stage.description}
+                    </p>
+                    <ul className="mt-6 space-y-2 text-sm text-foreground/80">
+                      {stage.details.map((detail) => (
+                        <li key={detail} className="flex items-start gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-teal flex-shrink-0" />
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div
+                    className={`flex items-center justify-center min-h-[220px] sm:min-h-[260px] ${
+                      isEven
+                        ? "order-1 lg:order-3 lg:col-span-2 lg:col-start-11"
+                        : "order-1 lg:order-1 lg:col-span-2 lg:col-start-1"
+                    } ${isEven ? "bg-teal" : "bg-gold"}`}
+                  >
+                    <span className="text-[10rem] font-bold text-white/90 italic">
+                      {stage.number}
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </section>
 
