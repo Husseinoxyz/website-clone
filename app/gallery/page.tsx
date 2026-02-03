@@ -4,10 +4,37 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { GalleryGrid } from "@/components/symposium/gallery-grid";
+import { GalleryLoadMore } from "@/components/symposium/gallery-load-more";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-const gallery2025 = Array.from({ length: 12 }, (_, index) => ({
-  src: `/images/gallery-1/${index + 1}.jpg`,
+const gallery2025 = [
+  "/images/symp/hero-slide1.jpg",
+  "/images/symp/hero-slide2.jpg",
+  "/images/symp/hero-slide3.jpg",
+  "/images/symp/hero-slide4.jpg",
+  "/images/symp/hero-slide5.jpg",
+  "/images/symp/hero-slide6.jpg",
+  "/images/symp/hero-slide7.jpg",
+  "/images/symp/symposium1.jpg",
+  "/images/symp/symposium2.jpg",
+  "/images/symp/symposium3.jpg",
+  "/images/symp/symposium4.jpg",
+  "/images/symp/symposium5.jpg",
+  "/images/symp/symposium6.jpg",
+  "/images/symp/symposium7.jpg",
+  "/images/symp/symposium8.jpg",
+  "/images/symp/symposium9.jpg",
+  "/images/symp/home1.jpg",
+  "/images/symp/home2.jpg",
+  "/images/symp/home3.jpg",
+  "/images/symp/home4.jpg",
+  "/images/symp/home5.jpg",
+  "/images/symp/home6.jpg",
+  "/images/symp/home7.jpg",
+  "/images/symp/home8.jpg",
+  "/images/symp/home9.jpg",
+].map((src) => ({
+  src,
   alt: "2025 symposium highlight",
 }));
 
@@ -130,9 +157,10 @@ export default function GalleryPage() {
                   2025 Symposium
                 </h3>
               </div>
-              <GalleryGrid
+              <GalleryLoadMore
                 alt="2025 symposium highlight"
                 images={gallery2025.map((image) => image.src)}
+                initialCount={15}
               />
             </div>
 

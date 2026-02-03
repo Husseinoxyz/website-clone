@@ -198,14 +198,14 @@ export default function ProgramPage() {
 
             <div className="grid gap-8 md:grid-cols-3 mb-12">
               {/* Package I */}
-              <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-gold text-foreground">
-                <div className="absolute inset-0 bg-gradient-to-r from-gold/80 via-gold/70 to-gold/55" />
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 text-foreground">
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-200/70 to-slate-300/60" />
                 <div className="relative flex flex-col gap-6 p-8">
                   <div className="flex-1">
                     <h3 className="mt-2 text-2xl font-bold text-foreground">
                       Package I: Stem Cell Scholar (The Foundation)
                     </h3>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                    <span className="mt-2 inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
                       Early Bird
                     </span>
                     <p className="mt-2 text-sm font-semibold text-foreground/90">
@@ -214,7 +214,7 @@ export default function ProgramPage() {
                     <ul className="mt-4 grid gap-4">
                       {packageIFeatures.map((feature) => (
                         <li key={feature.text} className="flex items-start gap-3">
-                          <feature.icon className="h-5 w-5 text-teal flex-shrink-0 mt-0.5" />
+                          <feature.icon className="h-5 w-5 text-teal-dark flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-foreground/80">
                             {feature.text}
                           </span>
@@ -254,7 +254,7 @@ export default function ProgramPage() {
                       Package II: Immersive Experience (The Clinical Track)
                     </h3>
                     <p className="mt-2 text-sm font-semibold text-foreground/90">
-                      Includes Package 1, Plus:
+                      Includes Package I, Plus:
                     </p>
                     <ul className="mt-4 grid gap-4">
                       {packageIIFeatures.map((feature) => (
@@ -285,21 +285,21 @@ export default function ProgramPage() {
               </div>
 
               {/* Package III */}
-              <div className="relative overflow-hidden rounded-3xl border border-gold/70 bg-teal-dark text-secondary-foreground">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-dark/80 via-teal-dark/70 to-teal-dark/55" />
+              <div className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900 text-white">
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800/70 to-slate-700/60" />
                 <div className="relative flex flex-col gap-6 p-8">
                   <div className="flex-1">
-                    <h3 className="mt-2 text-2xl font-bold text-secondary-foreground">
+                    <h3 className="mt-2 text-2xl font-bold text-white">
                       Package III: Global Elite Partner (The Business Track)
                     </h3>
-                    <p className="mt-2 text-sm font-semibold text-secondary-foreground/90">
-                      Includes Packages 1 & 2, Plus:
+                    <p className="mt-2 text-sm font-semibold text-white/90">
+                      Includes Packages I & II, Plus:
                     </p>
                     <ul className="mt-4 grid gap-4">
                       {packageIIIFeatures.map((feature) => (
                         <li key={feature.text} className="flex items-start gap-3">
                           <feature.icon className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-secondary-foreground/85">
+                          <span className="text-sm text-white/85">
                             {feature.text}
                           </span>
                         </li>
@@ -308,7 +308,7 @@ export default function ProgramPage() {
                     <div className="mt-6 flex flex-col gap-4">
                       <div>
                         <p className="text-3xl font-bold">USD 25,000</p>
-                        <p className="text-sm text-secondary-foreground/80">
+                        <p className="text-sm text-white/80">
                           Total Value: USD 51,400
                         </p>
                       </div>

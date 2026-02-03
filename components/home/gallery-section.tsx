@@ -8,28 +8,40 @@ import { ArrowRight, X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "/images/gallery/symposium-1.jpg",
+    src: "/images/symp/home1.jpg",
     alt: "International doctors at symposium",
   },
   {
-    src: "/images/gallery/symposium-2.jpg",
+    src: "/images/symp/home2.jpg",
     alt: "Clinical discussion session",
   },
   {
-    src: "/images/gallery/symposium-3.jpg",
+    src: "/images/symp/home3.jpg",
     alt: "Professional networking event",
   },
   {
-    src: "/images/gallery/symposium-4.jpg",
+    src: "/images/symp/home4.jpg",
     alt: "Medical presentation",
   },
   {
-    src: "/images/gallery/symposium-5.jpg",
+    src: "/images/symp/home5.jpg",
     alt: "Strategic collaboration meeting",
   },
   {
-    src: "/images/gallery/symposium-6.jpg",
+    src: "/images/symp/home6.jpg",
     alt: "Symposium attendees",
+  },
+  {
+    src: "/images/symp/home7.jpg",
+    alt: "Conference networking moment",
+  },
+  {
+    src: "/images/symp/home8.jpg",
+    alt: "Clinical workshop session",
+  },
+  {
+    src: "/images/symp/home9.jpg",
+    alt: "Panel discussion",
   },
 ];
 
@@ -69,6 +81,7 @@ export function GallerySection() {
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
                   fill
+                  quality={100}
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-teal-dark/0 group-hover:bg-teal-dark/60 transition-colors duration-300" />
@@ -131,6 +144,7 @@ export function GallerySection() {
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 fill
+                quality={100}
                 className="object-contain"
               />
             </div>

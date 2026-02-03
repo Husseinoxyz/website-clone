@@ -410,12 +410,15 @@ export default function SymposiumPage() {
             <GalleryGrid
               alt="Symposium 2025 gallery"
               images={[
-                "/images/gallery-1/1.jpg",
-                "/images/gallery-1/2.jpg",
-                "/images/gallery-1/3.jpg",
-                "/images/gallery-1/4.jpg",
-                "/images/gallery-1/5.jpg",
-                "/images/gallery-1/6.jpg",
+                "/images/symp/symposium1.jpg",
+                "/images/symp/symposium2.jpg",
+                "/images/symp/symposium3.jpg",
+                "/images/symp/symposium4.jpg",
+                "/images/symp/symposium5.jpg",
+                "/images/symp/symposium6.jpg",
+                "/images/symp/symposium7.jpg",
+                "/images/symp/symposium8.jpg",
+                "/images/symp/symposium9.jpg",
               ]}
             />
             <div className="mt-10 flex flex-wrap justify-center gap-3">

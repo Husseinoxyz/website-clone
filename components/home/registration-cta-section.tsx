@@ -17,7 +17,7 @@ const registrationOptions = [
   {
     key: "package-i",
     registerType: "package-i-early-bird",
-    name: "Package I: Stem Cell Scholar (The Foundation)",
+    name: "Stem Cell Scholar (The Foundation)",
     price: "USD 2,500",
     subPrice: "Early Bird | USD 3,000 Standard",
     deadline: "Early Bird Deadline: 28 February 2026",
@@ -41,20 +41,21 @@ const registrationOptions = [
       },
     ],
     backgroundImage: "/images/symposium-hero.jpg",
-    gradient: "from-gold/80 via-gold/70 to-gold/55",
-    bg: "bg-gold",
-    text: "text-foreground",
-    button: "bg-teal hover:bg-teal-dark text-secondary-foreground",
-    icon: "text-teal",
+    border: "border-slate-200/80",
+    gradient: "from-slate-100/90 via-slate-200/80 to-slate-300/70",
+    bg: "bg-slate-100",
+    text: "text-slate-900",
+    button: "bg-slate-900 hover:bg-slate-800 text-white",
+    icon: "text-slate-700",
   },
   {
     key: "package-ii",
     registerType: "package-ii",
-    name: "Package II: Immersive Experience (The Clinical Track)",
+    name: "Immersive Experience (The Clinical Track)",
     price: "USD 10,000",
     subPrice: "Total Value: USD 15,500",
     deadline: null,
-    intro: "Includes Package 1, Plus:",
+    intro: "Includes Package I, Plus:",
     features: [
       { icon: LineChart, text: "Advanced OXYZ product suite" },
       { icon: Scan, text: "VIP on-site diagnostics" },
@@ -62,8 +63,9 @@ const registrationOptions = [
       { icon: BadgeCheck, text: "Referral partnership" },
     ],
     backgroundImage: "/images/symposium-preview.jpg",
-    gradient: "from-[#d1a654]/80 via-[#d1a654]/70 to-[#d1a654]/55",
-    bg: "bg-[#d1a654]",
+    border: "border-gold/50",
+    gradient: "",
+    bg: "bg-gold",
     text: "text-foreground",
     button: "bg-white text-foreground hover:bg-white/90",
     icon: "text-white",
@@ -71,7 +73,7 @@ const registrationOptions = [
   {
     key: "package-iii",
     registerType: "package-iii",
-    name: "Package III: Global Elite Partner (The Business Track)",
+    name: "Global Elite Partner (The Business Track)",
     price: "USD 25,000",
     subPrice: "Total Value: USD 51,400",
     deadline: null,
@@ -87,11 +89,12 @@ const registrationOptions = [
       { icon: BadgeCheck, text: "Elite business associate status" },
     ],
     backgroundImage: "/images/world-map.jpg",
-    gradient: "from-teal-dark/80 via-teal-dark/70 to-teal-dark/55",
-    bg: "bg-teal-dark",
-    text: "text-secondary-foreground",
-    button: "bg-gold hover:bg-gold-dark text-foreground",
-    icon: "text-gold",
+    border: "border-slate-700/80",
+    gradient: "from-slate-900/90 via-slate-800/85 to-slate-700/75",
+    bg: "bg-slate-900",
+    text: "text-white",
+    button: "bg-amber-400 hover:bg-amber-500 text-slate-900",
+    icon: "text-amber-300",
   },
 ];
 
@@ -116,19 +119,17 @@ export function RegistrationCTASection() {
           {registrationOptions.map((option) => (
             <div
               key={option.key}
-              className={`relative overflow-hidden rounded-3xl border ${
-                option.key === "package-iii"
-                  ? "border-gold/70"
-                  : "border-gold/40"
-              } ${option.bg} ${option.text}`}
+              className={`relative overflow-hidden rounded-3xl border ${option.border} ${option.bg} ${option.text}`}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-r ${option.gradient}`}
-              />
+              {option.gradient ? (
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${option.gradient}`}
+                />
+              ) : null}
               <div className="relative flex flex-col gap-6 p-8">
                 <h3 className="text-2xl font-bold">{option.name}</h3>
                 {option.key === "package-i" && (
-                  <span className="inline-flex items-center gap-2 rounded-full bg-teal px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">
                     Early Bird
                   </span>
                 )}

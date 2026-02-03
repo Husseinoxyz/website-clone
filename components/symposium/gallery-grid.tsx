@@ -49,6 +49,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 50vw, 33vw"
+              quality={100}
             />
           </button>
         ))}
@@ -83,6 +84,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
               fill
               className="object-contain"
               sizes="(max-width: 1024px) 100vw, 70vw"
+              quality={100}
             />
           </div>
           <button
