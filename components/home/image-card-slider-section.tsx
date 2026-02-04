@@ -4,37 +4,37 @@ import Image from "next/image";
 
 const slides = [
   {
-    src: "/images/symp/hero-slide1.jpg",
+    src: "/images/sym/slide_1.jpg",
     alt: "Specialists collaborating during a symposium session",
     title: "Collaborative Sessions",
   },
   {
-    src: "/images/symp/hero-slide2.jpg",
+    src: "/images/sym/slide_2.jpg",
     alt: "Clinicians discussing regenerative workflows",
     title: "Clinical Focus",
   },
   {
-    src: "/images/symp/hero-slide3.jpg",
+    src: "/images/sym/slide_3.jpg",
     alt: "Audience viewing a keynote presentation",
     title: "Keynote Insights",
   },
   {
-    src: "/images/symp/hero-slide4.jpg",
+    src: "/images/sym/slide_4.jpg",
     alt: "Medical professionals networking",
     title: "Global Network",
   },
   {
-    src: "/images/symp/hero-slide5.jpg",
+    src: "/images/sym/slide_5.jpg",
     alt: "Laboratory demonstration at the symposium",
     title: "Hands-On Demos",
   },
   {
-    src: "/images/symp/hero-slide6.jpg",
+    src: "/images/sym/slide_6.jpg",
     alt: "Panel discussion with experts",
     title: "Expert Panels",
   },
   {
-    src: "/images/symp/hero-slide7.jpg",
+    src: "/images/sym/slide_7.jpg",
     alt: "Symposium breakout discussion",
     title: "Breakout Sessions",
   },

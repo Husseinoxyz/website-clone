@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -18,7 +18,41 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Clock, Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react"
+import { Clock, Mail, MapPin, Phone, Send, CheckCircle, ArrowRight, MessageCircle } from "lucide-react"
+
+// Custom hook for scroll animations
+function useScrollAnimation() {
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+      observers.push(observer);
+    };
+
+    animateOnScroll();
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+}
 
 const countryCodes = [
   { code: "+1", label: "USA/Canada" },
@@ -93,6 +127,8 @@ const countryCodes = [
 ];
 
 export default function ContactPage() {
+  useScrollAnimation();
+
   const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle")
   const [formData, setFormData] = useState({
     name: "",
@@ -123,60 +159,143 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <style jsx global>{`
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .slide-in-left {
+          transform: translateX(-50px);
+        }
+
+        .slide-in-left.animated {
+          transform: translateX(0);
+        }
+
+        .slide-in-right {
+          transform: translateX(50px);
+        }
+
+        .slide-in-right.animated {
+          transform: translateX(0);
+        }
+
+        .scale-in {
+          transform: scale(0.9);
+        }
+
+        .scale-in.animated {
+          transform: scale(1);
+        }
+
+        .stagger-1 {
+          transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+          transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+          transition-delay: 0.3s;
+        }
+
+        .stagger-4 {
+          transition-delay: 0.4s;
+        }
+      `}</style>
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-            <div className="relative flex items-center bg-teal px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-white">
-              <div className="mx-auto max-w-2xl text-left">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">
-                  Get in touch with our team to learn more about OXYZ Health
-                  International and our upcoming symposium
-                </h1>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link href="/register">
-                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                      Register Now
-                    </Button>
-                  </Link>
-                  <Link
-                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
-                    >
-                      Request Scientific Program
-                    </Button>
-                  </Link>
+        {/* Hero Section - Enhanced */}
+        <section className="relative w-full min-h-screen">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/sym/about_hero.jpg"
+              alt="OXYZ Health International contact"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/30" />
+          </div>
+
+          {/* Content Container - Positioned at bottom */}
+          <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
+            <div className="max-w-4xl w-full">
+              
+              {/* Badge */}
+              <div className="mb-6 animate-fade-in-up opacity-0 animation-delay-100">
+                <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
+                  <MessageCircle className="h-4 w-4" />
+                  Contact Us
                 </div>
               </div>
-            </div>
 
-            <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
-              <Image
-                src="/images/about-hero.jpg"
-                alt="OXYZ Health International contact"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/5" />
+              {/* Main Title */}
+              <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
+                <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
+                  <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                    Let's Connect
+                  </span>
+                  <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
+                    Get in Touch with OXYZ Health International
+                  </span>
+                </h1>
+              </div>
+
+              {/* Description */}
+              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
+                Whether you have questions about the symposium, partnership opportunities, or want to learn more about our regenerative medicine ecosystem, we're here to help.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
+                <Link href="/register" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
+                  >
+                    Register Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link
+                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
+                  >
+                    Request Scientific Program
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Contact Info & Form */}
-        <section className="py-20 bg-background">
+        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Information */}
-              <div>
+              <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl font-bold text-foreground mb-4">
                   Get In Touch
                 </h2>
@@ -187,8 +306,8 @@ export default function ContactPage() {
                 </p>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <div className="animate-on-scroll stagger-1 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
                       <Mail className="w-6 h-6 text-gold" />
                     </div>
                     <div>
@@ -197,15 +316,15 @@ export default function ContactPage() {
                       </h3>
                       <a
                         href="mailto:global@oxyzhealth.com"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-muted-foreground hover:text-gold transition-colors"
                       >
                         global@oxyzhealth.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <div className="animate-on-scroll stagger-2 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
                       <Phone className="w-6 h-6 text-gold" />
                     </div>
                     <div>
@@ -213,7 +332,7 @@ export default function ContactPage() {
                         Phone / WhatsApp
                       </h3>
                       <a
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-muted-foreground hover:text-gold transition-colors"
                         href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                         target="_blank"
                         rel="noreferrer"
@@ -223,8 +342,8 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <div className="animate-on-scroll stagger-3 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
                       <MapPin className="w-6 h-6 text-gold" />
                     </div>
                     <div>
@@ -237,8 +356,8 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <div className="animate-on-scroll stagger-4 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
                       <Clock className="w-6 h-6 text-gold" />
                     </div>
                     <div>
@@ -253,35 +372,39 @@ export default function ContactPage() {
                 </div>
 
                 {/* Quick Links */}
-                <div className="mt-10 p-6 bg-muted rounded-xl">
+                <div className="mt-10 p-6 bg-white rounded-xl border-2 border-slate-100 shadow-sm animate-on-scroll">
                   <h3 className="font-semibold text-foreground mb-4">
                     Quick Links
                   </h3>
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <Link
                       href="/register"
-                      className="text-muted-foreground hover:text-gold transition-colors"
+                      className="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1"
                     >
+                      <ArrowRight className="h-3 w-3" />
                       Register for Symposium
                     </Link>
                     <a
                       href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
-                      className="text-muted-foreground hover:text-gold transition-colors"
+                      className="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noreferrer"
                     >
+                      <ArrowRight className="h-3 w-3" />
                       View Program
                     </a>
                     <Link
                       href="/about"
-                      className="text-muted-foreground hover:text-gold transition-colors"
+                      className="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1"
                     >
+                      <ArrowRight className="h-3 w-3" />
                       About OXYZ
                     </Link>
                     <Link
                       href="/why-work-with-us"
-                      className="text-muted-foreground hover:text-gold transition-colors"
+                      className="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1"
                     >
+                      <ArrowRight className="h-3 w-3" />
                       Partnership Info
                     </Link>
                   </div>
@@ -291,7 +414,7 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div
                 id="contact-form"
-                className="bg-white p-8 rounded-2xl shadow-lg border border-border"
+                className="animate-on-scroll slide-in-right scale-in bg-white p-8 rounded-2xl shadow-xl border-2 border-slate-100"
               >
                 {formState === "success" ? (
                   <div className="text-center py-12">

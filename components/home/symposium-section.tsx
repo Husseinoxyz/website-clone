@@ -10,7 +10,7 @@ export function SymposiumSection() {
     <section className="py-24 bg-background relative overflow-hidden">
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/symposium-preview.jpg"
+          src="/images/sym/symposium_hero.jpg"
           alt="OXYZ Symposium background"
           fill
           className="object-cover blur-sm"
@@ -88,7 +88,7 @@ export function SymposiumSection() {
           <div className="relative">
             <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/symposium-preview.jpg"
+                src="/images/sym/symposium_hero.jpg"
                 alt="OXYZ Symposium"
                 fill
                 className="object-cover"

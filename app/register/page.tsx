@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -18,72 +18,294 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Check, Shield, CreditCard, ArrowRight } from "lucide-react";
+import { Check, Shield, CreditCard, ArrowRight, ClipboardCheck, X } from "lucide-react";
 import Loading from "./loading";
+
+// Custom hook for scroll animations
+function useScrollAnimation() {
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+      observers.push(observer);
+    };
+
+    animateOnScroll();
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+}
+
+const countryCodes = [
+  { code: "+1", country: "USA/Canada" },
+  { code: "+7", country: "Russia" },
+  { code: "+20", country: "Egypt" },
+  { code: "+27", country: "South Africa" },
+  { code: "+30", country: "Greece" },
+  { code: "+31", country: "Netherlands" },
+  { code: "+32", country: "Belgium" },
+  { code: "+33", country: "France" },
+  { code: "+34", country: "Spain" },
+  { code: "+36", country: "Hungary" },
+  { code: "+39", country: "Italy" },
+  { code: "+40", country: "Romania" },
+  { code: "+41", country: "Switzerland" },
+  { code: "+43", country: "Austria" },
+  { code: "+44", country: "United Kingdom" },
+  { code: "+45", country: "Denmark" },
+  { code: "+46", country: "Sweden" },
+  { code: "+47", country: "Norway" },
+  { code: "+48", country: "Poland" },
+  { code: "+49", country: "Germany" },
+  { code: "+51", country: "Peru" },
+  { code: "+52", country: "Mexico" },
+  { code: "+53", country: "Cuba" },
+  { code: "+54", country: "Argentina" },
+  { code: "+55", country: "Brazil" },
+  { code: "+56", country: "Chile" },
+  { code: "+57", country: "Colombia" },
+  { code: "+58", country: "Venezuela" },
+  { code: "+60", country: "Malaysia" },
+  { code: "+61", country: "Australia" },
+  { code: "+62", country: "Indonesia" },
+  { code: "+63", country: "Philippines" },
+  { code: "+64", country: "New Zealand" },
+  { code: "+65", country: "Singapore" },
+  { code: "+66", country: "Thailand" },
+  { code: "+81", country: "Japan" },
+  { code: "+82", country: "South Korea" },
+  { code: "+84", country: "Vietnam" },
+  { code: "+86", country: "China" },
+  { code: "+90", country: "Turkey" },
+  { code: "+91", country: "India" },
+  { code: "+92", country: "Pakistan" },
+  { code: "+93", country: "Afghanistan" },
+  { code: "+94", country: "Sri Lanka" },
+  { code: "+95", country: "Myanmar" },
+  { code: "+98", country: "Iran" },
+  { code: "+212", country: "Morocco" },
+  { code: "+213", country: "Algeria" },
+  { code: "+216", country: "Tunisia" },
+  { code: "+218", country: "Libya" },
+  { code: "+220", country: "Gambia" },
+  { code: "+221", country: "Senegal" },
+  { code: "+233", country: "Ghana" },
+  { code: "+234", country: "Nigeria" },
+  { code: "+251", country: "Ethiopia" },
+  { code: "+254", country: "Kenya" },
+  { code: "+256", country: "Uganda" },
+  { code: "+260", country: "Zambia" },
+  { code: "+263", country: "Zimbabwe" },
+  { code: "+971", country: "UAE" },
+  { code: "+972", country: "Israel" },
+  { code: "+973", country: "Bahrain" },
+  { code: "+974", country: "Qatar" },
+  { code: "+975", country: "Bhutan" },
+  { code: "+976", country: "Mongolia" },
+  { code: "+977", country: "Nepal" },
+  { code: "+994", country: "Azerbaijan" },
+  { code: "+995", country: "Georgia" },
+  { code: "+998", country: "Uzbekistan" },
+];
+
+const countries = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+  "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+  "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+  "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
+  "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde",
+  "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
+  "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark",
+  "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt",
+  "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji",
+  "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece",
+  "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
+  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
+  "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya",
+  "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
+  "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia",
+  "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
+  "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+  "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal",
+  "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
+  "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay",
+  "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
+  "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
+  "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+  "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka",
+  "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan",
+  "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago",
+  "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+  "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
+  "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
+
+const packageFeatures = [
+  // Silver Tier Features
+  {
+    name: "4 nights hotel stay (single occupancy, breakfast included)",
+    silver: true,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "Full access to all 3-day symposium sessions",
+    silver: true,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "All official meals and Gala Dinner",
+    silver: true,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
+    silver: true,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "Exclusive hamper: Full trial series of all OXYZ products",
+    silver: true,
+    gold: true,
+    platinum: true,
+  },
+  // Gold Tier Exclusive Features
+  {
+    name: "Personal Stem Cell Suite (10 Boxes Oral MSC, BioSeries, Micro Cells)",
+    silver: false,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "VIP Clinical Screening: Live Blood Analysis, HRV, Bio-Resonance",
+    silver: false,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "1-on-1 'Cellular Reset' protocol design with Lead Scientist",
+    silver: false,
+    gold: true,
+    platinum: true,
+  },
+  {
+    name: "Direct referral agreement (15–20% commission scheme)",
+    silver: false,
+    gold: true,
+    platinum: true,
+  },
+  // Platinum Tier Exclusive Features
+  {
+    name: "Root Cause BR Scan Machine with Full Operating SOPs",
+    silver: false,
+    gold: false,
+    platinum: true,
+  },
+  {
+    name: "Inventory Suite: 20 sets Oral MSC, 20 boxes Gut+, Anti-Aging set",
+    silver: false,
+    gold: false,
+    platinum: true,
+  },
+  {
+    name: "1-day dedicated licensing & regional expansion consultation",
+    silver: false,
+    gold: false,
+    platinum: true,
+  },
+  {
+    name: "3–6 post-event training sessions for lead staff/nurses",
+    silver: false,
+    gold: false,
+    platinum: true,
+  },
+  {
+    name: "Elite Dealership status (30–35% margin, security deposit waived)",
+    silver: false,
+    gold: false,
+    platinum: true,
+  },
+];
 
 const registrationTypes = [
   {
-    id: "package-i-early-bird",
-    name: "Package 1: Stem Cell Scholar Series (Early Bird)",
+    id: "silver-tier-early-bird",
+    name: "Silver Tier: Stem Cell Scholar (Early Bird)",
+    shortName: "Silver Tier",
+    tierKey: "silver" as const,
     price: 2500,
     priceId: "price_package_i_early_bird",
     deadline: "Early Bird by 28 February 2026",
-    features: [
-      "4 nights hotel stay (single occupancy, breakfast included)",
-      "Full access to all 3-day symposium sessions",
-      "All official meals and Gala Dinner",
-      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
-    ],
+    standardPrice: "$3,000 Standard",
+    badge: "Early Bird",
   },
   {
-    id: "package-i-standard",
-    name: "Package 1: Stem Cell Scholar Series (Standard)",
+    id: "silver-tier-standard",
+    name: "Silver Tier: Stem Cell Scholar (Standard)",
+    shortName: "Silver Tier",
+    tierKey: "silver" as const,
     price: 3000,
     priceId: "price_package_i_standard",
     deadline: "After 28 February 2026",
-    features: [
-      "4 nights hotel stay (single occupancy, breakfast included)",
-      "Full access to all 3-day symposium sessions",
-      "All official meals and Gala Dinner",
-      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
-    ],
+    standardPrice: null,
+    badge: "Standard",
   },
   {
-    id: "package-ii",
-    name: "Package 2: OXYZ Immersive Experience",
+    id: "gold-tier",
+    name: "Gold Tier: Immersive Experience",
+    shortName: "Gold Tier",
+    tierKey: "gold" as const,
     price: 10000,
     priceId: "price_package_ii",
-    deadline: "Total Value: USD 15,500",
-    features: [
-      "Advanced OXYZ product suite",
-      "VIP on-site diagnostics",
-      "1-on-1 clinical protocol consultation",
-      "Referral partnership",
-    ],
+    deadline: null,
+    standardPrice: null,
+    badge: "Most Popular",
   },
   {
-    id: "package-iii",
-    name: "Package 3: OXYZ Global Elite Partner",
+    id: "platinum-tier",
+    name: "Platinum Tier: Global Elite Partner",
+    shortName: "Platinum Tier",
+    tierKey: "platinum" as const,
     price: 25000,
     priceId: "price_package_iii",
-    deadline: "Total Value: USD 51,400",
-    features: [
-      "Root Cause BR Scan Machine with SOPs",
-      "Executive strategy and regional expansion planning",
-      "Security deposit waived",
-      "Post-event clinical and staff training",
-      "Elite business associate status",
-    ],
+    deadline: null,
+    standardPrice: null,
+    badge: "Premium",
   },
 ];
 
 function RegistrationContent() {
+  useScrollAnimation();
+  
   const searchParams = useSearchParams();
   const requestedType = searchParams.get("type");
   const initialType =
     registrationTypes.some((type) => type.id === requestedType) && requestedType
       ? requestedType
-      : "package-i-early-bird";
+      : "silver-tier-early-bird";
   
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
@@ -91,6 +313,7 @@ function RegistrationContent() {
     firstName: "",
     lastName: "",
     email: "",
+    countryCode: "+1",
     phone: "",
     country: "",
     organization: "",
@@ -146,66 +369,169 @@ function RegistrationContent() {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="relative w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-          <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
-            <div className="mx-auto max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
-                Register for Symposium 2026
-              </h1>
-              <p className="text-xl text-secondary-foreground/90 leading-relaxed">
-                Complete your registration for the OXYZ International
-                Regenerative Medicine & Strategic Collaboration Symposium 2026.
-              </p>
-            </div>
-          </div>
+      <style jsx global>{`
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-          <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
-            <Image
-              src="/images/symposium-hero.jpg"
-              alt="Symposium registration"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/5" />
+        .animate-on-scroll.animated {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .slide-in-left {
+          transform: translateX(-50px);
+        }
+
+        .slide-in-left.animated {
+          transform: translateX(0);
+        }
+
+        .slide-in-right {
+          transform: translateX(50px);
+        }
+
+        .slide-in-right.animated {
+          transform: translateX(0);
+        }
+
+        .scale-in {
+          transform: scale(0.9);
+        }
+
+        .scale-in.animated {
+          transform: scale(1);
+        }
+
+        .stagger-1 {
+          transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+          transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+          transition-delay: 0.3s;
+        }
+
+        .stagger-4 {
+          transition-delay: 0.4s;
+        }
+      `}</style>
+
+      {/* Hero - Enhanced */}
+      <section className="relative w-full min-h-screen">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/sym/register_hero.jpg"
+            alt="Symposium registration"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/30" />
+        </div>
+
+        {/* Content Container - Positioned at bottom */}
+        <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
+          <div className="max-w-4xl w-full">
+            
+            {/* Badge */}
+            <div className="mb-6 animate-fade-in-up opacity-0 animation-delay-100">
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
+                <ClipboardCheck className="h-4 w-4" />
+                Registration
+              </div>
+            </div>
+
+            {/* Main Title */}
+            <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
+              <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  Register for
+                </span>
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
+                  Symposium 2026
+                </span>
+                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
+                  Secure Your Place at the Premier Event
+                </span>
+              </h1>
+            </div>
+
+            {/* Description */}
+            <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
+              Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Symposium 2026.
+            </p>
+
+            {/* Info Pills */}
+            <div className="flex flex-wrap gap-4 animate-fade-in-up opacity-0 animation-delay-600">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                <Check className="h-4 w-4 text-gold" />
+                <span>18-20 April 2026</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                <Check className="h-4 w-4 text-gold" />
+                <span>Limited to 80-100 Participants</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                <Check className="h-4 w-4 text-gold" />
+                <span>Subject to Review</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Registration Form */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 animate-on-scroll slide-in-left">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Registration Type */}
-                <div className="bg-muted rounded-lg p-6">
-                  <h2 className="text-xl font-bold text-foreground mb-4">
-                    Select Registration Type
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
+                  <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    Select Registration Tier
                   </h2>
-                  <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
-                    {registrationTypes.map((type) => (
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {registrationTypes.map((type, idx) => (
                       <button
                         key={type.id}
                         type="button"
                         onClick={() => setSelectedType(type.id)}
-                        className={`text-left p-4 rounded-lg border-2 transition-all ${
+                        className={`text-left p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${
                           selectedType === type.id
-                            ? "border-gold bg-gold/10"
-                            : "border-border hover:border-gold/50"
+                            ? "border-gold bg-gold/10 shadow-md"
+                            : "border-slate-200 hover:border-gold/50"
                         }`}
                       >
-                        <p className="font-semibold text-foreground text-sm mb-1">
+                        {type.badge && (
+                          <span className={`inline-block text-xs font-semibold px-2 py-1 rounded-full mb-2 ${
+                            type.badge === "Most Popular" 
+                              ? "bg-gold text-white" 
+                              : type.badge === "Premium"
+                              ? "bg-slate-900 text-white"
+                              : "bg-teal text-white"
+                          }`}>
+                            {type.badge}
+                          </span>
+                        )}
+                        <p className="font-semibold text-foreground text-sm mb-2">
                           {type.name}
                         </p>
-                        <p className="text-2xl font-bold text-gold">
+                        <p className="text-3xl font-bold text-gold mb-1">
                           ${type.price.toLocaleString()}
                         </p>
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <p className="text-xs text-muted-foreground">
                           {type.deadline}
                         </p>
                       </button>
@@ -214,35 +540,35 @@ function RegistrationContent() {
                 </div>
 
                 {/* Personal Information */}
-                <div className="bg-muted rounded-lg p-6">
-                  <h2 className="text-xl font-bold text-foreground mb-4">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
+                  <h2 className="text-2xl font-bold text-foreground mb-6">
                     Personal Information
                   </h2>
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName">First Name *</Label>
+                      <Label htmlFor="firstName" className="text-sm font-medium">First Name *</Label>
                       <Input
                         id="firstName"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="lastName">Last Name *</Label>
+                      <Label htmlFor="lastName" className="text-sm font-medium">Last Name *</Label>
                       <Input
                         id="lastName"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email" className="text-sm font-medium">Email Address *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -250,61 +576,86 @@ function RegistrationContent() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Phone Number *</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1"
-                      />
+                      <Label htmlFor="phone" className="text-sm font-medium">Phone Number *</Label>
+                      <div className="flex gap-2 mt-2">
+                        <Select
+                          value={formData.countryCode}
+                          onValueChange={(value) => handleSelectChange("countryCode", value)}
+                        >
+                          <SelectTrigger className="w-32 border-slate-200 focus:border-gold focus:ring-gold">
+                            <SelectValue placeholder="+1" />
+                          </SelectTrigger>
+                          <SelectContent className="max-h-60">
+                            {countryCodes.map((item) => (
+                              <SelectItem key={item.code} value={item.code}>
+                                {item.code} {item.country}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                          placeholder="123 456 7890"
+                          className="flex-1 border-slate-200 focus:border-gold focus:ring-gold"
+                        />
+                      </div>
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="country">Country *</Label>
-                      <Input
-                        id="country"
-                        name="country"
+                      <Label htmlFor="country" className="text-sm font-medium">Country *</Label>
+                      <Select
                         value={formData.country}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1"
-                      />
+                        onValueChange={(value) => handleSelectChange("country", value)}
+                      >
+                        <SelectTrigger className="mt-2 border-slate-200 focus:border-gold focus:ring-gold">
+                          <SelectValue placeholder="Select your country" />
+                        </SelectTrigger>
+                        <SelectContent className="max-h-60">
+                          {countries.map((country) => (
+                            <SelectItem key={country} value={country}>
+                              {country}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                 </div>
 
                 {/* Professional Information */}
-                <div className="bg-muted rounded-lg p-6">
-                  <h2 className="text-xl font-bold text-foreground mb-4">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
+                  <h2 className="text-2xl font-bold text-foreground mb-6">
                     Professional Information
                   </h2>
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="organization">Organization/Clinic *</Label>
+                      <Label htmlFor="organization" className="text-sm font-medium">Organization/Clinic *</Label>
                       <Input
                         id="organization"
                         name="organization"
                         value={formData.organization}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="role">Role/Position *</Label>
+                      <Label htmlFor="role" className="text-sm font-medium">Role/Position *</Label>
                       <Select
                         value={formData.role}
                         onValueChange={(value) =>
                           handleSelectChange("role", value)
                         }
                       >
-                        <SelectTrigger className="mt-1">
+                        <SelectTrigger className="mt-2 border-slate-200 focus:border-gold focus:ring-gold">
                           <SelectValue placeholder="Select your role" />
                         </SelectTrigger>
                         <SelectContent>
@@ -328,7 +679,7 @@ function RegistrationContent() {
                       </Select>
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="specialization">
+                      <Label htmlFor="specialization" className="text-sm font-medium">
                         Specialization/Area of Practice *
                       </Label>
                       <Input
@@ -337,12 +688,12 @@ function RegistrationContent() {
                         value={formData.specialization}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                         placeholder="e.g., Regenerative Medicine, Anti-Aging, Aesthetics"
                       />
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="interest">
+                      <Label htmlFor="interest" className="text-sm font-medium">
                         Area of Interest at Symposium
                       </Label>
                       <Textarea
@@ -350,7 +701,7 @@ function RegistrationContent() {
                         name="interest"
                         value={formData.interest}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="mt-2 border-slate-200 focus:border-gold focus:ring-gold resize-none"
                         rows={3}
                         placeholder="What are you hoping to learn or achieve at the symposium?"
                       />
@@ -359,14 +710,17 @@ function RegistrationContent() {
                 </div>
 
                 {/* Submit */}
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8 py-6 text-lg"
+                    className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
                   >
                     {isLoading ? (
-                      "Processing..."
+                      <>
+                        <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin mr-2" />
+                        Processing...
+                      </>
                     ) : (
                       <>
                         Proceed to Payment
@@ -383,36 +737,51 @@ function RegistrationContent() {
             </div>
 
             {/* Order Summary */}
-            <div className="lg:col-span-1">
-              <div className="bg-muted rounded-lg p-6 sticky top-24">
-                <h2 className="text-xl font-bold text-foreground mb-4">
+            <div className="lg:col-span-1 animate-on-scroll slide-in-right scale-in">
+              <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-slate-100 sticky top-24">
+                <h2 className="text-2xl font-bold text-foreground mb-6">
                   Order Summary
                 </h2>
 
                 {selectedRegistration && (
                   <>
-                    <div className="border-b border-border pb-4 mb-4">
-                      <p className="font-semibold text-foreground">
+                    <div className="border-b border-slate-200 pb-6 mb-6">
+                      <p className="font-bold text-foreground text-lg mb-1">
                         {selectedRegistration.name}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {selectedRegistration.deadline}
                       </p>
+                      {selectedRegistration.standardPrice && (
+                        <p className="text-xs text-muted-foreground mt-1">
+                          {selectedRegistration.standardPrice}
+                        </p>
+                      )}
                     </div>
 
-                    <ul className="space-y-2 mb-6">
-                      {selectedRegistration.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
-                          <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-muted-foreground">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-foreground mb-4">What's Included:</p>
+                      <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
+                        {packageFeatures.map((feature) => {
+                          const isIncluded = feature[selectedRegistration.tierKey];
+                          return (
+                            <div key={feature.name} className="flex items-start gap-2">
+                              {isIncluded ? (
+                                <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                              ) : (
+                                <X className="h-4 w-4 text-slate-300 flex-shrink-0 mt-0.5" />
+                              )}
+                              <span className={`text-sm ${isIncluded ? 'text-foreground' : 'text-muted-foreground/50 line-through'}`}>
+                                {feature.name}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
 
-                    <div className="border-t border-border pt-4">
-                      <div className="flex items-center justify-between mb-2">
+                    <div className="border-t border-slate-200 pt-6 space-y-3">
+                      <div className="flex items-center justify-between">
                         <span className="text-muted-foreground">
                           Registration Fee
                         </span>
@@ -420,7 +789,7 @@ function RegistrationContent() {
                           ${selectedRegistration.price.toLocaleString()}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between text-lg font-bold">
+                      <div className="flex items-center justify-between text-xl font-bold">
                         <span className="text-foreground">Total</span>
                         <span className="text-gold">
                           USD ${selectedRegistration.price.toLocaleString()}
@@ -430,9 +799,9 @@ function RegistrationContent() {
                   </>
                 )}
 
-                <div className="mt-6 p-4 bg-background rounded-lg">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <CreditCard className="h-4 w-4" />
+                <div className="mt-6 p-4 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2">
+                    <CreditCard className="h-4 w-4 text-gold" />
                     <span>Secure Payment</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
@@ -441,8 +810,8 @@ function RegistrationContent() {
                   </p>
                 </div>
 
-                <div className="mt-4 p-4 bg-teal-dark/10 rounded-lg">
-                  <p className="text-xs text-muted-foreground">
+                <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                  <p className="text-xs text-amber-900">
                     <strong>Note:</strong> All registrations are subject to
                     review and confirmation. You will receive a confirmation
                     email within 48 hours.

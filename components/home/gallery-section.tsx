@@ -8,39 +8,39 @@ import { ArrowRight, X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "/images/symp/home1.jpg",
+    src: "/images/sym/home_g_1.jpg",
     alt: "International doctors at symposium",
   },
   {
-    src: "/images/symp/home2.jpg",
+    src: "/images/sym/home_g_2.jpg",
     alt: "Clinical discussion session",
   },
   {
-    src: "/images/symp/home3.jpg",
+    src: "/images/sym/home_g_3.jpg",
     alt: "Professional networking event",
   },
   {
-    src: "/images/symp/home4.jpg",
+    src: "/images/sym/home_g_4.jpg",
     alt: "Medical presentation",
   },
   {
-    src: "/images/symp/home5.jpg",
+    src: "/images/sym/home_g_5.jpg",
     alt: "Strategic collaboration meeting",
   },
   {
-    src: "/images/symp/home6.jpg",
+    src: "/images/sym/home_g_6.jpg",
     alt: "Symposium attendees",
   },
   {
-    src: "/images/symp/home7.jpg",
+    src: "/images/sym/home_g_7.jpg",
     alt: "Conference networking moment",
   },
   {
-    src: "/images/symp/home8.jpg",
+    src: "/images/sym/home_g_8.jpg",
     alt: "Clinical workshop session",
   },
   {
-    src: "/images/symp/home9.jpg",
+    src: "/images/sym/home_g_9.jpg",
     alt: "Panel discussion",
   },
 ];

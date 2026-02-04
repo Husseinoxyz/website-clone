@@ -9,6 +9,7 @@ import { WhyOXYZSection } from "@/components/home/why-oxyz-section";
 import { SymposiumSection } from "@/components/home/symposium-section";
 import { GallerySection } from "@/components/home/gallery-section";
 import { RegistrationCTASection } from "@/components/home/registration-cta-section";
+import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
 import { CTASection } from "@/components/home/cta-section";
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
         <SymposiumSection />
         <GallerySection />
         <RegistrationCTASection />
+        <InstagramReelsSection />
         <CTASection />
       </main>
       <Footer />
