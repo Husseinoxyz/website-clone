@@ -1,14 +1,22 @@
-# macOS
+# macOS system files
 .DS_Store
 **/.DS_Store
 
-# ignore all images by default
+# Next.js build output
+.next/
+
+# Environment variables
+.env
+
+# Ignore all images by default
 public/images/*
 
-# BUT allow sym images
+# BUT allow 'sym' images folder and its contents
 !public/images/sym/
 !public/images/sym/**
 
-# misc
+# Node modules
+node_modules/
+
+# Miscellaneous
 git-lfs.tar.gz
-node_modules

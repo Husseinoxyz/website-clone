@@ -358,7 +358,10 @@ function RegistrationContent() {
       if (data.url) {
         window.location.href = data.url;
       } else {
-        console.error("Failed to create checkout session", data?.error || data);
+        console.error("Failed to create checkout session", {
+          status: response.status,
+          data,
+        });
         setIsLoading(false);
       }
     } catch (error) {

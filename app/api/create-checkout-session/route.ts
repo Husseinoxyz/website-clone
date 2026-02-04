@@ -26,7 +26,16 @@ const registrationPrices: Record<string, { amount: number; name: string }> = {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const rawBody = await request.text();
+    let body: any = {};
+    try {
+      body = rawBody ? JSON.parse(rawBody) : {};
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid JSON body", rawBody },
+        { status: 400 }
+      );
+    }
     const {
       registrationType,
       firstName,
@@ -40,10 +49,16 @@ export async function POST(request: Request) {
       interest,
     } = body;
 
-    const normalizedType =
-      registrationType === "package-i"
-        ? "package-i-early-bird"
-        : registrationType;
+    const normalizedType = (() => {
+      if (!registrationType) return registrationType;
+      const lower = String(registrationType).toLowerCase();
+      if (lower === "package-i") return "package-i-early-bird";
+      if (lower === "silver-tier-early-bird") return "package-i-early-bird";
+      if (lower === "silver-tier-standard") return "package-i-standard";
+      if (lower === "gold-tier") return "package-ii";
+      if (lower === "platinum-tier") return "package-iii";
+      return registrationType;
+    })();
     const registration = registrationPrices[normalizedType];
 
     if (!registration) {
