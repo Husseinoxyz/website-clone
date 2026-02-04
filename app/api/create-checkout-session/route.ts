@@ -40,11 +40,19 @@ export async function POST(request: Request) {
       interest,
     } = body;
 
-    const registration = registrationPrices[registrationType];
+    const normalizedType =
+      registrationType === "package-i"
+        ? "package-i-early-bird"
+        : registrationType;
+    const registration = registrationPrices[normalizedType];
 
     if (!registration) {
       return NextResponse.json(
-        { error: "Invalid registration type" },
+        {
+          error: "Invalid registration type",
+          received: registrationType,
+          allowed: Object.keys(registrationPrices),
+        },
         { status: 400 }
       );
     }
@@ -69,7 +77,7 @@ export async function POST(request: Request) {
           role,
           specialization,
           interest: interest || "",
-          registrationType,
+          registrationType: normalizedType,
         },
       });
     }
@@ -98,7 +106,7 @@ export async function POST(request: Request) {
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/register/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/register?canceled=true`,
       metadata: {
-        registrationType,
+        registrationType: normalizedType,
         firstName,
         lastName,
         phone,
