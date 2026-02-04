@@ -189,11 +189,11 @@ export function RegistrationCTASection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid gap-8 md:grid-cols-3 mb-12 pt-16">
+        <div className="grid gap-16 sm:gap-10 md:gap-8 md:grid-cols-3 mb-12 pt-16">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? 'md:scale-105' : ''}`}
+              className={`relative mt-20 sm:mt-0 overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? "md:scale-105" : ""}`}
             >
               {/* Price Circle - Border matches package color */}
               <div className="absolute -top-20 right-6 z-10">

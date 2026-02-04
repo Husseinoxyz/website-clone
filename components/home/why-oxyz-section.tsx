@@ -3,6 +3,41 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useEffect } from "react";
+
+// Custom hook for scroll animations
+function useScrollAnimation() {
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+      observers.push(observer);
+    };
+
+    animateOnScroll();
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+}
 
 const benefits = [
   "Medical-first governance",
@@ -13,65 +48,138 @@ const benefits = [
 ];
 
 export function WhyOXYZSection() {
+  useScrollAnimation();
+
   return (
-    <section className="py-24 bg-muted">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
-              Why Professionals Choose OXYZ
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-              We scale by alignment and capability, not volume. OXYZ integrates
-              regenerative medicine, preventive health, aesthetics, products,
-              and structured business models under one governance framework.
-            </p>
+    <>
+      <style jsx global>{`
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-            <ul className="space-y-4 mb-8">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-gold flex-shrink-0" />
-                  <span className="text-[#007A59] font-medium">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+        .animate-on-scroll.animated {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-            <Link href="/gallery">
-              <Button className="bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold">
-                View Gallery
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+        .slide-in-left {
+          transform: translateX(-50px);
+        }
 
-          {/* Quote Card */}
-          <div className="bg-teal-dark rounded-lg p-10 relative">
-            <div className="absolute top-6 left-6 text-8xl text-gold/20 font-serif">
-              &ldquo;
-            </div>
-            <div className="relative">
-              <p className="text-xl text-secondary-foreground leading-relaxed mb-6">
-                Regenerative medicine demands responsibility. Business
-                opportunities should emerge from medical mastery — not replace
-                it. OXYZ is not designed for rapid commercialization. It is
-                designed for sustainable medical excellence.
+        .slide-in-left.animated {
+          transform: translateX(0);
+        }
+
+        .slide-in-right {
+          transform: translateX(50px);
+        }
+
+        .slide-in-right.animated {
+          transform: translateX(0);
+        }
+
+        .scale-in {
+          transform: scale(0.95);
+        }
+
+        .scale-in.animated {
+          transform: scale(1);
+        }
+
+        .stagger-1 {
+          transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+          transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+          transition-delay: 0.3s;
+        }
+
+        .stagger-4 {
+          transition-delay: 0.4s;
+        }
+
+        .stagger-5 {
+          transition-delay: 0.5s;
+        }
+      `}</style>
+      
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <div className="animate-on-scroll slide-in-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#007A59]/30 bg-[#007A59]/10 px-4 py-2 mb-6">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#007A59]">
+                  Why Choose OXYZ
+                </span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
+                Why Professionals Choose OXYZ
+              </h2>
+              
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+                We scale by alignment and capability, not volume. OXYZ integrates
+                regenerative medicine, preventive health, aesthetics, products,
+                and structured business models under one governance framework.
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
-                  <span className="text-foreground font-bold text-lg">O</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-gold">OXYZ Philosophy</p>
-                  <p className="text-sm text-secondary-foreground/70">
-                    Medical Integrity First
-                  </p>
+              
+              <ul className="space-y-3 mb-8">
+                {benefits.map((benefit, idx) => (
+                  <li key={benefit} className={`animate-on-scroll stagger-${idx + 1} flex items-center gap-3`}>
+                    <CheckCircle2 className="h-6 w-6 text-gold flex-shrink-0" />
+                    <span className="text-[#007A59] font-medium">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="animate-on-scroll">
+                <Link href="/gallery">
+                  <Button 
+                    size="lg"
+                    className="bg-teal hover:bg-teal-dark text-secondary-foreground font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  >
+                    View Gallery
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Quote Card */}
+            <div className="animate-on-scroll slide-in-right scale-in bg-gradient-to-br from-teal-dark to-teal rounded-2xl p-10 relative shadow-2xl border border-white/10">
+              <div className="absolute top-6 left-6 text-8xl text-gold/30 font-serif leading-none">
+                &ldquo;
+              </div>
+              <div className="relative">
+                <p className="text-xl text-secondary-foreground/95 leading-relaxed mb-8">
+                  Regenerative medicine demands responsibility. Business
+                  opportunities should emerge from medical mastery — not replace
+                  it. OXYZ is not designed for rapid commercialization. It is
+                  designed for sustainable medical excellence.
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-foreground font-bold text-xl">O</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gold text-lg">OXYZ Philosophy</p>
+                    <p className="text-sm text-secondary-foreground/80">
+                      Medical Integrity First
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

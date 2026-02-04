@@ -97,10 +97,10 @@ const gallery2023 = Array.from({ length: 12 }, (_, index) => {
     value >= 10 && value <= 12 ? `0${value}` : number;
   const src =
     value === 11
-      ? "/images/gallery-1/011.png"
+      ? "/images/sym/011.png"
       : value === 12
-        ? "/images/gallery-1/012.png"
-        : `/images/gallery-1/${padded}.jpg`;
+        ? "/images/sym/012.png"
+        : `/images/sym/${padded}.jpg`;
 
   return {
     src,
@@ -328,7 +328,7 @@ export default function PastSymposiumsPage() {
               <div className="relative animate-on-scroll slide-in-right scale-in">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/gallery-1/8.jpg"
+                    src="/images/sym/about_hero.jpg"
                     alt="Past symposium"
                     width={600}
                     height={450}

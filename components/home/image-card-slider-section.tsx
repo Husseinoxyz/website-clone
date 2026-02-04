@@ -42,35 +42,79 @@ const slides = [
 
 export function ImageCardSliderSection() {
   const doubledSlides = [...slides, ...slides];
-
+  
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="relative">
-        <div className="flex w-max gap-0 px-0 animate-marquee motion-reduce:animate-none">
-          {doubledSlides.map((slide, index) => (
-            <article
-              key={`${slide.src}-${index}`}
-              aria-hidden={index >= slides.length}
-              className="group relative h-[260px] w-[340px] sm:h-[280px] sm:w-[380px] lg:h-[320px] lg:w-[440px] overflow-hidden rounded-3xl border border-[#0B2B22]/10 bg-white shadow-xl shadow-[#0B2B22]/10 shrink-0"
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                sizes="(max-width: 640px) 340px, (max-width: 1024px) 380px, 440px"
-                quality={100}
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2B22]/70 via-[#0B2B22]/10 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-sm font-semibold uppercase tracking-widest text-white/80">
-                  {slide.title}
-                </p>
-              </div>
-            </article>
-          ))}
+    <>
+      <style jsx global>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-marquee {
+            animation: none;
+          }
+        }
+      `}</style>
+      
+      <section className="relative overflow-hidden bg-white py-8">
+        {/* Optional Header */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#007A59] mb-3">
+            Symposium Highlights
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Experience the energy and collaboration of our international symposiums
+          </p>
         </div>
-      </div>
-    </section>
+
+        <div className="relative">
+          <div className="flex w-max gap-6 px-0 animate-marquee motion-reduce:animate-none">
+            {doubledSlides.map((slide, index) => (
+              <article
+                key={`${slide.src}-${index}`}
+                aria-hidden={index >= slides.length}
+                className="group relative h-[280px] w-[360px] sm:h-[300px] sm:w-[400px] lg:h-[340px] lg:w-[460px] overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-lg hover:shadow-2xl shrink-0 transition-all duration-300"
+              >
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 640px) 360px, (max-width: 1024px) 400px, 460px"
+                  quality={100}
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-base font-bold uppercase tracking-wider text-white drop-shadow-lg">
+                    {slide.title}
+                  </p>
+                </div>
+                
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#007A59]/90 via-[#007A59]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Gradient Overlays for smooth edges - lighter for better visibility */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/60 to-transparent pointer-events-none z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/60 to-transparent pointer-events-none z-10" />
+      </section>
+    </>
   );
 }

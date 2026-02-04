@@ -1,5 +1,3 @@
-"use client";
-
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
@@ -21,41 +19,6 @@ import {
   Building2,
   Network,
 } from "lucide-react";
-import { useEffect } from "react";
-
-// Custom hook for scroll animations
-function useScrollAnimation() {
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animated');
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        }
-      );
-
-      elements.forEach((el) => observer.observe(el));
-      observers.push(observer);
-    };
-
-    animateOnScroll();
-
-    return () => {
-      observers.forEach(observer => observer.disconnect());
-    };
-  }, []);
-}
 
 const whoIsFor = [
   { icon: Stethoscope, text: "Medical doctors & specialists" },
@@ -242,132 +205,73 @@ const packages = [
 ];
 
 export default function SymposiumPage() {
-  useScrollAnimation();
-
   return (
     <>
-      <style jsx global>{`
-        .animate-on-scroll {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .animate-on-scroll.animated {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .slide-in-left {
-          transform: translateX(-50px);
-        }
-
-        .slide-in-left.animated {
-          transform: translateX(0);
-        }
-
-        .slide-in-right {
-          transform: translateX(50px);
-        }
-
-        .slide-in-right.animated {
-          transform: translateX(0);
-        }
-
-        .scale-in {
-          transform: scale(0.9);
-        }
-
-        .scale-in.animated {
-          transform: scale(1);
-        }
-
-        .stagger-1 {
-          transition-delay: 0.1s;
-        }
-
-        .stagger-2 {
-          transition-delay: 0.2s;
-        }
-
-        .stagger-3 {
-          transition-delay: 0.3s;
-        }
-
-        .stagger-4 {
-          transition-delay: 0.4s;
-        }
-      `}</style>
       <Header />
       <main>
-        {/* Hero Section - Matching Home Style */}
-        <section className="relative w-full min-h-screen">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <Image
-              src="/images/sym/symposium_hero.jpg"
-              alt="OXYZ Symposium 2026"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-            
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20" />
-          </div>
+        {/* Hero Section */}
+        <section className="relative w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
+            <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full blur-3xl" />
+              </div>
 
-          {/* Content Container - Positioned at bottom */}
-          <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
-            <div className="max-w-4xl w-full">
-              
-              {/* Main Title */}
-              <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
-                <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
-                  <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    OXYZ International Symposium 2026
-                  </span>
-                  <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                    Regenerative Medicine & Strategic Collaboration
-                  </span>
+              <div className="relative z-10 mx-auto max-w-2xl">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6">
+                  OXYZ International Symposium 2026
                 </h1>
-              </div>
+                <p className="text-xl text-gold font-semibold mb-4">
+                  Regenerative Medicine & Strategic Collaboration
+                </p>
+                <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+                  A medically driven, invitation-based platform created for
+                  doctors, clinic owners, and healthcare leaders who seek to
+                  apply regenerative medicine responsibly and explore
+                  structured, ethical growth pathways.
+                </p>
+                <p className="text-secondary-foreground/80 italic mb-8">
+                  This is not a mass conference. It is a medical alignment
+                  platform.
+                </p>
 
-              {/* Description */}
-              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A medically driven, invitation-based platform created for doctors, clinic owners, and healthcare leaders who seek to apply regenerative medicine responsibly and explore structured, ethical growth pathways.
-              </p>
-
-              <p className="text-white/80 italic text-sm sm:text-base md:text-lg mb-10 sm:mb-12 animate-fade-in-up opacity-0 animation-delay-500">
-                This is not a mass conference. It is a medical alignment platform.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
-                <Link href="/register" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/register">
+                    <Button
+                      size="lg"
+                      className="bg-gold hover:bg-gold-dark text-white font-semibold"
+                    >
+                      Register Now
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full sm:w-auto"
-                >
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
-                  >
-                    Request Scientific Program
-                  </Button>
-                </Link>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                    >
+                      Request Scientific Program
+                    </Button>
+                  </Link>
+                </div>
               </div>
+            </div>
+
+            <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[80vh] order-1 lg:order-2">
+              <Image
+                src="/images/sym/symposium_hero.jpg"
+                alt="OXYZ Symposium 2026"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/5" />
             </div>
           </div>
         </section>
@@ -375,10 +279,10 @@ export default function SymposiumPage() {
         <CountdownSection />
 
         {/* Medical Imperative */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-24 bg-muted">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="animate-on-scroll slide-in-left">
+              <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Medical Imperative
                 </h2>
@@ -392,7 +296,7 @@ export default function SymposiumPage() {
                   discipline, ethical application, structured clinical systems,
                   and responsible scaling.
                 </p>
-                <div className="bg-white rounded-lg p-6 border-l-4 border-gold shadow-sm">
+                <div className="bg-background rounded-lg p-6 border-l-4 border-gold">
                   <p className="text-teal font-medium italic">
                     This symposium exists to address how regenerative medicine
                     should be practiced, integrated, and expanded — not as a
@@ -420,13 +324,13 @@ export default function SymposiumPage() {
                   </Link>
                 </div>
               </div>
-              <div className="relative aspect-square animate-on-scroll slide-in-right scale-in">
+              <div className="relative aspect-square">
                 <Image
                   src="/images/about/Our_Philosophy.jpg"
                   alt="Medical imperative"
                   width={600}
                   height={520}
-                  className="rounded-2xl shadow-2xl h-full w-full object-cover"
+                  className="rounded-lg shadow-xl h-full w-full object-cover"
                 />
               </div>
             </div>
@@ -447,7 +351,7 @@ export default function SymposiumPage() {
             <div className="absolute inset-0 bg-black/60" />
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
                 Who This Symposium Is For
               </h2>
@@ -458,10 +362,10 @@ export default function SymposiumPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {whoIsFor.map((item, idx) => (
+              {whoIsFor.map((item) => (
                 <div
                   key={item.text}
-                  className={`animate-on-scroll stagger-${idx + 1} scale-in bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                  className="bg-muted rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
                 >
                   <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="h-8 w-8 text-gold" />
@@ -470,7 +374,7 @@ export default function SymposiumPage() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap justify-center gap-3 animate-on-scroll">
+            <div className="flex flex-wrap justify-center gap-3">
               <Link href="/register">
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                   Register Now
@@ -495,20 +399,20 @@ export default function SymposiumPage() {
 
 
         {/* Scientific Focus */}
-        <section className="py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground">
+        <section className="py-24 bg-teal-dark text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
-              <div className="animate-on-scroll slide-in-left">
+              <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Scientific & Medical Focus
                 </h2>
-                <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+                <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
                   The emphasis is on medical depth, clarity, and governance —
                   not promotional medicine.
                 </p>
                 <ul className="space-y-4">
-                  {scientificFocus.map((item, idx) => (
-                    <li key={item} className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-start gap-3`}>
+                  {scientificFocus.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
                       <span className="text-secondary-foreground/90">
                         {item}
@@ -517,30 +421,30 @@ export default function SymposiumPage() {
                   ))}
                 </ul>
               </div>
-              <div className="animate-on-scroll slide-in-right">
+              <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   Symposium Format
                 </h2>
                 <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="bg-secondary-foreground/10 rounded-lg p-6">
                     <h3 className="text-xl font-semibold text-gold mb-2">
                       Physical Symposium
                     </h3>
-                    <ul className="space-y-2 text-secondary-foreground/90">
+                    <ul className="space-y-2 text-secondary-foreground/80">
                       <li>Medical & Scientific Sessions</li>
                       <li>Clinical Case Discussions</li>
                       <li>Live Treatment Observation*</li>
                       <li>Strategic Networking</li>
                     </ul>
-                    <p className="text-xs text-secondary-foreground/70 mt-3">
+                    <p className="text-xs text-secondary-foreground/60 mt-3">
                       *Subject to ethical standards and regulatory compliance
                     </p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="bg-secondary-foreground/10 rounded-lg p-6">
                     <h3 className="text-xl font-semibold text-gold mb-2">
                       Participants Will Gain
                     </h3>
-                    <ul className="space-y-2 text-secondary-foreground/90">
+                    <ul className="space-y-2 text-secondary-foreground/80">
                       <li>Direct engagement with OXYZ leadership</li>
                       <li>Interaction with international professionals</li>
                       <li>Exposure to structured frameworks</li>
@@ -575,9 +479,9 @@ export default function SymposiumPage() {
 
 
         {/* Strategic Pathways */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 Strategic Pathways Exploration
               </h2>
@@ -589,10 +493,10 @@ export default function SymposiumPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {pathways.map((pathway, idx) => (
+              {pathways.map((pathway) => (
                 <div
                   key={pathway.title}
-                  className={`animate-on-scroll stagger-${(idx % 4) + 1} scale-in bg-gradient-to-br from-slate-50 to-white rounded-xl p-8 border-2 border-slate-100 hover:border-gold/50 transition-all duration-300 hover:shadow-lg`}
+                  className="bg-muted rounded-lg p-8 border border-border hover:border-gold transition-colors"
                 >
                   <h3 className="text-xl font-bold text-teal mb-3">
                     {pathway.title}
@@ -601,7 +505,7 @@ export default function SymposiumPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link href="/register">
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                   Register Now
@@ -637,11 +541,11 @@ export default function SymposiumPage() {
               </p>
             </div>
 
-            <div className="grid gap-16 sm:gap-10 md:gap-8 md:grid-cols-3 mb-12 pt-16">
+            <div className="grid gap-8 md:grid-cols-3 mb-12 pt-16">
               {packages.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className={`relative mt-20 sm:mt-0 overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? "md:scale-105" : ""}`}
+                  className={`relative overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? "md:scale-105" : ""}`}
                 >
                   <div className="absolute -top-20 right-6 z-10">
                     <div className={`h-40 w-40 rounded-full bg-gradient-to-br ${pkg.accentGradient} shadow-[0_12px_32px_rgba(0,0,0,0.4)] flex items-center justify-center border-[8px] ${pkg.circleBorder}`}>
@@ -715,46 +619,43 @@ export default function SymposiumPage() {
         </section>
 
         {/* Symposium 2025 Overview */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-24 bg-muted">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2025 Symposium Overview
-                  </h2>
-                  <p className="text-muted-foreground max-w-2xl">
-                    A look back at our 2025 medical alignment forum, featuring
-                    focused clinical sessions, international collaboration, and
-                    practical regenerative discussions.
-                  </p>
-                </div>
-                <Link href="/past-symposiums">
-                  <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
-                    View Full Gallery
-                  </Button>
-                </Link>
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
+                  2025 Symposium Overview
+                </h2>
+                <p className="text-muted-foreground max-w-2xl">
+                  A look back at our 2025 medical alignment forum, featuring
+                  focused clinical sessions, international collaboration, and
+                  practical regenerative discussions.
+                </p>
               </div>
+              <Link href="/past-symposiums">
+                <Button variant="outline" className="border-teal text-teal">
+                  View Full Gallery
+                </Button>
+              </Link>
+            </div>
             </div>
 
-            <div className="animate-on-scroll">
-              <GalleryGrid
-                alt="Symposium 2025 gallery"
-                images={[
-                  "/images/sym/home_g_1.jpg",
-                  "/images/sym/home_g_2.jpg",
-                  "/images/sym/home_g_3.jpg",
-                  "/images/sym/home_g_4.jpg",
-                  "/images/sym/home_g_5.jpg",
-                  "/images/sym/home_g_6.jpg",
-                  "/images/sym/home_g_7.jpg",
-                  "/images/sym/home_g_8.jpg",
-                  "/images/sym/home_g_9.jpg",
-                ]}
-              />
-            </div>
-            
-            <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
+            <GalleryGrid
+              alt="Symposium 2025 gallery"
+              images={[
+                "/images/sym/home_g_1.jpg",
+                "/images/sym/home_g_2.jpg",
+                "/images/sym/home_g_3.jpg",
+                "/images/sym/home_g_4.jpg",
+                "/images/sym/home_g_5.jpg",
+                "/images/sym/home_g_6.jpg",
+                "/images/sym/home_g_7.jpg",
+                "/images/sym/home_g_8.jpg",
+                "/images/sym/home_g_9.jpg",
+              ]}
+            />
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link href="/register">
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                   Register Now
@@ -779,43 +680,40 @@ export default function SymposiumPage() {
 
 
         {/* Symposium 2023 Overview */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-background">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2023 Symposium Overview
-                  </h2>
-                  <p className="text-muted-foreground max-w-2xl">
-                    Highlights from the 2023 symposium focused on medical
-                    governance, structured clinical frameworks, and ecosystem
-                    building.
-                  </p>
-                </div>
-                <Link href="/past-symposiums">
-                  <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
-                    View Full Gallery
-                  </Button>
-                </Link>
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
+                  2023 Symposium Overview
+                </h2>
+                <p className="text-muted-foreground max-w-2xl">
+                  Highlights from the 2023 symposium focused on medical
+                  governance, structured clinical frameworks, and ecosystem
+                  building.
+                </p>
               </div>
+              <Link href="/past-symposiums">
+                <Button variant="outline" className="border-teal text-teal">
+                  View Full Gallery
+                </Button>
+              </Link>
+            </div>
             </div>
 
-            <div className="animate-on-scroll">
-              <GalleryGrid
-                alt="Symposium 2023 gallery"
-                images={[
-                  "/images/sym/012.png",
-                  "/images/sym/02.jpg",
-                  "/images/sym/03.jpg",
-                  "/images/sym/04.jpg",
-                  "/images/sym/05.jpg",
-                  "/images/sym/06.jpg",
-                ]}
-              />
-            </div>
-            
-            <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
+            <GalleryGrid
+              alt="Symposium 2023 gallery"
+              images={[
+                "/images/gallery-1/012.png",
+                "/images/gallery-1/02.jpg",
+                "/images/gallery-1/03.jpg",
+                "/images/gallery-1/04.jpg",
+                "/images/gallery-1/05.jpg",
+                "/images/gallery-1/06.jpg",
+              ]}
+            />
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link href="/register">
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                   Register Now
@@ -849,14 +747,14 @@ export default function SymposiumPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+            <div className="absolute inset-0 bg-black/60" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl p-12 text-center animate-on-scroll">
+            <div className="rounded-2xl p-12 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
                 Ready to Join Symposium 2026?
               </h2>
-              <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-foreground/85 mb-8 max-w-2xl mx-auto">
                 This symposium is intended for professionals seeking depth,
                 alignment, and long-term impact. Apply now to secure your place.
               </p>
@@ -878,7 +776,7 @@ export default function SymposiumPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-semibold px-8 bg-transparent"
+                    className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
                   >
                     Request More Details
                   </Button>

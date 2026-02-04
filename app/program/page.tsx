@@ -292,11 +292,11 @@ export default function ProgramPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3 mb-12 pt-16">
+            <div className="grid gap-16 sm:gap-10 md:gap-8 md:grid-cols-3 mb-12 pt-16">
               {packages.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className={`relative overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? "md:scale-105" : ""}`}
+                  className={`relative mt-20 sm:mt-0 overflow-visible rounded-3xl border-4 ${pkg.borderColor} bg-gradient-to-b from-[#1c1c1c] via-[#1a1a1a] to-[#0f0f0f] shadow-2xl transition-transform hover:scale-105 ${pkg.popular ? "md:scale-105" : ""}`}
                 >
                   <div className="absolute -top-20 right-6 z-10">
                     <div className={`h-40 w-40 rounded-full bg-gradient-to-br ${pkg.accentGradient} shadow-[0_12px_32px_rgba(0,0,0,0.4)] flex items-center justify-center border-[8px] ${pkg.circleBorder}`}>
