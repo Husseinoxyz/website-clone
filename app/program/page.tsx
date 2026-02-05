@@ -100,29 +100,10 @@ const packageFeatures = [
 const packages = [
   {
     id: "package-i",
-    title: "BRONZE",
+    title: "SILVER",
     title2: "PACKAGE",
     subtitle: "Stem Cell Scholar",
     price: "$2,500",
-    priceNote: "per person",
-    standardPrice: "",
-    borderColor: "border-[#C9793C]",
-    accentGradient: "from-[#D2825A] to-[#B86941]",
-    textColor: "text-[#CC7A3B]",
-    buttonClass: "bg-[#CC7A3B] hover:bg-[#B86B32] border-[#CC7A3B]",
-    circleBorder: "border-[#C9793C]",
-    features: packageFeatures.map((f) => ({
-      name: f.name,
-      included: f.packageI,
-    })),
-    registerType: "silver-tier-early-bird",
-  },
-  {
-    id: "package-ii",
-    title: "SILVER",
-    title2: "PACKAGE",
-    subtitle: "Immersive Experience",
-    price: "$10,000",
     priceNote: "per person",
     standardPrice: "",
     borderColor: "border-[#8F959C]",
@@ -132,17 +113,16 @@ const packages = [
     circleBorder: "border-[#8F959C]",
     features: packageFeatures.map((f) => ({
       name: f.name,
-      included: f.packageII,
+      included: f.packageI,
     })),
-    registerType: "gold-tier",
-    popular: true,
+    registerType: "silver-tier-early-bird",
   },
   {
-    id: "package-iii",
+    id: "package-ii",
     title: "GOLD",
     title2: "PACKAGE",
-    subtitle: "Global Elite Partner",
-    price: "$25,000",
+    subtitle: "Immersive Experience",
+    price: "$10,000",
     priceNote: "per person",
     standardPrice: "",
     borderColor: "border-[#D3A400]",
@@ -150,6 +130,26 @@ const packages = [
     textColor: "text-[#E5B511]",
     buttonClass: "bg-[#E5B511] hover:bg-[#D3A400] border-[#E5B511]",
     circleBorder: "border-[#E5B511]",
+    features: packageFeatures.map((f) => ({
+      name: f.name,
+      included: f.packageII,
+    })),
+    registerType: "gold-tier",
+    popular: true,
+  },
+  {
+    id: "package-iii",
+    title: "PLATINUM",
+    title2: "PACKAGE",
+    subtitle: "Global Elite Partner",
+    price: "$25,000",
+    priceNote: "per person",
+    standardPrice: "",
+    borderColor: "border-[#A8B5C0]",
+    accentGradient: "from-[#E5E8EB] to-[#B8C5D0]",
+    textColor: "text-[#A8B5C0]",
+    buttonClass: "bg-[#A8B5C0] hover:bg-[#98A5B0] border-[#A8B5C0]",
+    circleBorder: "border-[#A8B5C0]",
     features: packageFeatures.map((f) => ({
       name: f.name,
       included: f.packageIII,
@@ -184,7 +184,7 @@ export default function ProgramPage() {
             />
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10" />
           </div>
 
           {/* Content Container - Positioned at bottom */}
@@ -434,7 +434,7 @@ export default function ProgramPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-black/35" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto text-white">

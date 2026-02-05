@@ -237,7 +237,7 @@ export default function PastSymposiumsPage() {
             />
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/15" />
           </div>
 
           {/* Content Container - Positioned at bottom */}
@@ -507,7 +507,7 @@ export default function PastSymposiumsPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-12 text-center">

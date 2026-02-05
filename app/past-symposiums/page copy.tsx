@@ -333,7 +333,7 @@ export default function PastSymposiumsPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-12 text-center">

@@ -167,7 +167,7 @@ export default function AboutPage() {
             />
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10" />
           </div>
 
           {/* Content Container - Positioned at bottom */}
@@ -460,7 +460,7 @@ export default function AboutPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
