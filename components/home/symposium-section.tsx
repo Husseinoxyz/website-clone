@@ -114,16 +114,16 @@ export function SymposiumSection() {
             {/* Content */}
             <div className="animate-on-scroll slide-in-left">
               <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-4 text-balance">
-                OXYZ International Symposium 2026
+                OXYZ International Stem Cell Training 2026
               </h2>
               <p className="text-xl text-[#007A59] font-semibold mb-6">
                 A Medical & Strategic Alignment Platform
               </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-2xl">
+              <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed max-w-2xl">
                 An invitation-only forum for doctors and healthcare leaders to
                 align on clinical standards, systems, and long-term collaboration.
               </p>
-              <ul className="grid gap-3 text-sm text-muted-foreground mb-8 max-w-xl">
+              <ul className="grid gap-3 text-sm text-gold mb-8 max-w-xl">
                 <li>Clinical protocol alignment and case standards.</li>
                 <li>Operational frameworks for multi-center consistency.</li>
                 <li>Strategic partner onboarding with clear governance.</li>
@@ -156,7 +156,7 @@ export function SymposiumSection() {
               <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll">
                 <Link href="/symposium">
                   <Button className="bg-gold hover:bg-gold-dark text-[#007A59] font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                    Explore Symposium 2026
+                    Explore More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>

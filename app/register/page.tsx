@@ -189,6 +189,12 @@ const packageFeatures = [
   {
     name: "Exclusive hamper: Full trial series of all OXYZ products",
     silver: true,
+    gold: false,
+    platinum: false,
+  },
+  {
+    name: "Exclusive hamper: Full trial series of all OXYZ products",
+    silver: true,
     gold: true,
     platinum: true,
   },
@@ -272,28 +278,6 @@ const registrationTypes = [
     deadline: "After 28 February 2026",
     standardPrice: null,
     badge: "Standard",
-  },
-  {
-    id: "gold-tier",
-    name: "Gold Tier: Immersive Experience",
-    shortName: "Gold Tier",
-    tierKey: "gold" as const,
-    price: 10000,
-    priceId: "price_package_ii",
-    deadline: null,
-    standardPrice: null,
-    badge: "Most Popular",
-  },
-  {
-    id: "platinum-tier",
-    name: "Platinum Tier: Global Elite Partner",
-    shortName: "Platinum Tier",
-    tierKey: "platinum" as const,
-    price: 25000,
-    priceId: "price_package_iii",
-    deadline: null,
-    standardPrice: null,
-    badge: "Premium",
   },
 ];
 
@@ -502,7 +486,7 @@ function RegistrationContent() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Registration Type */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
-                  <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+                  <h2 className="text-2xl font-bold text-[#007A59] mb-6 flex items-center gap-2">
                     Select Registration Tier
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -513,28 +497,30 @@ function RegistrationContent() {
                         onClick={() => setSelectedType(type.id)}
                         className={`text-left p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${
                           selectedType === type.id
-                            ? "border-gold bg-gold/10 shadow-md"
+                            ? "border-gold bg-gold/20 shadow-md"
+                            : type.badge === "Early Bird"
+                            ? "border-gold/70 bg-gold/15 hover:border-gold"
                             : "border-slate-200 hover:border-gold/50"
                         }`}
                       >
                         {type.badge && (
-                          <span className={`inline-block text-xs font-semibold px-2 py-1 rounded-full mb-2 ${
-                            type.badge === "Most Popular" 
-                              ? "bg-gold text-white" 
-                              : type.badge === "Premium"
-                              ? "bg-slate-900 text-white"
-                              : "bg-teal text-white"
-                          }`}>
+                          <span
+                            className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
+                              type.badge === "Early Bird"
+                                ? "bg-amber-500 text-white shadow-md shadow-amber-500/30 ring-2 ring-amber-300/70 animate-pulse"
+                                : "bg-teal text-white"
+                            }`}
+                          >
                             {type.badge}
                           </span>
                         )}
-                        <p className="font-semibold text-foreground text-sm mb-2">
+                        <p className="font-semibold text-[#007A59] text-sm mb-2">
                           {type.name}
                         </p>
                         <p className="text-3xl font-bold text-gold mb-1">
                           ${type.price.toLocaleString()}
                         </p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-[#007A59]">
                           {type.deadline}
                         </p>
                       </button>
@@ -544,12 +530,12 @@ function RegistrationContent() {
 
                 {/* Personal Information */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">
+                  <h2 className="text-2xl font-bold text-[#007A59] mb-6">
                     Personal Information
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName" className="text-sm font-medium">First Name *</Label>
+                      <Label htmlFor="firstName" className="text-sm font-medium text-[#007A59]">First Name *</Label>
                       <Input
                         id="firstName"
                         name="firstName"
@@ -560,7 +546,7 @@ function RegistrationContent() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-sm font-medium">Last Name *</Label>
+                      <Label htmlFor="lastName" className="text-sm font-medium text-[#007A59]">Last Name *</Label>
                       <Input
                         id="lastName"
                         name="lastName"
@@ -571,7 +557,7 @@ function RegistrationContent() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-sm font-medium">Email Address *</Label>
+                      <Label htmlFor="email" className="text-sm font-medium text-[#007A59]">Email Address *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -583,7 +569,7 @@ function RegistrationContent() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone" className="text-sm font-medium">Phone Number *</Label>
+                      <Label htmlFor="phone" className="text-sm font-medium text-[#007A59]">Phone Number *</Label>
                       <div className="flex gap-2 mt-2">
                         <Select
                           value={formData.countryCode}
@@ -613,7 +599,7 @@ function RegistrationContent() {
                       </div>
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="country" className="text-sm font-medium">Country *</Label>
+                      <Label htmlFor="country" className="text-sm font-medium text-[#007A59]">Country *</Label>
                       <Select
                         value={formData.country}
                         onValueChange={(value) => handleSelectChange("country", value)}
@@ -635,12 +621,12 @@ function RegistrationContent() {
 
                 {/* Professional Information */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">
+                  <h2 className="text-2xl font-bold text-[#007A59] mb-6">
                     Professional Information
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="organization" className="text-sm font-medium">Organization/Clinic *</Label>
+                      <Label htmlFor="organization" className="text-sm font-medium text-[#007A59]">Organization/Clinic *</Label>
                       <Input
                         id="organization"
                         name="organization"
@@ -651,7 +637,7 @@ function RegistrationContent() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="role" className="text-sm font-medium">Role/Position *</Label>
+                      <Label htmlFor="role" className="text-sm font-medium text-[#007A59]">Role/Position *</Label>
                       <Select
                         value={formData.role}
                         onValueChange={(value) =>
@@ -682,7 +668,7 @@ function RegistrationContent() {
                       </Select>
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="specialization" className="text-sm font-medium">
+                      <Label htmlFor="specialization" className="text-sm font-medium text-[#007A59]">
                         Specialization/Area of Practice *
                       </Label>
                       <Input
@@ -696,7 +682,7 @@ function RegistrationContent() {
                       />
                     </div>
                     <div className="sm:col-span-2">
-                      <Label htmlFor="interest" className="text-sm font-medium">
+                      <Label htmlFor="interest" className="text-sm font-medium text-[#007A59]">
                         Area of Interest at Symposium
                       </Label>
                       <Textarea
@@ -717,7 +703,7 @@ function RegistrationContent() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-gold hover:bg-gold-dark text-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
+                    className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
                   >
                     {isLoading ? (
                       <>
@@ -731,9 +717,9 @@ function RegistrationContent() {
                       </>
                     )}
                   </Button>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-[#007A59]">
                     <Shield className="h-4 w-4" />
-                    <span>Secure checkout powered by Stripe</span>
+                    <span className="text-[#007A59]">Secure checkout powered by Stripe</span>
                   </div>
                 </div>
               </form>
@@ -742,58 +728,53 @@ function RegistrationContent() {
             {/* Order Summary */}
             <div className="lg:col-span-1 animate-on-scroll slide-in-right scale-in">
               <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-slate-100 sticky top-24">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+                <h2 className="text-2xl font-bold text-[#007A59] mb-6">
                   Order Summary
                 </h2>
 
                 {selectedRegistration && (
                   <>
                     <div className="border-b border-slate-200 pb-6 mb-6">
-                      <p className="font-bold text-foreground text-lg mb-1">
+                      <p className="font-bold text-gold text-lg mb-1">
                         {selectedRegistration.name}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-[#007A59]">
                         {selectedRegistration.deadline}
                       </p>
                       {selectedRegistration.standardPrice && (
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <p className="text-xs text-[#007A59] mt-1">
                           {selectedRegistration.standardPrice}
                         </p>
                       )}
                     </div>
 
                     <div className="mb-6">
-                      <p className="text-sm font-semibold text-foreground mb-4">What's Included:</p>
+                      <p className="text-sm font-semibold text-gold mb-4">What's Included:</p>
                       <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
-                        {packageFeatures.map((feature) => {
-                          const isIncluded = feature[selectedRegistration.tierKey];
-                          return (
+                        {packageFeatures
+                          .filter((feature) => feature[selectedRegistration.tierKey])
+                          .map((feature) => (
                             <div key={feature.name} className="flex items-start gap-2">
-                              {isIncluded ? (
-                                <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                              ) : (
-                                <X className="h-4 w-4 text-slate-300 flex-shrink-0 mt-0.5" />
-                              )}
-                              <span className={`text-sm ${isIncluded ? 'text-foreground' : 'text-muted-foreground/50 line-through'}`}>
+                              <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-[#007A59]">
                                 {feature.name}
                               </span>
                             </div>
-                          );
-                        })}
+                          ))}
                       </div>
                     </div>
 
                     <div className="border-t border-slate-200 pt-6 space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-muted-foreground">
+                        <span className="text-[#007A59]">
                           Registration Fee
                         </span>
-                        <span className="font-semibold text-foreground">
+                        <span className="font-semibold text-[#007A59]">
                           ${selectedRegistration.price.toLocaleString()}
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-xl font-bold">
-                        <span className="text-foreground">Total</span>
+                        <span className="text-[#007A59]">Total</span>
                         <span className="text-gold">
                           USD ${selectedRegistration.price.toLocaleString()}
                         </span>
@@ -803,18 +784,18 @@ function RegistrationContent() {
                 )}
 
                 <div className="mt-6 p-4 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#007A59] mb-2">
                     <CreditCard className="h-4 w-4 text-gold" />
                     <span>Secure Payment</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-[#007A59]">
                     Your payment is processed securely through Stripe. We never
                     store your card details.
                   </p>
                 </div>
 
                 <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-                  <p className="text-xs text-amber-900">
+                  <p className="text-xs text-[#007A59]">
                     <strong>Note:</strong> All registrations are subject to
                     review and confirmation. You will receive a confirmation
                     email within 48 hours.

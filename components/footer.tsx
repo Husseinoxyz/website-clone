@@ -12,6 +12,7 @@ const footerLinks = {
   company: [
     { name: "About OXYZ", href: "/about" },
     { name: "The 5D Model", href: "/5d-model" },
+    { name: "Business Enquiries", href: "/business-enquiries" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ],

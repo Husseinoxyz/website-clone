@@ -158,7 +158,7 @@ function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: numbe
   }, [isVisible, value, duration]);
 
   return (
-    <div ref={counterRef} className="text-5xl font-bold text-gold mb-2">
+    <div ref={counterRef} className="text-6xl font-bold text-[#007A59] mb-2">
       {count}{suffix}
     </div>
   );
@@ -251,7 +251,7 @@ export default function PastSymposiumsPage() {
                     Past OXYZ International
                   </span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                    Symposiums
+                    Stem Cell Trainings
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                     Building Professional Excellence Since 2023
@@ -261,7 +261,7 @@ export default function PastSymposiumsPage() {
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A glimpse into our medical and professional community. The OXYZ International Symposium series brings together medical professionals, clinic owners, and healthcare leaders from different regions.
+                A glimpse into our medical and professional community. The OXYZ International Stem Cell Training Series brings together medical professionals, clinic owners, and healthcare leaders from different regions.
               </p>
 
               {/* CTA Buttons */}
@@ -299,15 +299,15 @@ export default function PastSymposiumsPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6 text-balance">
                   Building Professional Excellence
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xl sm:text-2xl text-gold mb-6 leading-relaxed">
                   Organized by OXYZ Health International, each symposium focuses
                   on medical depth, professional exchange, and alignment — not
                   mass attendance.
                 </p>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
                   Each edition is curated to maintain professional quality and
                   meaningful interaction.
                 </p>
@@ -318,7 +318,7 @@ export default function PastSymposiumsPage() {
                       className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-3 bg-white border border-slate-200 rounded-lg p-4 hover:border-gold/30 transition-colors`}
                     >
                       <item.icon className="h-6 w-6 text-gold flex-shrink-0" />
-                      <span className="text-sm text-foreground">
+                      <span className="text-base sm:text-lg text-[#007A59]">
                         {item.text}
                       </span>
                     </div>
@@ -346,10 +346,10 @@ export default function PastSymposiumsPage() {
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                  Previous Symposium Highlights
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
+                  2025 International Training
                 </h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-xl sm:text-2xl text-gold">
                   Moments from our past events showcasing global participation and professional exchange
                 </p>
               </div>
@@ -357,8 +357,8 @@ export default function PastSymposiumsPage() {
 
             <div className="mb-12 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2025 Symposium
+                <h3 className="text-3xl font-semibold text-[#007A59] mb-6">
+                  2025 International Training
                 </h3>
               </div>
               <GalleryLoadMore
@@ -370,8 +370,8 @@ export default function PastSymposiumsPage() {
 
             <div className="animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2023 Symposium
+                <h3 className="text-3xl font-semibold text-[#007A59] mb-6">
+                  2023 International Training
                 </h3>
               </div>
               <GalleryGrid
@@ -387,10 +387,10 @@ export default function PastSymposiumsPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
                   Global Participation
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
                   Participants have included professionals from across the
                   globe, representing diverse healthcare systems and medical
                   specialties.
@@ -402,16 +402,16 @@ export default function PastSymposiumsPage() {
                       className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-center gap-3 bg-white border border-slate-200 hover:border-gold/30 transition-colors rounded-lg p-4`}
                     >
                       <Globe className="h-5 w-5 text-gold flex-shrink-0" />
-                      <span className="text-sm text-foreground">{region}</span>
+                      <span className="text-base sm:text-lg text-gold">{region}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="animate-on-scroll slide-in-right">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
                   Scientific Exchange & Collaboration
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
                   Our symposiums emphasize the core principles of responsible
                   regenerative medicine and structured clinical practice.
                 </p>
@@ -422,7 +422,7 @@ export default function PastSymposiumsPage() {
                       className={`animate-on-scroll stagger-${idx + 1} flex items-center gap-3 bg-gradient-to-r from-teal-dark to-teal text-white rounded-lg p-4 shadow-md`}
                     >
                       <div className="w-2 h-2 rounded-full bg-gold flex-shrink-0" />
-                      <span>{item}</span>
+                      <span className="text-gold text-base sm:text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -435,10 +435,10 @@ export default function PastSymposiumsPage() {
         <section className="py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6 animate-on-scroll">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gold mb-6 animate-on-scroll">
                 More Than an Event
               </h2>
-              <p className="text-lg text-secondary-foreground/90 mb-12 leading-relaxed animate-on-scroll">
+              <p className="text-xl sm:text-2xl text-gold mb-12 leading-relaxed animate-on-scroll">
                 For many participants, the symposium serves as a starting point
                 for collaboration, a platform for continued medical exchange,
                 and a gateway into the OXYZ ecosystem.
@@ -449,7 +449,7 @@ export default function PastSymposiumsPage() {
                   <h3 className="text-xl font-bold text-gold mb-3">
                     Starting Point
                   </h3>
-                  <p className="text-secondary-foreground/90 text-sm">
+                  <p className="text-gold text-base">
                     A launching pad for meaningful professional collaboration
                   </p>
                 </div>
@@ -457,13 +457,13 @@ export default function PastSymposiumsPage() {
                   <h3 className="text-xl font-bold text-gold mb-3">
                     Platform
                   </h3>
-                  <p className="text-secondary-foreground/90 text-sm">
+                  <p className="text-gold text-base">
                     For continued medical exchange and knowledge sharing
                   </p>
                 </div>
                 <div className="animate-on-scroll stagger-3 scale-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all">
                   <h3 className="text-xl font-bold text-gold mb-3">Gateway</h3>
-                  <p className="text-secondary-foreground/90 text-sm">
+                  <p className="text-gold text-base">
                     Into the broader OXYZ health ecosystem
                   </p>
                 </div>
@@ -476,10 +476,10 @@ export default function PastSymposiumsPage() {
         <section className="py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-on-scroll">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-4">
                 Our Impact
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-xl sm:text-2xl text-gold">
                 Numbers that reflect our global reach and influence
               </p>
             </div>
@@ -490,7 +490,7 @@ export default function PastSymposiumsPage() {
                   className={`animate-on-scroll stagger-${index + 1} scale-in group text-center p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border-2 border-slate-100 hover:border-gold/30 transition-all hover:shadow-lg`}
                 >
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2000} />
-                  <p className="text-muted-foreground font-medium">{stat.label}</p>
+                  <p className="text-[#007A59] text-lg font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>

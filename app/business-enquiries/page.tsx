@@ -126,7 +126,7 @@ const countryCodes = [
   { code: "+998", label: "Uzbekistan" },
 ];
 
-export default function ContactPage() {
+export default function BusinessEnquiriesPage() {
   useScrollAnimation();
 
   const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle")
@@ -144,7 +144,7 @@ export default function ContactPage() {
     setFormState("submitting")
 
     const whatsappMessage = [
-      "OXYZ Contact Form",
+      "OXYZ Business Enquiries Form",
       `Name: ${formData.name}`,
       `Email: ${formData.email}`,
       `Phone: ${formData.countryCode} ${formData.phone}`.trim(),
@@ -220,7 +220,7 @@ export default function ContactPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/about_hero.jpg"
-              alt="OXYZ Health International contact"
+              alt="OXYZ Health International business enquiries"
               fill
               priority
               sizes="100vw"
@@ -239,7 +239,7 @@ export default function ContactPage() {
               <div className="mb-6 animate-fade-in-up opacity-0 animation-delay-100">
                 <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
                   <MessageCircle className="h-4 w-4" />
-                  Contact Us
+                  Business Enquiries
                 </div>
               </div>
 
@@ -247,17 +247,17 @@ export default function ContactPage() {
               <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
                 <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    Let's Connect
+                    Business Enquiries
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                    Get in Touch with OXYZ Health International
+                    Partner with OXYZ Health International
                   </span>
                 </h1>
               </div>
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                Whether you have questions about the symposium, partnership opportunities, or want to learn more about our regenerative medicine ecosystem, we're here to help.
+                Share your business goals, partnership interests, or collaboration ideas. Our team will review and respond with the right next steps.
               </p>
 
               {/* CTA Buttons */}
@@ -302,7 +302,7 @@ export default function ContactPage() {
                 <p className="text-lg text-gold mb-10 leading-relaxed">
                   Whether you have questions about the symposium, partnership
                   opportunities, or want to learn more about our regenerative
-                  medicine ecosystem, we&apos;re here to help.
+                  medicine ecosystem, we're here to help.
                 </p>
 
                 <div className="space-y-6">
@@ -523,9 +523,9 @@ export default function ContactPage() {
                               <SelectValue placeholder="Select a topic" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="symposium">Symposium Enquiry</SelectItem>
-                              <SelectItem value="program">Program Request</SelectItem>
-                              <SelectItem value="partnership">Partnership Enquiry</SelectItem>
+                              <SelectItem value="business">Business Enquiry</SelectItem>
+                              <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                              <SelectItem value="distribution">Distribution Interest</SelectItem>
                               <SelectItem value="general">General Enquiry</SelectItem>
                             </SelectContent>
                           </Select>

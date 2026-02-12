@@ -247,25 +247,25 @@ export default function GalleryPage() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between animate-on-scroll">
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4">
                     Clinical depth meets strategic connection
                   </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-xl sm:text-2xl text-gold leading-relaxed">
                     Each frame captures collaboration, discussion, and the
                     standards that define the OXYZ ecosystem.
                   </p>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 text-sm text-[#007A59]">
                   <span className="h-2 w-2 rounded-full bg-gold" />
-                  Updated with the latest symposium highlights.
+                  Updated with the latest international training highlights.
                 </div>
               </div>
             </div>
 
             <div className="mt-16 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2025 Symposium
+                <h3 className="text-2xl font-semibold text-[#007A59] mb-6">
+                  2025 International Training
                 </h3>
               </div>
               <GalleryLoadMore
@@ -277,8 +277,8 @@ export default function GalleryPage() {
 
             <div className="mt-16 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2023 Symposium
+                <h3 className="text-2xl font-semibold text-[#007A59] mb-6">
+                  2023 International Training
                 </h3>
               </div>
               <GalleryGrid
@@ -294,11 +294,11 @@ export default function GalleryPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-6 animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59]">
                   Where strategy, science, and trust converge
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  OXYZ symposiums are designed for meaningful exchange and
+                <p className="text-xl sm:text-2xl text-gold leading-relaxed">
+                  OXYZ international trainings are designed for meaningful exchange and
                   clinical alignment, not mass attendance. The result is a
                   focused environment where relationships are built with depth.
                 </p>
@@ -331,7 +331,7 @@ export default function GalleryPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  {["/images/gallery-1/03.jpg", "/images/gallery-1/04.jpg"].map(
+                  {["/images/sym/03.jpg", "/images/sym/04.jpg"].map(
                     (src, idx) => (
                       <div
                         key={src}

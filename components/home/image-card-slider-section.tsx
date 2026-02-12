@@ -74,9 +74,9 @@ export function ImageCardSliderSection() {
         {/* Optional Header */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#007A59] mb-3">
-            Symposium Highlights
+            Past Highlights
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-gold text-lg sm:text-xl max-w-2xl mx-auto">
             Experience the energy and collaboration of our international symposiums
           </p>
         </div>

@@ -87,17 +87,13 @@ export function FiveDModelSection() {
           <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] mb-16">
             {/* Left Content */}
             <div className="max-w-2xl animate-on-scroll slide-in-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#007A59]/30 bg-[#007A59]/10 px-4 py-2 mb-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#007A59]">
-                  Our Framework
-                </span>
-              </div>
+              <div className="mb-6" />
               
               <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
                 One Model. Consistent Outcomes.
               </h2>
               
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-gold text-xl sm:text-2xl leading-relaxed mb-8">
                 At the core of OXYZ is the 5D Biological Regenerative Medical Model.
                 This framework ensures medical clarity before intervention,
                 responsible regenerative application, and consistent patient
@@ -110,7 +106,7 @@ export function FiveDModelSection() {
                   <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-[#007A59] mb-1">Medical Clarity</h3>
-                    <p className="text-sm text-muted-foreground">Comprehensive diagnostics before any intervention</p>
+                    <p className="text-sm text-gold">Comprehensive diagnostics before any intervention</p>
                   </div>
                 </div>
                 
@@ -118,7 +114,7 @@ export function FiveDModelSection() {
                   <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-[#007A59] mb-1">Responsible Application</h3>
-                    <p className="text-sm text-muted-foreground">Evidence-based regenerative protocols</p>
+                    <p className="text-sm text-gold">Evidence-based regenerative protocols</p>
                   </div>
                 </div>
                 
@@ -126,7 +122,7 @@ export function FiveDModelSection() {
                   <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-[#007A59] mb-1">Consistent Journeys</h3>
-                    <p className="text-sm text-muted-foreground">Standardized patient care across all centers</p>
+                    <p className="text-sm text-gold">Standardized patient care across all centers</p>
                   </div>
                 </div>
               </div>
@@ -162,7 +158,7 @@ export function FiveDModelSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-gold mt-4">
               Discover how our framework ensures medical excellence
             </p>
           </div>

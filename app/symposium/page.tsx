@@ -306,7 +306,7 @@ export default function SymposiumPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/symposium_hero.jpg"
-              alt="OXYZ Symposium 2026"
+              alt="OXYZ International Stem Cell Training 2026"
               fill
               priority
               sizes="100vw"
@@ -325,7 +325,7 @@ export default function SymposiumPage() {
               <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
                 <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    OXYZ International Symposium 2026
+                    OXYZ International Stem Cell Training 2026
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                     Regenerative Medicine & Strategic Collaboration
@@ -347,7 +347,7 @@ export default function SymposiumPage() {
                 <Link href="/register" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
+                    className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
                   >
                     Register Now
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -382,18 +382,18 @@ export default function SymposiumPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Medical Imperative
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed">
                   Regenerative medicine is redefining modern healthcare —
                   shifting the focus from symptom management to cellular repair,
                   biological optimization, and long-term patient outcomes.
                 </p>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                   However, true regenerative medicine requires medical
                   discipline, ethical application, structured clinical systems,
                   and responsible scaling.
                 </p>
                 <div className="bg-white rounded-lg p-6 border-l-4 border-gold shadow-sm">
-                  <p className="text-teal font-medium italic">
+                  <p className="text-[#007A59] text-lg sm:text-xl font-medium italic">
                     This symposium exists to address how regenerative medicine
                     should be practiced, integrated, and expanded — not as a
                     trend, but as a sustainable medical framework.
@@ -499,10 +499,10 @@ export default function SymposiumPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
                   Scientific & Medical Focus
                 </h2>
-                <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                   The emphasis is on medical depth, clarity, and governance —
                   not promotional medicine.
                 </p>
@@ -510,7 +510,7 @@ export default function SymposiumPage() {
                   {scientificFocus.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-start gap-3`}>
                       <CheckCircle2 className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-secondary-foreground/90">
+                      <span className="text-gold text-lg">
                         {item}
                       </span>
                     </li>
@@ -518,7 +518,7 @@ export default function SymposiumPage() {
                 </ul>
               </div>
               <div className="animate-on-scroll slide-in-right">
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
                   Symposium Format
                 </h2>
                 <div className="space-y-4">
@@ -526,13 +526,13 @@ export default function SymposiumPage() {
                     <h3 className="text-xl font-semibold text-gold mb-2">
                       Physical Symposium
                     </h3>
-                    <ul className="space-y-2 text-secondary-foreground/90">
+                    <ul className="space-y-2 text-gold text-lg">
                       <li>Medical & Scientific Sessions</li>
                       <li>Clinical Case Discussions</li>
                       <li>Live Treatment Observation*</li>
                       <li>Strategic Networking</li>
                     </ul>
-                    <p className="text-xs text-secondary-foreground/70 mt-3">
+                    <p className="text-xs text-gold/80 mt-3">
                       *Subject to ethical standards and regulatory compliance
                     </p>
                   </div>
@@ -540,7 +540,7 @@ export default function SymposiumPage() {
                     <h3 className="text-xl font-semibold text-gold mb-2">
                       Participants Will Gain
                     </h3>
-                    <ul className="space-y-2 text-secondary-foreground/90">
+                    <ul className="space-y-2 text-gold text-lg">
                       <li>Direct engagement with OXYZ leadership</li>
                       <li>Interaction with international professionals</li>
                       <li>Exposure to structured frameworks</li>
@@ -550,7 +550,7 @@ export default function SymposiumPage() {
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link href="/register">
-                    <Button className="bg-gold hover:bg-gold-dark text-foreground font-semibold">
+                    <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                       Register Now
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -581,7 +581,7 @@ export default function SymposiumPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 Strategic Pathways Exploration
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-gold text-xl sm:text-2xl leading-relaxed">
                 When regenerative medicine is practiced with integrity, natural
                 ecosystems emerge. This symposium introduces how medical
                 expertise can evolve into structured collaboration pathways.
@@ -597,7 +597,7 @@ export default function SymposiumPage() {
                   <h3 className="text-xl font-bold text-teal mb-3">
                     {pathway.title}
                   </h3>
-                  <p className="text-muted-foreground">{pathway.description}</p>
+                  <p className="text-gold text-lg">{pathway.description}</p>
                 </div>
               ))}
             </div>
@@ -629,10 +629,10 @@ export default function SymposiumPage() {
         <section className="py-24 bg-gradient-to-b from-[#0B3B2E] via-[#0F4B3A] to-[#0A2F24]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6 text-balance">
                 Choose Your Tier
               </h2>
-              <p className="text-lg text-slate-200 leading-relaxed">
+              <p className="text-gold text-xl sm:text-2xl leading-relaxed">
                 Compare features across all tiers to find the best fit for your professional goals.
               </p>
             </div>
@@ -708,7 +708,7 @@ export default function SymposiumPage() {
               ))}
             </div>
 
-            <p className="text-center text-slate-200 text-sm">
+            <p className="text-center text-gold text-sm">
               Early Bird rates apply to Package I only and must be completed by 28 February 2026.
             </p>
           </div>
@@ -723,7 +723,7 @@ export default function SymposiumPage() {
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                     2025 Symposium Overview
                   </h2>
-                  <p className="text-muted-foreground max-w-2xl">
+                  <p className="text-gold text-xl sm:text-2xl max-w-2xl">
                     A look back at our 2025 medical alignment forum, featuring
                     focused clinical sessions, international collaboration, and
                     practical regenerative discussions.
@@ -787,7 +787,7 @@ export default function SymposiumPage() {
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                     2023 Symposium Overview
                   </h2>
-                  <p className="text-muted-foreground max-w-2xl">
+                  <p className="text-gold text-xl sm:text-2xl max-w-2xl">
                     Highlights from the 2023 symposium focused on medical
                     governance, structured clinical frameworks, and ecosystem
                     building.

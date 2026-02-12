@@ -53,10 +53,10 @@ export function HeroSection() {
           <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
             <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                OXYZ Advanced Regenerative Medicine
+                OXYZ International Stem Cell Training
               </span>
               <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                Clinical & Strategic Collaboration 2.0 Program
+                Regenerative Medicine & Strategic Collaboration
               </span>
             </h1>
           </div>
@@ -74,7 +74,7 @@ export function HeroSection() {
                 size="lg"
                 className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
               >
-                Explore Symposium 2026
+                Discover more
               </Button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">

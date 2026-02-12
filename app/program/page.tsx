@@ -101,7 +101,7 @@ const packages = [
   {
     id: "package-i",
     title: "SILVER",
-    title2: "PACKAGE",
+    title2: "TIER",
     subtitle: "Stem Cell Scholar",
     price: "$2,500",
     priceNote: "per person",
@@ -120,7 +120,7 @@ const packages = [
   {
     id: "package-ii",
     title: "GOLD",
-    title2: "PACKAGE",
+    title2: "TIER",
     subtitle: "Immersive Experience",
     price: "$10,000",
     priceNote: "per person",
@@ -140,7 +140,7 @@ const packages = [
   {
     id: "package-iii",
     title: "PLATINUM",
-    title2: "PACKAGE",
+    title2: "TIER",
     subtitle: "Global Elite Partner",
     price: "$25,000",
     priceNote: "per person",
@@ -198,14 +198,14 @@ export default function ProgramPage() {
                     Program Overview
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                    Registration Options & Packages
+                    Registration Options & Tiers
                   </span>
                 </h1>
               </div>
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                Comprehensive details about the OXYZ International Symposium 2026, including registration options, fees, and what is included.
+                Comprehensive details about the OXYZ International Stem Cell Training 2026.
               </p>
 
               {/* CTA Buttons */}
@@ -245,14 +245,14 @@ export default function ProgramPage() {
               <div className="bg-muted rounded-lg p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="h-8 w-8 text-gold" />
-                  <h2 className="text-2xl font-bold text-foreground">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gold">
                     Symposium Dates
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
                   18 - 20 April 2026
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-gold text-lg sm:text-xl">
                   4 nights accommodation included for Silver, Gold, and Platinum Tier
                   participants
                 </p>
@@ -260,17 +260,17 @@ export default function ProgramPage() {
               <div className="bg-muted rounded-lg p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Clock className="h-8 w-8 text-gold" />
-                  <h2 className="text-2xl font-bold text-foreground">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gold">
                     Participant Capacity
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
                   80 - 100 Selected Professionals
                 </p>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-gold text-lg sm:text-xl mb-4">
                   Intentionally limited to ensure:
                 </p>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2 text-gold text-lg sm:text-xl">
                   <li>High-quality scientific exchange</li>
                   <li>Meaningful professional networking</li>
                   <li>Direct engagement with faculty and OXYZ leadership</li>
@@ -280,14 +280,14 @@ export default function ProgramPage() {
           </div>
         </section>
 
-        {/* Package Comparison */}
+        {/* Tier Comparison */}
         <section className="py-24 bg-gradient-to-b from-[#0B3B2E] via-[#0F4B3A] to-[#0A2F24]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gold mb-6 text-balance">
                 Choose Your Tier
               </h2>
-              <p className="text-lg text-slate-200 leading-relaxed">
+              <p className="text-gold text-2xl sm:text-3xl leading-relaxed">
                 Compare features across all tiers to find the best fit for your professional goals.
               </p>
             </div>
@@ -363,8 +363,8 @@ export default function ProgramPage() {
               ))}
             </div>
 
-            <p className="text-center text-slate-200 text-sm">
-              Early Bird rates apply to Package I only and must be completed by 28 February 2026.
+            <p className="text-center text-gold text-base sm:text-lg">
+              Early Bird rates apply to Silver Tier only and must be completed by 28 February 2026.
             </p>
           </div>
         </section>
@@ -373,13 +373,13 @@ export default function ProgramPage() {
         <section className="py-24 bg-teal-dark text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gold">
                 Program Overview
               </h2>
             </div>
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-secondary-foreground/80 text-lg leading-relaxed">
-                Full package inclusions are available upon request. Our team
+              <p className="text-gold text-2xl sm:text-3xl leading-relaxed">
+                Full tier inclusions are available upon request. Our team
                 will provide the most current program details, benefits, and
                 eligibility guidance based on your profile.
               </p>
@@ -389,7 +389,7 @@ export default function ProgramPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button className="bg-gold hover:bg-gold-dark text-foreground font-semibold">
+                  <Button className="bg-gold hover:bg-gold-dark text-white text-lg font-semibold">
                     Request More Details
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -405,7 +405,7 @@ export default function ProgramPage() {
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
                 <Info className="h-8 w-8 text-gold" />
-                <h2 className="text-3xl font-bold text-foreground">
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59]">
                   Important Information
                 </h2>
               </div>
@@ -416,7 +416,7 @@ export default function ProgramPage() {
                     className="flex items-start gap-3 bg-background rounded-lg p-4"
                   >
                     <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground">{info}</span>
+                    <span className="text-gold text-lg sm:text-xl">{info}</span>
                   </li>
                 ))}
               </ul>
@@ -469,7 +469,7 @@ export default function ProgramPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button size="lg" variant="ghost" className="px-8 text-white">
+                  <Button size="lg" variant="ghost" className="px-8 text-white text-lg">
                     Request More Details
                   </Button>
                 </Link>

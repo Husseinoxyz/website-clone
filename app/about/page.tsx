@@ -219,7 +219,7 @@ export default function AboutPage() {
         {/* Mission Statement */}
         <section className="py-16 bg-gold">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
-            <p className="text-2xl font-semibold text-white leading-relaxed">
+            <p className="text-2xl sm:text-3xl font-semibold text-[#007A59] leading-relaxed">
               We do not operate as a single clinic or product brand.
               <span className="block mt-2 text-teal-dark">
                 We build medical ecosystems.
@@ -236,13 +236,13 @@ export default function AboutPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Future of Medicine
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed">
                   At OXYZ, we believe the future of medicine lies in
                   regeneration, prevention, and biological optimization —
                   delivered through disciplined medical practice and structured
                   clinical systems.
                 </p>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                   Modern healthcare must move beyond symptom control toward:
                 </p>
                 <ul className="space-y-4 mb-8">
@@ -253,7 +253,7 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl leading-relaxed">
                   OXYZ was established to ensure regenerative medicine is
                   practiced responsibly, consistently, and sustainably across
                   all environments in which it is delivered.
@@ -279,7 +279,7 @@ export default function AboutPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 A Globally Structured Organization
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-gold text-xl sm:text-2xl leading-relaxed">
                 OXYZ operates through a deliberately structured international
                 footprint, ensuring scientific governance, operational
                 integrity, and scalability.
@@ -298,12 +298,12 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-teal mb-3">
                     {location.country}
                   </h3>
-                  <p className="text-muted-foreground">{location.description}</p>
+                  <p className="text-gold text-lg">{location.description}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-center text-muted-foreground animate-on-scroll">
+            <p className="text-center text-[#007A59] text-xl sm:text-2xl animate-on-scroll">
               This structure enables OXYZ to maintain medical consistency while
               supporting international expansion.
             </p>
@@ -315,31 +315,31 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
                   Our Medical Foundation
                 </h2>
-                <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                   OXYZ&apos;s clinical philosophy is grounded in integrative and
                   regenerative medicine, combining conventional medical science
                   with evidence-based complementary approaches.
                 </p>
-                <p className="text-secondary-foreground/90 mb-4">
+                <p className="text-gold text-xl sm:text-2xl mb-4">
                   Our work spans:
                 </p>
                 <ul className="space-y-3 mb-8">
                   {medicalFoundation.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-3`}>
                       <div className="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0" />
-                      <span className="text-secondary-foreground/90">{item}</span>
+                      <span className="text-gold text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="animate-on-scroll slide-in-right">
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
                   Clinical Pathways
                 </h2>
-                <p className="text-lg text-secondary-foreground/90 mb-8 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                   All OXYZ clinical pathways are designed with foundational
                   principles that ensure the highest standards of care.
                 </p>
@@ -350,7 +350,7 @@ export default function AboutPage() {
                       className={`animate-on-scroll stagger-${idx + 1} flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/15 transition-all`}
                     >
                       <principle.icon className="h-8 w-8 text-gold" />
-                      <span className="text-xl font-medium text-secondary-foreground">
+                      <span className="text-xl font-medium text-gold">
                         {principle.text}
                       </span>
                     </div>
@@ -378,14 +378,14 @@ export default function AboutPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   Beyond Clinics: A Medical Ecosystem
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed">
                   OXYZ extends beyond clinical care into a complete medical
                   ecosystem, supporting structured collaboration with medical
                   professionals, scientifically grounded product platforms,
                   international education, and scalable medical business models.
                 </p>
                 <div className="bg-white rounded-xl p-6 border-l-4 border-gold shadow-sm">
-                  <p className="text-foreground font-medium italic">
+                  <p className="text-gold text-xl font-medium italic">
                     Our ecosystem approach allows medical professionals to grow
                     responsibly, without compromising standards or outcomes.
                   </p>
@@ -402,7 +402,7 @@ export default function AboutPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6">
                 Our Commitment
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
                 OXYZ collaborates selectively. We work only with professionals
                 and organizations who share our commitment to medical integrity,
                 patient-centered outcomes, structured systems and governance,
@@ -429,7 +429,7 @@ export default function AboutPage() {
                   ))}
                 </ul>
                 <div className="bg-gradient-to-r from-teal-dark to-teal text-secondary-foreground rounded-xl p-6 shadow-lg">
-                  <p className="font-medium">
+                  <p className="text-gold text-xl sm:text-2xl font-medium">
                     OXYZ is not designed for rapid commercialization.
                     <span className="block mt-2 text-gold">
                       It is designed for sustainable medical excellence.

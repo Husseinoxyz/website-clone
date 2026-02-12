@@ -114,17 +114,13 @@ export function WhyOXYZSection() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Content */}
             <div className="animate-on-scroll slide-in-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#007A59]/30 bg-[#007A59]/10 px-4 py-2 mb-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#007A59]">
-                  Why Choose OXYZ
-                </span>
-              </div>
+              <div className="mb-6" />
               
               <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
                 Why Professionals Choose OXYZ
               </h2>
               
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+              <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed max-w-2xl">
                 We scale by alignment and capability, not volume. OXYZ integrates
                 regenerative medicine, preventive health, aesthetics, products,
                 and structured business models under one governance framework.
@@ -158,7 +154,7 @@ export function WhyOXYZSection() {
                 &ldquo;
               </div>
               <div className="relative">
-                <p className="text-xl text-secondary-foreground/95 leading-relaxed mb-8">
+                <p className="text-gold text-2xl leading-relaxed mb-8">
                   Regenerative medicine demands responsibility. Business
                   opportunities should emerge from medical mastery — not replace
                   it. OXYZ is not designed for rapid commercialization. It is

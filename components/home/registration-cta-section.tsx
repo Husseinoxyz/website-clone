@@ -2,173 +2,52 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Check,
-  X,
-} from "lucide-react";
-
-const packageFeatures = [
-  // Package I Features
-  {
-    name: "4 nights hotel stay (single occupancy, breakfast included)",
-    packageI: true,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "Full access to all 3-day symposium sessions",
-    packageI: true,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "All official meals and Gala Dinner",
-    packageI: true,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
-    packageI: true,
-    packageII: true,
-    packageIII: true,
-  },
-  // Package II Exclusive Features
-  {
-    name: "Advanced OXYZ product suite",
-    packageI: false,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "VIP on-site diagnostics",
-    packageI: false,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "1-on-1 clinical protocol consultation",
-    packageI: false,
-    packageII: true,
-    packageIII: true,
-  },
-  {
-    name: "Referral partnership",
-    packageI: false,
-    packageII: true,
-    packageIII: true,
-  },
-  // Package III Exclusive Features
-  {
-    name: "Root Cause BR Scan Machine with SOPs",
-    packageI: false,
-    packageII: false,
-    packageIII: true,
-  },
-  {
-    name: "Executive strategy and regional expansion planning",
-    packageI: false,
-    packageII: false,
-    packageIII: true,
-  },
-  {
-    name: "Security deposit waived",
-    packageI: false,
-    packageII: false,
-    packageIII: true,
-  },
-  {
-    name: "Post-event clinical and staff training",
-    packageI: false,
-    packageII: false,
-    packageIII: true,
-  },
-  {
-    name: "Elite business associate status",
-    packageI: false,
-    packageII: false,
-    packageIII: true,
-  },
-];
-
-const packageHighlights = [
-  "4 nights hotel stay (single occupancy, breakfast included)",
-  "Full access to all 3-day symposium sessions",
-  "All official meals and Gala Dinner",
-  "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
-];
+import { ArrowRight, Check } from "lucide-react";
 
 const packages = [
   {
-    id: "package-i",
+    id: "package-i-early-bird",
     title: "SILVER",
-    title2: "PACKAGE",
-    subtitle: "Essential Access · Clinical Introduction",
+    title2: "TIER",
+    subtitle: "Stem Cell Scholar (Early Bird)",
     price: "$2,500",
     priceNote: "per person",
-    standardPrice: "",
+    standardPrice: "Early Bird by 28 February 2026",
     borderColor: "border-[#8F959C]",
     accentGradient: "from-[#C5CBD3] to-[#8E969D]",
     textColor: "text-[#8F959C]",
     buttonClass: "bg-[#8F959C] hover:bg-[#7A8088] border-[#8F959C]",
     circleBorder: "border-[#8F959C]",
     features: [
-      "4-Night Hotel Stay (Single, Breakfast Included)",
-      "Full 3-Day Symposium Access + Gala Dinner",
-      "Joint Certificate (OXYZ Academy × DFGTT – Germany)",
-      "Entry-Level OXYZ Product Exposure",
-      "Clinical & Business Networking Access",
+      "4 nights hotel stay (single occupancy, breakfast included)",
+      "Full access to all 3-day symposium sessions",
+      "All official meals and Gala Dinner",
+      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
     registerType: "package-i-early-bird",
-    cta: "View Full Symposium Details",
+    cta: "Discover Silver",
   },
   {
-    id: "package-ii",
-    title: "GOLD",
-    title2: "PACKAGE",
-    subtitle: "Advanced Clinical Access · Growth Ready",
-    price: "$10,000",
+    id: "package-i-standard",
+    title: "SILVER",
+    title2: "TIER",
+    subtitle: "Stem Cell Scholar (Standard)",
+    price: "$3,000",
     priceNote: "per person",
-    standardPrice: "",
-    borderColor: "border-[#D3A400]",
-    accentGradient: "from-[#F5D866] to-[#D4A928]",
-    textColor: "text-[#E5B511]",
-    buttonClass: "bg-[#E5B511] hover:bg-[#D3A400] border-[#E5B511]",
-    circleBorder: "border-[#E5B511]",
+    standardPrice: "After 28 February 2026",
+    borderColor: "border-[#8F959C]",
+    accentGradient: "from-[#C5CBD3] to-[#8E969D]",
+    textColor: "text-[#8F959C]",
+    buttonClass: "bg-[#8F959C] hover:bg-[#7A8088] border-[#8F959C]",
+    circleBorder: "border-[#8F959C]",
     features: [
-      "4-Night Hotel Stay (Single, Breakfast Included)",
-      "Full 3-Day Symposium Access + All Official Meals",
-      "Joint Certificate (OXYZ Academy × DFGTT – Germany)",
-      "Advanced OXYZ Product Suite + VIP Diagnostics",
-      "1-on-1 Clinical Consultation & Referral Partnership",
+      "4 nights hotel stay (single occupancy, breakfast included)",
+      "Full access to all 3-day symposium sessions",
+      "All official meals and Gala Dinner",
+      "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
-    registerType: "package-ii",
-    popular: true,
-    cta: "Explore Symposium Experience",
-  },
-  {
-    id: "package-iii",
-    title: "PLATINUM",
-    title2: "PACKAGE",
-    subtitle: "Elite Partnership · Full Business & Clinical Authority",
-    price: "$25,000",
-    priceNote: "per person",
-    standardPrice: "",
-    borderColor: "border-[#A8B5C0]",
-    accentGradient: "from-[#E5E8EB] to-[#B8C5D0]",
-    textColor: "text-[#A8B5C0]",
-    buttonClass: "bg-[#A8B5C0] hover:bg-[#98A5B0] border-[#A8B5C0]",
-    circleBorder: "border-[#A8B5C0]",
-    features: [
-      "4-Night Hotel Stay (Single, Breakfast Included)",
-      "Full 3-Day Symposium Access + VIP Gala Experience",
-      "Joint Certificate (OXYZ Academy × DFGTT – Germany)",
-      "Complete OXYZ System + Root Cause BR Scan Machine",
-      "Executive Strategy, Training & Elite Associate Status",
-    ],
-    registerType: "package-iii",
-    cta: "Discover the Full Platinum Experience",
+    registerType: "package-i-standard",
+    cta: "Discover Silver",
   },
 ];
 
@@ -177,11 +56,11 @@ export function RegistrationCTASection() {
     <section className="py-24 bg-gradient-to-b from-[#0B3B2E] via-[#0F4B3A] to-[#0A2F24]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
-            Secure Your Place at Symposium 2026
+          <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6 text-balance">
+            Secure Your Place for OXYZ International Stem Cell Training 2026
           </h2>
-          <p className="text-lg text-slate-200 leading-relaxed">
-            This is a professionally curated symposium, not open to mass
+          <p className="text-lg text-gold leading-relaxed">
+            This is a professionally curated training, not open to mass
             registration. All registrations are subject to review and
             confirmation. Seats are allocated to ensure medical relevance and
             alignment.
@@ -189,7 +68,7 @@ export function RegistrationCTASection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid gap-16 sm:gap-10 md:gap-8 md:grid-cols-3 mb-12 pt-16">
+        <div className="grid gap-16 sm:gap-10 md:gap-8 md:grid-cols-2 mb-12 pt-16 max-w-5xl mx-auto">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
@@ -216,7 +95,7 @@ export function RegistrationCTASection() {
                 </div>
               )}
 
-              <div className="relative flex flex-col gap-6 p-8 pt-10">
+              <div className="relative flex flex-col gap-6 p-8 pt-10 min-h-[640px]">
                 {/* Package Title - Larger and positioned at top */}
                 <div>
                   <div className={`${pkg.textColor} border-b-2 ${pkg.borderColor} pb-4 mb-5 inline-block`}>
@@ -236,7 +115,7 @@ export function RegistrationCTASection() {
                 </div>
 
                 {/* Highlights */}
-                <ul className="space-y-3 flex-grow min-h-[220px]">
+                <ul className="space-y-3 flex-grow min-h-[320px]">
                   {pkg.features.map((feature) => (
                     <li
                       key={feature}
@@ -265,8 +144,8 @@ export function RegistrationCTASection() {
           ))}
         </div>
 
-        <p className="text-center text-slate-200 text-sm">
-          Early Bird rates apply to Package I only and must be completed by 28 February 2026.
+        <p className="text-center text-gold text-sm">
+          Early Bird rates apply to Silver Tier only and must be completed by 28 February 2026.
         </p>
       </div>
     </section>

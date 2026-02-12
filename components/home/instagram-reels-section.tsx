@@ -111,13 +111,11 @@ export function InstagramReelsSection() {
       <section className="py-24 bg-gradient-to-b from-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 animate-on-scroll">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold mb-4">
-              Testimonials
-            </p>
+            <div className="mb-4" />
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4 text-balance">
               Real Experiences From Our Community
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-gold text-xl leading-relaxed">
               Watch firsthand perspectives from doctors, partners, and attendees
               who experienced the OXYZ Symposium.
             </p>
