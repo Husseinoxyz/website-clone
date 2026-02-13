@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -38,36 +38,21 @@ function useScrollAnimation() {
 
 const reels = [
   {
-    id: "DQGs41-k3OG",
+    id: "test-1",
+    src: "/images/tesimonials/test-1.mp4",
   },
   {
-    id: "DPYPsWqEykT",
+    id: "test-2",
+    src: "/images/tesimonials/test-2.mp4",
   },
   {
-    id: "DOs1omqjUD3",
-  },
-  {
-    id: "DO5t4oNiTsE",
+    id: "test-3",
+    src: "/images/tesimonials/test-3.mp4",
   },
 ];
 
 export function InstagramReelsSection() {
   useScrollAnimation();
-  
-  const [loadedReels, setLoadedReels] = useState<Record<string, boolean>>({});
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoadedReels((prev) => {
-        const next = { ...prev };
-        reels.forEach((reel) => {
-          if (!next[reel.id]) next[reel.id] = true;
-        });
-        return next;
-      });
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <>
@@ -103,9 +88,6 @@ export function InstagramReelsSection() {
           transition-delay: 0.3s;
         }
 
-        .stagger-4 {
-          transition-delay: 0.4s;
-        }
       `}</style>
       
       <section className="py-24 bg-gradient-to-b from-white to-slate-50">
@@ -121,34 +103,23 @@ export function InstagramReelsSection() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {reels.map((reel, index) => {
-              const isLoaded = loadedReels[reel.id];
               return (
                 <div
                   key={reel.id}
                   className={`animate-on-scroll stagger-${index + 1} scale-in rounded-2xl border-2 border-slate-200 bg-white shadow-lg hover:shadow-xl overflow-hidden transition-all duration-300`}
                 >
                   <div className="relative aspect-[9/16] w-full bg-slate-50">
-                    {!isLoaded ? (
-                      <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-50 to-slate-100 text-slate-500">
-                        <div className="h-10 w-10 animate-spin rounded-full border-2 border-slate-300 border-t-gold" />
-                        <p className="text-sm font-semibold tracking-wide uppercase">
-                          Loading Reel
-                        </p>
-                      </div>
-                    ) : null}
-                    <iframe
-                      title={`OXYZ Training Reel ${index + 1}`}
-                      src={`https://www.instagram.com/reel/${reel.id}/embed`}
-                      className="h-full w-full"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen
-                      loading="lazy"
-                      onLoad={() =>
-                        setLoadedReels((prev) => ({ ...prev, [reel.id]: true }))
-                      }
-                    />
+                    <video
+                      title={`OXYZ Training Testimonial ${index + 1}`}
+                      className="h-full w-full object-cover bg-slate-100"
+                      controls
+                      playsInline
+                      preload={index === 0 ? "auto" : "metadata"}
+                    >
+                      <source src={reel.src} type="video/mp4" />
+                    </video>
                   </div>
                 </div>
               );
