@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GalleryGrid } from "@/components/symposium/gallery-grid";
+import { GalleryGrid } from "@/components/training/gallery-grid";
 
 type GalleryLoadMoreProps = {
   images: string[];

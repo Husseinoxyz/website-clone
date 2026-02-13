@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { GalleryGrid } from "@/components/symposium/gallery-grid";
-import { GalleryLoadMore } from "@/components/symposium/gallery-load-more";
+import { GalleryGrid } from "@/components/training/gallery-grid";
+import { GalleryLoadMore } from "@/components/training/gallery-load-more";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const gallery2025 = [
@@ -26,7 +26,7 @@ const gallery2025 = [
   "/images/sym/home_g_9.jpg",
 ].map((src) => ({
   src,
-  alt: "2025 symposium highlight",
+  alt: "2025 training highlight",
 }));
 
 const gallery2023 = Array.from({ length: 12 }, (_, index) => {
@@ -43,7 +43,7 @@ const gallery2023 = Array.from({ length: 12 }, (_, index) => {
 
   return {
     src,
-    alt: "2023 symposium highlight",
+    alt: "2023 training highlight",
   };
 });
 
@@ -65,7 +65,7 @@ export default function GalleryPage() {
                   Gallery
                 </div>
                 <h1 className="mt-6 text-4xl font-bold sm:text-5xl">
-                  Moments from the OXYZ Symposiums
+                  Moments from the OXYZ Trainings
                 </h1>
                 <p className="mt-6 text-lg text-secondary-foreground/80 leading-relaxed">
                   A curated visual archive of clinical exchange, strategic
@@ -81,7 +81,7 @@ export default function GalleryPage() {
                       </Button>
                     </Link>
                     <Link
-                      href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -92,12 +92,12 @@ export default function GalleryPage() {
                         Request Scientific Program
                       </Button>
                     </Link>
-                    <Link href="/past-symposiums">
+                    <Link href="/past-trainings">
                       <Button
                         variant="outline"
                         className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold bg-transparent"
                       >
-                        View Past Symposiums
+                        View Past Trainings
                       </Button>
                     </Link>
                   </div>
@@ -111,7 +111,7 @@ export default function GalleryPage() {
             <div className="relative min-h-[300px] sm:min-h-[420px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
                 src="/images/sym/gallery_hero.jpg"
-                alt="OXYZ symposium gathering"
+                alt="OXYZ training gathering"
                 fill
                 className="object-cover"
                 priority
@@ -137,7 +137,7 @@ export default function GalleryPage() {
               </div>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="h-2 w-2 rounded-full bg-gold" />
-                Updated with the latest symposium highlights.
+                Updated with the latest training highlights.
               </div>
             </div>
             </div>
@@ -145,11 +145,11 @@ export default function GalleryPage() {
             <div className="mt-16">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2025 Symposium
+                  2025 Training
                 </h3>
               </div>
               <GalleryLoadMore
-                alt="2025 symposium highlight"
+                alt="2025 training highlight"
                 images={gallery2025.map((image) => image.src)}
                 initialCount={12}
               />
@@ -158,11 +158,11 @@ export default function GalleryPage() {
             <div className="mt-16">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  2023 Symposium
+                  2023 Training
                 </h3>
               </div>
               <GalleryGrid
-                alt="2023 symposium highlight"
+                alt="2023 training highlight"
                 images={gallery2023.map((image) => image.src)}
               />
             </div>
@@ -177,7 +177,7 @@ export default function GalleryPage() {
                   Where strategy, science, and trust converge
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  OXYZ symposiums are designed for meaningful exchange and
+                  OXYZ trainings are designed for meaningful exchange and
                   clinical alignment, not mass attendance. The result is a
                   focused environment where relationships are built with depth.
                 </p>
@@ -217,7 +217,7 @@ export default function GalleryPage() {
                       >
                         <Image
                           src={src}
-                          alt="OXYZ symposium highlight"
+                          alt="OXYZ training highlight"
                           fill
                           className="object-cover"
                         />
@@ -245,7 +245,7 @@ export default function GalleryPage() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold">
-                  Be part of Symposium 2026
+                  Be part of Training 2026
                 </h2>
                 <p className="text-secondary-foreground/80 mt-2">
                   Register your interest and join the next cohort of leaders.

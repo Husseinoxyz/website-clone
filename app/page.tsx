@@ -6,7 +6,7 @@ import { MedicalEcosystemSection } from "@/components/home/medical-ecosystem-sec
 import { FiveDModelSection } from "@/components/home/five-d-model-section";
 import { GlobalSection } from "@/components/home/global-section";
 import { WhyOXYZSection } from "@/components/home/why-oxyz-section";
-import { SymposiumSection } from "@/components/home/symposium-section";
+import { TrainingSection } from "@/components/home/training-section";
 import { GallerySection } from "@/components/home/gallery-section";
 import { RegistrationCTASection } from "@/components/home/registration-cta-section";
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
@@ -23,7 +23,7 @@ export default function HomePage() {
         <GlobalSection />
         <WhyOXYZSection />
         <FiveDModelSection />
-        <SymposiumSection />
+        <TrainingSection />
         <GallerySection />
         <RegistrationCTASection />
         <InstagramReelsSection />

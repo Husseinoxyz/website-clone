@@ -60,7 +60,7 @@ const partnershipTiers = [
       "Educational resources access",
       "Quarterly newsletters",
       "Community forum access",
-      "Annual symposium discount",
+      "Annual training discount",
     ],
     highlight: false,
   },
@@ -72,7 +72,7 @@ const partnershipTiers = [
       "Patient referral network",
       "Protocol development support",
       "Marketing materials & support",
-      "Priority symposium registration",
+      "Priority training registration",
       "Quarterly webinars & training",
     ],
     highlight: true,
@@ -386,7 +386,7 @@ export default function WhyWorkWithUsPage() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 bg-transparent">
-                <Link href="/register">Attend the Symposium</Link>
+                <Link href="/register">Attend the Training</Link>
               </Button>
             </div>
           </div>

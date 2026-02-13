@@ -6,8 +6,8 @@ import { InstagramReelsSection } from "@/components/home/instagram-reels-section
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { GalleryGrid } from "@/components/symposium/gallery-grid";
-import { GalleryLoadMore } from "@/components/symposium/gallery-load-more";
+import { GalleryGrid } from "@/components/training/gallery-grid";
+import { GalleryLoadMore } from "@/components/training/gallery-load-more";
 import { ArrowRight, Globe, Users, BookOpen, Handshake } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -87,7 +87,7 @@ const gallery2025 = [
   "/images/sym/home_g_9.jpg",
 ].map((src) => ({
   src,
-  alt: "2025 symposium highlight",
+  alt: "2025 training highlight",
 }));
 
 const gallery2023 = Array.from({ length: 12 }, (_, index) => {
@@ -104,7 +104,7 @@ const gallery2023 = Array.from({ length: 12 }, (_, index) => {
 
   return {
     src,
-    alt: "2023 symposium highlight",
+    alt: "2023 training highlight",
   };
 });
 
@@ -164,7 +164,7 @@ function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: numbe
   );
 }
 
-export default function PastSymposiumsPage() {
+export default function PastTrainingsPage() {
   useScrollAnimation();
 
   return (
@@ -229,7 +229,7 @@ export default function PastSymposiumsPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/past_symposium.jpg"
-              alt="Past OXYZ symposium highlights"
+              alt="Past OXYZ training highlights"
               fill
               priority
               sizes="100vw"
@@ -276,7 +276,7 @@ export default function PastSymposiumsPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -303,7 +303,7 @@ export default function PastSymposiumsPage() {
                   Building Professional Excellence
                 </h2>
                 <p className="text-xl sm:text-2xl text-gold mb-6 leading-relaxed">
-                  Organized by OXYZ Health International, each symposium focuses
+                  Organized by OXYZ Health International, each training focuses
                   on medical depth, professional exchange, and alignment — not
                   mass attendance.
                 </p>
@@ -329,7 +329,7 @@ export default function PastSymposiumsPage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/sym/about_hero.jpg"
-                    alt="Past symposium"
+                    alt="Past training"
                     width={600}
                     height={450}
                     className="rounded-2xl"
@@ -362,7 +362,7 @@ export default function PastSymposiumsPage() {
                 </h3>
               </div>
               <GalleryLoadMore
-                alt="2025 symposium highlight"
+                alt="2025 training highlight"
                 images={gallery2025.map((image) => image.src)}
                 initialCount={12}
               />
@@ -375,7 +375,7 @@ export default function PastSymposiumsPage() {
                 </h3>
               </div>
               <GalleryGrid
-                alt="2023 symposium highlight"
+                alt="2023 training highlight"
                 images={gallery2023.map((image) => image.src)}
               />
             </div>
@@ -412,7 +412,7 @@ export default function PastSymposiumsPage() {
                   Scientific Exchange & Collaboration
                 </h2>
                 <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
-                  Our symposiums emphasize the core principles of responsible
+                  Our trainings emphasize the core principles of responsible
                   regenerative medicine and structured clinical practice.
                 </p>
                 <ul className="space-y-4">
@@ -439,7 +439,7 @@ export default function PastSymposiumsPage() {
                 More Than an Event
               </h2>
               <p className="text-xl sm:text-2xl text-gold mb-12 leading-relaxed animate-on-scroll">
-                For many participants, the symposium serves as a starting point
+                For many participants, the training serves as a starting point
                 for collaboration, a platform for continued medical exchange,
                 and a gateway into the OXYZ ecosystem.
               </p>
@@ -515,17 +515,17 @@ export default function PastSymposiumsPage() {
                 Looking Ahead
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-on-scroll">
-                Building on previous editions, the OXYZ International Symposium
+                Building on previous editions, the OXYZ International Training
                 2026 will continue to strengthen medical credibility,
                 professional networks, and structured collaboration pathways.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll scale-in">
-                <Link href="/symposium">
+                <Link href="/training">
                   <Button
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Explore Symposium 2026
+                    Explore Training 2026
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -549,7 +549,7 @@ export default function PastSymposiumsPage() {
         <section className="py-12 bg-gradient-to-b from-slate-50 to-white border-t border-border">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-muted-foreground italic text-lg animate-on-scroll">
-              "OXYZ symposiums are built on alignment, professionalism, and
+              "OXYZ trainings are built on alignment, professionalism, and
               long-term impact."
             </p>
           </div>

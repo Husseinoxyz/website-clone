@@ -67,7 +67,7 @@ export function CountdownSection() {
               28 February 2026
             </h2>
             <p className="mt-3 text-white/80">
-              Symposium date: 18 - 20 April 2026
+              Training date: 18 - 20 April 2026
             </p>
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
               {[
@@ -123,7 +123,7 @@ export function CountdownSection() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
+              <Link href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
                 <Button
                   variant="outline"
                   className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"

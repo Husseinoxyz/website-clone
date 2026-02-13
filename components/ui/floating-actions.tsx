@@ -19,7 +19,7 @@ export function FloatingActions() {
     <>
       <div className="fixed right-4 top-1/2 z-50 flex -translate-y-1/2 flex-col gap-3">
         <a
-          href="tel:+16466478616"
+          href="tel:+6586163762"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-teal text-white shadow-lg transition-transform hover:-translate-y-0.5"
           aria-label="Call us"
         >
@@ -33,7 +33,7 @@ export function FloatingActions() {
           <Mail className="h-5 w-5" />
         </a>
         <a
-          href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+          href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
           target="_blank"
           rel="noreferrer"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:-translate-y-0.5"

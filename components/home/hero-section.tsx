@@ -1,46 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const heroImages = [
-  "/images/hero-bg-1.jpg",
-  "/images/hero-bg-2.jpg",
-  "/images/hero-bg-3.jpg",
-  "/images/hero-bg-4.jpg",
-  "/images/hero-bg-5.jpg",
-];
-
 export function HeroSection() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative w-full min-h-screen">
-      {/* Background Images with Carousel */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        {heroImages.map((src, index) => (
-          <Image
-            key={src}
-            src={src}
-            alt="OXYZ regenerative medicine collaboration"
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className={`object-cover transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
-        
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/hero-bg-1.jpg"
+        >
+          <source src="/images/Hero.mp4" type="video/mp4" />
+        </video>
+
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10" />
       </div>
@@ -69,7 +47,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
-            <Link href="/symposium" className="w-full sm:w-auto">
+            <Link href="/training" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"

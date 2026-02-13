@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
-  symposium: [
-    { name: "Overview", href: "/symposium" },
+  training: [
+    { name: "Overview", href: "/training" },
     { name: "Program Details", href: "/program" },
     { name: "Registration", href: "/register" },
-    { name: "Past Symposiums", href: "/past-symposiums" },
+    { name: "Past Trainings", href: "/past-trainings" },
   ],
   company: [
     { name: "About OXYZ", href: "/about" },
@@ -41,13 +41,13 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Symposium Links */}
+          {/* Training Links */}
           <div>
             <h3 className="text-sm font-semibold text-gold uppercase tracking-wider mb-4">
-              Symposium 2026
+              Stem Cell Training 2026
             </h3>
             <ul className="space-y-3">
-              {footerLinks.symposium.map((link) => (
+              {footerLinks.training.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -97,10 +97,10 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                 <a
-                  href="tel:+16466478616"
+                  href="tel:+6586163762"
                   className="text-sm text-secondary-foreground/80 hover:text-gold transition-colors"
                 >
-                  +1 646 647 8616
+                  +65 8616 3762
                 </a>
               </li>
               <li className="flex items-start gap-3">

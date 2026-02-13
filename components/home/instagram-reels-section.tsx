@@ -117,7 +117,7 @@ export function InstagramReelsSection() {
             </h2>
             <p className="text-gold text-xl leading-relaxed">
               Watch firsthand perspectives from doctors, partners, and attendees
-              who experienced the OXYZ Symposium.
+              who experienced the OXYZ Training.
             </p>
           </div>
 
@@ -139,7 +139,7 @@ export function InstagramReelsSection() {
                       </div>
                     ) : null}
                     <iframe
-                      title={`OXYZ Symposium Reel ${index + 1}`}
+                      title={`OXYZ Training Reel ${index + 1}`}
                       src={`https://www.instagram.com/reel/${reel.id}/embed`}
                       className="h-full w-full"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"

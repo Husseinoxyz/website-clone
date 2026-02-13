@@ -6,8 +6,8 @@ import { InstagramReelsSection } from "@/components/home/instagram-reels-section
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { CountdownSection } from "@/components/symposium/countdown-section";
-import { GalleryGrid } from "@/components/symposium/gallery-grid";
+import { CountdownSection } from "@/components/training/countdown-section";
+import { GalleryGrid } from "@/components/training/gallery-grid";
 import {
   ArrowRight,
   Calendar,
@@ -107,7 +107,7 @@ const packageFeatures = [
     packageIII: true,
   },
   {
-    name: "Full access to all 3-day symposium sessions",
+    name: "Full access to all 3-day training sessions",
     packageI: true,
     packageII: true,
     packageIII: true,
@@ -241,7 +241,7 @@ const packages = [
   },
 ];
 
-export default function SymposiumPage() {
+export default function TrainingPage() {
   useScrollAnimation();
 
   return (
@@ -354,7 +354,7 @@ export default function SymposiumPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -394,7 +394,7 @@ export default function SymposiumPage() {
                 </p>
                 <div className="bg-white rounded-lg p-6 border-l-4 border-gold shadow-sm">
                   <p className="text-[#007A59] text-lg sm:text-xl font-medium italic">
-                    This symposium exists to address how regenerative medicine
+                    This training exists to address how regenerative medicine
                     should be practiced, integrated, and expanded — not as a
                     trend, but as a sustainable medical framework.
                   </p>
@@ -407,7 +407,7 @@ export default function SymposiumPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -449,10 +449,10 @@ export default function SymposiumPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
-                Who This Symposium Is For
+                Who This Training Is For
               </h2>
               <p className="text-lg text-white/80 leading-relaxed">
-                This symposium is curated for professionals who meet both
+                This training is curated for professionals who meet both
                 medical and strategic readiness.
               </p>
             </div>
@@ -478,7 +478,7 @@ export default function SymposiumPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -519,12 +519,12 @@ export default function SymposiumPage() {
               </div>
               <div className="animate-on-scroll slide-in-right">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
-                  Symposium Format
+                  Training Format
                 </h2>
                 <div className="space-y-4">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                     <h3 className="text-xl font-semibold text-gold mb-2">
-                      Physical Symposium
+                      Physical Training
                     </h3>
                     <ul className="space-y-2 text-gold text-lg">
                       <li>Medical & Scientific Sessions</li>
@@ -556,7 +556,7 @@ export default function SymposiumPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -583,7 +583,7 @@ export default function SymposiumPage() {
               </h2>
               <p className="text-gold text-xl sm:text-2xl leading-relaxed">
                 When regenerative medicine is practiced with integrity, natural
-                ecosystems emerge. This symposium introduces how medical
+                ecosystems emerge. This training introduces how medical
                 expertise can evolve into structured collaboration pathways.
               </p>
             </div>
@@ -609,7 +609,7 @@ export default function SymposiumPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -714,14 +714,14 @@ export default function SymposiumPage() {
           </div>
         </section>
 
-        {/* Symposium 2025 Overview */}
+        {/* Training 2025 Overview */}
         <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
                 <div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2025 Symposium Overview
+                    2025 Training Overview
                   </h2>
                   <p className="text-gold text-xl sm:text-2xl max-w-2xl">
                     A look back at our 2025 medical alignment forum, featuring
@@ -729,7 +729,7 @@ export default function SymposiumPage() {
                     practical regenerative discussions.
                   </p>
                 </div>
-                <Link href="/past-symposiums">
+                <Link href="/past-trainings">
                   <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
                     View Full Gallery
                   </Button>
@@ -739,7 +739,7 @@ export default function SymposiumPage() {
 
             <div className="animate-on-scroll">
               <GalleryGrid
-                alt="Symposium 2025 gallery"
+                alt="Training 2025 gallery"
                 images={[
                   "/images/sym/home_g_1.jpg",
                   "/images/sym/home_g_2.jpg",
@@ -762,7 +762,7 @@ export default function SymposiumPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -778,22 +778,22 @@ export default function SymposiumPage() {
         </section>
 
 
-        {/* Symposium 2023 Overview */}
+        {/* Training 2023 Overview */}
         <section className="py-24 bg-white">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
                 <div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2023 Symposium Overview
+                    2023 Training Overview
                   </h2>
                   <p className="text-gold text-xl sm:text-2xl max-w-2xl">
-                    Highlights from the 2023 symposium focused on medical
+                    Highlights from the 2023 training focused on medical
                     governance, structured clinical frameworks, and ecosystem
                     building.
                   </p>
                 </div>
-                <Link href="/past-symposiums">
+                <Link href="/past-trainings">
                   <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
                     View Full Gallery
                   </Button>
@@ -803,7 +803,7 @@ export default function SymposiumPage() {
 
             <div className="animate-on-scroll">
               <GalleryGrid
-                alt="Symposium 2023 gallery"
+                alt="Training 2023 gallery"
                 images={[
                   "/images/sym/012.png",
                   "/images/sym/02.jpg",
@@ -823,7 +823,7 @@ export default function SymposiumPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -844,7 +844,7 @@ export default function SymposiumPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
-              alt="Symposium CTA background"
+              alt="Training CTA background"
               fill
               className="object-cover"
               sizes="100vw"
@@ -854,10 +854,10 @@ export default function SymposiumPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-12 text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
-                Ready to Join Symposium 2026?
+                Ready to Join Training 2026?
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
-                This symposium is intended for professionals seeking depth,
+                This training is intended for professionals seeking depth,
                 alignment, and long-term impact. Apply now to secure your place.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -871,7 +871,7 @@ export default function SymposiumPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >

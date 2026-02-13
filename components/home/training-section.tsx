@@ -40,7 +40,7 @@ function useScrollAnimation() {
   }, []);
 }
 
-export function SymposiumSection() {
+export function TrainingSection() {
   useScrollAnimation();
 
   return (
@@ -98,7 +98,7 @@ export function SymposiumSection() {
         <div className="absolute inset-0 -z-20">
           <Image
             src="/images/sym/symposium_hero.jpg"
-            alt="OXYZ Symposium background"
+            alt="OXYZ Training background"
             fill
             className="object-cover blur-sm"
             priority
@@ -154,7 +154,7 @@ export function SymposiumSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll">
-                <Link href="/symposium">
+                <Link href="/training">
                   <Button className="bg-gold hover:bg-gold-dark text-[#007A59] font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
                     Explore More
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -172,11 +172,14 @@ export function SymposiumSection() {
             </div>
 
             {/* Image */}
-            <div className="relative animate-on-scroll slide-in-right scale-in">
+            <Link
+              href="/register?type=silver-tier-early-bird"
+              className="relative block animate-on-scroll slide-in-right scale-in"
+            >
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/sym/symposium_hero.jpg"
-                  alt="OXYZ Symposium"
+                  alt="OXYZ Training"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -188,7 +191,7 @@ export function SymposiumSection() {
                 <p className="text-2xl font-bold">USD 2,500</p>
                 <p className="text-xs mt-1">Until 28 Feb 2026</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

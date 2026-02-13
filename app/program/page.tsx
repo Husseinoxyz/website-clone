@@ -22,7 +22,7 @@ const packageFeatures = [
     packageIII: true,
   },
   {
-    name: "Full access to all 3-day symposium sessions",
+    name: "Full access to all 3-day training sessions",
     packageI: true,
     packageII: true,
     packageIII: true,
@@ -176,7 +176,7 @@ export default function ProgramPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/program_hero.jpg"
-              alt="Symposium program overview"
+              alt="Training program overview"
               fill
               priority
               sizes="100vw"
@@ -220,7 +220,7 @@ export default function ProgramPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -246,7 +246,7 @@ export default function ProgramPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="h-8 w-8 text-gold" />
                   <h2 className="text-3xl sm:text-4xl font-bold text-gold">
-                    Symposium Dates
+                    Training Dates
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
@@ -385,7 +385,7 @@ export default function ProgramPage() {
               </p>
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -455,17 +455,8 @@ export default function ProgramPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/register?type=gold-tier">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold px-8 bg-transparent"
-                  >
-                    Register for Gold Tier
-                  </Button>
-                </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >

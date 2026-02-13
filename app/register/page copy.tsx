@@ -30,7 +30,7 @@ const registrationTypes = [
     deadline: "Early Bird by 28 February 2026",
     features: [
       "4 nights hotel stay (single occupancy, breakfast included)",
-      "Full access to all 3-day symposium sessions",
+      "Full access to all 3-day training sessions",
       "All official meals and Gala Dinner",
       "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
@@ -43,7 +43,7 @@ const registrationTypes = [
     deadline: "After 28 February 2026",
     features: [
       "4 nights hotel stay (single occupancy, breakfast included)",
-      "Full access to all 3-day symposium sessions",
+      "Full access to all 3-day training sessions",
       "All official meals and Gala Dinner",
       "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
     ],
@@ -152,11 +152,11 @@ function RegistrationContent() {
           <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
             <div className="mx-auto max-w-2xl">
               <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
-                Register for Symposium 2026
+                Register for Training 2026
               </h1>
               <p className="text-xl text-secondary-foreground/90 leading-relaxed">
                 Complete your registration for the OXYZ International
-                Regenerative Medicine & Strategic Collaboration Symposium 2026.
+                Regenerative Medicine & Strategic Collaboration Training 2026.
               </p>
             </div>
           </div>
@@ -164,7 +164,7 @@ function RegistrationContent() {
           <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
             <Image
               src="/images/sym/register_hero.jpg"
-              alt="Symposium registration"
+              alt="Training registration"
               fill
               className="object-cover"
               priority
@@ -343,7 +343,7 @@ function RegistrationContent() {
                     </div>
                     <div className="sm:col-span-2">
                       <Label htmlFor="interest">
-                        Area of Interest at Symposium
+                        Area of Interest at Training
                       </Label>
                       <Textarea
                         id="interest"
@@ -352,7 +352,7 @@ function RegistrationContent() {
                         onChange={handleInputChange}
                         className="mt-1"
                         rows={3}
-                        placeholder="What are you hoping to learn or achieve at the symposium?"
+                        placeholder="What are you hoping to learn or achieve at the training?"
                       />
                     </div>
                   </div>

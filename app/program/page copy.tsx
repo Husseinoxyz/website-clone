@@ -24,7 +24,7 @@ const packageIFeatures = [
   },
   {
     icon: Users,
-    text: "Full access to all 3-day symposium sessions",
+    text: "Full access to all 3-day training sessions",
   },
   {
     icon: ClipboardCheck,
@@ -99,7 +99,7 @@ export default function ProgramPage() {
                   Program Overview
                 </h1>
                 <p className="text-xl text-secondary-foreground/80 leading-relaxed">
-                  Comprehensive details about the OXYZ International Symposium
+                  Comprehensive details about the OXYZ International Training
                   2026, including registration options, fees, and what is
                   included.
                 </p>
@@ -111,7 +111,7 @@ export default function ProgramPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -129,7 +129,7 @@ export default function ProgramPage() {
             <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
                 src="/images/sym/program_hero.jpg"
-                alt="Symposium program overview"
+                alt="Training program overview"
                 fill
                 className="object-cover"
                 priority
@@ -148,7 +148,7 @@ export default function ProgramPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="h-8 w-8 text-gold" />
                   <h2 className="text-2xl font-bold text-foreground">
-                    Symposium Dates
+                    Training Dates
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
@@ -187,10 +187,10 @@ export default function ProgramPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
-                Secure Your Place at Symposium 2026
+                Secure Your Place at Training 2026
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                This is a professionally curated symposium, not open to mass
+                This is a professionally curated training, not open to mass
                 registration. All registrations are subject to review and
                 confirmation. Seats are allocated to ensure medical relevance
                 and alignment.
@@ -210,7 +210,7 @@ export default function ProgramPage() {
                       Early Bird
                     </span>
                     <p className="mt-2 text-sm font-semibold text-foreground/90">
-                      Includes Symposium Access + Hospitality:
+                      Includes Training Access + Hospitality:
                     </p>
                     <ul className="mt-4 grid gap-4">
                       {packageIFeatures.map((feature) => (
@@ -344,7 +344,7 @@ export default function ProgramPage() {
               </p>
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -424,7 +424,7 @@ export default function ProgramPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >

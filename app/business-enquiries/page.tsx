@@ -153,7 +153,7 @@ export default function BusinessEnquiriesPage() {
     ].join("\n")
 
     const encodedMessage = encodeURIComponent(whatsappMessage)
-    window.open(`https://wa.me/16466478616?text=${encodedMessage}`, "_blank", "noopener,noreferrer")
+    window.open(`https://wa.me/6586163762?text=${encodedMessage}`, "_blank", "noopener,noreferrer")
     setFormState("success")
   }
 
@@ -272,7 +272,7 @@ export default function BusinessEnquiriesPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -300,7 +300,7 @@ export default function BusinessEnquiriesPage() {
                   Get In Touch
                 </h2>
                 <p className="text-lg text-gold mb-10 leading-relaxed">
-                  Whether you have questions about the symposium, partnership
+                  Whether you have questions about the training, partnership
                   opportunities, or want to learn more about our regenerative
                   medicine ecosystem, we're here to help.
                 </p>
@@ -333,11 +333,11 @@ export default function BusinessEnquiriesPage() {
                       </h3>
                       <a
                         className="text-gold hover:text-gold/80 transition-colors"
-                        href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                        href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                         target="_blank"
                         rel="noreferrer"
                       >
-                        +1 646 647 8616
+                        +65 8616 3762
                       </a>
                     </div>
                   </div>
@@ -382,10 +382,10 @@ export default function BusinessEnquiriesPage() {
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                     >
                       <ArrowRight className="h-3 w-3" />
-                      Register for Symposium
+                      Register for Training
                     </Link>
                     <a
-                      href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noreferrer"

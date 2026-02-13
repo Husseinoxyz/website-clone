@@ -91,12 +91,12 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 animate-fade-in-up opacity-0 animation-delay-600">
-              <Link href="/symposium" className="w-full sm:w-auto">
+              <Link href="/training" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="w-full sm:w-auto bg-[#007A59] hover:bg-[#006048] text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base shadow-lg shadow-[#007A59]/30 transition-all hover:shadow-xl hover:shadow-[#007A59]/40 hover:scale-105"
                 >
-                  Explore Symposium 2026
+                  Explore Training 2026
                 </Button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">
@@ -118,7 +118,7 @@ export function HeroSection() {
             <Image
               key={src}
               src={src}
-              alt="Medical symposium - professionals collaborating in regenerative medicine"
+              alt="Medical training - professionals collaborating in regenerative medicine"
               fill
               priority={index === 0}
               sizes="(max-width: 1024px) 100vw, 50vw"

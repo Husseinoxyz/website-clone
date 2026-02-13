@@ -5,7 +5,7 @@ import Image from "next/image";
 const slides = [
   {
     src: "/images/sym/slide_1.jpg",
-    alt: "Specialists collaborating during a symposium session",
+    alt: "Specialists collaborating during a training session",
     title: "Collaborative Sessions",
   },
   {
@@ -25,7 +25,7 @@ const slides = [
   },
   {
     src: "/images/sym/slide_5.jpg",
-    alt: "Laboratory demonstration at the symposium",
+    alt: "Laboratory demonstration at the training",
     title: "Hands-On Demos",
   },
   {
@@ -35,7 +35,7 @@ const slides = [
   },
   {
     src: "/images/sym/slide_7.jpg",
-    alt: "Symposium breakout discussion",
+    alt: "Training breakout discussion",
     title: "Breakout Sessions",
   },
 ];
@@ -77,7 +77,7 @@ export function ImageCardSliderSection() {
             Past Highlights
           </h2>
           <p className="text-gold text-lg sm:text-xl max-w-2xl mx-auto">
-            Experience the energy and collaboration of our international symposiums
+            Experience the energy and collaboration of our international trainings
           </p>
         </div>
 

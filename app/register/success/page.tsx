@@ -20,7 +20,7 @@ export default function RegistrationSuccessPage() {
             </h1>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Thank you for registering for the OXYZ International Symposium
+              Thank you for registering for the OXYZ International Training
               2026. Your payment has been received and your registration is now
               being processed.
             </p>
@@ -81,7 +81,7 @@ export default function RegistrationSuccessPage() {
                 <span className="text-gold font-bold">18-20 April 2026</span>
               </p>
               <p className="text-sm text-secondary-foreground/80 mt-2">
-                OXYZ International Symposium 2026, Malaysia
+                OXYZ International Training 2026, Malaysia
               </p>
             </div>
 
@@ -92,12 +92,12 @@ export default function RegistrationSuccessPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/symposium">
+              <Link href="/training">
                 <Button
                   variant="outline"
                   className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold px-8 bg-transparent"
                 >
-                  View Symposium Details
+                  View Training Details
                 </Button>
               </Link>
             </div>

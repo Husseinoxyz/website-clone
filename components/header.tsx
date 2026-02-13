@@ -9,9 +9,9 @@ import { Menu, X } from "lucide-react";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About OXYZ", href: "/about" },
-  { name: "2026 Training", href: "/symposium" },
+  { name: "2026 Training", href: "/training" },
   { name: "Program", href: "/program" },
-  { name: "Past Trainings", href: "/past-symposiums" },
+  { name: "Past Trainings", href: "/past-trainings" },
   { name: "Business Enquiries", href: "/business-enquiries" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },

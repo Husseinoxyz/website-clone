@@ -99,7 +99,7 @@ function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: numbe
 const galleryImages = [
   {
     src: "/images/sym/home_g_1.jpg",
-    alt: "International doctors at symposium",
+    alt: "International doctors at training",
   },
   {
     src: "/images/sym/home_g_2.jpg",
@@ -119,7 +119,7 @@ const galleryImages = [
   },
   {
     src: "/images/sym/home_g_6.jpg",
-    alt: "Symposium attendees",
+    alt: "Training attendees",
   },
   {
     src: "/images/sym/home_g_7.jpg",
@@ -243,12 +243,12 @@ export function GallerySection() {
           </div>
 
           <div className="text-center animate-on-scroll">
-            <Link href="/past-symposiums">
+            <Link href="/past-trainings">
               <Button 
                 size="lg"
                 className="bg-[#007A59] hover:bg-[#006048] text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
-                View All Past Symposiums
+                View More Past Event Highlights
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

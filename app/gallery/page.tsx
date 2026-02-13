@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { GalleryGrid } from "@/components/symposium/gallery-grid";
-import { GalleryLoadMore } from "@/components/symposium/gallery-load-more";
+import { GalleryGrid } from "@/components/training/gallery-grid";
+import { GalleryLoadMore } from "@/components/training/gallery-load-more";
 import { ArrowRight, Sparkles, Camera, Globe, Users } from "lucide-react";
 import { useEffect } from "react";
 
@@ -63,7 +63,7 @@ const gallery2025 = [
   "/images/sym/home_g_9.jpg",
 ].map((src) => ({
   src,
-  alt: "2025 symposium highlight",
+  alt: "2025 training highlight",
 }));
 
 const gallery2023 = Array.from({ length: 12 }, (_, index) => {
@@ -80,7 +80,7 @@ const gallery2023 = Array.from({ length: 12 }, (_, index) => {
 
   return {
     src,
-    alt: "2023 symposium highlight",
+    alt: "2023 training highlight",
   };
 });
 
@@ -155,7 +155,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/gallery_hero.jpg"
-              alt="OXYZ symposium gathering"
+              alt="OXYZ training gathering"
               fill
               priority
               sizes="100vw"
@@ -185,7 +185,7 @@ export default function GalleryPage() {
                     Moments from the
                   </span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                    OXYZ Symposiums
+                    OXYZ Trainings
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                     A Visual Archive of Clinical Excellence
@@ -223,7 +223,7 @@ export default function GalleryPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/16466478616?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Symposium%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -269,7 +269,7 @@ export default function GalleryPage() {
                 </h3>
               </div>
               <GalleryLoadMore
-                alt="2025 symposium highlight"
+                alt="2025 training highlight"
                 images={gallery2025.map((image) => image.src)}
                 initialCount={12}
               />
@@ -282,7 +282,7 @@ export default function GalleryPage() {
                 </h3>
               </div>
               <GalleryGrid
-                alt="2023 symposium highlight"
+                alt="2023 training highlight"
                 images={gallery2023.map((image) => image.src)}
               />
             </div>
@@ -339,7 +339,7 @@ export default function GalleryPage() {
                       >
                         <Image
                           src={src}
-                          alt="OXYZ symposium highlight"
+                          alt="OXYZ training highlight"
                           fill
                           className="object-cover hover:scale-105 transition-transform duration-300"
                         />
@@ -367,7 +367,7 @@ export default function GalleryPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Be Part of Symposium 2026
+                Be Part of Training 2026
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8">
                 Register your interest and join the next cohort of leaders shaping the future of regenerative medicine.
@@ -382,13 +382,13 @@ export default function GalleryPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/past-symposiums">
+                <Link href="/past-trainings">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-semibold px-8 bg-transparent"
                   >
-                    View Past Symposiums
+                    View Past Trainings
                   </Button>
                 </Link>
               </div>

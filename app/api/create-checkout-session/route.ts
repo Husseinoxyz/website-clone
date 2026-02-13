@@ -106,8 +106,8 @@ export async function POST(request: Request) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: `OXYZ Symposium 2026 - ${registration.name}`,
-              description: `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Symposium 2026`,
+              name: `OXYZ Training 2026 - ${registration.name}`,
+              description: `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026`,
               images: [
                 `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/images/sym/symposium_hero.jpg`,
               ],

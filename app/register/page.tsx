@@ -169,7 +169,7 @@ const packageFeatures = [
     platinum: true,
   },
   {
-    name: "Full access to all 3-day symposium sessions",
+    name: "Full access to all 3-day training sessions",
     silver: true,
     gold: true,
     platinum: true,
@@ -410,16 +410,16 @@ function RegistrationContent() {
       `}</style>
 
       {/* Hero - Enhanced */}
-      <section className="relative w-full min-h-screen">
+      <section className="relative w-full min-h-[62vh] md:min-h-[68vh]">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/sym/register_hero.jpg"
-            alt="Symposium registration"
+            alt="Training registration"
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
           
           {/* Overlay for better text readability */}
@@ -427,17 +427,9 @@ function RegistrationContent() {
         </div>
 
         {/* Content Container - Positioned at bottom */}
-        <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
+        <div className="relative z-10 flex items-end min-h-[62vh] md:min-h-[68vh] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-6 sm:pb-8 md:pb-10 lg:pb-12 pt-20">
           <div className="max-w-4xl w-full">
             
-            {/* Badge */}
-            <div className="mb-6 animate-fade-in-up opacity-0 animation-delay-100">
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
-                <ClipboardCheck className="h-4 w-4" />
-                Registration
-              </div>
-            </div>
-
             {/* Main Title */}
             <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
               <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
@@ -445,7 +437,7 @@ function RegistrationContent() {
                   Register for
                 </span>
                 <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                  Symposium 2026
+                  Training 2026
                 </span>
                 <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                   Secure Your Place at the Premier Event
@@ -455,7 +447,7 @@ function RegistrationContent() {
 
             {/* Description */}
             <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-              Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Symposium 2026.
+              Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026.
             </p>
 
             {/* Info Pills */}
@@ -467,10 +459,6 @@ function RegistrationContent() {
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
                 <Check className="h-4 w-4 text-gold" />
                 <span>Limited to 80-100 Participants</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
-                <Check className="h-4 w-4 text-gold" />
-                <span>Subject to Review</span>
               </div>
             </div>
           </div>
@@ -490,41 +478,60 @@ function RegistrationContent() {
                     Select Registration Tier
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {registrationTypes.map((type, idx) => (
-                      <button
-                        key={type.id}
-                        type="button"
-                        onClick={() => setSelectedType(type.id)}
-                        className={`text-left p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${
-                          selectedType === type.id
-                            ? "border-gold bg-gold/20 shadow-md"
-                            : type.badge === "Early Bird"
-                            ? "border-gold/70 bg-gold/15 hover:border-gold"
-                            : "border-slate-200 hover:border-gold/50"
-                        }`}
-                      >
-                        {type.badge && (
-                          <span
-                            className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
-                              type.badge === "Early Bird"
-                                ? "bg-amber-500 text-white shadow-md shadow-amber-500/30 ring-2 ring-amber-300/70 animate-pulse"
-                                : "bg-teal text-white"
+                    {registrationTypes.map((type) => {
+                      const isSelected = selectedType === type.id;
+                      const isEarlyBird = type.id === "silver-tier-early-bird";
+
+                      return (
+                        <button
+                          key={type.id}
+                          type="button"
+                          onClick={() => setSelectedType(type.id)}
+                          className={`text-left p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${
+                            isSelected && isEarlyBird
+                              ? "border-[#006b4f] bg-[#007A59] shadow-lg ring-2 ring-[#007A59]/35"
+                              : isSelected
+                              ? "border-gold bg-gold/20 shadow-md"
+                              : isEarlyBird
+                              ? "border-[#007A59] bg-[#007A59] hover:bg-[#006b4f] hover:border-[#006b4f]"
+                              : "border-slate-200 hover:border-gold/50"
+                          }`}
+                        >
+                          {type.badge && (
+                            <span
+                              className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
+                                isEarlyBird
+                                  ? "bg-gold text-[#1f2d24]"
+                                  : "bg-teal text-white"
+                              }`}
+                            >
+                              {type.badge}
+                            </span>
+                          )}
+                          <p
+                            className={`font-semibold text-sm mb-2 ${
+                              isEarlyBird ? "text-white" : "text-[#007A59]"
                             }`}
                           >
-                            {type.badge}
-                          </span>
-                        )}
-                        <p className="font-semibold text-[#007A59] text-sm mb-2">
-                          {type.name}
-                        </p>
-                        <p className="text-3xl font-bold text-gold mb-1">
-                          ${type.price.toLocaleString()}
-                        </p>
-                        <p className="text-xs text-[#007A59]">
-                          {type.deadline}
-                        </p>
-                      </button>
-                    ))}
+                            {type.name}
+                          </p>
+                          <p
+                            className={`text-3xl font-bold mb-1 ${
+                              isEarlyBird ? "text-white" : "text-gold"
+                            }`}
+                          >
+                            ${type.price.toLocaleString()}
+                          </p>
+                          <p
+                            className={`text-xs ${
+                              isEarlyBird ? "text-white/90" : "text-[#007A59]"
+                            }`}
+                          >
+                            {type.deadline}
+                          </p>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -683,7 +690,7 @@ function RegistrationContent() {
                     </div>
                     <div className="sm:col-span-2">
                       <Label htmlFor="interest" className="text-sm font-medium text-[#007A59]">
-                        Area of Interest at Symposium
+                        Area of Interest at Training
                       </Label>
                       <Textarea
                         id="interest"
@@ -692,7 +699,7 @@ function RegistrationContent() {
                         onChange={handleInputChange}
                         className="mt-2 border-slate-200 focus:border-gold focus:ring-gold resize-none"
                         rows={3}
-                        placeholder="What are you hoping to learn or achieve at the symposium?"
+                        placeholder="What are you hoping to learn or achieve at the training?"
                       />
                     </div>
                   </div>
