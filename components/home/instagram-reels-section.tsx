@@ -40,14 +40,17 @@ const reels = [
   {
     id: "test-1",
     src: "/images/tesimonials/test-1.mp4",
+    poster: "/images/tesimonials/test-1.mp4.png",
   },
   {
     id: "test-2",
     src: "/images/tesimonials/test-2.mp4",
+    poster: "/images/tesimonials/test-2.mp4.png",
   },
   {
     id: "test-3",
     src: "/images/tesimonials/test-3.mp4",
+    poster: "/images/tesimonials/test-3.mp4.png",
   },
 ];
 
@@ -114,9 +117,10 @@ export function InstagramReelsSection() {
                     <video
                       title={`OXYZ Training Testimonial ${index + 1}`}
                       className="h-full w-full object-cover bg-slate-100"
+                      poster={reel.poster}
                       controls
                       playsInline
-                      preload={index === 0 ? "auto" : "metadata"}
+                      preload="none"
                     >
                       <source src={reel.src} type="video/mp4" />
                     </video>

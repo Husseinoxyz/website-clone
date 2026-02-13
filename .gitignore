@@ -15,6 +15,8 @@ public/images/*
 !public/images/sym/
 !public/images/sym/**
 !public/images/Hero.mp4
+!public/images/tesimonials/
+!public/images/tesimonials/**
 
 # Node modules
 node_modules/

@@ -101,7 +101,7 @@ export function TrainingSection() {
             alt="OXYZ Training background"
             fill
             className="object-cover blur-sm"
-            priority
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 -z-10">
