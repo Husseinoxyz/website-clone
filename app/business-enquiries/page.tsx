@@ -336,9 +336,6 @@ export default function BusinessEnquiriesPage() {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl animate-on-scroll mb-16">
-              <p className="inline-flex items-center rounded-full border border-[#007A59]/20 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#007A59] mb-5">
-                Strategic Pathways
-              </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#007A59] mb-5">
                 The Threshold of Innovation
               </h2>
