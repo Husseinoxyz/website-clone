@@ -604,6 +604,8 @@ export default function TrainingPage() {
           </div>
         </section>
 
+        <InstagramReelsSection />
+
 
         {/* CTA */}
         <section className="py-24 text-secondary-foreground relative overflow-hidden">
@@ -653,7 +655,6 @@ export default function TrainingPage() {
             </div>
           </div>
         </section>
-        <InstagramReelsSection />
       </main>
       <Footer />
     </>
