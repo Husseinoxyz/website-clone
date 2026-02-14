@@ -497,6 +497,8 @@ export default function PastTrainingsPage() {
           </div>
         </section>
 
+        <InstagramReelsSection />
+
         {/* Looking Ahead */}
         <section className="py-24 text-secondary-foreground relative overflow-hidden">
           <div className="absolute inset-0">
@@ -542,8 +544,6 @@ export default function PastTrainingsPage() {
             </div>
           </div>
         </section>
-
-        <InstagramReelsSection />
 
         {/* Footer Quote */}
         <section className="py-12 bg-gradient-to-b from-slate-50 to-white border-t border-border">

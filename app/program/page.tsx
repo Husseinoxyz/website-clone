@@ -424,6 +424,8 @@ export default function ProgramPage() {
           </div>
         </section>
 
+        <InstagramReelsSection />
+
         {/* CTA */}
         <section className="py-24 bg-background relative overflow-hidden">
           <div className="absolute inset-0">
@@ -468,7 +470,6 @@ export default function ProgramPage() {
             </div>
           </div>
         </section>
-        <InstagramReelsSection />
       </main>
       <Footer />
     </>
