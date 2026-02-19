@@ -723,12 +723,12 @@ export default function BusinessEnquiriesPage() {
                         <video
                           title="Platinum tier clinical success stories"
                           className="h-full w-full object-cover"
-                          poster="/images/PLATINUM-test.mp4.png"
+                          poster="/images/tesimonials/platinum-test.mp4.png"
                           controls
                           playsInline
                           preload="metadata"
                         >
-                          <source src="/images/PLATINUM-test.mp4" type="video/mp4" />
+                          <source src="/images/tesimonials/platinum-test.mp4" type="video/mp4" />
                         </video>
                       </div>
                       </div>
