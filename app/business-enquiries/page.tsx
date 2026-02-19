@@ -9,6 +9,12 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section"
 import { Button } from "@/components/ui/button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
@@ -138,16 +144,29 @@ const subjectOptions = [
 
 const tierWhatsappMessages: Record<"gold-tier" | "platinum-tier", string> = {
   "gold-tier":
-    "Hello OXYZ team, I want to enquire about the Gold Track (Clinical Authority Accelerator) for the 2026 training. Please share full inclusions, implementation support, pricing details, and next steps.",
+    "Hello OXYZ team, I want to enquire about the Gold Tier (Clinical Mastery) for the 2026 training. Please share full inclusions, implementation support, pricing details, and next steps.",
   "platinum-tier":
-    "Hello OXYZ team, I want to enquire about the Platinum Track (Regional Dominance Blueprint) for the 2026 training. Please share infrastructure details, licensing scope, staff integration support, pricing, and onboarding timeline.",
+    "Hello OXYZ team, I want to enquire about the Platinum Tier (Institutional Leadership) for the 2026 training. Please share infrastructure details, licensing scope, staff integration support, pricing, and onboarding timeline.",
 };
 
 const tierFormPrefillMessages: Record<"gold-tier" | "platinum-tier", string> = {
   "gold-tier":
-    "I would like to enquire about the Gold Track (Clinical Authority Accelerator), including inclusions, implementation support, pricing details, and next steps.",
+    "I would like to enquire about the Gold Tier (Clinical Mastery), including inclusions, implementation support, pricing details, and next steps.",
   "platinum-tier":
-    "I would like to enquire about the Platinum Track (Regional Dominance Blueprint), including infrastructure, licensing scope, staff integration support, pricing, and onboarding timeline.",
+    "I would like to enquire about the Platinum Tier (Institutional Leadership), including infrastructure, licensing scope, staff integration support, pricing, and onboarding timeline.",
+};
+
+const tierSectionImages = {
+  gold: {
+    clinical: { src: "/images/sym/home_g_1.jpg", alt: "Gold tier clinical training moment" },
+    included: { src: "/images/sym/home_g_4.jpg", alt: "Gold tier practical implementation session" },
+    testimonial: { src: "/images/sym/home_g_7.jpg", alt: "Gold tier global collaboration highlight" },
+  },
+  platinum: {
+    clinical: { src: "/images/PLATINUM-2.jpg", alt: "Platinum tier diagnostics and implementation" },
+    included: { src: "/images/sym/home_g_8.jpg", alt: "Platinum tier executive strategy planning" },
+    testimonial: { src: "/images/sym/slide_2.jpg", alt: "Platinum tier diagnostics and clinical validation" },
+  },
 };
 
 export default function BusinessEnquiriesPage() {
@@ -253,12 +272,6 @@ export default function BusinessEnquiriesPage() {
           transition-delay: 0.4s;
         }
 
-        @media (max-width: 1023px) {
-          .mobile-no-shift.animate-on-scroll,
-          .mobile-no-shift.animate-on-scroll.animated {
-            transform: none;
-          }
-        }
       `}</style>
       <Header />
 
@@ -298,7 +311,7 @@ export default function BusinessEnquiriesPage() {
                   The 2026 OXYZ International Stem Cell Training is an exclusive convergence for the top 1% of regenerative practitioners. We have moved past the &quot;what&quot; of stem cell science and into the &quot;how&quot; of clinical success and institutional growth.
                 </p>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl leading-relaxed font-light">
-                  While the Silver Tier provides the essential academic foundation, our advanced tracks are designed for those ready to move from knowing to implementing.
+                  While the Silver Tier provides the essential academic foundation, our advanced tiers are designed for those ready to move from knowing to implementing.
                 </p>
               </div>
 
@@ -309,7 +322,7 @@ export default function BusinessEnquiriesPage() {
                   className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
                   onClick={() => handleTierEnquiry("gold-tier")}
                 >
-                  Gold Track Enquiry
+                  Gold Tier Enquiry
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -318,7 +331,7 @@ export default function BusinessEnquiriesPage() {
                   className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
                   onClick={() => handleTierEnquiry("platinum-tier")}
                 >
-                  Platinum Track Enquiry
+                  Platinum Tier Enquiry
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -344,79 +357,7 @@ export default function BusinessEnquiriesPage() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-10 mb-24 md:mb-16 max-w-6xl mx-auto">
-              <article className="group animate-on-scroll mobile-no-shift stagger-1 min-h-[620px] lg:min-h-[700px] w-full max-w-[520px] mx-auto rounded-3xl border border-[#B8964A] bg-[#D4AF37] p-10 shadow-[0_18px_45px_rgba(166,141,74,0.30)] flex flex-col relative z-10 overflow-visible transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(166,141,74,0.35)]">
-                <div className="absolute -top-14 right-6 z-20">
-                  <div className="h-28 w-28 rounded-full bg-[#D4AF37] shadow-[0_12px_32px_rgba(0,0,0,0.35)] flex items-center justify-center border-[6px] border-[#B8964A]">
-                    <div className="text-center leading-tight">
-                      <p className="text-[22px] font-black text-[#2F1E08]">Gold</p>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#2F1E08]/85">Track</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative">
-                  <h3 className="text-4xl font-black text-[#0B3B2E] mb-2 leading-tight">
-                    Clinical Authority Accelerator
-                  </h3>
-                  <p className="text-[#0B3B2E]/90 font-semibold mb-4">
-                    &quot;Lead with proof. Convert science into outcomes.&quot;
-                  </p>
-                  <p className="text-[#1A1A1A]/95 leading-relaxed mb-5 text-[1.03rem]">
-                    Built for elite practitioners who move from theory to treatment fast. Gold equips you with a guided personal protocol, OXYZ Cellular Reset implementation, and launch-ready tools so you can return and start delivering measurable patient value immediately.
-                  </p>
-                  <p className="text-[#0B3B2E] font-bold mb-2">
-                    Best for: Progressive clinicians, specialists, and high-performance solo practices.
-                  </p>
-                  <p className="text-[#0B3B2E] font-bold mb-7">
-                    Key Outcome: Signature protocol + immediate inventory + faster patient trust and ROI.
-                  </p>
-                </div>
-                <Button
-                  className="mt-auto w-full rounded-full bg-[#0B3B2E] hover:bg-[#0F4B3A] text-white font-semibold py-6 shadow-lg shadow-[#0B3B2E]/35 transition-all duration-300 group-hover:scale-[1.02]"
-                  onClick={() => handleTierEnquiry("gold-tier")}
-                >
-                  Request More Info
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </article>
-
-              <article className="group animate-on-scroll mobile-no-shift stagger-2 min-h-[620px] lg:min-h-[700px] w-full max-w-[520px] mx-auto rounded-3xl border border-[#9AA8B5] bg-[#E5E4E2] p-10 shadow-[0_18px_45px_rgba(75,95,116,0.28)] flex flex-col relative z-10 overflow-visible transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(75,95,116,0.34)]">
-                <div className="absolute -top-14 right-6 z-20">
-                  <div className="h-28 w-28 rounded-full bg-[#E5E4E2] shadow-[0_12px_32px_rgba(40,49,59,0.35)] flex items-center justify-center border-[6px] border-[#A8B5C0]">
-                    <div className="text-center leading-tight">
-                      <p className="text-[16px] font-black text-[#1D2733]">Platinum</p>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#1D2733]/85">Track</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative">
-                  <h3 className="text-4xl font-black text-[#1A2633] mb-2 leading-tight">
-                    Regional Dominance Blueprint
-                  </h3>
-                  <p className="text-[#2D3A46]/90 font-semibold mb-4">
-                    &quot;Build the center others refer to.&quot;
-                  </p>
-                  <p className="text-[#2D3A46] leading-relaxed mb-5 text-[1.03rem]">
-                    Created for founders and healthcare leaders scaling beyond a single clinic. Platinum delivers the Root Cause BR Scan ecosystem, team enablement, and executive expansion strategy to position your institution as the regional authority in regenerative medicine.
-                  </p>
-                  <p className="text-[#1A2633] font-bold mb-2">
-                    Best for: Multi-clinic owners, hospital executives, and healthcare investors.
-                  </p>
-                  <p className="text-[#1A2633] font-bold mb-7">
-                    Key Outcome: Infrastructure acquisition + licensing + full staff integration for scale.
-                  </p>
-                </div>
-                <Button
-                  className="mt-auto w-full rounded-full bg-[#1A2633] hover:bg-[#243447] text-white font-semibold py-6 shadow-lg shadow-[#1A2633]/30 transition-all duration-300 group-hover:scale-[1.02]"
-                  onClick={() => handleTierEnquiry("platinum-tier")}
-                >
-                  Request More Info
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </article>
-            </div>
-
-            <div className="animate-on-scroll relative z-20 mt-4 md:mt-0 rounded-3xl border border-[#007A59]/15 bg-white/85 backdrop-blur-sm p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,122,89,0.12)] overflow-hidden">
+            <div className="animate-on-scroll relative z-20 rounded-3xl border border-[#007A59]/15 bg-white/85 backdrop-blur-sm p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,122,89,0.12)] overflow-hidden mb-16">
               <div className="absolute -top-10 -right-14 h-44 w-44 rounded-full bg-[#007A59]/10 blur-3xl" />
               <div className="relative">
                 <h3 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4">
@@ -446,6 +387,355 @@ export default function BusinessEnquiriesPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className="space-y-12 w-full">
+              <article className="animate-on-scroll">
+                <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D4AF37] border-y border-[#B8964A]/60">
+                  <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+                        <div className="h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-gradient-to-br from-[#E4C157] to-[#B8860B] shadow-[0_12px_32px_rgba(61,42,6,0.35)] flex items-center justify-center border-[7px] sm:border-[9px] border-[#A97910]">
+                          <div className="text-center leading-tight">
+                            <div className="text-sm sm:text-2xl font-black tracking-[0.1em] text-[#2F1E08]">GOLD</div>
+                            <div className="text-sm sm:text-2xl font-black tracking-[0.1em] text-[#2F1E08]">TIER</div>
+                          </div>
+                        </div>
+                        <p className="max-w-2xl text-base sm:text-lg font-semibold text-[#4A340A] leading-relaxed">
+                          Lead with conviction and return with a launch-ready protocol, inventory, and immediate patient implementation pathway.
+                        </p>
+                      </div>
+                      <Button
+                        className="w-full sm:w-auto rounded-full bg-[#0B3B2E] hover:bg-[#0F4B3A] text-white font-semibold px-8 py-6 shadow-lg shadow-[#0B3B2E]/35 ring-1 ring-[#0B3B2E]/20"
+                        onClick={() => handleTierEnquiry("gold-tier")}
+                      >
+                        Request More Info
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D4AF37]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 items-start">
+                      <div>
+                        <h3 className="text-4xl sm:text-5xl font-black text-[#0B3B2E] mb-2">
+                          Clinical Mastery
+                        </h3>
+                        <p className="text-lg sm:text-xl text-[#0B3B2E]/95 font-semibold mb-4">
+                          &quot;Master the Science by Becoming the Proof.&quot;
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#1A1A1A]/95 leading-relaxed mb-5">
+                          Designed for the practitioner who leads through experience. The Gold Tier is built on the philosophy that a doctor&apos;s greatest clinical tool is their own conviction. This immersive tier focuses on personal biological optimization and the immediate integration of the OXYZ Cellular Reset into your daily practice.
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#0B3B2E] font-bold mb-2">
+                          Best for: Clinicians, Specialists, and Solo Practitioners.
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#0B3B2E] font-bold">
+                          Key Outcome: Personal protocol design + Immediate product inventory for patient ROI.
+                        </p>
+                      </div>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                        <Image
+                          src={tierSectionImages.gold.clinical.src}
+                          alt={tierSectionImages.gold.clinical.alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 360px"
+                          className="object-cover"
+                        />
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#DEBF5E]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 items-start">
+                      <div>
+                        <h4 className="text-2xl sm:text-3xl font-bold text-[#0B3B2E] mb-4">
+                          What is included
+                        </h4>
+                        <Accordion type="multiple" className="w-full">
+                          <AccordionItem value="gold-1" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
+                              1. EVERYTHING: from the Silver Tier Package
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
+                              <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
+                                <li>4 Nights Premium Stay: Single occupancy hotel accommodation with daily breakfast.</li>
+                                <li>Full Access: Entry to all 3 days of scientific sessions and strategic presentations.</li>
+                                <li>Elite Hospitality: All official symposium meals and the prestigious Gala Dinner.</li>
+                                <li>Accreditation: Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="gold-2" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
+                              2. PLUS: The Personal Stem Cell Suite
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
+                              Depart with a professional-grade inventory to jumpstart your practice.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="gold-3" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
+                              3. PLUS: VIP On-Site Diagnostics
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
+                              Priority access to our cell screening tools testing to establish your own biological baseline and observe the protocol&apos;s efficacy.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="gold-4" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
+                              4. PLUS: 1-on-1 Cellular Reset Consultation
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
+                              A private, deep-dive session with an OXYZ Specialist Consultant to interpret your results and design a custom protocol for your personal and clinical use.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="gold-5" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
+                              5. PLUS: Referral Partnership
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
+                              Immediate entry into our direct referral agreement, allowing you to monetize OXYZ solutions within your own patient network immediately.
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </div>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                        <Image
+                          src={tierSectionImages.gold.included.src}
+                          alt={tierSectionImages.gold.included.alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 320px"
+                          className="object-cover"
+                        />
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#E4C97A]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-5 items-start">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
+                        <video
+                          title="Gold tier clinical success stories"
+                          className="h-full w-full object-cover"
+                          poster="/images/tesimonials/test-1.mp4.png"
+                          controls
+                          playsInline
+                          preload="metadata"
+                        >
+                          <source src="/images/tesimonials/test-1.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div>
+                        <h4 className="text-2xl sm:text-3xl font-bold text-[#0B3B2E] mb-1">
+                          Hear from our Clinical Success Stories
+                        </h4>
+                        <p className="text-lg sm:text-xl text-[#0B3B2E]/80 font-semibold mb-3">
+                          &quot;From Attendees to Global Distributors&quot;
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#1A1A1A]/90 leading-relaxed">
+                          &quot;The results we&apos;ve seen are nothing short of transformative. After attending the OXYZ training in 2025, we didn&apos;t just teach the protocols, we lived them. The clinical outcomes for our patients in South Africa were so significant that we transitioned from attendees to official distributors. We regularly refer complex cases to the Malaysia center, and the Cellular Reset feedback has been tremendous. This is the start of a global clinical network.&quot;
+                        </p>
+                        <p className="mt-3 text-lg sm:text-xl text-[#0B3B2E] font-semibold">
+                          Business Associates, South Africa
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </article>
+
+              <article className="animate-on-scroll">
+                <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#CDD5DC] border-y border-[#9AA8B5]/65">
+                  <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+                        <div className="h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-gradient-to-br from-[#E3E8ED] to-[#A0ACB8] shadow-[0_12px_32px_rgba(29,39,51,0.32)] flex items-center justify-center border-[7px] sm:border-[9px] border-[#8D9AA7]">
+                          <div className="text-center leading-tight">
+                            <div className="text-sm sm:text-2xl font-black tracking-[0.06em] text-[#1D2733]">PLATINUM</div>
+                            <div className="text-sm sm:text-2xl font-black tracking-[0.1em] text-[#1D2733]">TIER</div>
+                          </div>
+                        </div>
+                        <p className="max-w-2xl text-base sm:text-lg font-semibold text-[#2E3B48] leading-relaxed">
+                          Build institutional authority with diagnostics infrastructure, staff integration, and regional scaling strategy.
+                        </p>
+                      </div>
+                      <Button
+                        className="w-full sm:w-auto rounded-full bg-[#1A2633] hover:bg-[#243447] text-white font-semibold px-8 py-6 shadow-lg shadow-[#1A2633]/30 ring-1 ring-[#1A2633]/20"
+                        onClick={() => handleTierEnquiry("platinum-tier")}
+                      >
+                        Request More Info
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#CDD5DC]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-5 items-start">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                        <Image
+                          src={tierSectionImages.platinum.clinical.src}
+                          alt={tierSectionImages.platinum.clinical.alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 300px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-4xl sm:text-5xl font-black text-[#1A2633] mb-2">
+                          Institutional Leadership
+                        </h3>
+                        <p className="text-lg sm:text-xl text-[#2D3A46]/95 font-semibold mb-4">
+                          &quot;The Turn-Key Solution for Market Dominance.&quot;
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#2D3A46] leading-relaxed mb-5">
+                          Designed for the Visionary CEO, Hospital Director, and Regional Lead. Platinum status is not just an event ticket, it is a capital investment in your business&apos;s infrastructure. We provide the proprietary hardware, the staff training, and the executive strategy required to scale your facility into a regional hub for regenerative medicine.
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#1A2633] font-bold mb-2">
+                          Best for: Clinic Owners, Healthcare Investors, and Hospital Groups.
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#1A2633] font-bold">
+                          Key Outcome: Acquisition of the Root Cause BR Scan Machine + Regional Licensing + Staff Integration.
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D7DEE4]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 items-start">
+                      <div>
+                        <h4 className="text-2xl sm:text-3xl font-bold text-[#1A2633] mb-4">
+                          What is included
+                        </h4>
+                        <Accordion type="multiple" className="w-full">
+                          <AccordionItem value="platinum-1" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              1. EVERYTHING from the Silver Tier Package
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
+                                <li>4 Nights Premium Stay: Single occupancy hotel accommodation with daily breakfast.</li>
+                                <li>Full Access: Entry to all 3 days of scientific sessions and strategic presentations.</li>
+                                <li>Elite Hospitality: All official symposium meals and the prestigious Gala Dinner.</li>
+                                <li>Accreditation: Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-2" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              2. EVERYTHING from the Gold Tier Package
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
+                                <li>The Personal Stem Cell Suite: Professional-grade stem cell inventory to jumpstart your practice.</li>
+                                <li>VIP On-Site Diagnostics: Priority access to our cell screening tools testing.</li>
+                                <li>1-on-1 Cellular Reset Consultation: A private, deep-dive session with an OXYZ Specialist Consultant to interpret your results and design a customized protocol.</li>
+                                <li>Referral Partnership: Immediate entry into our direct referral agreement.</li>
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-3" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              3. PLUS: Proprietary Hardware
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              Full ownership of the Root Cause BR Scan Machine. A high-converting diagnostic cornerstone for your facility.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-4" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              4. PLUS: Master Inventory Suite
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              A massive launch stock to ensure immediate patient intake.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-5" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              5. PLUS: Executive Strategy Session
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              A dedicated 1-day private consultation focused on licensing, regional expansion, and high-level market positioning.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-6" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5 mb-3">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              6. PLUS: Post-Event Staff Integration
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              Dedicated training sessions for your lead staff and nurses post-event to ensure the OXYZ protocols are executed with elite precision in your clinic.
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="platinum-7" className="rounded-xl border border-[#6D7C89]/40 bg-[#C8D0D7] px-4 sm:px-5">
+                            <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#1A2633] font-semibold">
+                              7. PLUS: Elite Business Associate Status
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
+                              Formalized business associate agreement granting you the highest tier of support and pricing within the OXYZ global network.
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </div>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                        <Image
+                          src={tierSectionImages.platinum.included.src}
+                          alt={tierSectionImages.platinum.included.alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 320px"
+                          className="object-cover"
+                        />
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#E1E6EB]">
+                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+                      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-5 items-start">
+                      <div>
+                        <h4 className="text-2xl sm:text-3xl font-bold text-[#1A2633] mb-1">
+                          Hear from our Clinical Success Stories
+                        </h4>
+                        <p className="text-lg sm:text-xl text-[#1A2633]/80 font-semibold mb-3">
+                          &quot;Tremendous Results from Scan to Clinical Tests&quot;
+                        </p>
+                        <p className="text-lg sm:text-xl text-[#2D3A46] leading-relaxed">
+                          &quot;As a business associate in Lebanon, I have integrated the OXYZ Mega+ Cell vials into my practice with exceptional success. What makes this system unique is the ability to verify results through two lenses: our own clinical lab tests and the OXYZ Bio-Resonance scans. The data is consistent, and the patient outcomes are undeniable. I will be presenting my specific case studies at the 2026 Symposium to show how these protocols bridge the gap between diagnostic technology and clinical reality.&quot;
+                        </p>
+                        <p className="mt-3 text-lg sm:text-xl text-[#1A2633] font-semibold">
+                          Global Elite Partner, Lebanon
+                        </p>
+                      </div>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
+                        <video
+                          title="Platinum tier clinical success stories"
+                          className="h-full w-full object-cover"
+                          poster="/images/PLATINUM-test.mp4.png"
+                          controls
+                          playsInline
+                          preload="metadata"
+                        >
+                          <source src="/images/PLATINUM-test.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -764,7 +1054,7 @@ export default function BusinessEnquiriesPage() {
           </div>
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Ready to Activate Your Track?
+              Ready to Activate Your Tier?
             </h2>
             <p className="text-white/85 text-lg sm:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
               Choose your pathway and our team will prepare the right implementation plan for your clinic, team, and growth goals.
