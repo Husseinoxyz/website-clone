@@ -958,7 +958,7 @@ export default function BusinessEnquiriesPage() {
                               }
                             >
                               <SelectTrigger className="w-28 border-border text-gold focus:border-gold focus:ring-gold">
-                                <SelectValue placeholder="+1" />
+                                <span className="truncate">{formData.countryCode || "+1"}</span>
                               </SelectTrigger>
                             <SelectContent>
                               {countryCodes.map((item) => (

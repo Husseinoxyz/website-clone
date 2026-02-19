@@ -583,7 +583,7 @@ function RegistrationContent() {
                           onValueChange={(value) => handleSelectChange("countryCode", value)}
                         >
                           <SelectTrigger className="w-32 border-slate-200 focus:border-gold focus:ring-gold">
-                            <SelectValue placeholder="+1" />
+                            <span className="truncate">{formData.countryCode || "+1"}</span>
                           </SelectTrigger>
                           <SelectContent className="max-h-60">
                             {countryCodes.map((item) => (
