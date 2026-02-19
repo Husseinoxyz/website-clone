@@ -62,7 +62,7 @@ function useScrollAnimation() {
 }
 
 const countryCodes = [
-  { code: "+1", label: "USA/Canada" },
+  { code: "+1", label: "USA" },
   { code: "+7", label: "Russia" },
   { code: "+20", label: "Egypt" },
   { code: "+27", label: "South Africa" },
@@ -958,7 +958,7 @@ export default function BusinessEnquiriesPage() {
                               }
                             >
                               <SelectTrigger className="w-28 border-border text-gold focus:border-gold focus:ring-gold">
-                                <span className="truncate">{formData.countryCode || "+1"}</span>
+                                <span className="truncate">{formData.countryCode === "+1" ? "+1 USA" : formData.countryCode || "+1"}</span>
                               </SelectTrigger>
                             <SelectContent>
                               {countryCodes.map((item) => (

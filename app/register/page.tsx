@@ -56,7 +56,7 @@ function useScrollAnimation() {
 }
 
 const countryCodes = [
-  { code: "+1", country: "USA/Canada" },
+  { code: "+1", country: "USA" },
   { code: "+7", country: "Russia" },
   { code: "+20", country: "Egypt" },
   { code: "+27", country: "South Africa" },
@@ -583,7 +583,7 @@ function RegistrationContent() {
                           onValueChange={(value) => handleSelectChange("countryCode", value)}
                         >
                           <SelectTrigger className="w-32 border-slate-200 focus:border-gold focus:ring-gold">
-                            <span className="truncate">{formData.countryCode || "+1"}</span>
+                            <span className="truncate">{formData.countryCode === "+1" ? "+1 USA" : formData.countryCode || "+1"}</span>
                           </SelectTrigger>
                           <SelectContent className="max-h-60">
                             {countryCodes.map((item) => (
