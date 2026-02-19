@@ -391,11 +391,11 @@ export default function BusinessEnquiriesPage() {
 
             <div className="space-y-12 w-full">
               <article className="animate-on-scroll">
-                <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D4AF37] border-y border-[#B8964A]/60">
+                <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gold border-y border-[#A68D4A]/60">
                   <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
-                        <div className="h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-gradient-to-br from-[#E4C157] to-[#B8860B] shadow-[0_12px_32px_rgba(61,42,6,0.35)] flex items-center justify-center border-[7px] sm:border-[9px] border-[#A97910]">
+                        <div className="h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-gradient-to-br from-[#DCC78E] to-[#A68D4A] shadow-[0_12px_32px_rgba(61,42,6,0.35)] flex items-center justify-center border-[7px] sm:border-[9px] border-[#8D7538]">
                           <div className="text-center leading-tight">
                             <div className="text-sm sm:text-2xl font-black tracking-[0.1em] text-[#2F1E08]">GOLD</div>
                             <div className="text-sm sm:text-2xl font-black tracking-[0.1em] text-[#2F1E08]">TIER</div>
@@ -417,7 +417,7 @@ export default function BusinessEnquiriesPage() {
                 </div>
 
                 <div className="space-y-6">
-                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D4AF37]">
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gold">
                     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
                       <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 items-start">
                       <div>
@@ -450,7 +450,7 @@ export default function BusinessEnquiriesPage() {
                     </div>
                   </section>
 
-                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#DEBF5E]">
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D8C185]">
                     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
                       <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 items-start">
                       <div>
@@ -458,20 +458,20 @@ export default function BusinessEnquiriesPage() {
                           What is included
                         </h4>
                         <Accordion type="multiple" className="w-full">
-                          <AccordionItem value="gold-1" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                          <AccordionItem value="gold-1" className="rounded-xl border border-[#A68D4A]/40 bg-[#CFB473] px-4 sm:px-5 mb-3">
                             <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
                               1. EVERYTHING: from the Silver Tier Package
                             </AccordionTrigger>
                             <AccordionContent className="text-base sm:text-lg text-[#0B3B2E]/90 leading-relaxed">
                               <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
-                                <li>4 Nights Premium Stay: Single occupancy hotel accommodation with daily breakfast.</li>
-                                <li>Full Access: Entry to all 3 days of scientific sessions and strategic presentations.</li>
-                                <li>Elite Hospitality: All official symposium meals and the prestigious Gala Dinner.</li>
-                                <li>Accreditation: Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
+                                <li><strong>4 Nights Premium Stay:</strong> Single occupancy hotel accommodation with daily breakfast.</li>
+                                <li><strong>Full Access:</strong> Entry to all 3 days of scientific sessions and strategic presentations.</li>
+                                <li><strong>Elite Hospitality:</strong> All official symposium meals and the prestigious Gala Dinner.</li>
+                                <li><strong>Accreditation:</strong> Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
                               </ul>
                             </AccordionContent>
                           </AccordionItem>
-                          <AccordionItem value="gold-2" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                          <AccordionItem value="gold-2" className="rounded-xl border border-[#A68D4A]/40 bg-[#CFB473] px-4 sm:px-5 mb-3">
                             <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
                               2. PLUS: The Personal Stem Cell Suite
                             </AccordionTrigger>
@@ -479,7 +479,7 @@ export default function BusinessEnquiriesPage() {
                               Depart with a professional-grade inventory to jumpstart your practice.
                             </AccordionContent>
                           </AccordionItem>
-                          <AccordionItem value="gold-3" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                          <AccordionItem value="gold-3" className="rounded-xl border border-[#A68D4A]/40 bg-[#CFB473] px-4 sm:px-5 mb-3">
                             <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
                               3. PLUS: VIP On-Site Diagnostics
                             </AccordionTrigger>
@@ -487,7 +487,7 @@ export default function BusinessEnquiriesPage() {
                               Priority access to our cell screening tools testing to establish your own biological baseline and observe the protocol&apos;s efficacy.
                             </AccordionContent>
                           </AccordionItem>
-                          <AccordionItem value="gold-4" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5 mb-3">
+                          <AccordionItem value="gold-4" className="rounded-xl border border-[#A68D4A]/40 bg-[#CFB473] px-4 sm:px-5 mb-3">
                             <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
                               4. PLUS: 1-on-1 Cellular Reset Consultation
                             </AccordionTrigger>
@@ -495,7 +495,7 @@ export default function BusinessEnquiriesPage() {
                               A private, deep-dive session with an OXYZ Specialist Consultant to interpret your results and design a custom protocol for your personal and clinical use.
                             </AccordionContent>
                           </AccordionItem>
-                          <AccordionItem value="gold-5" className="rounded-xl border border-[#7A5A1A]/35 bg-[#D8B447] px-4 sm:px-5">
+                          <AccordionItem value="gold-5" className="rounded-xl border border-[#A68D4A]/40 bg-[#CFB473] px-4 sm:px-5">
                             <AccordionTrigger className="hover:no-underline text-base sm:text-lg text-[#0B3B2E] font-semibold">
                               5. PLUS: Referral Partnership
                             </AccordionTrigger>
@@ -518,7 +518,7 @@ export default function BusinessEnquiriesPage() {
                     </div>
                   </section>
 
-                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#E4C97A]">
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gold-light">
                     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
                       <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-5 items-start">
                       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
@@ -546,6 +546,15 @@ export default function BusinessEnquiriesPage() {
                         <p className="mt-3 text-lg sm:text-xl text-[#0B3B2E] font-semibold">
                           Business Associates, South Africa
                         </p>
+                        <div className="mt-6">
+                          <Button
+                            className="w-full sm:w-auto rounded-full bg-[#0B3B2E] hover:bg-[#0F4B3A] text-white font-semibold px-8 py-6 shadow-lg shadow-[#0B3B2E]/35 ring-1 ring-[#0B3B2E]/20"
+                            onClick={() => handleTierEnquiry("gold-tier")}
+                          >
+                            Enquire for Gold Tier NOW
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                       </div>
                     </div>
@@ -627,10 +636,10 @@ export default function BusinessEnquiriesPage() {
                             </AccordionTrigger>
                             <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
                               <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
-                                <li>4 Nights Premium Stay: Single occupancy hotel accommodation with daily breakfast.</li>
-                                <li>Full Access: Entry to all 3 days of scientific sessions and strategic presentations.</li>
-                                <li>Elite Hospitality: All official symposium meals and the prestigious Gala Dinner.</li>
-                                <li>Accreditation: Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
+                                <li><strong>4 Nights Premium Stay:</strong> Single occupancy hotel accommodation with daily breakfast.</li>
+                                <li><strong>Full Access:</strong> Entry to all 3 days of scientific sessions and strategic presentations.</li>
+                                <li><strong>Elite Hospitality:</strong> All official symposium meals and the prestigious Gala Dinner.</li>
+                                <li><strong>Accreditation:</strong> Joint Certificate from OXYZ Academy &amp; DFGTT (Germany).</li>
                               </ul>
                             </AccordionContent>
                           </AccordionItem>
@@ -640,10 +649,10 @@ export default function BusinessEnquiriesPage() {
                             </AccordionTrigger>
                             <AccordionContent className="text-base sm:text-lg text-[#2D3A46] leading-relaxed">
                               <ul className="list-disc pl-5 space-y-1 text-base sm:text-lg">
-                                <li>The Personal Stem Cell Suite: Professional-grade stem cell inventory to jumpstart your practice.</li>
-                                <li>VIP On-Site Diagnostics: Priority access to our cell screening tools testing.</li>
-                                <li>1-on-1 Cellular Reset Consultation: A private, deep-dive session with an OXYZ Specialist Consultant to interpret your results and design a customized protocol.</li>
-                                <li>Referral Partnership: Immediate entry into our direct referral agreement.</li>
+                                <li><strong>The Personal Stem Cell Suite:</strong> Professional-grade stem cell inventory to jumpstart your practice.</li>
+                                <li><strong>VIP On-Site Diagnostics:</strong> Priority access to our cell screening tools testing.</li>
+                                <li><strong>1-on-1 Cellular Reset Consultation:</strong> A private, deep-dive session with an OXYZ Specialist Consultant to interpret your results and design a customized protocol.</li>
+                                <li><strong>Referral Partnership:</strong> Immediate entry into our direct referral agreement.</li>
                               </ul>
                             </AccordionContent>
                           </AccordionItem>
@@ -718,6 +727,15 @@ export default function BusinessEnquiriesPage() {
                         <p className="mt-3 text-lg sm:text-xl text-[#1A2633] font-semibold">
                           Global Elite Partner, Lebanon
                         </p>
+                        <div className="mt-6">
+                          <Button
+                            className="w-full sm:w-auto rounded-full bg-[#1A2633] hover:bg-[#243447] text-white font-semibold px-8 py-6 shadow-lg shadow-[#1A2633]/30 ring-1 ring-[#1A2633]/20"
+                            onClick={() => handleTierEnquiry("platinum-tier")}
+                          >
+                            Enquire for Platinum Tier NOW
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
                         <video
