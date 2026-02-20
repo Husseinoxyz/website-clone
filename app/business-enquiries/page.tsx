@@ -453,7 +453,7 @@ export default function BusinessEnquiriesPage() {
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#D8C185]">
                     <img
                       aria-hidden
-                      src="/images/faq.gif"
+                      src="/images/faq.gif?v=20260220"
                       alt=""
                       className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45 faq-overlay-motion"
                     />
@@ -632,7 +632,7 @@ export default function BusinessEnquiriesPage() {
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#D7DEE4]">
                     <img
                       aria-hidden
-                      src="/images/faq.gif"
+                      src="/images/faq.gif?v=20260220"
                       alt=""
                       className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 faq-overlay-motion"
                     />
