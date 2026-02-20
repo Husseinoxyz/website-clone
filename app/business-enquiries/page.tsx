@@ -363,26 +363,26 @@ export default function BusinessEnquiriesPage() {
                 <h3 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4">
                   Why Choose a Partner Track?
                 </h3>
-                <p className="text-gold font-semibold text-lg sm:text-xl mb-7">
+                <p className="text-gold text-lg sm:text-xl mb-7">
                   In a field as rapidly advancing as cellular longevity, the difference between a successful practice and a stagnating one is Infrastructure.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="rounded-xl border border-slate-200/80 bg-white p-5">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 mt-0.5 text-[#007A59] flex-shrink-0" />
-                      <span className="text-gold/90 text-base leading-relaxed">Eliminate the Implementation Gap: We provide the inventory (Gold) and the hardware (Platinum) so you can begin treating patients the day you return.</span>
+                      <span className="text-gold/90 text-base leading-relaxed"><strong>Eliminate the Implementation Gap:</strong> We provide the inventory (Gold) and the hardware (Platinum) so you can begin treating patients the day you return.</span>
                     </div>
                   </div>
                   <div className="rounded-xl border border-slate-200/80 bg-white p-5">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 mt-0.5 text-[#007A59] flex-shrink-0" />
-                      <span className="text-gold/90 text-base leading-relaxed">Verify the Results: Move away from subjective improvements. Use our diagnostic suite to show your patients real-time biological shifts.</span>
+                      <span className="text-gold/90 text-base leading-relaxed"><strong>Verify the Results:</strong> Move away from subjective improvements. Use our diagnostic suite to show your patients real-time biological shifts.</span>
                     </div>
                   </div>
                   <div className="rounded-xl border border-slate-200/80 bg-white p-5">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 mt-0.5 text-[#007A59] flex-shrink-0" />
-                      <span className="text-gold/90 text-base leading-relaxed">Join a Global Network: Gain access to the peer-verified success of our fellow business associates from Lebanon and South Africa.</span>
+                      <span className="text-gold/90 text-base leading-relaxed"><strong>Join a Global Network:</strong> Gain access to the peer-verified success of our fellow business associates from Lebanon and South Africa.</span>
                     </div>
                   </div>
                 </div>
@@ -418,9 +418,9 @@ export default function BusinessEnquiriesPage() {
 
                 <div className="space-y-6">
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gold">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-5 items-start">
-                      <div>
+                    <div className="w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-0 items-stretch">
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h3 className="text-4xl sm:text-5xl font-black text-[#0B3B2E] mb-2">
                           Clinical Mastery
                         </h3>
@@ -437,7 +437,7 @@ export default function BusinessEnquiriesPage() {
                           Key Outcome: Personal protocol design + Immediate product inventory for patient ROI.
                         </p>
                       </div>
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                      <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden">
                         <Image
                           src={tierSectionImages.gold.clinical.src}
                           alt={tierSectionImages.gold.clinical.alt}
@@ -450,10 +450,17 @@ export default function BusinessEnquiriesPage() {
                     </div>
                   </section>
 
-                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D8C185]">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 items-start">
-                      <div>
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#D8C185]">
+                    <img
+                      aria-hidden
+                      src="/images/faq.gif"
+                      alt=""
+                      className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45 faq-overlay-motion"
+                    />
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#D8C185]/35" />
+                    <div className="relative z-10 w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-0 items-stretch">
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h4 className="text-2xl sm:text-3xl font-bold text-[#0B3B2E] mb-4">
                           What is included
                         </h4>
@@ -505,7 +512,7 @@ export default function BusinessEnquiriesPage() {
                           </AccordionItem>
                         </Accordion>
                       </div>
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                      <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden">
                         <Image
                           src={tierSectionImages.gold.included.src}
                           alt={tierSectionImages.gold.included.alt}
@@ -519,9 +526,9 @@ export default function BusinessEnquiriesPage() {
                   </section>
 
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gold-light">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-5 items-start">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
+                    <div className="w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-0 items-stretch">
+                      <div className="relative self-start min-h-[360px] sm:min-h-[460px] lg:h-[600px] lg:min-h-0 overflow-hidden bg-slate-100">
                         <video
                           title="Gold tier clinical success stories"
                           className="h-full w-full object-cover"
@@ -533,7 +540,7 @@ export default function BusinessEnquiriesPage() {
                           <source src="/images/tesimonials/test-1.mp4" type="video/mp4" />
                         </video>
                       </div>
-                      <div>
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h4 className="text-2xl sm:text-3xl font-bold text-[#0B3B2E] mb-1">
                           Hear from our Clinical Success Stories
                         </h4>
@@ -590,9 +597,9 @@ export default function BusinessEnquiriesPage() {
 
                 <div className="space-y-6">
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#CDD5DC]">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-5 items-start">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                    <div className="w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-0 items-stretch">
+                      <div className="relative self-start min-h-[420px] sm:min-h-[560px] lg:h-[760px] lg:min-h-0 overflow-hidden">
                         <Image
                           src={tierSectionImages.platinum.clinical.src}
                           alt={tierSectionImages.platinum.clinical.alt}
@@ -601,7 +608,7 @@ export default function BusinessEnquiriesPage() {
                           className="object-cover"
                         />
                       </div>
-                      <div>
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h3 className="text-4xl sm:text-5xl font-black text-[#1A2633] mb-2">
                           Institutional Leadership
                         </h3>
@@ -622,10 +629,17 @@ export default function BusinessEnquiriesPage() {
                     </div>
                   </section>
 
-                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#D7DEE4]">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 items-start">
-                      <div>
+                  <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#D7DEE4]">
+                    <img
+                      aria-hidden
+                      src="/images/faq.gif"
+                      alt=""
+                      className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 faq-overlay-motion"
+                    />
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#D7DEE4]/40" />
+                    <div className="relative z-10 w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-0 items-stretch">
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h4 className="text-2xl sm:text-3xl font-bold text-[#1A2633] mb-4">
                           What is included
                         </h4>
@@ -698,7 +712,7 @@ export default function BusinessEnquiriesPage() {
                           </AccordionItem>
                         </Accordion>
                       </div>
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+                      <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden">
                         <Image
                           src={tierSectionImages.platinum.included.src}
                           alt={tierSectionImages.platinum.included.alt}
@@ -712,9 +726,9 @@ export default function BusinessEnquiriesPage() {
                   </section>
 
                   <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#E1E6EB]">
-                    <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-                      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-5 items-start">
-                      <div>
+                    <div className="w-full pb-8 sm:pb-10">
+                      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-0 items-stretch">
+                      <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                         <h4 className="text-2xl sm:text-3xl font-bold text-[#1A2633] mb-1">
                           Hear from our Clinical Success Stories
                         </h4>
@@ -737,7 +751,7 @@ export default function BusinessEnquiriesPage() {
                           </Button>
                         </div>
                       </div>
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
+                      <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden bg-slate-100">
                         <video
                           title="Platinum tier clinical success stories"
                           className="h-full w-full object-cover"
