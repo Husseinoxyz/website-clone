@@ -36,26 +36,71 @@ function useScrollAnimation() {
   }, []);
 }
 
-const reels = [
+type ReelItem = {
+  id: string;
+  src: string;
+  poster?: string;
+  title?: string;
+  platform?: "mp4" | "youtube";
+  aspect?: "portrait" | "landscape";
+  autoplay?: boolean;
+};
+
+const defaultReels: ReelItem[] = [
   {
     id: "test-1",
     src: "/images/tesimonials/test-1.mp4",
     poster: "/images/tesimonials/test-1.mp4.png",
+    platform: "mp4",
   },
   {
     id: "test-2",
     src: "/images/tesimonials/test-2.mp4",
     poster: "/images/tesimonials/test-2.mp4.png",
+    platform: "mp4",
   },
   {
     id: "test-3",
     src: "/images/tesimonials/test-3.mp4",
     poster: "/images/tesimonials/test-3.mp4.png",
+    platform: "mp4",
   },
 ];
 
-export function InstagramReelsSection() {
+function toYouTubeEmbedUrl(url: string) {
+  const buildEmbedUrl = (id: string) =>
+    `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${id}&iv_load_policy=3&disablekb=1&fs=0`;
+
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, "");
+    if (host === "youtu.be") {
+      const id = parsed.pathname.replace("/", "");
+      return buildEmbedUrl(id);
+    }
+    if (host === "youtube.com" || host === "m.youtube.com") {
+      const id = parsed.searchParams.get("v");
+      if (id) {
+        return buildEmbedUrl(id);
+      }
+      const parts = parsed.pathname.split("/");
+      const embedIndex = parts.findIndex((part) => part === "embed");
+      if (embedIndex >= 0 && parts[embedIndex + 1]) {
+        return buildEmbedUrl(parts[embedIndex + 1]);
+      }
+    }
+  } catch {
+    return url;
+  }
+  return url;
+}
+
+export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelItem[] }) {
   useScrollAnimation();
+  const gridColsClass =
+    reels.length === 2
+      ? "grid gap-8 sm:grid-cols-2 lg:grid-cols-2"
+      : "grid gap-8 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <>
@@ -106,24 +151,40 @@ export function InstagramReelsSection() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={gridColsClass}>
             {reels.map((reel, index) => {
+              const isLandscape =
+                reel.aspect === "landscape" || reel.platform === "youtube";
               return (
                 <div
                   key={reel.id}
                   className={`animate-on-scroll stagger-${index + 1} scale-in rounded-2xl border-2 border-slate-200 bg-white shadow-lg hover:shadow-xl overflow-hidden transition-all duration-300`}
                 >
-                  <div className="relative aspect-[9/16] w-full bg-slate-50">
-                    <video
-                      title={`OXYZ Training Testimonial ${index + 1}`}
-                      className="h-full w-full object-cover bg-slate-100"
-                      poster={reel.poster}
-                      controls
-                      playsInline
-                      preload="none"
-                    >
-                      <source src={reel.src} type="video/mp4" />
-                    </video>
+                  <div className={`relative w-full bg-slate-50 ${isLandscape ? "aspect-video" : "aspect-[9/16]"}`}>
+                    {reel.platform === "youtube" ? (
+                      <iframe
+                        title={reel.title || `OXYZ Training Testimonial ${index + 1}`}
+                        src={toYouTubeEmbedUrl(reel.src)}
+                        className="h-full w-full bg-slate-100"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        title={reel.title || `OXYZ Training Testimonial ${index + 1}`}
+                        className="h-full w-full object-cover bg-slate-100"
+                        poster={reel.poster}
+                        autoPlay={Boolean(reel.autoplay)}
+                        muted={Boolean(reel.autoplay)}
+                        loop={Boolean(reel.autoplay)}
+                        controls
+                        playsInline
+                        preload="none"
+                      >
+                        <source src={reel.src} type="video/mp4" />
+                      </video>
+                    )}
                   </div>
                 </div>
               );

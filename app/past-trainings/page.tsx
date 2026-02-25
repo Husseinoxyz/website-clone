@@ -115,6 +115,25 @@ const stats = [
   { value: 20, suffix: "+", label: "Countries" },
 ];
 
+const pastTrainingTestimonials = [
+  {
+    id: "past-training-ali-hossain",
+    src: "/new/DR%20ALI%20HOSSAIN.mp4",
+    platform: "mp4" as const,
+    aspect: "landscape" as const,
+    autoplay: true,
+    title: "Past Trainings Testimonial 1",
+  },
+  {
+    id: "past-training-grace-capital",
+    src: "/new/DR%20GRACE%20CAPITAL.mp4",
+    platform: "mp4" as const,
+    aspect: "landscape" as const,
+    autoplay: true,
+    title: "Past Trainings Testimonial 2",
+  },
+];
+
 function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -497,7 +516,7 @@ export default function PastTrainingsPage() {
           </div>
         </section>
 
-        <InstagramReelsSection />
+        <InstagramReelsSection reels={pastTrainingTestimonials} />
 
         {/* Looking Ahead */}
         <section className="py-24 text-secondary-foreground relative overflow-hidden">

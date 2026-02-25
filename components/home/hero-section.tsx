@@ -13,10 +13,9 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          preload="none"
-          poster="/images/hero-bg-1.jpg"
+          preload="metadata"
         >
-          <source src="/images/Hero.mp4" type="video/mp4" />
+          <source src="/new/DR%20ALI%20HOSSAIN.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay for better text readability */}
