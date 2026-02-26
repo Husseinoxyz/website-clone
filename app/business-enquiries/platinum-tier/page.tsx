@@ -231,14 +231,14 @@ export default function PlatinumTierPage() {
       </section>
 
       <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#d0d9e2]">
-        <div className="grid w-full items-stretch gap-0 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="px-4 py-12 sm:px-6 sm:py-16 lg:px-12 xl:px-16">
+        <div className="grid w-full items-stretch gap-0 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="px-4 py-12 text-left sm:px-6 sm:py-16 lg:order-2 lg:px-12 xl:px-16">
             <h2 className="mt-2 text-3xl font-bold text-[#1f2d3a] sm:text-5xl">From Clinic Owner to Regional Authority.</h2>
             <p className="mt-6 text-lg leading-relaxed text-[#334b5e] sm:text-xl">
               The Platinum Tier is a Clinic-in-a-Box solution for the world&apos;s leading healthcare entrepreneurs. We provide the infrastructure you need to move beyond single-patient care and into institutional scaling. As a Global Elite Partner, you don&apos;t just attend the event; you acquire the technology and licensing to become the primary OXYZ hub in your territory.
             </p>
           </div>
-          <div className="relative min-h-[300px] sm:min-h-[420px] lg:min-h-full">
+          <div className="relative min-h-[380px] sm:min-h-[520px] lg:order-1 lg:min-h-[680px]">
             <Image
               src="/platinum/2.png"
               alt="Platinum tier institutional strategy"
