@@ -140,12 +140,10 @@ export default function GoldTierPage() {
       </section>
 
       <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#dbc17f]">
-        <img
-          src="/images/faq.gif?v=20260220"
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 faq-overlay-motion"
-        />
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="faq-overlay-motion absolute inset-0 bg-[radial-gradient(circle_at_20%_22%,rgba(255,255,255,0.22),transparent_46%),radial-gradient(circle_at_84%_18%,rgba(179,144,63,0.2),transparent_42%),radial-gradient(circle_at_50%_82%,rgba(15,49,43,0.14),transparent_54%)] opacity-60 [animation-duration:14s]" />
+          <div className="faq-overlay-motion absolute -inset-8 bg-[linear-gradient(120deg,rgba(255,255,255,0.1),rgba(255,255,255,0.01),rgba(255,255,255,0.1))] opacity-22 [animation-duration:18s]" />
+        </div>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <h2 className="mt-2 text-3xl font-bold text-[#0f312b] sm:text-5xl">What You Receive in Gold Tier</h2>
 

@@ -394,12 +394,9 @@ export default function PlatinumTierPage() {
           <p className="mx-auto mt-4 max-w-5xl text-lg leading-relaxed text-[#dbe5ee] sm:text-xl">
             Secure the hardware, the inventory, and the training to lead your region in the new era of regenerative medicine.
           </p>
-          <div className="mt-6 flex flex-col items-stretch justify-center gap-4 sm:flex-row">
-            <Button asChild className="bg-[#6a7986] px-8 py-6 text-sm font-semibold text-white hover:bg-[#5c6974]">
-              <a href="#platinum-register">APPLY FOR PLATINUM ELITE PARTNERSHIP</a>
-            </Button>
+          <div className="mt-6 flex justify-center">
             <Button asChild variant="outline" className="border-[#9eb0c2] bg-transparent px-8 py-6 text-sm font-semibold text-white hover:bg-white/10">
-              <a href="#platinum-register">REQUEST A PRIVATE STRATEGIC BRIEFING</a>
+              <a href="#platinum-register">APPLY FOR PLATINUM PARTNERSHIP</a>
             </Button>
           </div>
         </div>
