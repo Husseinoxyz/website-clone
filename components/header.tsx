@@ -6,7 +6,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const navigation = [
+type NavigationItem = {
+  name: string;
+  href: string;
+};
+
+const navigation: NavigationItem[] = [
   { name: "Home", href: "/" },
   { name: "About OXYZ", href: "/about" },
   { name: "2026 Training", href: "/training" },
