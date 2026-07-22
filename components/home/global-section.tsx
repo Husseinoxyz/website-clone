@@ -114,9 +114,9 @@ export function GlobalSection() {
         }
       `}</style>
       
-      <section className="py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground relative overflow-hidden">
+      <section className="py-24 bg-white text-gray-900 relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <Image
             src="/images/world-map.jpg"
             alt="World map"
@@ -131,11 +131,11 @@ export function GlobalSection() {
             <div className="animate-on-scroll slide-in-left">
               <div className="mb-6" />
               
-              <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6 text-balance">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
                 Global by Design
               </h2>
               
-              <p className="text-lg text-gold mb-8 leading-relaxed max-w-2xl">
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl">
                 A deliberately structured international footprint ensures
                 scientific governance, operational integrity, and scalable
                 expansion within a shared global framework.
@@ -145,16 +145,16 @@ export function GlobalSection() {
                 {locations.map((location, idx) => (
                   <div
                     key={location.country}
-                    className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300`}
+                    className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-4 bg-slate-50 rounded-xl p-5 border border-slate-200 hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300`}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gold rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-[#007A59]" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#007A59] rounded-lg flex items-center justify-center shadow-md">
+                      <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gold text-lg mb-1">
+                      <h3 className="font-semibold text-gray-900 text-lg mb-1">
                         {location.country}
                       </h3>
-                      <p className="text-secondary-foreground/90">
+                      <p className="text-gray-600">
                         {location.description}
                       </p>
                     </div>
@@ -166,21 +166,21 @@ export function GlobalSection() {
             {/* Stats */}
             <div className="animate-on-scroll slide-in-right">
               <div className="grid grid-cols-2 gap-6">
-                <div className="animate-on-scroll stagger-1 scale-in bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-300">
-                  <span className="text-5xl font-bold text-gold">3</span>
-                  <p className="text-secondary-foreground/90 mt-2 font-medium">Global Regions</p>
+                <div className="animate-on-scroll stagger-1 scale-in bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300">
+                  <span className="text-5xl font-bold text-[#007A59]">3</span>
+                  <p className="text-gray-600 mt-2 font-medium">Global Regions</p>
                 </div>
-                <div className="animate-on-scroll stagger-2 scale-in bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-300">
-                  <span className="text-5xl font-bold text-gold">5D</span>
-                  <p className="text-secondary-foreground/90 mt-2 font-medium">Medical Model</p>
+                <div className="animate-on-scroll stagger-2 scale-in bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300">
+                  <span className="text-5xl font-bold text-[#007A59]">5D</span>
+                  <p className="text-gray-600 mt-2 font-medium">Medical Model</p>
                 </div>
-                <div className="animate-on-scroll stagger-3 scale-in bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-300">
-                  <span className="text-5xl font-bold text-gold">100+</span>
-                  <p className="text-secondary-foreground/90 mt-2 font-medium">Professionals</p>
+                <div className="animate-on-scroll stagger-3 scale-in bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300">
+                  <span className="text-5xl font-bold text-[#007A59]">100+</span>
+                  <p className="text-gray-600 mt-2 font-medium">Professionals</p>
                 </div>
-                <div className="animate-on-scroll stagger-4 scale-in bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-300">
-                  <span className="text-5xl font-bold text-gold">6+</span>
-                  <p className="text-secondary-foreground/90 mt-2 font-medium">Continents Served</p>
+                <div className="animate-on-scroll stagger-4 scale-in bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300">
+                  <span className="text-5xl font-bold text-[#007A59]">6+</span>
+                  <p className="text-gray-600 mt-2 font-medium">Continents Served</p>
                 </div>
               </div>
             </div>
