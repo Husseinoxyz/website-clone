@@ -161,7 +161,7 @@ export default function TrainingPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/sym/symposium_hero.jpg"
+              src="/images/sym/register_hero.jpg"
               alt="OXYZ International Stem Cell Training 2026"
               fill
               priority
@@ -170,36 +170,32 @@ export default function TrainingPage() {
             />
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10" />
+            <div className="absolute inset-0 bg-black/70" />
           </div>
 
-          {/* Content Container - Positioned at bottom */}
-          <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
-            <div className="max-w-4xl w-full">
+          {/* Content Container - Vertically & Horizontally Centered */}
+          <div className="relative z-10 flex items-center justify-center text-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pt-36 pb-20">
+            <div className="max-w-3xl w-full mx-auto">
               
               {/* Main Title */}
-              <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
-                <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
-                  <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <div className="mb-6 sm:mb-8 text-center animate-fade-in-up opacity-0 animation-delay-200">
+                <h1 className="font-bold leading-[1.15] text-[#CDB06A] text-center">
+                  <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
                     OXYZ International Stem Cell Training 2026
                   </span>
-                  <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
+                  <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide text-center">
                     Regenerative Medicine & Strategic Collaboration
                   </span>
                 </h1>
               </div>
 
-              {/* Description */}
-              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A medically driven, invitation-based platform created for doctors, clinic owners, and healthcare leaders who seek to apply regenerative medicine responsibly and explore structured, ethical growth pathways.
+              {/* Description - reduced and clean */}
+              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto text-center animate-fade-in-up opacity-0 animation-delay-400 font-light">
+                A premier invitation-only medical platform for doctors, clinic owners, and healthcare leaders seeking clinical excellence in regenerative medicine.
               </p>
 
-              <p className="text-white/80 italic text-sm sm:text-base md:text-lg mb-10 sm:mb-12 animate-fade-in-up opacity-0 animation-delay-500">
-                This is not a mass conference. It is a medical alignment platform.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
+              {/* CTA Buttons - Centered */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
                 <Link href="/register" className="w-full sm:w-auto">
                   <Button
                     size="lg"
@@ -351,22 +347,22 @@ export default function TrainingPage() {
 
 
         {/* Scientific Focus */}
-        <section className="py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground">
+        <section className="py-24 bg-white text-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
                   Scientific & Medical Focus
                 </h2>
-                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
+                <p className="text-[#B8964A] text-xl sm:text-2xl mb-8 leading-relaxed font-medium">
                   The emphasis is on medical depth, clarity, and governance —
                   not promotional medicine.
                 </p>
                 <ul className="space-y-4">
                   {scientificFocus.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-start gap-3`}>
-                      <CheckCircle2 className="h-6 w-6 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-gold text-lg">
+                      <CheckCircle2 className="h-6 w-6 text-[#CDB06A] flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-600 text-lg">
                         {item}
                       </span>
                     </li>
@@ -374,29 +370,29 @@ export default function TrainingPage() {
                 </ul>
               </div>
               <div className="animate-on-scroll slide-in-right">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
                   Training Format
                 </h2>
                 <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <h3 className="text-xl font-semibold text-gold mb-2">
+                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-l-4 border-l-[#CDB06A]">
+                    <h3 className="text-xl font-semibold text-[#007A59] mb-2">
                       Physical Training
                     </h3>
-                    <ul className="space-y-2 text-gold text-lg">
+                    <ul className="space-y-2 text-slate-600 text-lg">
                       <li>Medical & Scientific Sessions</li>
                       <li>Clinical Case Discussions</li>
                       <li>Live Treatment Observation*</li>
                       <li>Strategic Networking</li>
                     </ul>
-                    <p className="text-xs text-gold/80 mt-3">
+                    <p className="text-xs text-slate-500 mt-3">
                       *Subject to ethical standards and regulatory compliance
                     </p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <h3 className="text-xl font-semibold text-gold mb-2">
+                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-l-4 border-l-[#CDB06A]">
+                    <h3 className="text-xl font-semibold text-[#007A59] mb-2">
                       Participants Will Gain
                     </h3>
-                    <ul className="space-y-2 text-gold text-lg">
+                    <ul className="space-y-2 text-slate-600 text-lg">
                       <li>Direct engagement with OXYZ leadership</li>
                       <li>Interaction with international professionals</li>
                       <li>Exposure to structured frameworks</li>
@@ -418,7 +414,7 @@ export default function TrainingPage() {
                   >
                     <Button
                       variant="outline"
-                      className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold bg-transparent"
+                      className="border-[#007A59] text-[#007A59] hover:bg-[#007A59] hover:text-white font-semibold bg-transparent"
                     >
                       Request More Details
                     </Button>
