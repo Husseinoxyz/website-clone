@@ -26,6 +26,11 @@ public/images/*
 !public/images/slides poster/**
 !public/images/Machines/
 !public/images/Machines/**
+!public/images/5D/
+!public/images/5D/**
+!public/images/Doctors/
+!public/images/Doctors/**
+public/images/Doctors/*.mp4
 
 # Node modules
 node_modules/
