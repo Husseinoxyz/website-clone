@@ -189,12 +189,6 @@ const packageFeatures = [
   {
     name: "Exclusive hamper: Full trial series of all OXYZ products",
     silver: true,
-    gold: false,
-    platinum: false,
-  },
-  {
-    name: "Exclusive hamper: Full trial series of all OXYZ products",
-    silver: true,
     gold: true,
     platinum: true,
   },
@@ -258,26 +252,15 @@ const packageFeatures = [
 
 const registrationTypes = [
   {
-    id: "silver-tier-early-bird",
-    name: "Silver Tier: Stem Cell Scholar (Early Bird)",
-    shortName: "Silver Tier",
-    tierKey: "silver" as const,
-    price: 2500,
-    priceId: "price_package_i_early_bird",
-    deadline: "Early Bird by 28 February 2026",
-    standardPrice: "$3,000 Standard",
-    badge: "Early Bird",
-  },
-  {
     id: "silver-tier-standard",
-    name: "Silver Tier: Stem Cell Scholar (Standard)",
-    shortName: "Silver Tier",
+    name: "VIP Package: Stem Cell Scholar",
+    shortName: "VIP Package",
     tierKey: "silver" as const,
     price: 3000,
     priceId: "price_package_i_standard",
-    deadline: "After 28 February 2026",
+    deadline: "Deadline: 15 October 2026",
     standardPrice: null,
-    badge: "Standard",
+    badge: "VIP",
   },
 ];
 
@@ -289,7 +272,7 @@ function RegistrationContent() {
   const initialType =
     registrationTypes.some((type) => type.id === requestedType) && requestedType
       ? requestedType
-      : "silver-tier-early-bird";
+      : "silver-tier-standard";
   
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
@@ -409,78 +392,49 @@ function RegistrationContent() {
         }
       `}</style>
 
-      {/* Hero - Enhanced */}
-      <section className="relative w-full min-h-[62vh] md:min-h-[68vh]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      {/* Hero Banner with Elegant Overlay Text - Full Width */}
+      <section className="bg-slate-950 pt-20 sm:pt-24 border-b border-slate-900">
+        <div className="relative w-full aspect-[16/9] md:aspect-[2.4/1] xl:aspect-[3/1] bg-slate-950">
           <Image
-            src="/images/sym/register_hero.jpg"
-            alt="Training registration"
+            src="/images/slides poster/Post 1.png"
+            alt="OXYZ Registration Event Banner"
             fill
+            className="object-cover filter brightness-[0.45] contrast-[1.05]"
             priority
-            sizes="100vw"
-            className="object-cover object-top"
           />
-          
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/15" />
-        </div>
-
-        {/* Content Container - Positioned at bottom */}
-        <div className="relative z-10 flex items-end min-h-[62vh] md:min-h-[68vh] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-6 sm:pb-8 md:pb-10 lg:pb-12 pt-20">
-          <div className="max-w-4xl w-full">
-            
-            {/* Main Title */}
-            <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
-              <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Register for
-                </span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                  Training 2026
-                </span>
-                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                  Secure Your Place at the Premier Event
-                </span>
+          {/* Overlay Text directly on top of the image */}
+          <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/35">
+            <div className="max-w-2xl w-full text-center text-white">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#CDB06A] uppercase tracking-wide leading-tight mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                Register for Training 2026
               </h1>
-            </div>
-
-            {/* Description */}
-            <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-              Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026.
-            </p>
-
-            {/* Info Pills */}
-            <div className="flex flex-wrap gap-4 animate-fade-in-up opacity-0 animation-delay-600">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
-                <Check className="h-4 w-4 text-gold" />
-                <span>18-20 April 2026</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
-                <Check className="h-4 w-4 text-gold" />
-                <span>Limited to 80-100 Participants</span>
-              </div>
+              <p className="text-xs sm:text-sm md:text-base text-emerald-400 font-semibold uppercase tracking-wider mb-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                Secure Your Place at the Premier Event
+              </p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-slate-100 font-light leading-relaxed max-w-lg mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Registration Form */}
-      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
-            <div className="lg:col-span-2 animate-on-scroll slide-in-left">
+            <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Registration Type */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
                   <h2 className="text-2xl font-bold text-[#007A59] mb-6 flex items-center gap-2">
                     Select Registration Tier
                   </h2>
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4">
                     {registrationTypes.map((type) => {
                       const isSelected = selectedType === type.id;
-                      const isEarlyBird = type.id === "silver-tier-early-bird";
 
                       return (
                         <button
@@ -488,50 +442,61 @@ function RegistrationContent() {
                           type="button"
                           onClick={() => setSelectedType(type.id)}
                           className={`text-left p-5 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${
-                            isSelected && isEarlyBird
-                              ? "border-[#006b4f] bg-[#007A59] shadow-lg ring-2 ring-[#007A59]/35"
-                              : isSelected
-                              ? "border-gold bg-gold/20 shadow-md"
-                              : isEarlyBird
-                              ? "border-[#007A59] bg-[#007A59] hover:bg-[#006b4f] hover:border-[#006b4f]"
-                              : "border-slate-200 hover:border-gold/50"
+                            isSelected
+                              ? "border-[#007A59] bg-[#007A59]/5 shadow-lg ring-2 ring-[#007A59]/20"
+                              : "border-slate-200 bg-white hover:border-[#007A59]/50"
                           }`}
                         >
                           {type.badge && (
                             <span
                               className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
-                                isEarlyBird
-                                  ? "bg-gold text-[#1f2d24]"
-                                  : "bg-teal text-white"
+                                isSelected
+                                  ? "bg-[#007A59] text-white"
+                                  : "bg-slate-100 text-[#007A59]"
                               }`}
                             >
                               {type.badge}
                             </span>
                           )}
-                          <p
-                            className={`font-semibold text-sm mb-2 ${
-                              isEarlyBird ? "text-white" : "text-[#007A59]"
-                            }`}
-                          >
+                          <p className="font-semibold text-sm mb-2 text-[#007A59]">
                             {type.name}
                           </p>
-                          <p
-                            className={`text-3xl font-bold mb-1 ${
-                              isEarlyBird ? "text-white" : "text-gold"
-                            }`}
-                          >
+                          <p className="text-3xl font-bold mb-1 text-gold">
                             ${type.price.toLocaleString()}
                           </p>
-                          <p
-                            className={`text-xs ${
-                              isEarlyBird ? "text-white/90" : "text-[#007A59]"
-                            }`}
-                          >
+                          <p className="text-xs text-slate-500">
                             {type.deadline}
                           </p>
                         </button>
                       );
                     })}
+                  </div>
+
+                  {/* What You'll Gain from the Program */}
+                  <div className="mt-8 pt-6 border-t border-slate-100">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-[#007A59] mb-4">
+                      What You'll Gain from the Certification Program
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        { title: "Accredited Certification", desc: "Internationally accredited certification recognizing advanced training in Stem Cell, Biological Medicine, and Peptide Therapy." },
+                        { title: "Become a Specialist", desc: "Gain knowledge, practical skills, and clinical confidence to introduce regenerative medicine services." },
+                        { title: "Clinical Implementation", desc: "Return to your clinic with ready-to-use clinical protocols and immediate implementation strategies." },
+                        { title: "Grow Your Clinic", desc: "6 months of business development support, marketing consultation, and patient acquisition strategies." },
+                        { title: "Build Your Brand", desc: "Personal branding, social media positioning, and physician profile development by our team." },
+                        { title: "Continuous Support", desc: "6 months of ongoing support, clinical guidance, technical assistance, and case discussions." },
+                        { title: "AI in Regenerative Medicine", desc: "Discover how AI improves clinical workflows, patient communication, and documentation." },
+                        { title: "Future of Integrative Medicine", desc: "Master the latest advancements in Biological Medicine and regenerative healthcare technologies." }
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                          <Check className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-sm text-[#007A59] mb-1">{item.title}</p>
+                            <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -733,7 +698,7 @@ function RegistrationContent() {
             </div>
 
             {/* Order Summary */}
-            <div className="lg:col-span-1 animate-on-scroll slide-in-right scale-in">
+            <div className="lg:col-span-1">
               <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-slate-100 sticky top-24">
                 <h2 className="text-2xl font-bold text-[#007A59] mb-6">
                   Order Summary
@@ -760,8 +725,8 @@ function RegistrationContent() {
                       <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
                         {packageFeatures
                           .filter((feature) => feature[selectedRegistration.tierKey])
-                          .map((feature) => (
-                            <div key={feature.name} className="flex items-start gap-2">
+                          .map((feature, idx) => (
+                            <div key={`${feature.name}-${idx}`} className="flex items-start gap-2">
                               <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
                               <span className="text-sm text-[#007A59]">
                                 {feature.name}

@@ -182,11 +182,10 @@ export default function FiveDModelPage() {
                   className="grid gap-0 overflow-hidden bg-[#FCFBF8] border-y border-[#E9E1CF] lg:grid-cols-12"
                 >
                   <div
-                    className={`relative min-h-[220px] sm:min-h-[260px] ${
-                      isEven
+                    className={`relative min-h-[220px] sm:min-h-[260px] ${isEven
                         ? "order-2 lg:order-1 lg:col-span-5 lg:col-start-1"
                         : "order-2 lg:order-3 lg:col-span-5 lg:col-start-8"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={stage.image}
@@ -198,11 +197,10 @@ export default function FiveDModelPage() {
                     <div className="absolute inset-0 bg-teal/20 mix-blend-multiply" />
                   </div>
                   <div
-                    className={`order-3 lg:order-2 px-6 py-8 sm:px-10 sm:py-10 ${
-                      isEven
+                    className={`order-3 lg:order-2 px-6 py-8 sm:px-10 sm:py-10 ${isEven
                         ? "lg:col-span-5 lg:col-start-6"
                         : "lg:col-span-5 lg:col-start-3"
-                    }`}
+                      }`}
                   >
                     <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
                       {stage.title}
@@ -223,11 +221,10 @@ export default function FiveDModelPage() {
                     </ul>
                   </div>
                   <div
-                    className={`flex items-center justify-center min-h-[220px] sm:min-h-[260px] ${
-                      isEven
+                    className={`flex items-center justify-center min-h-[220px] sm:min-h-[260px] ${isEven
                         ? "order-1 lg:order-3 lg:col-span-2 lg:col-start-11"
                         : "order-1 lg:order-1 lg:col-span-2 lg:col-start-1"
-                    } ${isEven ? "bg-teal" : "bg-gold"}`}
+                      } ${isEven ? "bg-teal" : "bg-gold"}`}
                   >
                     <span className="text-[10rem] font-bold text-white/90 italic">
                       {stage.number}

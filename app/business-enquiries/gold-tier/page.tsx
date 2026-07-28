@@ -120,7 +120,7 @@ export default function GoldTierPage() {
               <li>
                 <span className="font-bold text-[#173f37]">Unshakable Confidence:</span> Trying the product yourself eliminates the clinical gap. You return to your practice with the absolute certainty that comes from seeing your own markers move.
               </li>
-            </ul> 
+            </ul>
           </div>
           <div className="flex flex-col justify-center border-l-4 border-[#b3903f] px-4 py-12 sm:px-6 sm:py-16 lg:px-12 xl:px-16">
             <p className="text-2xl font-semibold italic leading-relaxed text-[#2a3c38] sm:text-3xl">

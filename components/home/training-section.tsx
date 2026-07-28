@@ -134,7 +134,7 @@ export function TrainingSection() {
                   <Calendar className="h-6 w-6 text-gold" />
                   <div>
                     <p className="text-sm text-[#007A59]">Date</p>
-                    <p className="font-semibold text-[#007A59]">April 2026</p>
+                    <p className="font-semibold text-[#007A59]">November 2026</p>
                   </div>
                 </div>
                 <div className="animate-on-scroll stagger-2 scale-in flex items-center gap-3 bg-muted rounded-lg p-4 hover:shadow-md transition-shadow">
@@ -155,7 +155,7 @@ export function TrainingSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll">
                 <Link href="/training">
-                  <Button className="bg-gold hover:bg-gold-dark text-[#007A59] font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                  <Button className="bg-gold hover:bg-gold-dark text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
                     Explore More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -173,7 +173,7 @@ export function TrainingSection() {
 
             {/* Image */}
             <Link
-              href="/register?type=silver-tier-early-bird"
+              href="/register?type=silver-tier-standard"
               className="relative block animate-on-scroll slide-in-right scale-in"
             >
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
@@ -186,10 +186,9 @@ export function TrainingSection() {
                 />
               </div>
               {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-gold text-[#007A59] rounded-xl p-6 shadow-2xl hover:shadow-3xl transition-shadow">
-                <p className="text-sm font-medium">Early Bird</p>
-                <p className="text-2xl font-bold">USD 2,500</p>
-                <p className="text-xs mt-1">Until 28 Feb 2026</p>
+              <div className="absolute -bottom-6 -left-6 bg-gold text-white rounded-xl p-6 shadow-2xl hover:shadow-3xl transition-shadow">
+                <p className="text-sm font-medium">VIP Package</p>
+                <p className="text-2xl font-bold">USD 3,000</p>
               </div>
             </Link>
           </div>

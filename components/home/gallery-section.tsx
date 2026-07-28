@@ -10,10 +10,10 @@ import { ArrowRight, X } from "lucide-react";
 function useScrollAnimation() {
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-    
+
     const animateOnScroll = () => {
       const elements = document.querySelectorAll('.animate-on-scroll');
-      
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -52,18 +52,18 @@ function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: numbe
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
-            
+
             const startTime = Date.now();
             const endTime = startTime + duration;
 
             const updateCounter = () => {
               const now = Date.now();
               const progress = Math.min((now - startTime) / duration, 1);
-              
+
               // Easing function for smooth animation
               const easeOutQuart = 1 - Math.pow(1 - progress, 4);
               const currentCount = Math.floor(easeOutQuart * value);
-              
+
               setCount(currentCount);
 
               if (progress < 1) {
@@ -137,7 +137,7 @@ const galleryImages = [
 
 export function GallerySection() {
   useScrollAnimation();
-  
+
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
@@ -181,72 +181,74 @@ export function GallerySection() {
           transition-delay: 0.4s;
         }
       `}</style>
-      
-      <section className="py-24 bg-[#CDB06A]">
+
+      <section className="py-24 bg-gradient-to-b from-[#FAF6ED] via-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#005744] mb-6 text-balance">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
               Past International Training Highlights
             </h2>
-            <p className="text-lg text-[#005744]/80 leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               A glimpse into our medical and professional community. The OXYZ
               International Stem Cell Training Series brings together medical professionals,
               clinic owners, and healthcare leaders from different regions.
             </p>
           </div>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 mb-12 w-screen mx-[calc(50%-50vw)] animate-on-scroll">
+          {/* Gallery Grid (Styled as separated rounded banners) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-16 animate-on-scroll">
             {galleryImages.map((image, index) => (
               <button
                 key={index}
                 type="button"
                 onClick={() => setSelectedImage(image)}
-                className={`relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-                  index === 0 || index === 5 ? "md:col-span-1 md:row-span-1" : ""
-                }`}
+                className="relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-[24px] border border-slate-200/80 shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
               >
                 <div className="aspect-[4/3] relative">
                   <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    quality={100}
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white bg-[#007A59]/90 text-xs font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-wider">
+                      View Highlight
+                    </span>
+                  </div>
                 </div>
               </button>
             ))}
           </div>
 
           {/* Participants Info */}
-          <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-8 mb-12 shadow-xl animate-on-scroll">
+          <div className="bg-white border border-[#CDB06A]/30 rounded-2xl p-8 mb-12 shadow-xl animate-on-scroll">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div className="animate-on-scroll stagger-1 scale-in">
                 <AnimatedCounter value={6} suffix="+" duration={2000} />
-                <p className="text-[#005744] mt-2 font-medium">Continents Represented</p>
+                <p className="text-slate-600 mt-2 font-medium">Continents Represented</p>
               </div>
               <div className="animate-on-scroll stagger-2 scale-in">
                 <AnimatedCounter value={100} suffix="+" duration={2000} />
-                <p className="text-[#005744] mt-2 font-medium">Medical Professionals</p>
+                <p className="text-slate-600 mt-2 font-medium">Medical Professionals</p>
               </div>
               <div className="animate-on-scroll stagger-3 scale-in">
                 <AnimatedCounter value={50} suffix="+" duration={2000} />
-                <p className="text-[#005744] mt-2 font-medium">Clinical Topics Covered</p>
+                <p className="text-slate-600 mt-2 font-medium">Clinical Topics Covered</p>
               </div>
               <div className="animate-on-scroll stagger-4 scale-in">
                 <AnimatedCounter value={20} suffix="+" duration={2000} />
-                <p className="text-[#005744] mt-2 font-medium">Countries Attended</p>
+                <p className="text-slate-600 mt-2 font-medium">Countries Attended</p>
               </div>
             </div>
           </div>
 
           <div className="text-center animate-on-scroll">
             <Link href="/past-trainings">
-              <Button 
+              <Button
                 size="lg"
-                className="bg-[#007A59] hover:bg-[#006048] text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="bg-[#CDB06A] hover:bg-[#B8964A] text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 View More Past Event Highlights
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -277,7 +279,7 @@ export function GallerySection() {
                   src={selectedImage.src}
                   alt={selectedImage.alt}
                   fill
-                  quality={100}
+                  sizes="(max-width: 1024px) 100vw, 1024px"
                   className="object-contain"
                 />
               </div>

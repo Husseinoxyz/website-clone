@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
@@ -109,7 +110,7 @@ export function WhyOXYZSection() {
         }
       `}</style>
       
-      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Content */}
@@ -120,7 +121,7 @@ export function WhyOXYZSection() {
                 Why Professionals Choose OXYZ
               </h2>
               
-              <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed max-w-2xl">
+              <p className="text-slate-600 text-xl sm:text-2xl mb-8 leading-relaxed max-w-2xl">
                 We scale by alignment and capability, not volume. OXYZ integrates
                 regenerative medicine, preventive health, aesthetics, products,
                 and structured business models under one governance framework.
@@ -148,25 +149,30 @@ export function WhyOXYZSection() {
               </div>
             </div>
             
-            {/* Quote Card */}
-            <div className="animate-on-scroll slide-in-right scale-in bg-gradient-to-br from-teal-dark to-teal rounded-2xl p-10 relative shadow-2xl border border-white/10">
-              <div className="absolute top-6 left-6 text-8xl text-gold/30 font-serif leading-none">
+            {/* Quote Card (Styled in light gold gradient with elegant serif typography) */}
+            <div className="animate-on-scroll slide-in-right scale-in bg-gradient-to-br from-[#FAF6ED] via-[#FAF6ED] to-[#F5EEDC] rounded-[24px] p-8 sm:p-10 relative shadow-xl border border-[#CDB06A]/25">
+              <div className="absolute -top-1 left-2 text-8xl text-[#CDB06A]/20 font-serif leading-none select-none pointer-events-none">
                 &ldquo;
               </div>
-              <div className="relative">
-                <p className="text-gold text-2xl leading-relaxed mb-8">
+              <div className="relative z-10">
+                <p className="text-slate-700 font-serif italic text-lg sm:text-xl leading-relaxed mb-8">
                   Regenerative medicine demands responsibility. Business
                   opportunities should emerge from medical mastery — not replace
                   it. OXYZ is not designed for rapid commercialization. It is
                   designed for sustainable medical excellence.
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-foreground font-bold text-xl">O</span>
+                  <div className="w-12 h-12 relative flex items-center justify-center shrink-0">
+                    <Image
+                      src="/logo.png"
+                      alt="OXYZ Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <div>
-                    <p className="font-bold text-gold text-lg">OXYZ Philosophy</p>
-                    <p className="text-sm text-secondary-foreground/80">
+                    <p className="font-bold text-[#007A59] text-base sm:text-lg">OXYZ Philosophy</p>
+                    <p className="text-xs sm:text-sm text-slate-500 font-medium">
                       Medical Integrity First
                     </p>
                   </div>

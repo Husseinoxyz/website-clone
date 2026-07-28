@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -24,9 +25,34 @@ const navigation: NavigationItem[] = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const pathname = usePathname();
+
+  // Scroll detection: Only show header at the very top (hero part)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (mobileMenuOpen) return; // Keep visible if mobile nav is open
+
+      const currentScrollY = window.scrollY;
+
+      // Show header only if scrolled to the top/hero section (scrollY < 80px)
+      if (currentScrollY < 80) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
+    };
+
+    // Run once on mount to set initial state correctly
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-border shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-border shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"
+      }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -57,11 +83,13 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-4">
-            <Link href="/register">
-              <Button className="bg-gold hover:bg-gold-dark text-white font-semibold px-6 shadow-md shadow-gold/20 hover:shadow-lg hover:shadow-gold/30 transition-shadow">
-                Register Now
-              </Button>
-            </Link>
+            {pathname !== "/register" && (
+              <Link href="/register">
+                <Button className="bg-gold hover:bg-gold-dark text-white font-semibold px-6 shadow-md shadow-gold/20 hover:shadow-lg hover:shadow-gold/30 transition-shadow">
+                  Register Now
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,11 +121,13 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-gold hover:bg-gold-dark text-white font-semibold shadow-md shadow-gold/20">
-                  Register Now
-                </Button>
-              </Link>
+              {pathname !== "/register" && (
+                <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full bg-gold hover:bg-gold-dark text-white font-semibold shadow-md shadow-gold/20">
+                    Register Now
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         )}

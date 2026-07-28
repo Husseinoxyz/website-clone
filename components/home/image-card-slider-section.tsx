@@ -94,7 +94,6 @@ export function ImageCardSliderSection() {
                   alt={slide.alt}
                   fill
                   sizes="(max-width: 640px) 360px, (max-width: 1024px) 400px, 460px"
-                  quality={100}
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

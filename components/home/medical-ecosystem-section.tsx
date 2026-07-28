@@ -137,26 +137,26 @@ export function MedicalEcosystemSection() {
           </div>
           
           {/* Content */}
-          <div className="px-4 sm:px-6 lg:px-16 py-12 lg:py-16 animate-on-scroll slide-in-right">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#005744] mb-8 leading-tight sm:whitespace-nowrap">
+          <div className="px-6 sm:px-8 lg:px-12 py-8 lg:py-12 animate-on-scroll slide-in-right flex flex-col justify-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#005744] mb-4 leading-tight">
               A Medical-First Ecosystem
             </h2>
-            <p className="text-xl sm:text-2xl text-[#005744]/80 mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg text-[#005744]/90 mb-6 leading-relaxed">
               Regenerative medicine demands discipline, ethics, and structure.
               OXYZ integrates multiple medical disciplines through structured
               clinical and operational systems.
             </p>
             
-            <div className="space-y-4 mb-10">
+            <div className="space-y-3 mb-6">
               {features.map((feature, idx) => (
                 <div 
                   key={feature.title} 
                   className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-3`}
                 >
-                  <feature.icon className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-1" />
-                  <div>
+                  <feature.icon className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-0.5" />
+                  <div className="text-sm sm:text-base">
                     <span className="font-semibold text-[#005744]">{feature.title}</span>
-                    <span className="text-[#005744]/70"> — {feature.description}</span>
+                    <span className="text-[#005744]/80"> — {feature.description}</span>
                   </div>
                 </div>
               ))}
@@ -165,11 +165,10 @@ export function MedicalEcosystemSection() {
             <div className="animate-on-scroll">
               <Link href="/about">
                 <Button 
-                  size="lg"
-                  className="bg-[#007A59] hover:bg-[#006048] text-white font-semibold text-base px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  className="bg-[#007A59] hover:bg-[#006048] text-white font-semibold text-sm sm:text-base px-6 py-2.5 h-auto shadow-md hover:shadow-lg transition-all hover:scale-105"
                 >
                   About OXYZ
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
             </div>

@@ -34,9 +34,18 @@ const getCountdown = (): Countdown => {
 };
 
 export function CountdownSection() {
-  const [countdown, setCountdown] = useState<Countdown>(getCountdown());
+  const [mounted, setMounted] = useState(false);
+  const [countdown, setCountdown] = useState<Countdown>({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
 
   useEffect(() => {
+    setMounted(true);
+    setCountdown(getCountdown());
+
     const timer = setInterval(() => {
       setCountdown(getCountdown());
     }, 1000);
@@ -81,7 +90,7 @@ export function CountdownSection() {
                   className="group rounded-xl bg-black/60 border border-white/10 px-3 py-3.5 text-center shadow-lg hover:border-gold/30 hover:scale-[1.02] transition-all duration-300"
                 >
                   <p className="text-3xl sm:text-4xl font-extrabold text-gold tracking-tight">
-                    {unit.value}
+                    {mounted ? unit.value : "00"}
                   </p>
                   <p className="text-[9px] sm:text-xs uppercase tracking-wider text-white/70 mt-1 font-semibold">
                     {unit.label}

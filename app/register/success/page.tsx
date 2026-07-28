@@ -78,7 +78,7 @@ export default function RegistrationSuccessPage() {
             <div className="bg-teal-dark text-secondary-foreground rounded-lg p-6 mb-8">
               <p className="font-medium">
                 Remember to save the date:{" "}
-                <span className="text-gold font-bold">18-20 April 2026</span>
+                <span className="text-gold font-bold">20-23 November 2026</span>
               </p>
               <p className="text-sm text-secondary-foreground/80 mt-2">
                 OXYZ International Training 2026, Malaysia

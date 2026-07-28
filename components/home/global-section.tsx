@@ -147,8 +147,12 @@ export function GlobalSection() {
                     key={location.country}
                     className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-4 bg-slate-50 rounded-xl p-5 border border-slate-200 hover:bg-slate-100/80 hover:border-slate-300 shadow-sm transition-all duration-300`}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-[#007A59] rounded-lg flex items-center justify-center shadow-md">
-                      <MapPin className="h-6 w-6 text-white" />
+                    <div className="flex-shrink-0 w-12 h-8 rounded overflow-hidden shadow-sm relative">
+                      <img
+                        src={`https://flagcdn.com/w80/${location.flag.toLowerCase()}.png`}
+                        alt={`${location.country} Flag`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 text-lg mb-1">
