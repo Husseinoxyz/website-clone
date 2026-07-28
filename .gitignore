@@ -20,6 +20,10 @@ public/images/*
 !public/images/faq.gif
 !public/images/tesimonials/
 !public/images/tesimonials/**
+!public/images/sliderpost phone/
+!public/images/sliderpost phone/**
+!public/images/slides poster/
+!public/images/slides poster/**
 
 # Node modules
 node_modules/
