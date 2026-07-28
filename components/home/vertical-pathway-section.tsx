@@ -27,7 +27,7 @@ const pathways = [
     type: "handson",
     category: "Certificates",
     image: "/images/sym/03.jpg",
-    video: "/images/PLATINUM-test.mp4",
+    video: "/images/tesimonials/Doctors%20certficate.mp4",
     link: "/register",
   },
   {
