@@ -443,11 +443,11 @@ const getAnnularSectorPath = (cx: number, cy: number, rIn: number, rOut: number,
 
 // Hardcoded label details to align custom 'D' prefix with the rest of the text label (snug 0.5 gap, centered at X)
 const labelPositions = [
-  { title: "Discovery", dX: -9.0, textX: -5.75 },
-  { title: "Detox", dX: -5.5, textX: -2.25 },
-  { title: "Defence", dX: -7.25, textX: -4.0 },
-  { title: "Dynamic", dX: -7.25, textX: -4.0 },
-  { title: "Dietary", dX: -7.0, textX: -3.75 },
+  { title: "Discovery", dX: -7.9, textX: -5.75 },
+  { title: "Detox", dX: -4.4, textX: -2.25 },
+  { title: "Defence", dX: -6.15, textX: -4.0 },
+  { title: "Dynamic", dX: -6.15, textX: -4.0 },
+  { title: "Dietary", dX: -5.9, textX: -3.75 },
 ];
 
 // Absolute centers of icon and label content within each sector, aligned vertically
