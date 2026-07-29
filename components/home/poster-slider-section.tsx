@@ -9,34 +9,35 @@ const posterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/slides poster/Post 1.png",
-    mobileImage: "/images/sliderpost phone/Post 1.png",
+    image: "/images/slides poster/PC View/Post 1.png",
+    mobileImage: "/images/slides poster/Phone View/Post 1.png",
   },
   {
     id: 2,
     title: "OXYZ Poster 2",
-    image: "/images/slides poster/Post 2.png",
-    mobileImage: "/images/sliderpost phone/Post 2.png",
+    image: "/images/slides poster/PC View/Post 2.png",
+    mobileImage: "/images/slides poster/Phone View/Post 2.png",
   },
   {
     id: 3,
     title: "OXYZ Poster 3",
-    image: "/images/slides poster/Post 3.png",
-    mobileImage: "/images/sliderpost phone/Post 3.png",
+    image: "/images/slides poster/PC View/Post 3.png",
+    mobileImage: "/images/slides poster/Phone View/Post 3.png",
   },
   {
     id: 4,
     title: "OXYZ Poster 4",
-    image: "/images/slides poster/Post 4.png",
-    mobileImage: "/images/sliderpost phone/Post 4.png",
+    image: "/images/slides poster/PC View/Post 4.png",
+    mobileImage: "/images/slides poster/Phone View/Post 4.png",
   },
   {
     id: 5,
     title: "OXYZ Poster 5",
-    image: "/images/slides poster/Post 5.png",
-    mobileImage: "/images/sliderpost phone/Post 5.png",
+    image: "/images/slides poster/PC View/Symposium Website Post.png",
+    mobileImage: "/images/slides poster/Phone View/Post 5.png",
   },
 ];
+
 
 export function PosterSliderSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
