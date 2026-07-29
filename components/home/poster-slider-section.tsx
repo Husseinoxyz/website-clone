@@ -125,13 +125,13 @@ export function PosterSliderSection() {
             animation: shimmer 8s infinite linear;
           }
         `}</style>
-        
+
         {/* Animated ambient light glow behind text */}
         <div className="absolute inset-0 shimmer-bg pointer-events-none" />
 
         <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-3.5 gap-y-2 leading-relaxed max-w-7xl mx-auto">
           <Calendar className="h-4 w-4 text-[#CDB06A] shrink-0 animate-bounce" />
-          <span className="text-white/95">
+          <span className="text-white/95 font-bold text-lg">
             Enter the World of the Stem Cell, Biological Medicine & Peptide Therapy Industry.{" "}
             <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
               Bring It to Your Clinic.
@@ -160,7 +160,7 @@ export function PosterSliderSection() {
           </div>
 
           <div className="relative w-full max-w-[1550px] mx-auto flex flex-col items-center justify-start gap-3 sm:gap-6 px-4 sm:px-6 md:px-8 z-10 pt-2 md:pt-4">
-            <div 
+            <div
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
@@ -219,9 +219,8 @@ export function PosterSliderSection() {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentIndex ? "w-6 bg-[#CDB06A]" : "w-2 bg-white/60"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-6 bg-[#CDB06A]" : "w-2 bg-white/60"
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
