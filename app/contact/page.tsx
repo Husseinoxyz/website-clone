@@ -323,24 +323,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="animate-on-scroll stagger-2 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
-                    <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
-                      <Phone className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-[#007A59] mb-1">
-                        Phone / WhatsApp
-                      </h3>
-                      <a
-                        className="text-gold hover:text-gold/80 transition-colors"
-                        href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        +65 8616 3762
-                      </a>
-                    </div>
-                  </div>
+
 
                   <div className="animate-on-scroll stagger-3 group flex items-start gap-4 p-4 rounded-xl hover:bg-white transition-colors">
                     <div className="w-12 h-12 rounded-lg bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">

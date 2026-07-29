@@ -34,23 +34,31 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {images.map((src, index) => (
           <button
             key={src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="relative aspect-[4/3] overflow-hidden"
+            className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group bg-slate-100"
             aria-label={`${alt} ${index + 1}`}
           >
             <Image
               src={src}
               alt={alt}
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               quality={100}
             />
+            {/* Dark overlay on hover */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+            {/* Centered "VIEW HIGHLIGHT" pill button */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="bg-[#007A59] text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full tracking-widest uppercase shadow-lg">
+                View Highlight
+              </span>
+            </div>
           </button>
         ))}
       </div>
