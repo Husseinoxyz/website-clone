@@ -9,8 +9,8 @@ const posterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/slides poster/PC View/Post 1.png",
-    mobileImage: "/images/slides poster/Phone View/Post 1.png",
+    image: "/images/slides poster/PC View/Post 1 updated.png",
+    mobileImage: "/images/slides poster/Phone View/Post 1 update.png",
   },
   {
     id: 2,
