@@ -51,7 +51,7 @@ export function StatsFeaturesSection() {
             {/* Stat Card 2 (Styled with a light, low-opacity brand green) */}
             <div className="bg-[#E6F3EF] border border-[#007A59]/20 p-8 sm:p-10 rounded-[24px] shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-md">
               <span className="text-4xl sm:text-5xl font-extrabold text-[#007A59] tracking-tight mb-3 font-sans">
-                +15 Years
+                15+ Years
               </span>
               <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed max-w-xs">
                 of Experience in Regenerative Medicine

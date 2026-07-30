@@ -45,7 +45,7 @@ const featuredVideos = [
   },
   {
     id: "feat-2",
-    title: "Oxyz 5D Concept",
+    title: "OXYZ 5D Concept",
     videoUrl: "https://youtu.be/nUjWrDeruMc?si=8R-CkO6MkP4G2S4u",
     poster: "https://img.youtube.com/vi/nUjWrDeruMc/maxresdefault.jpg",
     badge: "WELLNESS CONCEPT",
@@ -214,12 +214,12 @@ export function LibraryHubSection() {
       {/* Quote Section in between */}
       <QuoteSection />
 
-      {/* Second Half (Oxyz Activities) */}
+      {/* Second Half (OXYZ Activities) */}
       <div className="w-full max-w-none px-4 sm:px-6 lg:px-10 pt-16 sm:pt-24">
         {/* Interviews Subtitle */}
         <div className="mb-6 border-b border-slate-100 pb-4">
           <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-wide border-l-4 border-[#CDB06A] pl-3">
-            Oxyz Activities
+            OXYZ Activities
           </h3>
         </div>
 
