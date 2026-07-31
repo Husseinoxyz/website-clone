@@ -123,6 +123,8 @@ const pastTrainingTestimonials = [
     aspect: "landscape" as const,
     autoplay: true,
     title: "Past Trainings Testimonial 1",
+    subtitle: "",
+    doctor: "Dr. Ali Hossain",
   },
   {
     id: "past-training-grace-capital",
@@ -131,6 +133,8 @@ const pastTrainingTestimonials = [
     aspect: "landscape" as const,
     autoplay: true,
     title: "Past Trainings Testimonial 2",
+    subtitle: "",
+    doctor: "Dr. Grace Capital",
   },
 ];
 
