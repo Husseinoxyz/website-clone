@@ -273,7 +273,13 @@ function RegistrationContent() {
     registrationTypes.some((type) => type.id === requestedType) && requestedType
       ? requestedType
       : "silver-tier-standard";
-  
+
+  const requestedCountry = searchParams.get("country");
+  const initialCountry =
+    countries.find(
+      (c) => c.toLowerCase() === requestedCountry?.toLowerCase()
+    ) || "";
+
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -282,7 +288,7 @@ function RegistrationContent() {
     email: "",
     countryCode: "+1",
     phone: "",
-    country: "",
+    country: initialCountry,
     organization: "",
     role: "",
     specialization: "",

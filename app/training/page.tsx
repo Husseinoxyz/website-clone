@@ -153,6 +153,55 @@ export default function TrainingPage() {
         .stagger-4 {
           transition-delay: 0.4s;
         }
+
+        @keyframes float-up-1 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes float-up-2 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-25px) rotate(-5deg); }
+        }
+
+        @keyframes float-up-3 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        @keyframes float-up-4 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-22px) rotate(-4deg); }
+        }
+
+        @keyframes float-up-5 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-18px) rotate(4deg); }
+        }
+
+        @keyframes float-up-6 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-24px) rotate(-3deg); }
+        }
+
+        @keyframes float-up-7 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-16px) rotate(2deg); }
+        }
+
+        @keyframes float-up-8 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(-2deg); }
+        }
+
+        .float-1 { animation: float-up-1 4s ease-in-out infinite; }
+        .float-2 { animation: float-up-2 4.5s ease-in-out infinite 0.2s; }
+        .float-3 { animation: float-up-3 4s ease-in-out infinite 0.4s; }
+        .float-4 { animation: float-up-4 4.5s ease-in-out infinite 0.1s; }
+        .float-5 { animation: float-up-5 4s ease-in-out infinite 0.3s; }
+        .float-6 { animation: float-up-6 4.5s ease-in-out infinite 0.2s; }
+        .float-7 { animation: float-up-7 4s ease-in-out infinite 0.15s; }
+        .float-8 { animation: float-up-8 4.5s ease-in-out infinite 0.25s; }
       `}</style>
       <Header />
       <main>
