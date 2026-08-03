@@ -219,7 +219,7 @@ export default function TrainingPage() {
 
               <div className="relative z-10 mx-auto max-w-2xl">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6">
-                  OXYZ International Training 2026
+                  Global Regenerative Medicine Summit 2026
                 </h1>
                 <p className="text-xl text-gold font-semibold mb-4">
                   Regenerative Medicine & Strategic Collaboration
@@ -246,7 +246,7 @@ export default function TrainingPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -265,7 +265,7 @@ export default function TrainingPage() {
             <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[80vh] order-1 lg:order-2">
               <Image
                 src="/images/sym/symposium_hero.jpg"
-                alt="OXYZ Training 2026"
+                alt="Global Regenerative Medicine Summit 2026"
                 fill
                 className="object-cover"
                 priority
@@ -311,7 +311,7 @@ export default function TrainingPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -382,7 +382,7 @@ export default function TrainingPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -460,7 +460,7 @@ export default function TrainingPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -513,7 +513,7 @@ export default function TrainingPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -663,7 +663,7 @@ export default function TrainingPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -721,7 +721,7 @@ export default function TrainingPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -752,7 +752,7 @@ export default function TrainingPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-12 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
-                Ready to Join Training 2026?
+                Ready to Join Summit 2026?
               </h2>
               <p className="text-lg text-secondary-foreground/85 mb-8 max-w-2xl mx-auto">
                 This training is intended for professionals seeking depth,
@@ -769,7 +769,7 @@ export default function TrainingPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >

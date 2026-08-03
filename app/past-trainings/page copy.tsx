@@ -98,7 +98,7 @@ export default function PastTrainingsPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -351,7 +351,7 @@ export default function PastTrainingsPage() {
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Explore Training 2026
+                    Explore Summit 2026
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>

@@ -29,7 +29,7 @@ const packageFeatures = [
 const singlePackage = {
   id: "silver-tier-standard",
   badge: "VIP",
-  title: "VIP Package: Stem Cell Scholar",
+  title: "VIP Package: Global Regenerative Medicine Summit",
   price: "$3,000",
   priceNote: "per person",
   deadline: "Deadline: 15 October 2026",
@@ -83,7 +83,7 @@ export default function ProgramPage() {
 
               {/* Description */}
               <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-6 mb-10 font-light max-w-xl">
-                Comprehensive details for the OXYZ International Stem Cell Training 2026 VIP Tier.
+                Comprehensive details for the Global Regenerative Medicine Summit 2026 VIP Tier.
               </p>
 
               {/* CTA Buttons */}
@@ -98,7 +98,7 @@ export default function ProgramPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -131,7 +131,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-2xl font-extrabold text-[#007A59] mb-3">
-                  20 - 23 November 2026
+                  20 - 24 November 2026
                 </p>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   4 nights premium accommodation included for VIP Package participants.
@@ -263,7 +263,7 @@ export default function ProgramPage() {
             </p>
             <div className="flex justify-center">
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -336,7 +336,7 @@ export default function ProgramPage() {
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full sm:w-auto"

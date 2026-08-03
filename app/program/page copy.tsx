@@ -111,7 +111,7 @@ export default function ProgramPage() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -152,7 +152,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
-                  20 - 23 November 2026
+                  20 - 24 November 2026
                 </p>
                 <p className="text-muted-foreground">
                   4 nights accommodation included for Package I, II, and III
@@ -187,7 +187,7 @@ export default function ProgramPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
-                Secure Your Place at Training 2026
+                Secure Your Place at Summit 2026
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 This is a professionally curated training, not open to mass
@@ -344,7 +344,7 @@ export default function ProgramPage() {
               </p>
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -424,7 +424,7 @@ export default function ProgramPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                 >

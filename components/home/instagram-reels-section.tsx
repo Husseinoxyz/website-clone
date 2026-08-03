@@ -189,7 +189,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
               Experience the Symposium
             </h2>
             <p className="text-gold text-xl leading-relaxed">
-              Get a firsthand look at the depth, quality, and practical insights our stem cell training delivers.
+              Get a firsthand look at the depth, quality, and practical insights our regenerative medicine summit delivers.
             </p>
           </div>
 

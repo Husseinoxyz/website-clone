@@ -272,7 +272,7 @@ export default function ContactPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -368,7 +368,7 @@ export default function ContactPage() {
                       Register for Training
                     </Link>
                     <a
-                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noreferrer"

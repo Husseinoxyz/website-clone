@@ -152,11 +152,11 @@ function RegistrationContent() {
           <div className="relative flex items-center bg-teal-dark px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-secondary-foreground">
             <div className="mx-auto max-w-2xl">
               <h1 className="text-4xl sm:text-5xl font-bold text-secondary-foreground mb-6">
-                Register for Training 2026
+                Register for Summit 2026
               </h1>
               <p className="text-xl text-secondary-foreground/90 leading-relaxed">
                 Complete your registration for the OXYZ International
-                Regenerative Medicine & Strategic Collaboration Training 2026.
+                Regenerative Medicine & Strategic Collaboration Summit 2026.
               </p>
             </div>
           </div>

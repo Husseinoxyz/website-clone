@@ -229,7 +229,7 @@ export default function GalleryPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -453,7 +453,7 @@ export default function GalleryPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Be Part of Training 2026
+                Be Part of Summit 2026
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8">
                 Register your interest and join the next cohort of leaders shaping the future of regenerative medicine.

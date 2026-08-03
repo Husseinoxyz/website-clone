@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'OXYZ International Training 2026 | Regenerative Medicine',
-  description: 'OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026. Advancing Regenerative Medicine. Structuring the Future of Medical Practice.',
+  title: 'Global Regenerative Medicine Summit 2026 | Regenerative Medicine',
+  description: 'OXYZ International Regenerative Medicine & Strategic Collaboration Summit 2026. Advancing Regenerative Medicine. Structuring the Future of Medical Practice.',
   keywords: ['regenerative medicine', 'training', 'medical conference', 'OXYZ Health', 'integrative medicine'],
   icons: {
     icon: '/Logo1.png',

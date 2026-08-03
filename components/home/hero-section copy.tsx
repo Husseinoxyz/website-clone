@@ -96,7 +96,7 @@ export function HeroSection() {
                   size="lg"
                   className="w-full sm:w-auto bg-[#007A59] hover:bg-[#006048] text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base shadow-lg shadow-[#007A59]/30 transition-all hover:shadow-xl hover:shadow-[#007A59]/40 hover:scale-105"
                 >
-                  Explore Training 2026
+                  Explore Summit 2026
                 </Button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">

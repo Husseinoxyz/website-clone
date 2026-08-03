@@ -81,7 +81,7 @@ export default function GalleryPage() {
                       </Button>
                     </Link>
                     <Link
-                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -245,7 +245,7 @@ export default function GalleryPage() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold">
-                  Be part of Training 2026
+                  Be part of Summit 2026
                 </h2>
                 <p className="text-secondary-foreground/80 mt-2">
                   Register your interest and join the next cohort of leaders.

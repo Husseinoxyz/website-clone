@@ -24,7 +24,7 @@ export function RegistrationCTASection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance font-sans">
-            Secure Your Place for OXYZ International Stem Cell Training 2026
+            Secure Your Place for Global Regenerative Medicine Summit 2026
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
             This is a professionally curated training, not open to mass
@@ -53,7 +53,7 @@ export function RegistrationCTASection() {
                 </div>
                 
                 <h3 className="text-3xl font-extrabold text-[#007A59] tracking-wide uppercase font-sans mb-2">
-                  STEM CELL SCHOLAR
+                  GLOBAL REGENERATIVE MEDICINE SUMMIT
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium">
                   Comprehensive 3-day clinical training & international certification

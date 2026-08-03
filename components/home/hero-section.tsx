@@ -30,7 +30,7 @@ export function HeroSection() {
           <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
             <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                OXYZ International Stem Cell Training
+                Global Regenerative Medicine Summit
               </span>
               <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                 Regenerative Medicine & Strategic Collaboration

@@ -253,7 +253,7 @@ const packageFeatures = [
 const registrationTypes = [
   {
     id: "silver-tier-standard",
-    name: "VIP Package: Stem Cell Scholar",
+    name: "VIP Package: Global Regenerative Medicine Summit",
     shortName: "VIP Package",
     tierKey: "silver" as const,
     price: 3000,
@@ -412,13 +412,13 @@ function RegistrationContent() {
           <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/35">
             <div className="max-w-2xl w-full text-center text-white">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#CDB06A] uppercase tracking-wide leading-tight mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                Register for Training 2026
+                Register for Summit 2026
               </h1>
               <p className="text-xs sm:text-sm md:text-base text-emerald-400 font-semibold uppercase tracking-wider mb-3 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                 Secure Your Place at the Premier Event
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-slate-100 font-light leading-relaxed max-w-lg mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026.
+                Complete your registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Summit 2026.
               </p>
             </div>
           </div>
@@ -426,13 +426,31 @@ function RegistrationContent() {
       </section>
 
       {/* Registration Form */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-8 sm:py-12 bg-gradient-to-b from-slate-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 w-full flex flex-col items-center overflow-hidden">
+            <div className="relative inline-block px-2">
+              <h2 
+                className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#007A59] tracking-tight whitespace-nowrap"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Welcome to Global <span className="text-[#CDB06A]">Regenerative Medicine</span> Summit 2026
+              </h2>
+              {/* Creative underline */}
+              <div className="mt-4 flex justify-center items-center gap-2 w-full">
+                <div className="h-[2px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-[#CDB06A] rounded-full"></div>
+                <div className="h-[4px] w-16 sm:w-32 bg-[#007A59] rounded-full relative shadow-[0_0_8px_rgba(0,122,89,0.4)]">
+                  <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] rounded-full bg-[#CDB06A] shadow-sm"></div>
+                </div>
+                <div className="h-[2px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-[#CDB06A] rounded-full"></div>
+              </div>
+            </div>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
+          <form onSubmit={handleSubmit} className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="space-y-8">
                 {/* Registration Type */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
                   <h2 className="text-2xl font-bold text-[#007A59] mb-6 flex items-center gap-2">
@@ -481,7 +499,7 @@ function RegistrationContent() {
                   {/* What You'll Gain from the Program */}
                   <div className="mt-8 pt-6 border-t border-slate-100">
                     <h3 className="text-sm font-bold uppercase tracking-wider text-[#007A59] mb-4">
-                      What You'll Gain from the Certification Program
+                      What You'll Gain from the Global Regenerative Medicine Summit
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {[
@@ -676,31 +694,7 @@ function RegistrationContent() {
                   </div>
                 </div>
 
-                {/* Submit */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                  <Button
-                    type="submit"
-                    disabled={isLoading}
-                    className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin mr-2" />
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        Proceed to Payment
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </>
-                    )}
-                  </Button>
-                  <div className="flex items-center gap-2 text-sm text-[#007A59]">
-                    <Shield className="h-4 w-4" />
-                    <span className="text-[#007A59]">Secure checkout powered by Stripe</span>
-                  </div>
-                </div>
-              </form>
+              </div>
             </div>
 
             {/* Order Summary */}
@@ -781,7 +775,34 @@ function RegistrationContent() {
                 </div>
               </div>
             </div>
-          </div>
+            
+            {/* Submit Button Moved to Bottom of Grid */}
+            <div className="lg:col-span-3 pt-6 -mt-4 border-t border-slate-200">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 lg:w-2/3 pr-0 lg:pr-12">
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl sm:flex-none"
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin mr-2" />
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      Proceed to Payment
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </>
+                  )}
+                </Button>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-[#007A59] bg-emerald-50/50 p-3 px-4 rounded-xl border border-emerald-100 sm:flex-1">
+                  <Shield className="h-4 w-4" />
+                  <span className="text-[#007A59] font-medium">Secure checkout powered by Stripe</span>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </section>
     </main>

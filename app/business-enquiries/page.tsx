@@ -308,7 +308,7 @@ export default function BusinessEnquiriesPage() {
 
               <div className="space-y-4 max-w-4xl mb-10 sm:mb-12 animate-fade-in-up opacity-0 animation-delay-400">
                 <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed font-light">
-                  The 2026 OXYZ International Stem Cell Training is an exclusive convergence for the top 1% of regenerative practitioners. We have moved past the &quot;what&quot; of stem cell science and into the &quot;how&quot; of clinical success and institutional growth.
+                  The 2026 Global Regenerative Medicine Summit is an exclusive convergence for the top 1% of regenerative practitioners. We have moved past the &quot;what&quot; of stem cell science and into the &quot;how&quot; of clinical success and institutional growth.
                 </p>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl leading-relaxed font-light">
                   While the Silver Tier provides the essential academic foundation, our advanced tiers are designed for those ready to move from knowing to implementing.
@@ -815,7 +815,7 @@ export default function BusinessEnquiriesPage() {
                       </h3>
                       <a
                         className="text-gold hover:text-gold/80 transition-colors"
-                        href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                        href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                         target="_blank"
                         rel="noreferrer"
                       >

@@ -149,7 +149,7 @@ export default function GoldTierPage() {
 
           <div className="mt-8 grid gap-12 lg:grid-cols-2">
             <div>
-              <h3 className="text-xl font-bold text-[#0f312b]">Everything in the Stem Cell Scholar Package (Silver Tier)</h3>
+              <h3 className="text-xl font-bold text-[#0f312b]">Everything in the Global Regenerative Medicine Summit Package (Silver Tier)</h3>
               <Accordion type="multiple" className="mt-4 w-full">
                 {silverInclusions.map((item, index) => (
                   <AccordionItem key={item.title} value={`silver-${index}`} className="border-[#c9ab5a]">

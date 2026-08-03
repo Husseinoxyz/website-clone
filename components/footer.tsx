@@ -44,7 +44,7 @@ export function Footer() {
           {/* Training Links */}
           <div>
             <h3 className="text-sm font-semibold text-gold uppercase tracking-wider mb-4">
-              Stem Cell Training 2026
+              Global Regenerative Medicine Summit 2026
             </h3>
             <ul className="space-y-3">
               {footerLinks.training.map((link) => (

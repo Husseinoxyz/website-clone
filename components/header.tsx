@@ -15,7 +15,7 @@ type NavigationItem = {
 const navigation: NavigationItem[] = [
   { name: "Home", href: "/" },
   { name: "About OXYZ", href: "/about" },
-  { name: "2026 Training", href: "/training" },
+  { name: "2026 Summit", href: "/training" },
   { name: "Program", href: "/program" },
   { name: "Past Trainings", href: "/past-trainings" },
   { name: "Business Enquiries", href: "/business-enquiries" },

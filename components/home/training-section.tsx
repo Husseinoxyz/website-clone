@@ -114,7 +114,7 @@ export function TrainingSection() {
             {/* Content */}
             <div className="animate-on-scroll slide-in-left">
               <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-4 text-balance">
-                OXYZ International Stem Cell Training 2026
+                Global Regenerative Medicine Summit 2026
               </h2>
               <p className="text-xl text-[#007A59] font-semibold mb-6">
                 A Medical & Strategic Alignment Platform

@@ -97,7 +97,7 @@ export function CountdownSection() {
                 15 October 2026
               </h2>
               <p className="mt-3 text-white/80">
-                Training date: 20 - 23 November 2026
+                Training date: 20 - 24 November 2026
               </p>
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
               {[
@@ -127,7 +127,7 @@ export function CountdownSection() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Dates</p>
-                  <p className="font-bold text-sm sm:text-base text-white">20 – 23 Nov 2026</p>
+                  <p className="font-bold text-sm sm:text-base text-white">20 – 24 Nov 2026</p>
                 </div>
               </div>
               <div className="group flex items-center gap-3 rounded-xl bg-black/60 border border-white/10 px-4 py-3.5 hover:border-gold/20 transition-all duration-300">
@@ -159,7 +159,7 @@ export function CountdownSection() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
+                <Link href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
                   <Button
                     variant="outline"
                     className="border-gold text-gold hover:bg-gold hover:text-white font-bold px-8 py-6 rounded-xl bg-transparent transition-all hover:scale-105"

@@ -274,7 +274,7 @@ export default function PastTrainingsPage() {
                     Past OXYZ International
                   </span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                    Stem Cell Trainings
+                    Regenerative Medicine Summits
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
                     Building Professional Excellence Since 2023
@@ -284,7 +284,7 @@ export default function PastTrainingsPage() {
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A glimpse into our medical and professional community. The OXYZ International Stem Cell Training Series brings together medical professionals, clinic owners, and healthcare leaders from different regions.
+                A glimpse into our medical and professional community. The Global Regenerative Medicine Summit Series brings together medical professionals, clinic owners, and healthcare leaders from different regions.
               </p>
 
               {/* CTA Buttons */}
@@ -299,7 +299,7 @@ export default function PastTrainingsPage() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20OXYZ%20Training%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -550,7 +550,7 @@ export default function PastTrainingsPage() {
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Explore Training 2026
+                    Explore Summit 2026
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>

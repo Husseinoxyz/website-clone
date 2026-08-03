@@ -8,11 +8,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const registrationPrices: Record<string, { amount: number; name: string }> = {
   "package-i-early-bird": {
     amount: 250000, // $2,500 in cents
-    name: "Package I: Stem Cell Scholar Series (Early Bird)",
+    name: "Package I: Global Regenerative Medicine Summit (Early Bird)",
   },
   "package-i-standard": {
     amount: 300000, // $3,000 in cents
-    name: "Package I: Stem Cell Scholar Series (Standard)",
+    name: "Package I: Global Regenerative Medicine Summit (Standard)",
   },
   "package-ii": {
     amount: 1000000, // $10,000 in cents
@@ -106,8 +106,8 @@ export async function POST(request: Request) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: `OXYZ Training 2026 - ${registration.name}`,
-              description: `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Training 2026`,
+              name: `Global Regenerative Medicine Summit 2026 - ${registration.name}`,
+              description: `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Summit 2026`,
               images: [
                 `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/images/sym/symposium_hero.jpg`,
               ],
