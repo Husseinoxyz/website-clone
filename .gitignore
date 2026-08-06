@@ -24,6 +24,10 @@ public/images/*
 !public/images/sliderpost phone/**
 !public/images/slides poster/
 !public/images/slides poster/**
+!public/images/Slider poster arabic-Pc/
+!public/images/Slider poster arabic-Pc/**
+!public/images/Slider poster arabic-Phone/
+!public/images/Slider poster arabic-Phone/**
 !public/images/Machines/
 !public/images/Machines/**
 !public/images/5D/
