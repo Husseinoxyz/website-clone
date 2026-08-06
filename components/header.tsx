@@ -27,6 +27,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const pathname = usePathname();
+  const isArabic = pathname === "/ar" || pathname.startsWith("/ar/");
 
   // Scroll detection: Only show header at the very top (hero part)
   useEffect(() => {
@@ -83,10 +84,10 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-4">
-            {pathname !== "/register" && (
-              <Link href="/register">
+            {pathname !== "/register" && pathname !== "/ar/register" && (
+              <Link href={isArabic ? "/ar/register" : "/register"}>
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold px-6 shadow-md shadow-gold/20 hover:shadow-lg hover:shadow-gold/30 transition-shadow">
-                  Register Now
+                  {isArabic ? "سجل الآن" : "Register Now"}
                 </Button>
               </Link>
             )}

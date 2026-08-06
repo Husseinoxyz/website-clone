@@ -46,7 +46,9 @@ export async function POST(request: Request) {
       organization,
       role,
       specialization,
+      specialization,
       interest,
+      isArabic,
     } = body;
 
     const normalizedType = (() => {
@@ -106,8 +108,12 @@ export async function POST(request: Request) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: `Global Regenerative Medicine Summit 2026 - ${registration.name}`,
-              description: `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Summit 2026`,
+              name: isArabic 
+                ? `قمة الطب التجديدي العالمي 2026 - ${registration.name.replace("Package I: Global Regenerative Medicine Summit (Standard)", "الباقة الشاملة").replace("Package I", "الباقة الشاملة").replace("Early Bird", "الحجز المبكر").replace("Standard", "القياسي")}`
+                : `Global Regenerative Medicine Summit 2026 - ${registration.name}`,
+              description: isArabic
+                ? `تسجيل في قمة أوكسيز الدولية للطب التجديدي والتعاون الاستراتيجي 2026`
+                : `Registration for the OXYZ International Regenerative Medicine & Strategic Collaboration Summit 2026`,
               images: [
                 `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/images/sym/symposium_hero.jpg`,
               ],
@@ -118,8 +124,9 @@ export async function POST(request: Request) {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/register/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}/register?canceled=true`,
+      locale: isArabic ? "ar" : "auto",
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}${isArabic ? "/ar/register" : "/register"}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://oxyz-symposium.vercel.app"}${isArabic ? "/ar/register" : "/register"}?canceled=true`,
       metadata: {
         registrationType: normalizedType,
         firstName,

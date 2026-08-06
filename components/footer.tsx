@@ -15,6 +15,7 @@ const footerLinks = {
     { name: "Business Enquiries", href: "/business-enquiries" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
+    { name: "العربية (Arabic)", href: "/ar" },
   ],
 };
 

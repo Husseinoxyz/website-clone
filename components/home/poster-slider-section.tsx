@@ -38,8 +38,41 @@ const posterSlides = [
   },
 ];
 
+const arabicPosterSlides = [
+  {
+    id: 1,
+    title: "OXYZ Poster 1",
+    image: "/images/Slider poster arabic-Pc/Post 1.png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 1.png",
+  },
+  {
+    id: 2,
+    title: "OXYZ Poster 2",
+    image: "/images/Slider poster arabic-Pc/Post 2.png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 2.png",
+  },
+  {
+    id: 3,
+    title: "OXYZ Poster 3",
+    image: "/images/Slider poster arabic-Pc/Post 3.png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 3.png",
+  },
+  {
+    id: 4,
+    title: "OXYZ Poster 4",
+    image: "/images/Slider poster arabic-Pc/Post 4.png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 4.png",
+  },
+  {
+    id: 5,
+    title: "OXYZ Poster 5",
+    image: "/images/Slider poster arabic-Pc/Post 5.png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 5.png",
+  },
+];
 
-export function PosterSliderSection() {
+
+export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -71,20 +104,21 @@ export function PosterSliderSection() {
   }, []);
 
   const minSwipeDistance = 50;
+  const activeSlides = isArabic ? arabicPosterSlides : posterSlides;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % posterSlides.length);
+      setCurrentIndex((prev) => (prev + 1) % activeSlides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [activeSlides.length]);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + posterSlides.length) % posterSlides.length);
+    setCurrentIndex((prev) => (prev - 1 + activeSlides.length) % activeSlides.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % posterSlides.length);
+    setCurrentIndex((prev) => (prev + 1) % activeSlides.length);
   };
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -109,7 +143,7 @@ export function PosterSliderSection() {
     }
   };
 
-  const current = posterSlides[currentIndex];
+  const current = activeSlides[currentIndex] || activeSlides[0];
 
   return (
     <section className="bg-white w-full relative overflow-hidden border-b border-slate-100 pt-20 pb-0">
@@ -133,14 +167,25 @@ export function PosterSliderSection() {
         <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-3.5 gap-y-2 leading-relaxed max-w-7xl mx-auto">
           <Calendar className="h-4 w-4 text-[#CDB06A] shrink-0 animate-bounce" />
           <span className="text-white/95 font-bold text-lg">
-            Enter the World of the Stem Cell, Biological Medicine & Peptide Therapy Industry.{" "}
-            <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
-              Bring It to Your Clinic.
-            </span>
+            {isArabic ? (
+              <>
+                ادخل عالم الخلايا الجذعية، الطب البيولوجي وعلاجات الببتيدات.{" "}
+                <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
+                  وانقلها إلى عيادتك.
+                </span>
+              </>
+            ) : (
+              <>
+                Enter the World of the Stem Cell, Biological Medicine & Peptide Therapy Industry.{" "}
+                <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
+                  Bring It to Your Clinic.
+                </span>
+              </>
+            )}
           </span>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
           <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3.5 py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
-            Nov 20 - 24, 2026 &bull; Kuala Lumpur, Malaysia
+            {isArabic ? <><span dir="ltr">20 - 24</span> نوفمبر 2026 • كوالالمبور، ماليزيا</> : "Nov 20 - 24, 2026 • Kuala Lumpur, Malaysia"}
           </span>
         </div>
       </div>
