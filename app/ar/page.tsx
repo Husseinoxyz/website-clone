@@ -8,7 +8,16 @@ import { PosterSliderSection } from "@/components/home/poster-slider-section";
 import { Readex_Pro } from "next/font/google";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 
+import type { Metadata } from "next";
+
 const readexPro = Readex_Pro({ subsets: ["arabic"], display: 'swap' });
+
+export const metadata: Metadata = {
+  title: 'القمة العالمية للطب التجديدي 2026',
+  other: {
+    google: 'notranslate'
+  }
+};
 
 export default function ArabicPage() {
   return (
