@@ -52,11 +52,11 @@ type ReelItem = {
 const defaultReels: ReelItem[] = [
   {
     id: "clip-1",
-    src: "/images/Doctors/B2B Online Training Video Clip 2 (Dr Gisele).mp4",
+    src: "https://www.youtube.com/embed/tKywBK98HmU",
     doctor: "Dr. Gisela",
     title: "From cells to systeme - The evolution of regenerative medicine",
     subtitle: "Featured Preview Clip 1",
-    platform: "mp4",
+    platform: "youtube",
     aspect: "landscape",
   },
   {
@@ -70,11 +70,11 @@ const defaultReels: ReelItem[] = [
   },
   {
     id: "clip-3",
-    src: "/images/Doctors/B2B Online Training Video Clip 1 (Q&A).mp4",
+    src: "https://www.youtube.com/embed/Bu4K5wwKxTo",
     doctor: "Dr. Muhammed Abdalqadir",
     title: "Are stem cells safe and don't behave like cancer cells?",
     subtitle: "Featured Preview Clip 3 (Q&A)",
-    platform: "mp4",
+    platform: "youtube",
     aspect: "landscape",
   },
 ];
