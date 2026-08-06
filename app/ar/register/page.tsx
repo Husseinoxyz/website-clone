@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -256,6 +257,53 @@ function ArabicRegistrationContent() {
                       placeholder="اسم العيادة أو المستشفى"
                     />
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="role" className="text-base text-gray-700">المسمى الوظيفي / المهنة *</Label>
+                    <Select
+                      value={formData.role}
+                      onValueChange={(val) => handleSelectChange("role", val)}
+                      required
+                    >
+                      <SelectTrigger className="bg-gray-50/50 border-gray-200 text-right h-12" dir="rtl">
+                        <SelectValue placeholder="اختر المسمى الوظيفي" />
+                      </SelectTrigger>
+                      <SelectContent dir="rtl">
+                        <SelectItem value="medical-doctor">طبيب بشري</SelectItem>
+                        <SelectItem value="specialist">طبيب أخصائي</SelectItem>
+                        <SelectItem value="clinic-owner">مالك عيادة</SelectItem>
+                        <SelectItem value="healthcare-investor">مستثمر في الرعاية الصحية</SelectItem>
+                        <SelectItem value="distributor">موزع طبي</SelectItem>
+                        <SelectItem value="other">أخرى</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="specialization" className="text-base text-gray-700">التخصص / مجال العمل *</Label>
+                    <Input
+                      id="specialization"
+                      name="specialization"
+                      required
+                      value={formData.specialization}
+                      onChange={handleInputChange}
+                      className="bg-gray-50/50 border-gray-200 text-right h-12"
+                      placeholder="مثال: الطب التجديدي، مكافحة الشيخوخة، التجميل"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="interest" className="text-base text-gray-700">مجالات الاهتمام في التدريب</Label>
+                  <Textarea
+                    id="interest"
+                    name="interest"
+                    value={formData.interest}
+                    onChange={handleInputChange}
+                    className="bg-gray-50/50 border-gray-200 text-right min-h-[100px] resize-none"
+                    placeholder="ما الذي تأمل تعلمه أو تحقيقه في هذا التدريب؟"
+                  />
                 </div>
               </div>
 
