@@ -61,11 +61,11 @@ const defaultReels: ReelItem[] = [
   },
   {
     id: "clip-2",
-    src: "/images/Doctors/B2B Online Training Video Clip (Dr Michelle).mp4",
+    src: "https://www.youtube.com/embed/VfkXACyh5Ws",
     doctor: "Dr. Michelle",
     title: "Bio resournce scanner BR 3d quantum medicine cellular screening and technology",
     subtitle: "Featured Preview Clip 2",
-    platform: "mp4",
+    platform: "youtube",
     aspect: "landscape",
   },
   {
@@ -86,7 +86,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
 
   // Handle auto-playing video inside modal
   useEffect(() => {
-    if (activeVideo && videoRef.current) {
+    if (activeVideo && activeVideo.platform !== "youtube" && videoRef.current) {
       videoRef.current.play().catch((err) => {
         console.log("Auto-play failed, user interaction is required: ", err);
       });
@@ -114,7 +114,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
 
   const openVideo = (reel: ReelItem) => {
     setActiveVideo(reel);
-    if (videoRef.current) {
+    if (reel.platform !== "youtube" && videoRef.current) {
       videoRef.current.src = reel.src;
       videoRef.current.load();
       videoRef.current.play().catch((err) => {
@@ -124,7 +124,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
   };
 
   const closeModal = () => {
-    if (videoRef.current) {
+    if (activeVideo?.platform !== "youtube" && videoRef.current) {
       videoRef.current.pause();
       videoRef.current.src = "";
     }
@@ -209,14 +209,24 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                 >
                   <div className={`relative w-full bg-black group cursor-pointer ${isLandscape ? "aspect-video" : "aspect-[9/16]"}`}
                        onClick={() => openVideo(reel)}>
-                    <video
-                      className="h-full w-full object-cover bg-slate-900 opacity-80 group-hover:opacity-60 transition-opacity duration-300"
-                      preload="metadata"
-                      muted
-                      playsInline
-                    >
-                      <source src={reel.src} type="video/mp4" />
-                    </video>
+                    {reel.platform === "youtube" ? (
+                      <div className="h-full w-full absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-60 transition-opacity duration-300">
+                        <iframe 
+                          src={`${reel.src}?controls=0&mute=1&autoplay=1&loop=1&playlist=${reel.src.split('/').pop()}`}
+                          className="w-full h-[150%] -translate-y-[25%]"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        />
+                      </div>
+                    ) : (
+                      <video
+                        className="h-full w-full object-cover bg-slate-900 opacity-80 group-hover:opacity-60 transition-opacity duration-300"
+                        preload="metadata"
+                        muted
+                        playsInline
+                      >
+                        <source src={reel.src} type="video/mp4" />
+                      </video>
+                    )}
                     
                     {/* Dark overlay & Play button */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
@@ -300,13 +310,22 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
 
           {/* Video Player */}
           <div className="relative flex-1 min-h-0 bg-black flex items-center justify-center">
-            <video
-              ref={videoRef}
-              className="w-full h-auto max-h-full object-contain"
-              controls
-              playsInline
-              autoPlay
-            />
+            {activeVideo?.platform === "youtube" ? (
+              <iframe
+                className="w-full h-full"
+                src={`${activeVideo.src}?autoplay=1`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                className="w-full h-auto max-h-full object-contain"
+                controls
+                playsInline
+                autoPlay
+              />
+            )}
           </div>
         </div>
       </div>

@@ -160,7 +160,7 @@ export default function ArabicPage() {
                   day: "اليوم الثاني",
                   title: "البروتوكولات العلاجية",
                   topics: ["أمراض المفاصل.", "السكري ومضاعفاته.", "الأمراض العصبية.", "مكافحة الشيخوخة."],
-                  image: "/images/Doctors/B2B Online Training Video Clip (Dr Michelle).mp4"
+                  image: "https://www.youtube.com/embed/VfkXACyh5Ws"
                 },
                 {
                   day: "اليوم الثالث",
@@ -184,6 +184,7 @@ export default function ArabicPage() {
               ].map((dayInfo, index) => {
                 const isEven = index % 2 === 0;
                 const isVideo = dayInfo.image.endsWith('.mp4');
+                const isYoutube = dayInfo.image.includes('youtube.com/embed/');
 
                 return (
                   <div key={index} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16 py-12 border-b border-gray-200 last:border-0`}>
@@ -198,7 +199,7 @@ export default function ArabicPage() {
                           </div>
                         </div>
                       ) : (
-                        <div className={`${isVideo ? 'w-full' : 'aspect-[4/3]'} rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow duration-500 relative bg-black`}>
+                        <div className={`${isVideo || isYoutube ? 'w-full aspect-[16/9]' : 'aspect-[4/3]'} rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow duration-500 relative bg-black`}>
                           {isVideo ? (
                             <video
                               src={dayInfo.image}
@@ -208,10 +209,17 @@ export default function ArabicPage() {
                               playsInline
                               className="w-full h-auto"
                             />
+                          ) : isYoutube ? (
+                            <iframe 
+                              src={dayInfo.image}
+                              className="w-full h-full absolute inset-0 border-0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
                           ) : (
                             <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                           )}
-                          {!isVideo && <div className="absolute inset-0 bg-[#007A59]/10"></div>}
+                          {!isVideo && !isYoutube && <div className="absolute inset-0 bg-[#007A59]/10"></div>}
                         </div>
                       )}
                     </div>
