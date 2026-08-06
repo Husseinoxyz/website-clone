@@ -71,7 +71,7 @@ export function MedicalTechnologyGallerySection() {
                 </div>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-sm font-semibold text-[#007A59]">OXYZ GMB Lab</h4>
+                  <h4 className="text-sm font-semibold text-[#007A59]">OXYZ GMP Lab</h4>
                   <p className="text-xs text-slate-600 mt-1">Precision testing & innovation</p>
                 </div>
               </div>
