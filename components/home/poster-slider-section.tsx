@@ -54,8 +54,8 @@ const arabicPosterSlides = [
   {
     id: 3,
     title: "OXYZ Poster 3",
-    image: "/images/Slider poster arabic-Pc/Post 3.png",
-    mobileImage: "/images/Slider poster arabic-Phone/Post 3.png",
+    image: "/images/Slider poster arabic-Pc/Post 3-updated (1).png",
+    mobileImage: "/images/Slider poster arabic-Phone/Post 3-updated (2).png",
   },
   {
     id: 4,
