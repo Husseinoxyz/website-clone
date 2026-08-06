@@ -46,7 +46,6 @@ export async function POST(request: Request) {
       organization,
       role,
       specialization,
-      specialization,
       interest,
       isArabic,
     } = body;
