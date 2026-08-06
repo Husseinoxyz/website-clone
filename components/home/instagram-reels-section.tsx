@@ -309,7 +309,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
           </div>
 
           {/* Video Player */}
-          <div className="relative flex-1 min-h-0 bg-black flex items-center justify-center">
+          <div className="relative w-full aspect-video bg-black flex items-center justify-center">
             {activeVideo?.platform === "youtube" ? (
               <iframe
                 className="w-full h-full"
