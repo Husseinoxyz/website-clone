@@ -195,12 +195,12 @@ function ArabicRegistrationContent() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-base text-gray-700">رقم الهاتف (واتساب) *</Label>
-                    <div className="flex gap-2" dir="ltr">
+                    <div className="flex gap-2" dir="rtl">
                       <Select
                         value={formData.countryCode}
                         onValueChange={(val) => handleSelectChange("countryCode", val)}
                       >
-                        <SelectTrigger className="w-[110px] bg-gray-50/50 border-gray-200 h-12">
+                        <SelectTrigger className="w-[110px] bg-gray-50/50 border-gray-200 h-12" dir="ltr">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
                         <SelectContent>
