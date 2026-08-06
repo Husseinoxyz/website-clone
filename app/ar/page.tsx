@@ -210,12 +210,14 @@ export default function ArabicPage() {
                               className="w-full h-auto"
                             />
                           ) : isYoutube ? (
-                            <iframe 
-                              src={dayInfo.image}
-                              className="w-full h-full absolute inset-0 border-0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
+                            <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
+                              <iframe 
+                                src={`${dayInfo.image}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${dayInfo.image.split('/').pop()}`}
+                                className="w-[150%] h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            </div>
                           ) : (
                             <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                           )}

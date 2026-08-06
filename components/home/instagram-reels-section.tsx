@@ -210,10 +210,10 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                   <div className={`relative w-full bg-black group cursor-pointer ${isLandscape ? "aspect-video" : "aspect-[9/16]"}`}
                        onClick={() => openVideo(reel)}>
                     {reel.platform === "youtube" ? (
-                      <div className="h-full w-full absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-60 transition-opacity duration-300">
+                      <div className="h-full w-full absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-60 transition-opacity duration-300 overflow-hidden">
                         <iframe 
-                          src={`${reel.src}?controls=0&mute=1&autoplay=1&loop=1&playlist=${reel.src.split('/').pop()}`}
-                          className="w-full h-[150%] -translate-y-[25%]"
+                          src={`${reel.src}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${reel.src.split('/').pop()}`}
+                          className="w-[150%] h-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
                       </div>
