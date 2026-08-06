@@ -299,6 +299,38 @@ function RegistrationContent() {
     (t) => t.id === selectedType
   );
 
+  useEffect(() => {
+    async function fetchLocation() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        
+        setFormData((prev) => {
+          const updates: Partial<typeof prev> = {};
+          
+          if (data.country_calling_code) {
+            const exists = countryCodes.some((c) => c.code === data.country_calling_code);
+            if (exists) updates.countryCode = data.country_calling_code;
+          }
+          
+          if (data.country_name) {
+            if (countries.includes(data.country_name)) {
+              updates.country = data.country_name;
+            }
+          }
+          
+          return { ...prev, ...updates };
+        });
+      } catch (err) {
+        console.error("Failed to fetch location", err);
+      }
+    }
+    
+    if (!initialCountry && !formData.country) {
+      fetchLocation();
+    }
+  }, [initialCountry]);
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {

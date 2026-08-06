@@ -52,6 +52,23 @@ const registrationTypes = [
   },
 ];
 
+const countryNameToArabicMap: Record<string, string> = {
+  "Saudi Arabia": "السعودية",
+  "United Arab Emirates": "الإمارات العربية المتحدة",
+  "Kuwait": "الكويت",
+  "Qatar": "قطر",
+  "Bahrain": "البحرين",
+  "Oman": "عمان",
+  "Egypt": "مصر",
+  "Jordan": "الأردن",
+  "Iraq": "العراق",
+  "Morocco": "المغرب",
+  "Algeria": "الجزائر",
+  "Tunisia": "تونس",
+  "Lebanon": "لبنان",
+  "Malaysia": "ماليزيا",
+};
+
 function ArabicRegistrationContent() {
   const searchParams = useSearchParams();
   const requestedType = searchParams.get("type");
@@ -78,6 +95,42 @@ function ArabicRegistrationContent() {
   const selectedRegistration = registrationTypes.find(
     (t) => t.id === selectedType
   );
+
+  useEffect(() => {
+    async function fetchLocation() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        
+        setFormData((prev) => {
+          const updates: Partial<typeof prev> = {};
+          
+          if (data.country_calling_code) {
+            const exists = countryCodes.some((c) => c.code === data.country_calling_code);
+            if (exists) updates.countryCode = data.country_calling_code;
+          }
+          
+          if (data.country_name) {
+            const arabicName = countryNameToArabicMap[data.country_name];
+            if (arabicName && countries.includes(arabicName)) {
+              updates.country = arabicName;
+            } else if (countries.includes(data.country_name)) {
+              updates.country = data.country_name;
+            }
+          }
+          
+          return { ...prev, ...updates };
+        });
+      } catch (err) {
+        console.error("Failed to fetch location", err);
+      }
+    }
+    
+    // Only auto-detect if the country isn't passed via URL
+    if (!initialCountry && !formData.country) {
+      fetchLocation();
+    }
+  }, [initialCountry]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -200,7 +253,7 @@ function ArabicRegistrationContent() {
                         value={formData.countryCode}
                         onValueChange={(val) => handleSelectChange("countryCode", val)}
                       >
-                        <SelectTrigger className="w-[110px] bg-gray-50/50 border-gray-200 h-12" dir="ltr">
+                        <SelectTrigger className="w-[150px] bg-gray-50/50 border-gray-200 h-12" dir="ltr">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
                         <SelectContent>
