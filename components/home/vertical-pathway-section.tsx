@@ -223,7 +223,7 @@ export function VerticalPathwaySection() {
           aria-modal="true"
           onClick={() => setActiveVideo(null)}
         >
-          <div className="relative max-w-lg w-full bg-black rounded-2xl overflow-hidden shadow-2xl border border-neutral-800" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-auto max-w-full rounded-2xl overflow-hidden shadow-2xl bg-transparent" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setActiveVideo(null)}
               className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/65 text-white hover:text-white/80 flex items-center justify-center transition-colors"
@@ -231,15 +231,13 @@ export function VerticalPathwaySection() {
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="w-full bg-black flex items-center justify-center" style={{ maxHeight: '90vh' }}>
-                <video
-                  src={activeVideo}
-                  className="w-full h-full max-h-[90vh] object-contain"
-                  autoPlay
-                  controls
-                  playsInline
-                />
-            </div>
+            <video
+              src={activeVideo}
+              className="w-auto h-auto max-w-full max-h-[90vh] rounded-2xl bg-black"
+              autoPlay
+              controls
+              playsInline
+            />
           </div>
         </div>
       )}
