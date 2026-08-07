@@ -207,7 +207,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                   key={reel.id}
                   className={`animate-on-scroll stagger-${index + 1} scale-in rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 flex flex-col`}
                 >
-                  <div className={`relative w-full bg-black group cursor-pointer ${isLandscape ? "aspect-video" : "aspect-[9/16]"}`}
+                  <div className={`relative w-full bg-black group cursor-pointer aspect-video`}
                        onClick={() => openVideo(reel)}>
                     {reel.platform === "youtube" ? (
                       <div className="h-full w-full absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-60 transition-opacity duration-300 overflow-hidden">
@@ -286,30 +286,20 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
       </section>
 
       {/* Video Modal Popup */}
-      <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 backdrop-blur-sm p-2 sm:p-6 transition-all duration-300 ${
+      <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 backdrop-blur-sm p-2 sm:p-6 transition-all duration-300 ${
         activeVideo ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}>
         <div className="relative w-full max-w-5xl max-h-[95vh] sm:max-h-[90vh] bg-[#090d16] rounded-2xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col">
-          {/* Modal Header */}
-          <div className="flex items-center justify-between p-4 bg-slate-900/80 border-b border-slate-800 text-white flex-shrink-0">
-            <div>
-              <span className="text-xs text-gold uppercase tracking-wider font-semibold">
-                {activeVideo?.doctor || ""}
-              </span>
-              <h4 className="text-sm sm:text-base font-bold truncate max-w-xs sm:max-w-xl">
-                {activeVideo?.title || ""}
-              </h4>
-            </div>
-            <button
-              onClick={closeModal}
-              className="p-1 rounded-full hover:bg-slate-800 transition-colors text-slate-400 hover:text-white"
-            >
-              <X className="h-6 w-6" />
-            </button>
-          </div>
+          {/* Close Button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 z-[60] p-2 rounded-full bg-black/60 hover:bg-black/80 transition-colors text-white backdrop-blur-sm"
+          >
+            <X className="h-6 w-6" />
+          </button>
 
           {/* Video Player */}
-          <div className="relative w-full aspect-video bg-black flex items-center justify-center">
+          <div className={`relative ${activeVideo?.aspect === 'portrait' ? 'h-[75vh] sm:h-[80vh] aspect-[9/16] mx-auto' : 'w-full aspect-video'} bg-black flex items-center justify-center`}>
             {activeVideo?.platform === "youtube" ? (
               <iframe
                 className="w-full h-full"

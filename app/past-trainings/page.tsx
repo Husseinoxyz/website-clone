@@ -130,7 +130,7 @@ const pastTrainingTestimonials = [
     id: "past-training-grace-capital",
     src: "https://www.youtube.com/embed/WkFN4mP5-JQ",
     platform: "youtube" as const,
-    aspect: "landscape" as const,
+    aspect: "portrait" as const,
     autoplay: true,
     title: "Dr HONGO INTERVIEW",
     subtitle: "",
