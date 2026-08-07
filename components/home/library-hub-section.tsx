@@ -38,17 +38,24 @@ const getYouTubePreviewUrl = (url: string) => {
 const featuredVideos = [
   {
     id: "feat-1",
-    title: "Dr. Muthorst - Definition of Complete Well-being",
-    videoUrl: "https://youtu.be/-TUlcu1ytxs?si=17RjieuK3g58NJ45",
-    poster: "https://img.youtube.com/vi/-TUlcu1ytxs/maxresdefault.jpg",
-    badge: "SPECIALIST INTERVIEW",
+    title: "International Seminar on Root Cause Medicine Dr Thorsten Muthorst Germany",
+    videoUrl: "https://youtu.be/u5oTbe1ONhs?si=aQ-pS3BeiPavTCFd",
+    poster: "https://img.youtube.com/vi/u5oTbe1ONhs/maxresdefault.jpg",
+    badge: "SEMINAR",
   },
   {
     id: "feat-2",
-    title: "OXYZ 5D Concept",
-    videoUrl: "https://youtu.be/nUjWrDeruMc?si=8R-CkO6MkP4G2S4u",
-    poster: "https://img.youtube.com/vi/nUjWrDeruMc/maxresdefault.jpg",
-    badge: "WELLNESS CONCEPT",
+    title: "OXYZ International Symposium 2025",
+    videoUrl: "https://youtu.be/dkppIjFsWxM?si=jk21ogMENXK91QYo",
+    poster: "https://img.youtube.com/vi/dkppIjFsWxM/maxresdefault.jpg",
+    badge: "SYMPOSIUM",
+  },
+  {
+    id: "feat-3",
+    title: "Dr Dr Muthorst - Celllar therapy in germany",
+    videoUrl: "https://youtu.be/5fPNttdsUo0?si=vh9fujX8XhtX04v7",
+    poster: "https://img.youtube.com/vi/5fPNttdsUo0/maxresdefault.jpg",
+    badge: "THERAPY",
   },
 ];
 
@@ -157,7 +164,7 @@ export function LibraryHubSection() {
         </div>
 
         {/* Featured Videos Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {featuredVideos.map((video) => (
             <div
               key={video.id}
