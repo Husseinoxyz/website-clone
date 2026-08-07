@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, Pause } from "lucide-react";
+import { Play, X } from "lucide-react";
 
 const pathways = [
   {
@@ -40,21 +40,9 @@ const pathways = [
   },
 ];
 
-function PathwayCard({ item }: { item: (typeof pathways)[0] }) {
+function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlayClick: (url: string) => void }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlay = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play().catch(() => { });
-      }
-    }
-  };
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -69,14 +57,19 @@ function PathwayCard({ item }: { item: (typeof pathways)[0] }) {
     }
   };
 
+  const handlePlayClick = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onPlayClick(item.video);
+  };
+
   return (
     <div
-      onClick={togglePlay}
+      onClick={handlePlayClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="group relative h-[380px] xs:h-[420px] sm:h-[480px] lg:h-[540px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-slate-200/80 cursor-pointer"
     >
-
 
       {/* Background Poster Image */}
       <Image
@@ -108,21 +101,13 @@ function PathwayCard({ item }: { item: (typeof pathways)[0] }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none group-hover:from-black/98 transition-colors duration-500" />
 
       {/* Play Button Overlay (Top-Left Upper Edge on Mobile screens) */}
-      <div className="absolute top-3.5 left-3.5 z-30 sm:hidden">
+      <div className="absolute top-3.5 left-3.5 z-30">
         <button
-          onClick={togglePlay}
-          aria-label={isPlaying ? "Pause video" : "Play video"}
-          className={`w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-[#CDB06A] text-white flex items-center justify-center shadow-lg transition-all duration-300 transform ${
-            isPlaying
-              ? "bg-[#007A59]/90 border-white text-white opacity-90"
-              : "scale-100 active:scale-95"
-          }`}
+          onClick={handlePlayClick}
+          aria-label="Play video"
+          className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-[#CDB06A] text-white flex items-center justify-center shadow-lg transition-all duration-300 transform scale-100 active:scale-95 group-hover:bg-[#007A59]/90 group-hover:border-white"
         >
-          {isPlaying ? (
-            <Pause className="h-4 w-4 fill-white text-white" />
-          ) : (
-            <Play className="h-4 w-4 fill-white text-white ml-0.5" />
-          )}
+          <Play className="h-4 w-4 fill-white text-white ml-0.5" />
         </button>
       </div>
 
@@ -204,6 +189,8 @@ function PathwayCard({ item }: { item: (typeof pathways)[0] }) {
 }
 
 export function VerticalPathwaySection() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   return (
     <section className="bg-white pt-4 sm:pt-6 pb-16 sm:pb-24 border-b border-slate-100 overflow-hidden w-full">
       <div className="w-full max-w-none px-4 sm:px-6 lg:px-8">
@@ -223,10 +210,39 @@ export function VerticalPathwaySection() {
         {/* 4 ISSCA-Style Vertical Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {pathways.map((item) => (
-            <PathwayCard key={item.id} item={item} />
+            <PathwayCard key={item.id} item={item} onPlayClick={setActiveVideo} />
           ))}
         </div>
       </div>
+
+      {/* Video Popup Modal */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div className="relative max-w-lg w-full bg-black rounded-2xl overflow-hidden shadow-2xl border border-neutral-800" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/65 text-white hover:text-white/80 flex items-center justify-center transition-colors"
+              aria-label="Close video player"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="w-full bg-black flex items-center justify-center" style={{ maxHeight: '85vh', aspectRatio: '9/16' }}>
+                <video
+                  src={activeVideo}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  controls
+                  playsInline
+                />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
