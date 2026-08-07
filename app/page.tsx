@@ -29,7 +29,7 @@ export default function HomePage() {
         <FeaturedCertificationSection />
         <LibraryHubSection />
         <StatsFeaturesSection />
-        <ClinicalMachinesSection />
+        {/* <ClinicalMachinesSection /> */}
         <CountdownSection />
         <ImageCardSliderSection />
         <MedicalEcosystemSection />

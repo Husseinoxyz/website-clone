@@ -281,11 +281,10 @@ export default function GalleryPage() {
               />
             </div>
 
+            {/* 
             <div className="mt-24 animate-on-scroll">
               <div className="relative rounded-3xl py-16 sm:py-20 overflow-hidden">
-                {/* Background Image */}
                 <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/images/sym/home_g_3.jpg)'}} />
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#E6F3EF]/95 via-[#F0F9F7]/90 to-[#E6F3EF]/85" />
 
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
@@ -360,6 +359,7 @@ export default function GalleryPage() {
                 </div>
               </div>
             </div>
+            */}
 
             <div className="mt-16 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
