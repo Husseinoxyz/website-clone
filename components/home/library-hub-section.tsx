@@ -166,50 +166,49 @@ export function LibraryHubSection() {
         {/* Featured Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {featuredVideos.map((video) => (
-            <div
-              key={video.id}
-              onClick={() => handlePlayVideo(video.videoUrl)}
-              className="group relative aspect-video bg-neutral-950 rounded-2xl overflow-hidden border border-slate-200 shadow-xl cursor-pointer hover:border-slate-300 transition-all duration-300"
-            >
-              {/* Preview Video / Thumbnail */}
-              {isYouTubeUrl(video.videoUrl) ? (
-                <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none">
-                  <iframe
-                    src={getYouTubePreviewUrl(video.videoUrl)}
-                    className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[0.68] opacity-75 group-hover:opacity-85 transition-all duration-700"
-                    allow="autoplay; encrypted-media"
-                    style={{ border: 0 }}
+            <div key={video.id} className="flex flex-col gap-4">
+              <div
+                onClick={() => handlePlayVideo(video.videoUrl)}
+                className="group relative aspect-video bg-neutral-950 rounded-2xl overflow-hidden border border-slate-200 shadow-xl cursor-pointer hover:border-slate-300 transition-all duration-300"
+              >
+                {/* Preview Video / Thumbnail */}
+                {isYouTubeUrl(video.videoUrl) ? (
+                  <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none">
+                    <iframe
+                      src={getYouTubePreviewUrl(video.videoUrl)}
+                      className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[0.68] opacity-75 group-hover:opacity-85 transition-all duration-700"
+                      allow="autoplay; encrypted-media"
+                      style={{ border: 0 }}
+                    />
+                  </div>
+                ) : (
+                  <video
+                    src={video.videoUrl}
+                    poster={video.poster}
+                    className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-85 transition-all duration-700 group-hover:scale-105"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
                   />
-                </div>
-              ) : (
-                <video
-                  src={video.videoUrl}
-                  poster={video.poster}
-                  className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-85 transition-all duration-700 group-hover:scale-105"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-              )}
+                )}
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/25 group-hover:via-black/20 transition-all duration-300" />
-
-              {/* Subtle hover icon overlay indicator */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-14 h-14 rounded-full bg-[#007A59]/90 text-white flex items-center justify-center shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
-                  <Play className="h-6 w-6 fill-white text-white ml-0.5" />
+                {/* Subtle hover icon overlay indicator */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-14 h-14 rounded-full bg-[#007A59]/90 text-white flex items-center justify-center shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
+                    <Play className="h-6 w-6 fill-white text-white ml-0.5" />
+                  </div>
                 </div>
               </div>
-
+              
               {/* Title & Badge */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
-                <span className="inline-block bg-black/60 backdrop-blur-sm border border-[#CDB06A]/50 px-2.5 py-0.5 rounded text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-[#CDB06A] mb-2">
+              <div className="flex flex-col items-start px-1">
+                <span className="inline-block bg-[#007A59]/10 border border-[#007A59]/20 px-2.5 py-0.5 rounded text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-[#007A59] mb-2">
                   {video.badge}
                 </span>
-                <h4 className="text-base sm:text-lg font-bold text-white leading-snug drop-shadow-md group-hover:text-white/95 transition-colors">
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                   {video.title}
                 </h4>
               </div>
