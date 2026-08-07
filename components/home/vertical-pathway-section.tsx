@@ -19,7 +19,7 @@ const pathways = [
     type: "onsite",
     category: "Aesthetic",
     image: "/images/sym/02.jpg",
-    video: "/images/tesimonials/aesthetic-video-clip.mp4",
+    video: "/images/tesimonials/Aesthetic.mp4",
     link: "/program",
   },
   {
