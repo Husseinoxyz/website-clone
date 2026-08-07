@@ -171,7 +171,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
               <>
                 ادخل عالم الخلايا الجذعية، الطب البيولوجي وعلاجات الببتيدات.{" "}
                 <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
-                  وانقلها إلى عيادتك.
+                  وانقلها إلى ممارستك.
                 </span>
               </>
             ) : (
