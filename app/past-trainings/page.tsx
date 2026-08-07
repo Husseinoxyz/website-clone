@@ -142,9 +142,9 @@ const pastTrainingTestimonials = [
     platform: "youtube" as const,
     aspect: "landscape" as const,
     autoplay: true,
-    title: "Past Training 2",
+    title: "Oxyz Doctors",
     subtitle: "",
-    doctor: "Past Training",
+    doctor: "Guest Speakers",
   },
 ];
 
