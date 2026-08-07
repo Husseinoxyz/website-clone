@@ -537,7 +537,9 @@ function RegistrationContent() {
                         { title: "Build Your Brand", desc: "Personal branding, social media positioning, and physician profile development by our team." },
                         { title: "Continuous Support", desc: "6 months of ongoing support, clinical guidance, technical assistance, and case discussions." },
                         { title: "AI in Regenerative Medicine", desc: "Discover how AI improves clinical workflows, patient communication, and documentation." },
-                        { title: "Future of Integrative Medicine", desc: "Master the latest advancements in Biological Medicine and regenerative healthcare technologies." }
+                        { title: "Future of Integrative Medicine", desc: "Master the latest advancements in Biological Medicine and regenerative healthcare technologies." },
+                        { title: "Access to a Global Professional Network", desc: "Connect with physicians, specialists, researchers, healthcare leaders, and innovators worldwide, building meaningful relationships beyond the summit." },
+                        { title: "Long-Term Collaboration Opportunities", desc: "Join an international healthcare community that fosters knowledge exchange and professional collaboration beyond the summit." }
                       ].map((item, idx) => (
                         <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
                           <Check className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-0.5" />
