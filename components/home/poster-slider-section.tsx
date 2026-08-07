@@ -178,7 +178,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
               <>
                 Enter the World of the Stem Cell, Biological Medicine & Peptide Therapy Industry.{" "}
                 <span className="text-[#CDB06A] font-extrabold underline decoration-[#CDB06A]/40 decoration-2 underline-offset-4">
-                  Bring It to Your Clinic.
+                  Bring it to your practice.
                 </span>
               </>
             )}
