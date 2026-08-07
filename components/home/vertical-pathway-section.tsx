@@ -231,10 +231,10 @@ export function VerticalPathwaySection() {
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="w-full bg-black flex items-center justify-center" style={{ maxHeight: '85vh', aspectRatio: '9/16' }}>
+            <div className="w-full bg-black flex items-center justify-center" style={{ maxHeight: '90vh' }}>
                 <video
                   src={activeVideo}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full max-h-[90vh] object-contain"
                   autoPlay
                   controls
                   playsInline
