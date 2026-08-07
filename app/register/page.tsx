@@ -186,12 +186,7 @@ const packageFeatures = [
     gold: true,
     platinum: true,
   },
-  {
-    name: "Exclusive hamper: Full trial series of all OXYZ products",
-    silver: true,
-    gold: true,
-    platinum: true,
-  },
+
   // Gold Tier Exclusive Features
   {
     name: "Personal Stem Cell Suite (10 Boxes Oral MSC, BioSeries, Micro Cells)",
@@ -253,8 +248,8 @@ const packageFeatures = [
 const registrationTypes = [
   {
     id: "silver-tier-standard",
-    name: "VIP Package: Global Regenerative Medicine Summit",
-    shortName: "VIP Package",
+    name: "Executive Delegate Package: Global Regenerative Medicine Summit",
+    shortName: "Executive Delegate Package",
     tierKey: "silver" as const,
     price: 3000,
     priceId: "price_package_i_standard",

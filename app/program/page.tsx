@@ -18,7 +18,7 @@ const packageFeatures = [
   "Full access to all 3-day training sessions",
   "All official meals and Gala Dinner",
   "Joint Certificate: OXYZ Academy & DFGTT (Germany)",
-  "Exclusive hamper: Full trial series of all OXYZ products",
+
   "Internationally Accredited Certification (Stem Cell, Biological Medicine & Peptide)",
   "6 Months of Business Development & Clinic Growth Support",
   "6 Months of Post-Event Clinical Mentoring & Case Support",
@@ -28,8 +28,8 @@ const packageFeatures = [
 
 const singlePackage = {
   id: "silver-tier-standard",
-  badge: "VIP",
-  title: "VIP Package: Global Regenerative Medicine Summit",
+  badge: "Executive Delegate",
+  title: "Executive Delegate Package: Global Regenerative Medicine Summit",
   price: "$3,000",
   priceNote: "per person",
   deadline: "Deadline: 15 October 2026",
@@ -70,20 +70,20 @@ export default function ProgramPage() {
             <div className="max-w-3xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 shadow-md border border-[#007A59]/30">
-                VIP PACKAGE
+                EXECUTIVE DELEGATE PACKAGE
               </div>
               
               {/* Main Title */}
               <h1 className="font-extrabold leading-[1.1] text-[#CDB06A] text-4xl sm:text-5xl md:text-6xl tracking-tight">
                 Program Overview
                 <span className="block text-xl sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
-                  VIP Registration Package
+                  Executive Delegate Registration Package
                 </span>
               </h1>
 
               {/* Description */}
               <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-6 mb-10 font-light max-w-xl">
-                Comprehensive details for the Global Regenerative Medicine Summit 2026 VIP Tier.
+                Comprehensive details for the Global Regenerative Medicine Summit 2026 Executive Delegate Tier.
               </p>
 
               {/* CTA Buttons */}
@@ -134,7 +134,7 @@ export default function ProgramPage() {
                   20 - 24 November 2026
                 </p>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  4 nights premium accommodation included for VIP Package participants.
+                  4 nights premium accommodation included for Executive Delegate Package participants.
                 </p>
               </div>
 
@@ -185,7 +185,7 @@ export default function ProgramPage() {
               </p>
             </div>
 
-            {/* Single Centered VIP Package Card */}
+            {/* Single Centered Executive Delegate Package Card */}
             <div className="max-w-2xl mx-auto">
               <div className="relative flex flex-col rounded-[24px] border-2 border-[#007A59] bg-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-300/40">
                 

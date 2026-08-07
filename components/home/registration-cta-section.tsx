@@ -49,7 +49,7 @@ export function RegistrationCTASection() {
               {/* Card Header */}
               <div className="border-b border-slate-100 pb-6 text-center sm:text-left">
                 <div className="inline-block bg-[#CDB06A] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 shadow-sm">
-                  VIP Package
+                  Executive Delegate Package
                 </div>
                 
                 <h3 className="text-3xl font-extrabold text-[#007A59] tracking-wide uppercase font-sans mb-2">

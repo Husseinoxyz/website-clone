@@ -187,7 +187,7 @@ export function TrainingSection() {
               </div>
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -left-6 bg-gold text-white rounded-xl p-6 shadow-2xl hover:shadow-3xl transition-shadow">
-                <p className="text-sm font-medium">VIP Package</p>
+                <p className="text-sm font-medium">Executive Delegate Package</p>
                 <p className="text-2xl font-bold">USD 3,000</p>
               </div>
             </Link>
