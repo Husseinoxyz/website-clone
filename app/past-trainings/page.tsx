@@ -122,7 +122,7 @@ const pastTrainingTestimonials = [
     platform: "mp4" as const,
     aspect: "landscape" as const,
     autoplay: true,
-    title: "Past Training 1",
+    title: "Past Symposium 2025",
     subtitle: "",
     doctor: "Past Training",
   },
