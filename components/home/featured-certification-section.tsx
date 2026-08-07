@@ -14,7 +14,7 @@ export function FeaturedCertificationSection() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/slides poster/Post 2.png"
+          poster="/images/Slider Posts/PC View/Post 2.png"
           className="h-full w-full object-cover filter brightness-[0.85]"
         >
           <source src="/new/DR%20GRACE%20CAPITAL.mp4" type="video/mp4" />

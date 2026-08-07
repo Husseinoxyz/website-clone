@@ -434,7 +434,7 @@ function RegistrationContent() {
       <section className="bg-slate-950 pt-20 sm:pt-24 border-b border-slate-900">
         <div className="relative w-full aspect-[16/9] md:aspect-[2.4/1] xl:aspect-[3/1] bg-slate-950">
           <Image
-            src="/images/slides poster/PC View/Post 1 updated2.png"
+            src="/images/Slider Posts/PC View/Post 1.png"
             alt="OXYZ Registration Event Banner"
             fill
             className="object-cover filter brightness-[0.45] contrast-[1.05]"
