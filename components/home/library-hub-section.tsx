@@ -19,7 +19,7 @@ const getYouTubeEmbedUrl = (url: string) => {
   } else if (url.includes("youtube.com/embed/")) {
     videoId = url.split("youtube.com/embed/")[1].split("?")[0];
   }
-  return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080`;
 };
 
 const getYouTubePreviewUrl = (url: string) => {
@@ -32,7 +32,7 @@ const getYouTubePreviewUrl = (url: string) => {
   } else if (url.includes("youtube.com/embed/")) {
     videoId = url.split("youtube.com/embed/")[1].split("?")[0];
   }
-  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&enablejsapi=1`;
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&enablejsapi=1&vq=hd1080`;
 };
 
 const featuredVideos = [
@@ -52,9 +52,9 @@ const featuredVideos = [
   },
   {
     id: "feat-3",
-    title: "Dr Dr Muthorst - Celllar therapy in germany",
-    videoUrl: "https://youtu.be/5fPNttdsUo0?si=vh9fujX8XhtX04v7",
-    poster: "https://img.youtube.com/vi/5fPNttdsUo0/maxresdefault.jpg",
+    title: "OXYZ International Symposium 2023",
+    videoUrl: "https://youtu.be/MroTfwoPq2M?si=kcBUbLqy7chQwMPt",
+    poster: "https://img.youtube.com/vi/MroTfwoPq2M/maxresdefault.jpg",
     badge: "THERAPY",
   },
 ];

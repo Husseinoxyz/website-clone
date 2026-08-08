@@ -8,8 +8,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { GalleryGrid } from "@/components/training/gallery-grid";
 import { GalleryLoadMore } from "@/components/training/gallery-load-more";
-import { ArrowRight, Globe, Users, BookOpen, Handshake } from "lucide-react";
+import { ArrowRight, Globe, Users, BookOpen, Handshake, Play, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+const isYouTubeUrl = (url: string) => {
+  return url.includes("youtube.com") || url.includes("youtu.be");
+};
+
+const getYouTubeEmbedUrl = (url: string) => {
+  let videoId = "";
+  if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1].split("?")[0];
+  } else if (url.includes("youtube.com/watch")) {
+    const urlParams = new URLSearchParams(url.split("?")[1]);
+    videoId = urlParams.get("v") || "";
+  } else if (url.includes("youtube.com/embed/")) {
+    videoId = url.split("youtube.com/embed/")[1].split("?")[0];
+  }
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080`;
+};
+
+const getYouTubePreviewUrl = (url: string) => {
+  let videoId = "";
+  if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1].split("?")[0];
+  } else if (url.includes("youtube.com/watch")) {
+    const urlParams = new URLSearchParams(url.split("?")[1]);
+    videoId = urlParams.get("v") || "";
+  } else if (url.includes("youtube.com/embed/")) {
+    videoId = url.split("youtube.com/embed/")[1].split("?")[0];
+  }
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&enablejsapi=1&vq=hd1080`;
+};
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -199,6 +229,11 @@ function AnimatedCounter({ value, suffix = "", duration = 2000 }: { value: numbe
 
 export default function PastTrainingsPage() {
   useScrollAnimation();
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const handlePlayVideo = (url: string) => {
+    setActiveVideo(url);
+  };
 
   return (
     <>
@@ -394,6 +429,27 @@ export default function PastTrainingsPage() {
                   2025 International Training
                 </h3>
               </div>
+              <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-10">
+                <div 
+                  className="group relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-neutral-950 cursor-pointer hover:border-slate-300 transition-all duration-300"
+                  onClick={() => handlePlayVideo("https://www.youtube.com/embed/dkppIjFsWxM")}
+                >
+                  <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none">
+                    <iframe
+                      src={getYouTubePreviewUrl("https://www.youtube.com/embed/dkppIjFsWxM")}
+                      className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[0.68] opacity-75 group-hover:opacity-85 transition-all duration-700"
+                      allow="autoplay; encrypted-media"
+                      style={{ border: 0 }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 rounded-full bg-[#007A59]/90 text-white flex items-center justify-center shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
+                      <Play className="h-8 w-8 fill-white text-white ml-1" />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <GalleryLoadMore
                 alt="2025 training highlight"
                 images={gallery2025.map((image) => image.src)}
@@ -406,6 +462,27 @@ export default function PastTrainingsPage() {
                 <h3 className="text-3xl font-semibold text-[#007A59] mb-6">
                   2023 International Training
                 </h3>
+              </div>
+              <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-10">
+                <div 
+                  className="group relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-neutral-950 cursor-pointer hover:border-slate-300 transition-all duration-300"
+                  onClick={() => handlePlayVideo("https://www.youtube.com/embed/MroTfwoPq2M")}
+                >
+                  <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none">
+                    <iframe
+                      src={getYouTubePreviewUrl("https://www.youtube.com/embed/MroTfwoPq2M")}
+                      className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[0.68] opacity-75 group-hover:opacity-85 transition-all duration-700"
+                      allow="autoplay; encrypted-media"
+                      style={{ border: 0 }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 rounded-full bg-[#007A59]/90 text-white flex items-center justify-center shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
+                      <Play className="h-8 w-8 fill-white text-white ml-1" />
+                    </div>
+                  </div>
+                </div>
               </div>
               <GalleryGrid
                 alt="2023 training highlight"
@@ -588,6 +665,35 @@ export default function PastTrainingsPage() {
           </div>
         </section>
       </main>
+
+      {/* Premium Video Popup Modal */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div className="relative max-w-4xl w-full bg-black rounded-2xl overflow-hidden shadow-2xl border border-neutral-800" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/65 text-white hover:text-white/80 flex items-center justify-center transition-colors"
+              aria-label="Close video player"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="aspect-video w-full bg-black">
+              <iframe
+                src={getYouTubeEmbedUrl(activeVideo)}
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </>
   );
