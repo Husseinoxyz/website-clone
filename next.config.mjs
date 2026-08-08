@@ -4,11 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    // Keep image fidelity high while still enabling responsive optimization.
     unoptimized: false,
-    qualities: [100],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
-    formats: ["image/webp"],
+    formats: ["image/avif", "image/webp"],
   },
   async headers() {
     return [
