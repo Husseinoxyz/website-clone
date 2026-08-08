@@ -7,38 +7,38 @@ import { Pin, Plus, Eye } from "lucide-react";
 const machineImages = [
   {
     alt: "BR Scan",
-    src: "/images/Machines/Machine/BR Scan.png",
+    src: "/images/Machines/Machine/BR Scan.webp",
     plainSrc: "/images/Machines/BR scan.jpg",
     notes: "Advanced Bio-Resonance scanning designed to assess each individual's health at the cellular level by measuring the cells' electromagnetic frequencies."
   },
   {
     alt: "Colon Hydrotherapy",
-    src: "/images/Machines/Machine/Colon.png",
+    src: "/images/Machines/Machine/Colon.webp",
     plainSrc: "/images/Machines/Clon Hydrotherapy.jpg",
     notes: "A gentle cleansing therapy using warm, sterile water to flush the colon, supporting detoxification and digestive health."
   },
   {
     alt: "ECG Analysis",
-    src: "/images/Machines/Machine/ECG.png",
+    src: "/images/Machines/Machine/ECG.webp",
     plainSrc: "/images/Machines/Electrocardiogram(ESG).jpg",
     notes: "Precise cardiac activity mapping and electrocardiogram diagnostics to monitor heart rhythm and general cardiovascular health."
   },
   {
     alt: "Live Blood Analysis",
-    src: "/images/Machines/Machine/LBA.png",
+    src: "/images/Machines/Machine/LBA.webp",
     plainSrc: "/images/Machines/Live Blood Analysis.jpg",
     notes: "An interactive assessment examining a fresh drop of blood under a high-powered microscope to observe live cellular activity and immunity levels in real-time."
   },
   {
     alt: "HRV Assessment",
-    src: "/images/Machines/Machine/HRV.png",
+    src: "/images/Machines/Machine/HRV.webp",
     plainSrc: "/images/Machines/Heart rate Variability Analysis ( HRV).jpeg",
     notes: "Measures millisecond variations between heartbeats to evaluate autonomic nervous system performance and stress resilience."
   },
   {
     alt: "IHHT Therapy",
-    src: "/images/Machines/Machine/IHHT.png",
-    plainSrc: "/images/Machines/Machine/IHHT.png",
+    src: "/images/Machines/Machine/IHHT.webp",
+    plainSrc: "/images/Machines/Machine/IHHT.webp",
     notes: "Intermittent Hypoxia-Hyperoxia Training alternates between low- and high- oxygen levels to stimulate mitochondrial renewal and boost cellular energy."
   }
 ];

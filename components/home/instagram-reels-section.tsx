@@ -2,7 +2,13 @@
 
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Play, X, ArrowRight } from "lucide-react";
+
+function getYouTubeThumbnail(embedUrl: string) {
+  const id = embedUrl.split("/").pop();
+  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+}
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -210,11 +216,14 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                   <div className={`relative w-full bg-black group cursor-pointer aspect-video`}
                        onClick={() => openVideo(reel)}>
                     {reel.platform === "youtube" ? (
-                      <div className="h-full w-full absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-60 transition-opacity duration-300 overflow-hidden">
-                        <iframe 
-                          src={`${reel.src}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${reel.src.split('/').pop()}`}
-                          className="w-full h-full absolute inset-0 border-0 scale-[1.05]"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      <div className="h-full w-full absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity duration-300 overflow-hidden">
+                        <Image
+                          src={getYouTubeThumbnail(reel.src)}
+                          alt={reel.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          loading="lazy"
                         />
                       </div>
                     ) : (

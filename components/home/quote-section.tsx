@@ -5,23 +5,23 @@ import Image from "next/image";
 
 const doctors = [
   {
-    image: "/images/Doctors/doc 1.png",
+    image: "/images/Doctors/doc 1.webp",
     name: "OXYZ Medical Professional",
   },
   {
-    image: "/images/Doctors/Doc 2.png",
+    image: "/images/Doctors/Doc 2.webp",
     name: "OXYZ Medical Professional",
   },
   {
-    image: "/images/Doctors/Doc 3.png",
+    image: "/images/Doctors/Doc 3.webp",
     name: "OXYZ Medical Professional",
   },
   {
-    image: "/images/Doctors/doc 4.png",
+    image: "/images/Doctors/doc 4.webp",
     name: "OXYZ Medical Professional",
   },
   {
-    image: "/images/Doctors/doc 5.png",
+    image: "/images/Doctors/doc 5.webp",
     name: "OXYZ Medical Professional",
   },
 ];

@@ -49,7 +49,6 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              quality={100}
             />
             {/* Dark overlay on hover */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
