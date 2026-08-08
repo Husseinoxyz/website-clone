@@ -90,7 +90,7 @@ export function RegistrationCTASection() {
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                   <div className="text-center sm:text-left">
                     <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                      VIP Registration Rate
+                      Registration Rate
                     </p>
                     <p className="text-3xl sm:text-4xl font-black text-[#007A59] mt-1">
                       $ 3,000 <span className="text-sm font-normal text-slate-400">/ per person</span>

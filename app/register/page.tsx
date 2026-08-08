@@ -255,7 +255,6 @@ const registrationTypes = [
     priceId: "price_package_i_standard",
     deadline: "Deadline: 15 October 2026",
     standardPrice: null,
-    badge: "VIP",
   },
 ];
 
