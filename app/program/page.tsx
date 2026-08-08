@@ -331,7 +331,7 @@ export default function ProgramPage() {
                   size="lg"
                   className="w-full bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 py-5 rounded-xl shadow-lg transition-all hover:scale-105"
                 >
-                  Register for VIP Tier
+                  Register Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
