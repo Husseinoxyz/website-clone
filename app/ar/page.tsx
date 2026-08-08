@@ -169,7 +169,7 @@ export default function ArabicPage() {
                   day: "اليوم الثاني",
                   title: "البروتوكولات العلاجية",
                   topics: ["أمراض المفاصل.", "السكري ومضاعفاته.", "الأمراض العصبية.", "مكافحة الشيخوخة."],
-                  image: "https://www.youtube.com/embed/VfkXACyh5Ws"
+                  image: "https://www.youtube.com/embed/MroTfwoPq2M"
                 },
                 {
                   day: "اليوم الثالث",
