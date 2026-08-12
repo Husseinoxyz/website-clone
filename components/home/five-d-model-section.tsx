@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft, MousePointerClick } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 // Custom Brand D Icon Component (Slanted 3-line concentric letter D, matching the brand asset exactly)
@@ -274,12 +274,12 @@ const renderBrandTitle = (title: string, isHighlighted: boolean, stageColor: str
   const rest = title.slice(1).toUpperCase(); // 'ISCOVERY', etc.
 
   return (
-    <div className="flex items-center justify-center select-none">
+    <div className="inline-flex items-center justify-center select-none" dir="ltr">
       {/* Custom Brand D */}
       <CustomD
         className={`${isCenter
-          ? "h-4.5 w-4.5 sm:h-5 sm:w-5 mr-[2px]"
-          : "h-3 w-3 sm:h-3.5 sm:w-3.5 mr-[1px]"
+          ? "h-4.5 w-4.5 sm:h-5 sm:w-5 -mr-[3px]"
+          : "h-3 w-3 sm:h-3.5 sm:w-3.5 -mr-[1.5px]"
           } inline-block align-middle transition-transform duration-300`}
         style={{
           color: isHighlighted ? stageColor : "#94a3b8" // slate-400
@@ -484,7 +484,7 @@ const contentPositions = [
   }
 ];
 
-export function FiveDModelSection() {
+export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) {
   const [activeIndex, setActiveIndex] = useState(-1); // Defaults to -1 (Overview)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -520,9 +520,88 @@ export function FiveDModelSection() {
     };
   }, []);
 
+  const translatedOverviewStage = isArabic ? {
+    ...overviewStage,
+    subtitle: "النموذج الطبي البيولوجي خماسي الأبعاد",
+    description: "أضف حلول الببتيدات المتقدمة والعلاجات الخلوية إلى ممارستك الطبية، ووسّع خدمات عيادتك من خلال نظام الهندسة الألمانية للعلاج بطب الخلايا الجذعية والببتيدات. يضمن هذا الإطار الوضوح الطبي قبل التدخل، والتطبيق التجديدي المسؤول، ورحلات المريض المتسقة عبر جميع المراكز.",
+    details: [
+      "الوضوح الطبي: تشخيص شامل قبل أي تدخل",
+      "التطبيق المسؤول: بروتوكولات تجديدية قائمة على الأدلة",
+      "رحلات متسقة: رعاية مرضى موحدة عبر جميع المراكز",
+      "الصيانة التكاملية: دعم مستمر للتغذية ونمط الحياة"
+    ]
+  } : overviewStage;
+
+  const translatedStages = isArabic ? stages.map(stage => {
+    switch (stage.title) {
+      case "Discovery":
+        return {
+          ...stage,
+          subtitle: "التقييم والتشخيص",
+          description: "تتضمن مرحلة الاكتشاف تشخيصاً شاملاً وتقييماً للأسباب الجذرية. وهذا يشكل الأساس لكل رحلة مريض في OXYZ.",
+          details: [
+            "ملف صحي شامل",
+            "اختبارات تشخيصية متقدمة",
+            "تحديد الأسباب الجذرية",
+            "تأسيس خط أساس شخصي",
+          ]
+        };
+      case "Detox":
+        return {
+          ...stage,
+          subtitle: "التنظيف والتحسين",
+          description: "تركز مرحلة الديتوكس على تقليل العبء الجهازي وتحسين البيئة الداخلية، وتهيئة الجسم للتدخلات التجديدية.",
+          details: [
+            "تقليل العبء الجهازي",
+            "تحسين البيئة الداخلية",
+            "بروتوكولات التنظيف الخلوي",
+            "التحضير للتجديد",
+          ]
+        };
+      case "Defence":
+        return {
+          ...stage,
+          subtitle: "الدعم والتقوية",
+          description: "تركز مرحلة الدفاع على دعم المناعة والإصلاح والمرونة. تضمن هذه المرحلة دعم استراتيجيات التجديد بنظام دفاع داخلي قوي.",
+          details: [
+            "تحسين نظام المناعة",
+            "آليات الإصلاح الخلوي",
+            "بناء المرونة",
+            "استعادة الاستقرار الفسيولوجي",
+          ]
+        };
+      case "Dynamic":
+        return {
+          ...stage,
+          subtitle: "التنشيط والتجديد",
+          description: "تمثل المرحلة الديناميكية مرحلة التنشيط التجديدي، حيث تدعم التدخلات المستهدفة تجديد الخلايا والحيوية ونتائج مكافحة الشيخوخة.",
+          details: [
+            "تجديد واستعادة الخلايا",
+            "تعزيز الطاقة والحيوية",
+            "تدخلات مكافحة الشيخوخة",
+            "تحسين الأداء",
+          ]
+        };
+      case "Dietary":
+        return {
+          ...stage,
+          subtitle: "تحسين نمط الحياة",
+          description: "تضمن المرحلة الغذائية استدامة المكاسب التجديدية على المدى الطويل من خلال التغذية الشخصية وتحسين نمط الحياة والدعم المستمر.",
+          details: [
+            "استراتيجيات التغذية الشخصية",
+            "تحسين نمط الحياة",
+            "دعم تكوين العادات",
+            "تخطيط الصيانة على المدى الطويل",
+          ]
+        };
+      default:
+        return stage;
+    }
+  }) : stages;
+
   const displayIndex = hoveredIndex !== null ? hoveredIndex : activeIndex;
-  const displayedStage = displayIndex === -1 ? overviewStage : stages[displayIndex];
-  const activeStageDetails = activeIndex === -1 ? overviewStage : stages[activeIndex];
+  const displayedStage = displayIndex === -1 ? translatedOverviewStage : translatedStages[displayIndex];
+  const activeStageDetails = activeIndex === -1 ? translatedOverviewStage : translatedStages[activeIndex];
 
 
 
@@ -620,16 +699,36 @@ export function FiveDModelSection() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] mb-12">
             {/* Left Column: Interactive details panel */}
-            <div className="flex flex-col justify-center h-full animate-on-scroll slide-in-left">
-              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C5A880] mb-2">
-                The 5D Framework
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#007A59] mb-4 tracking-tight leading-tight">
-                One Model.<br className="hidden sm:inline" /> Consistent Outcomes.
+            <div className={`flex flex-col justify-center h-full animate-on-scroll ${isArabic ? 'slide-in-right' : 'slide-in-left'}`} dir={isArabic ? 'rtl' : 'ltr'}>
+              {!isArabic && (
+                <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C5A880] mb-2">
+                  The 5D Framework
+                </span>
+              )}
+              <h2 className={`font-bold text-[#007A59] mb-4 tracking-tight ${isArabic ? 'text-2xl sm:text-3xl lg:text-4xl leading-loose' : 'text-3xl sm:text-4xl lg:text-5xl leading-tight'}`}>
+                {isArabic ? (
+                  <>
+                    حوّل عيادتك للطب التجديدي المتقدم <br className="hidden sm:block" />
+                    عبر <span className="bg-[#CDB06A] text-white px-2 py-0.5 rounded-md mx-1 box-decoration-clone">برنامج الهندسة الألمانية للخلايا الجذعية والببتيدات</span>
+                  </>
+                ) : (
+                  <>One Model.<br className="hidden sm:inline" /> Consistent Outcomes.</>
+                )}
               </h2>
-              <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
-                At the core of OXYZ is the 5D Biological Regenerative Medical Model. Click or hover the interactive cycle wedges to explore each phase of our clinical model.
+              <p className="text-slate-600 text-base sm:text-lg mb-6 leading-relaxed">
+                {isArabic 
+                  ? "أضف حلول الببتيدات المتقدمة والعلاجات الخلوية إلى ممارستك الطبية، ووسّع خدمات عيادتك من خلال نظام الهندسة الألمانية للعلاج بطب الخلايا الجذعية والببتيدات." 
+                  : "At the core of OXYZ is the 5D Biological Regenerative Medical Model."}
               </p>
+              
+              <div className="flex items-start gap-3 bg-[#007A59]/5 border border-[#007A59]/10 rounded-xl p-4 mb-8 max-w-lg">
+                <MousePointerClick className="w-5 h-5 text-[#007A59] shrink-0 mt-0.5" />
+                <p className="text-sm font-medium text-[#007A59] leading-relaxed">
+                  {isArabic 
+                    ? "انقر أو مرر مؤشر الماوس فوق الأجزاء التفاعلية لاستكشاف كل مرحلة من مراحل نموذجنا السريري." 
+                    : "Click or hover the interactive cycle wedges to explore each phase of our clinical model."}
+                </p>
+              </div>
 
               {/* Dynamic details card with glassmorphism */}
               <div
@@ -656,10 +755,10 @@ export function FiveDModelSection() {
                     </div>
                     <div>
                       <div className="text-xs font-semibold uppercase tracking-wider text-[#C5A880]">
-                        {displayedStage === overviewStage ? "Model Overview" : `Dimension ${displayedStage.number}`}
+                        {displayedStage.number === "5D" ? (isArabic ? "نظرة عامة على النموذج" : "Model Overview") : `${isArabic ? "البعد" : "Dimension"} ${displayedStage.number}`}
                       </div>
                       <div className="mt-0.5">
-                        {displayedStage === overviewStage ? (
+                        {displayedStage.number === "5D" ? (
                           <span className="text-sm sm:text-base font-bold text-[#007A59] tracking-wide select-none">
                             OXYZ Medical Model
                           </span>
@@ -889,18 +988,29 @@ export function FiveDModelSection() {
           </div>
 
           {/* CTA Links and Details Button */}
-          <div className="text-center mt-12 animate-on-scroll">
+          <div className="text-center mt-12 animate-on-scroll" dir={isArabic ? 'rtl' : 'ltr'}>
             <Link href="/5d-model">
               <Button
                 size="lg"
                 className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
-                Explore the 5D Model
-                <ArrowRight className="ml-2 h-5 w-5 animate-pulse" />
+                {isArabic ? (
+                  <span className="flex items-center gap-1">
+                    <span>استكشف نموذج</span>
+                    <span dir="ltr">5D</span>
+                  </span>
+                ) : (
+                  "Explore the 5D Model"
+                )}
+                {isArabic ? (
+                  <ArrowLeft className="mr-2 h-5 w-5 animate-pulse" />
+                ) : (
+                  <ArrowRight className="ml-2 h-5 w-5 animate-pulse" />
+                )}
               </Button>
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 mt-4 font-medium tracking-wide">
-              * Click or hover the dimensions above to discover clinical details
+              {isArabic ? "* انقر أو مرر مؤشر الماوس فوق الأبعاد أعلاه لاكتشاف التفاصيل السريرية" : "* Click or hover the dimensions above to discover clinical details"}
             </p>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { CheckCircle2, BookOpen, Clock, Award, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PosterSliderSection } from "@/components/home/poster-slider-section";
+import { FiveDModelSection } from "@/components/home/five-d-model-section";
 import { Readex_Pro } from "next/font/google";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 
@@ -34,7 +35,7 @@ export default function ArabicPage() {
           <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
           <FadeIn delay={0.2} direction="up" className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-[#CDB06A] drop-shadow-sm">
-              انطلق بمستقبلك الطبي <br className="hidden md:block" /> مع أكاديمية الطب التجديدي
+              انطلق بمستقبلك <br className="hidden md:block" /> بطب الخلايا الجذعية والببتيدات
             </h1>
             <p className="text-lg md:text-xl text-teal-800 max-w-3xl mx-auto mb-6 leading-relaxed font-semibold">
               ادخل عالم الخلايا الجذعية والطب البيولوجي وعلاجات الببتيدات. وانقلها إلى عيادتك.
@@ -60,7 +61,7 @@ export default function ArabicPage() {
               {/* Text Side (Right in RTL) */}
               <FadeIn delay={0.2} direction="right" className="lg:w-1/2">
                 <div className="mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#CDB06A] drop-shadow-sm mb-6">لماذا تنضم إلى البرنامج؟</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#CDB06A] drop-shadow-sm mb-6">لماذا تنضم إلى الدورة</h2>
                   <div className="h-1 w-20 bg-[#CDB06A] rounded-full"></div>
                 </div>
 
@@ -150,10 +151,10 @@ export default function ArabicPage() {
         </section>
 
         {/* Training Program Section */}
-        <section className="py-20 bg-slate-50">
+        <section className="pt-20 pb-0 bg-slate-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn delay={0.1} direction="up" className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#CDB06A] drop-shadow-sm mb-6">البرنامج التدريبي</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#CDB06A] drop-shadow-sm mb-6">الدورة التدريبية</h2>
               <div className="h-1 w-20 bg-gold mx-auto rounded-full"></div>
             </FadeIn>
 
@@ -168,7 +169,7 @@ export default function ArabicPage() {
                 {
                   day: "اليوم الثاني",
                   title: "البروتوكولات العلاجية",
-                  topics: ["أمراض المفاصل.", "السكري ومضاعفاته.", "الأمراض العصبية.", "مكافحة الشيخوخة."],
+                  topics: ["أمراض المفاصل.", "السكري ومضاعفاته.", "الأمراض العصبية.", "مكافحة الشيخوخة.", "التجميل اللاجراحي.", "طب الأسنان."],
                   image: "https://www.youtube.com/embed/MroTfwoPq2M"
                 },
                 {
@@ -220,7 +221,7 @@ export default function ArabicPage() {
                             />
                           ) : isYoutube ? (
                             <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
-                              <iframe 
+                              <iframe
                                 src={`${dayInfo.image}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${dayInfo.image.split('/').pop()}`}
                                 className="w-full h-full absolute inset-0 border-0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -255,6 +256,11 @@ export default function ArabicPage() {
             </div>
           </div>
         </section>
+
+        {/* 5D Model Section */}
+        <div dir="ltr" className="-mt-8 sm:-mt-16 relative z-10">
+          <FiveDModelSection isArabic={true} />
+        </div>
 
         {/* What you get Section */}
         <section className="py-20 bg-white">
