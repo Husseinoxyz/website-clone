@@ -151,14 +151,38 @@ export default function ArabicPage() {
         </section>
 
         {/* Training Program Section */}
-        <section className="pt-20 pb-0 bg-slate-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="pt-20 pb-8 relative overflow-hidden">
+          {/* Warm beige/cream gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F5EFE0] via-[#FAF6ED] to-[#EDE4D0]" />
+          {/* Background image overlay */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-bg-2.jpg"
+              alt=""
+              fill
+              className="object-cover opacity-[0.06] mix-blend-multiply"
+              sizes="100vw"
+            />
+          </div>
+          {/* Warm gradient accents */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_top_right,_rgba(205,176,106,0.25),_transparent_60%)]" />
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(205,176,106,0.18),_transparent_55%)]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(205,176,106,0.08),_transparent_60%)]" />
+            <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(135deg,rgba(180,160,100,1)_0%,rgba(180,160,100,1)_25%,transparent_25%,transparent_50%,rgba(180,160,100,1)_50%,rgba(180,160,100,1)_75%,transparent_75%,transparent_100%)] bg-[length:24px_24px]" />
+          </div>
+          {/* Decorative floating orbs */}
+          <div className="absolute top-20 left-10 w-96 h-96 bg-[#CDB06A]/12 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-40 right-20 w-[500px] h-[500px] bg-[#CDB06A]/8 rounded-full blur-[120px] pointer-events-none" />
+
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn delay={0.1} direction="up" className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#CDB06A] drop-shadow-sm mb-6">الدورة التدريبية</h2>
-              <div className="h-1 w-20 bg-gold mx-auto rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#8B7332] drop-shadow-sm mb-4">الدورة التدريبية</h2>
+              <div className="h-1 w-20 bg-[#CDB06A] mx-auto rounded-full shadow-[0_0_12px_rgba(205,176,106,0.4)]"></div>
+              <p className="text-[#6B5D3E]/70 mt-4 text-lg">خمسة أيام من التعليم المكثف والتدريب العملي</p>
             </FadeIn>
 
-            <div className="max-w-4xl mx-auto space-y-6">
+            <div className="max-w-5xl mx-auto space-y-10">
               {[
                 {
                   day: "اليوم الأول",
@@ -197,57 +221,67 @@ export default function ArabicPage() {
                 const isYoutube = dayInfo.image.includes('youtube.com/embed/');
 
                 return (
-                  <div key={index} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16 py-12 border-b border-gray-200 last:border-0`}>
-                    <div className="w-full md:w-1/2 relative group">
-                      {dayInfo.secondaryImage ? (
-                        <div className="relative h-[300px] sm:h-[400px] w-full">
-                          <div className="absolute top-0 right-0 w-3/4 aspect-[4/3] rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 z-10 hover:z-30">
-                            <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover hover:scale-105 transition-transform duration-700" />
-                          </div>
-                          <div className="absolute bottom-0 left-0 w-3/4 aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 z-20 hover:z-30 border-[6px] border-slate-50">
-                            <Image src={dayInfo.secondaryImage} alt="Genting Highlands" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-                          </div>
-                        </div>
-                      ) : (
-                        <div className={`${isVideo || isYoutube ? 'w-full aspect-[16/9]' : 'aspect-[4/3]'} rounded-3xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow duration-500 relative bg-black`}>
-                          {isVideo ? (
-                            <video
-                              src={dayInfo.image}
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              className="w-full h-auto"
-                            />
-                          ) : isYoutube ? (
-                            <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
-                              <iframe
-                                src={`${dayInfo.image}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${dayInfo.image.split('/').pop()}`}
-                                className="w-full h-full absolute inset-0 border-0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                              />
+                  <div key={index} className="relative group">
+                    {/* Warm elegant card */}
+                    <div className="bg-white/60 backdrop-blur-sm border border-[#CDB06A]/20 rounded-3xl p-6 md:p-10 shadow-[0_4px_24px_rgba(180,160,100,0.12)] hover:shadow-[0_8px_40px_rgba(180,160,100,0.2)] hover:border-[#CDB06A]/35 transition-all duration-500">
+                      <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12`}>
+                        {/* Image side */}
+                        <div className="w-full md:w-1/2 relative">
+                          {dayInfo.secondaryImage ? (
+                            <div className="relative h-[300px] sm:h-[380px] w-full">
+                              <div className="absolute top-0 right-0 w-3/4 aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 z-10 hover:z-30 ring-1 ring-[#CDB06A]/20">
+                                <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                              </div>
+                              <div className="absolute bottom-0 left-0 w-3/4 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-all duration-500 z-20 hover:z-30 border-4 border-white ring-1 ring-[#CDB06A]/20">
+                                <Image src={dayInfo.secondaryImage} alt="Genting Highlands" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                              </div>
                             </div>
                           ) : (
-                            <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div className={`${isVideo || isYoutube ? 'w-full aspect-[16/9]' : 'aspect-[4/3]'} rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 relative bg-black ring-1 ring-[#CDB06A]/20`}>
+                              {isVideo ? (
+                                <video
+                                  src={dayInfo.image}
+                                  autoPlay
+                                  loop
+                                  muted
+                                  playsInline
+                                  className="w-full h-auto"
+                                />
+                              ) : isYoutube ? (
+                                <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
+                                  <iframe
+                                    src={`${dayInfo.image}?controls=0&mute=1&autoplay=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=${dayInfo.image.split('/').pop()}`}
+                                    className="w-full h-full absolute inset-0 border-0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                  />
+                                </div>
+                              ) : (
+                                <Image src={dayInfo.image} alt={dayInfo.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                              )}
+                            </div>
                           )}
-                          {!isVideo && !isYoutube && <div className="absolute inset-0 bg-[#007A59]/10"></div>}
                         </div>
-                      )}
-                    </div>
-                    <div className="w-full md:w-1/2 flex flex-col justify-center">
-                      <h3 className="text-[#CDB06A] text-xl font-bold mb-1 tracking-wide">{dayInfo.day}</h3>
-                      <h4 className="text-3xl md:text-4xl font-extrabold text-[#CDB06A] mb-4 leading-tight">{dayInfo.title}</h4>
-                      <div className="w-20 h-1 bg-[#CDB06A] mb-8"></div>
-                      <div className="space-y-4">
-                        <ul className="space-y-4">
-                          {dayInfo.topics.map((topic, i) => (
-                            <li key={i} className="flex items-start text-[#007A59] text-lg md:text-xl font-medium">
-                              <span className="w-2.5 h-2.5 bg-[#CDB06A] rounded-full ml-4 mt-2.5 shrink-0 shadow-sm"></span>
-                              <span className="leading-relaxed">{topic}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        {/* Text side */}
+                        <div className="w-full md:w-1/2 flex flex-col justify-center">
+                          {/* Day badge */}
+                          <div className="inline-flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#CDB06A] to-[#A8913E] flex items-center justify-center text-white font-bold text-lg shadow-[0_2px_12px_rgba(205,176,106,0.4)]">
+                              {index + 1}
+                            </div>
+                            <span className="text-[#8B7332] text-lg font-bold tracking-wide">{dayInfo.day}</span>
+                          </div>
+                          <h4 className="text-3xl md:text-4xl font-extrabold text-[#3D3520] mb-4 leading-tight">{dayInfo.title}</h4>
+                          <div className="w-16 h-1 bg-gradient-to-l from-[#CDB06A] to-[#CDB06A]/30 mb-6 rounded-full"></div>
+                          <ul className="space-y-3">
+                            {dayInfo.topics.map((topic, i) => (
+                              <li key={i} className="flex items-start text-[#4A4030] text-lg font-medium">
+                                <span className="w-2 h-2 bg-[#CDB06A] rounded-full ml-4 mt-2.5 shrink-0 shadow-[0_0_6px_rgba(205,176,106,0.4)]"></span>
+                                <span className="leading-relaxed">{topic}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
