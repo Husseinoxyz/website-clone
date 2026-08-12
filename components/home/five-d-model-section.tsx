@@ -754,9 +754,6 @@ export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) 
                       <displayedStage.icon className="h-7 w-7" active={true} />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold uppercase tracking-wider text-[#C5A880]">
-                        {displayedStage.number === "5D" ? (isArabic ? "نظرة عامة على النموذج" : "Model Overview") : `${isArabic ? "البعد" : "Dimension"} ${displayedStage.number}`}
-                      </div>
                       <div className="mt-0.5">
                         {displayedStage.number === "5D" ? (
                           <span className="text-sm sm:text-base font-bold text-[#007A59] tracking-wide select-none">
