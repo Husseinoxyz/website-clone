@@ -179,7 +179,6 @@ export default function ArabicPage() {
             <FadeIn delay={0.1} direction="up" className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-[#8B7332] drop-shadow-sm mb-4">الدورة التدريبية</h2>
               <div className="h-1 w-20 bg-[#CDB06A] mx-auto rounded-full shadow-[0_0_12px_rgba(205,176,106,0.4)]"></div>
-              <p className="text-[#6B5D3E]/70 mt-4 text-lg">خمسة أيام من التعليم المكثف والتدريب العملي</p>
             </FadeIn>
 
             <div className="max-w-5xl mx-auto space-y-10">
