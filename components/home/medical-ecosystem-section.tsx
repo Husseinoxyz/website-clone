@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Activity, Shield, Stethoscope, FlaskConical } from "lucide-react";
 import { useEffect } from "react";
@@ -121,23 +120,25 @@ export function MedicalEcosystemSection() {
         }
       `}</style>
       
-      <section className="bg-[#CDB06A] overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-0 items-stretch">
-          {/* Image */}
-          <div className="relative min-h-[320px] lg:min-h-[450px] animate-on-scroll slide-in-left scale-in">
-            <div className="absolute inset-0 overflow-hidden">
-              <Image
-                src="/images/medical-ecosystem.jpg"
-                alt="Medical ecosystem"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+      <section className="bg-[#CDB06A] overflow-hidden py-8 lg:py-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-6 sm:px-8 lg:px-12">
+          {/* Video */}
+          <div className="w-full max-w-sm lg:w-5/12 animate-on-scroll slide-in-left scale-in shrink-0">
+            <div className="relative aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+              <video
+                src="/images/Dr%20Gisele%20explaining%20about%20symposium.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </div>
           
           {/* Content */}
-          <div className="px-6 sm:px-8 lg:px-12 py-8 lg:py-12 animate-on-scroll slide-in-right flex flex-col justify-center">
+          <div className="w-full lg:w-7/12 animate-on-scroll slide-in-right flex flex-col justify-center py-4 lg:py-0">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#005744] mb-4 leading-tight">
               A Medical-First Ecosystem
             </h2>
