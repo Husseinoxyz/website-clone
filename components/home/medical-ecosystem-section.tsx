@@ -124,7 +124,7 @@ export function MedicalEcosystemSection() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-6 sm:px-8 lg:px-12">
           {/* Video */}
           <div className="w-full max-w-sm lg:w-5/12 animate-on-scroll slide-in-left scale-in shrink-0">
-            <div className="relative aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+            <div className="relative rounded-xl overflow-hidden shadow-lg border border-white/20">
               <video
                 src="/images/Dr%20Gisele%20explaining%20about%20symposium.mp4"
                 autoPlay
@@ -132,7 +132,7 @@ export function MedicalEcosystemSection() {
                 loop
                 playsInline
                 controls
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-auto object-contain rounded-xl"
               />
             </div>
           </div>
