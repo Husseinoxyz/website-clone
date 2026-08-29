@@ -126,7 +126,7 @@ export function MedicalEcosystemSection() {
           <div className="w-full max-w-sm lg:w-5/12 animate-on-scroll slide-in-left scale-in shrink-0">
             <div className="relative rounded-xl overflow-hidden shadow-lg border border-white/20">
               <video
-                src="/images/Dr%20Gisele%20explaining%20about%20symposium.mp4"
+                src="/images/Dr%20Gisele%20explaining%20about%20symposium-eng.mp4"
                 autoPlay
                 muted
                 loop

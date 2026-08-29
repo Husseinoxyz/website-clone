@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OXYZ 5D Model</title>
+
+  <!-- Tailwind CSS (utility classes used throughout this page) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["'Readex Pro'", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Readex Pro (supports Arabic + Latin) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, #stage-number-bg {
+      font-family: 'Readex Pro', sans-serif;
+    }
+    @keyframes slow-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes reverse-slow-spin {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .animate-slow-spin {
+      transform-origin: center;
+      animation: slow-spin 35s linear infinite;
+    }
+    .animate-reverse-slow-spin {
+      transform-origin: center;
+      animation: reverse-slow-spin 45s linear infinite;
+    }
+    .wedge-group {
+      cursor: pointer;
+      transform-origin: 50px 50px;
+    }
+    .wedge-path {
+      transition: all 0.3s ease;
+    }
+    .wedge-content {
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+    }
+    .fade-in {
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white to-slate-50 font-sans text-slate-800 antialiased py-16 sm:py-24 overflow-x-hidden">
+
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] mb-12">
+      
+      <!-- Right Column: SVG Wheel -->
+      <div class="relative flex items-center justify-center p-4 fade-in" dir="ltr">
+        <div class="relative w-full max-w-[460px] aspect-square" id="wheel-container">
+          <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full select-none overflow-visible">
+            <defs>
+              <filter id="shadow-glow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="rgba(0,0,0,0.15)" />
+              </filter>
+            </defs>
+            <circle cx="50" cy="50" r="48.5" stroke="rgba(197, 168, 128, 0.1)" stroke-width="0.5" fill="none" />
+            <circle cx="50" cy="50" r="48.5" stroke="rgba(0, 122, 89, 0.12)" stroke-width="0.5" stroke-dasharray="5 15" fill="none" class="animate-slow-spin" />
+            <circle cx="50" cy="50" r="23.5" stroke="rgba(197, 168, 128, 0.15)" stroke-width="0.5" stroke-dasharray="1.5 5" fill="none" class="animate-reverse-slow-spin" />
+            
+            <g id="wedges-container">
+              
+    <g class="wedge-group" id="wedge-0">
+      <path d="M 25.09 10.14 A 47 47 0 0 1 74.91 10.14 L 63.51 28.37 A 25.5 25.5 0 0 0 36.49 28.37 Z" fill="transparent" stroke="transparent" stroke-width="2.0" style="pointer-events: all;"></path>
+      <g id="wedge-visual-0" class="wedge-content" style="opacity: 0.88;">
+        <path class="wedge-path" d="M 25.09 10.14 A 47 47 0 0 1 74.91 10.14 L 63.51 28.37 A 25.5 25.5 0 0 0 36.49 28.37 Z" fill="#007A59" stroke="#007A59" stroke-width="2.0" stroke-linejoin="round"></path>
+        <svg x="45.75" y="7.25" width="8.5" height="8.5" class="text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="28" y="26" width="44" height="54" rx="5" fill="none"/><path d="M 43 26 L 45 16 L 55 16 L 57 26" fill="currentColor" fill-opacity="0.15"/><rect x="40" y="20" width="20" height="6" rx="1.5" fill="none"/><path d="M 36 42 L 41 47 L 51 37" stroke-width="4" fill="none"/><line x1="56" y1="41" x2="70" y2="41" stroke-width="4" fill="none"/><line x1="56" y1="47" x2="66" y2="47" stroke-width="4" fill="none"/><rect x="34" y="56" width="32" height="16" rx="3" stroke-width="3" fill="none"/><path d="M 37 64 L 40 64 L 43 59 L 46 69 L 49 61 L 52 67 L 55 64 L 63 64" stroke-width="3" fill="none"/><circle cx="70" cy="24" r="12" stroke="white" stroke-width="1" fill="white"/><path d="M 64 24 L 68 28 L 76 20" stroke="#007A59" stroke-width="3" fill="none"/></svg>
+        <g stroke="white" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M 41.72 20.88 L 42.15 18" fill="none"></path><path d="M 42.15 18 L 43.050000000000004 18 A 1.5 1.5 0 0 1 44.550000000000004 19.5 A 1.5 1.5 0 0 1 43.050000000000004 21 L 41.300000000000004 21" fill="none"></path><path d="M 42.1 20.5 L 42.53 18.38" fill="none"></path><path d="M 42.53 18.38 L 43.050000000000004 18.38 A 1.12 1.12 0 0 1 44.17 19.5 A 1.12 1.12 0 0 1 43.050000000000004 20.62 L 41.300000000000004 20.62" fill="none"></path><path d="M 42.48 20.119999999999997 L 42.91 18.76" fill="none"></path><path d="M 42.91 18.76 L 43.050000000000004 18.76 A 0.74 0.74 0 0 1 43.790000000000006 19.5 A 0.74 0.74 0 0 1 43.050000000000004 20.24 L 41.300000000000004 20.24" fill="none"></path></g>
+        <text x="44.25" y="20.40" fill="white" font-size="3.0" font-weight="900" font-style="italic">ISCOVERY</text>
+      </g>
+    </g>
+  
+    <g class="wedge-group" id="wedge-1">
+      <path d="M 80.21 14.00 A 47 47 0 0 1 95.60 61.37 L 74.74 56.17 A 25.5 25.5 0 0 0 66.39 30.47 Z" fill="transparent" stroke="transparent" stroke-width="2.0" style="pointer-events: all;"></path>
+      <g id="wedge-visual-1" class="wedge-content" style="opacity: 0.88;">
+        <path class="wedge-path" d="M 80.21 14.00 A 47 47 0 0 1 95.60 61.37 L 74.74 56.17 A 25.5 25.5 0 0 0 66.39 30.47 Z" fill="#115E4C" stroke="#115E4C" stroke-width="2.0" stroke-linejoin="round"></path>
+        <svg x="77.25" y="28.25" width="8.5" height="8.5" class="text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="18" r="7" fill="none"/><path d="M 25 31 C 25 31 25 27 28 27 L 43 27 C 46 27 47 31 50 31 C 53 31 54 27 57 27 L 72 27 C 75 27 75 31 75 31 L 75 33 C 75 33 75 35 72 35 L 61 35 C 59 35 58 36 58 38 L 58 66 M 42 66 L 42 38 C 42 36 41 35 39 35 L 28 35 C 25 35 25 33 25 33 Z" fill="none"/><path d="M 47 68 L 47 44 A 3 3 0 0 1 50 41 A 3 3 0 0 1 53 44 L 53 68" fill="none"/><path d="M 30 40 L 30 48 M 26 44 L 34 44" stroke-width="3" fill="none"/><path d="M 30 54 L 30 62 M 26 58 L 34 58" stroke-width="3" fill="none"/><path d="M 70 40 L 70 48 M 66 44 L 74 44" stroke-width="3" fill="none"/><path d="M 70 54 L 70 62 M 66 58 L 74 58" stroke-width="3" fill="none"/><circle cx="50" cy="68" r="14" stroke="white" stroke-width="1" fill="white"/><path d="M 41 68 L 47 74 L 59 62" stroke="#115E4C" stroke-width="4.5" fill="none"/></svg>
+        <g stroke="white" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M 80.22 42.38 L 80.64999999999999 39.5" fill="none"></path><path d="M 80.64999999999999 39.5 L 81.55 39.5 A 1.5 1.5 0 0 1 83.05 41 A 1.5 1.5 0 0 1 81.55 42.5 L 79.8 42.5" fill="none"></path><path d="M 80.6 42 L 81.02999999999999 39.88" fill="none"></path><path d="M 81.02999999999999 39.88 L 81.55 39.88 A 1.12 1.12 0 0 1 82.67 41 A 1.12 1.12 0 0 1 81.55 42.12 L 79.8 42.12" fill="none"></path><path d="M 80.98 41.620000000000005 L 81.41 40.26" fill="none"></path><path d="M 81.41 40.26 L 81.55 40.26 A 0.74 0.74 0 0 1 82.28999999999999 41 A 0.74 0.74 0 0 1 81.55 41.74 L 79.8 41.74" fill="none"></path></g>
+        <text x="82.75" y="41.90" fill="white" font-size="3.0" font-weight="900" font-style="italic">ETOX</text>
+      </g>
+    </g>
+  
+    <g class="wedge-group" id="wedge-2">
+      <path d="M 93.58 67.61 A 47 47 0 0 1 53.28 96.89 L 51.78 75.44 A 25.5 25.5 0 0 0 73.64 59.55 Z" fill="transparent" stroke="transparent" stroke-width="2.0" style="pointer-events: all;"></path>
+      <g id="wedge-visual-2" class="wedge-content" style="opacity: 0.88;">
+        <path class="wedge-path" d="M 93.58 67.61 A 47 47 0 0 1 53.28 96.89 L 51.78 75.44 A 25.5 25.5 0 0 0 73.64 59.55 Z" fill="#CDB06A" stroke="#CDB06A" stroke-width="2.0" stroke-linejoin="round"></path>
+        <svg x="65.25" y="69.75" width="8.5" height="8.5" class="text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M 50 18 C 59 18 72 15 72 32 C 72 52 50 72 50 75 C 50 72 28 52 28 32 C 28 15 41 18 50 18 Z" fill="none"/><path d="M 50 25 C 56 25 64 23 64 34 C 64 48 50 62 50 64 C 50 62 36 48 36 34 C 36 23 44 25 50 25 Z" stroke-width="3" fill="none"/><path d="M 50 36 L 50 50 M 43 43 L 57 43" stroke-width="5" fill="none"/><line x1="20" y1="28" x2="11" y2="23" fill="none"/><line x1="16" y1="43" x2="6" y2="43" fill="none"/><line x1="20" y1="58" x2="11" y2="63" fill="none"/><line x1="80" y1="28" x2="89" y2="23" fill="none"/><line x1="84" y1="43" x2="94" y2="43" fill="none"/><line x1="80" y1="58" x2="89" y2="63" fill="none"/><path d="M 62 10 L 62 18 M 58 14 L 66 14" stroke-width="3" fill="none"/><path d="M 34 76 L 34 84 M 30 80 L 38 80" stroke-width="3" fill="none"/><circle cx="37" cy="13" r="3.5" stroke-width="3" fill="none"/><circle cx="69" cy="18" r="1.2" stroke="none" fill="currentColor"/><circle cx="54" cy="83" r="3.5" stroke-width="3" fill="none"/><circle cx="44" cy="83" r="1.2" stroke="none" fill="currentColor"/><path d="M 19 14 C 16.5 14 15 16 15 18 C 15 20.5 16.5 22 19 22 C 21.5 22 23 20.5 23 18 C 23 16 21.5 14 19 14 Z" stroke-width="3" fill="none"/><line x1="16" y1="15" x2="11" y2="10" stroke-width="3" fill="none"/><line x1="22" y1="15" x2="27" y2="10" stroke-width="3" fill="none"/><line x1="15" y1="19" x2="10" y2="21" stroke-width="3" fill="none"/><line x1="23" y1="19" x2="28" y2="21" stroke-width="3" fill="none"/><circle cx="76" cy="65" r="5" stroke-width="3" fill="none"/><line x1="72.5" y1="61.5" x2="68" y2="57" stroke-width="3" fill="none"/><circle cx="66.5" cy="55.5" r="2" stroke-width="2.5" fill="none"/><line x1="79.5" y1="61.5" x2="84" y2="57" stroke-width="3" fill="none"/><circle cx="85.5" cy="55.5" r="2" stroke-width="2.5" fill="none"/><line x1="81" y1="65" x2="87" y2="65" stroke-width="3" fill="none"/><circle cx="89" cy="65" r="2" stroke-width="2.5" fill="none"/><line x1="79.5" y1="68.5" x2="84" y2="73" stroke-width="3" fill="none"/><circle cx="85.5" cy="74.5" r="2" stroke-width="2.5" fill="none"/><line x1="72.5" y1="68.5" x2="68" y2="73" stroke-width="3" fill="none"/><circle cx="66.5" cy="74.5" r="2" stroke-width="2.5" fill="none"/><circle cx="74" cy="64" r="0.75" stroke="none" fill="currentColor"/><circle cx="77" cy="66" r="0.75" stroke="none" fill="currentColor"/></svg>
+        <g stroke="white" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M 66.97 83.88 L 67.39999999999999 81" fill="none"></path><path d="M 67.39999999999999 81 L 68.3 81 A 1.5 1.5 0 0 1 69.8 82.5 A 1.5 1.5 0 0 1 68.3 84 L 66.55 84" fill="none"></path><path d="M 67.35 83.5 L 67.77999999999999 81.38" fill="none"></path><path d="M 67.77999999999999 81.38 L 68.3 81.38 A 1.12 1.12 0 0 1 69.42 82.5 A 1.12 1.12 0 0 1 68.3 83.62 L 66.55 83.62" fill="none"></path><path d="M 67.73 83.11999999999999 L 68.16 81.76" fill="none"></path><path d="M 68.16 81.76 L 68.3 81.76 A 0.74 0.74 0 0 1 69.03999999999999 82.5 A 0.74 0.74 0 0 1 68.3 83.24 L 66.55 83.24" fill="none"></path></g>
+        <text x="69.50" y="83.40" fill="white" font-size="3.0" font-weight="900" font-style="italic">EFENCE</text>
+      </g>
+    </g>
+  
+    <g class="wedge-group" id="wedge-3">
+      <path d="M 46.72 96.89 A 47 47 0 0 1 6.42 67.61 L 26.36 59.55 A 25.5 25.5 0 0 0 48.22 75.44 Z" fill="transparent" stroke="transparent" stroke-width="2.0" style="pointer-events: all;"></path>
+      <g id="wedge-visual-3" class="wedge-content" style="opacity: 0.88;">
+        <path class="wedge-path" d="M 46.72 96.89 A 47 47 0 0 1 6.42 67.61 L 26.36 59.55 A 25.5 25.5 0 0 0 48.22 75.44 Z" fill="#788A53" stroke="#788A53" stroke-width="2.0" stroke-linejoin="round"></path>
+        <svg x="26.25" y="69.75" width="8.5" height="8.5" class="text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="8" stroke="none" fill="currentColor"/><ellipse cx="50" cy="50" rx="36" ry="12" transform="rotate(30 50 50)" stroke-width="4" fill="none"/><ellipse cx="50" cy="50" rx="36" ry="12" transform="rotate(90 50 50)" stroke-width="4" fill="none"/><ellipse cx="50" cy="50" rx="36" ry="12" transform="rotate(150 50 50)" stroke-width="4" fill="none"/><circle cx="78" cy="66" r="4.5" stroke="none" fill="currentColor"/><circle cx="50" cy="14" r="4.5" stroke="none" fill="currentColor"/><circle cx="22" cy="66" r="4.5" stroke="none" fill="currentColor"/></svg>
+        <g stroke="white" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M 19.970000000000002 83.88 L 20.400000000000002 81" fill="none"></path><path d="M 20.400000000000002 81 L 21.3 81 A 1.5 1.5 0 0 1 22.8 82.5 A 1.5 1.5 0 0 1 21.3 84 L 19.55 84" fill="none"></path><path d="M 20.35 83.5 L 20.78 81.38" fill="none"></path><path d="M 20.78 81.38 L 21.3 81.38 A 1.12 1.12 0 0 1 22.42 82.5 A 1.12 1.12 0 0 1 21.3 83.62 L 19.55 83.62" fill="none"></path><path d="M 20.730000000000004 83.11999999999999 L 21.160000000000004 81.76" fill="none"></path><path d="M 21.160000000000004 81.76 L 21.3 81.76 A 0.74 0.74 0 0 1 22.04 82.5 A 0.74 0.74 0 0 1 21.3 83.24 L 19.55 83.24" fill="none"></path></g>
+        <text x="22.50" y="83.40" fill="white" font-size="3.0" font-weight="900" font-style="italic">YNAMIC</text>
+      </g>
+    </g>
+  
+    <g class="wedge-group" id="wedge-4">
+      <path d="M 4.40 61.37 A 47 47 0 0 1 19.79 14.00 L 33.61 30.47 A 25.5 25.5 0 0 0 25.26 56.17 Z" fill="transparent" stroke="transparent" stroke-width="2.0" style="pointer-events: all;"></path>
+      <g id="wedge-visual-4" class="wedge-content" style="opacity: 0.88;">
+        <path class="wedge-path" d="M 4.40 61.37 A 47 47 0 0 1 19.79 14.00 L 33.61 30.47 A 25.5 25.5 0 0 0 25.26 56.17 Z" fill="#5A7343" stroke="#5A7343" stroke-width="2.0" stroke-linejoin="round"></path>
+        <svg x="14.25" y="28.25" width="8.5" height="8.5" class="text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M 16 15 Q 16 18 19 18 Q 16 18 16 21 Q 16 18 13 18 Q 16 18 Z" stroke="none" fill="currentColor"/><path d="M 23 17 Q 23 20 26 20 Q 23 20 23 23 Q 23 20 20 20 Q 23 20 Z" stroke="none" fill="currentColor"/><path d="M 12 22 Q 12 24 14 24 Q 12 24 12 26 Q 12 24 10 24 Q 12 24 Z" stroke="none" fill="currentColor"/><rect x="25" y="16" width="18" height="19" rx="3" fill="none"/><rect x="27" y="10" width="14" height="6" rx="1" fill="none"/><line x1="30" y1="10" x2="30" y2="16" stroke-width="1.6" fill="none"/><line x1="34" y1="10" x2="34" y2="16" stroke-width="1.6" fill="none"/><line x1="38" y1="10" x2="38" y2="16" stroke-width="1.6" fill="none"/><rect x="28" y="21" width="12" height="6" stroke-width="1.6" fill="none"/><line x1="28" y1="30" x2="40" y2="30" stroke-width="1.6" fill="none"/><line x1="28" y1="32" x2="40" y2="32" stroke-width="1.6" fill="none"/><g transform="translate(24, 28) rotate(30)"><path d="M -5 -0.6 L -5 -2.5 A 5 5 0 0 1 5 -2.5 L 5 -0.6 Z" fill="currentColor" stroke="none"/><path d="M 5 0.6 L 5 2.5 A 5 5 0 0 1 -5 2.5 L -5 0.6 Z" fill="currentColor" stroke="none"/></g><g transform="translate(17, 33) rotate(45)"><path d="M -0.6 -6 A 6 6 0 0 0 -0.6 6 Z" fill="currentColor" stroke="none"/><path d="M 0.6 6 A 6 6 0 0 0 0.6 -6 Z" fill="currentColor" stroke="none"/></g><rect x="24" y="50" width="48" height="6" rx="3" fill="none"/><rect x="27" y="56" width="6" height="4" rx="1.5" fill="none"/><rect x="67" y="56" width="6" height="4" rx="1.5" fill="none"/><rect x="55" y="41" width="9" height="9" rx="2" fill="none"/><circle cx="59.5" cy="45.5" r="2.2" stroke="none" fill="currentColor"/><rect x="34" y="42" width="19" height="4" rx="2" fill="none"/><path d="M 59 41 C 70 41 74 34 74 26 C 74 18 64 21 61 28" fill="none"/><g transform="translate(58, 26) rotate(45)"><rect x="-2" y="-12" width="4" height="4" rx="0.5" stroke-width="1.8" fill="none"/><rect x="-4" y="-8" width="8" height="3" rx="0.5" stroke-width="1.8" fill="none"/><rect x="-6" y="-5" width="12" height="12" rx="1" stroke-width="2.2" fill="none"/><circle cx="0" cy="9" r="4.5" stroke="none" fill="currentColor"/><rect x="-2.5" y="13.5" width="5" height="4" rx="0.5" stroke-width="1.8" fill="none"/></g></svg>
+        <g stroke="white" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M 8.719999999999999 42.38 L 9.15 39.5" fill="none"></path><path d="M 9.15 39.5 L 10.049999999999999 39.5 A 1.5 1.5 0 0 1 11.549999999999999 41 A 1.5 1.5 0 0 1 10.049999999999999 42.5 L 8.299999999999999 42.5" fill="none"></path><path d="M 9.1 42 L 9.530000000000001 39.88" fill="none"></path><path d="M 9.530000000000001 39.88 L 10.049999999999999 39.88 A 1.12 1.12 0 0 1 11.169999999999998 41 A 1.12 1.12 0 0 1 10.049999999999999 42.12 L 8.299999999999999 42.12" fill="none"></path><path d="M 9.479999999999999 41.620000000000005 L 9.91 40.26" fill="none"></path><path d="M 9.91 40.26 L 10.049999999999999 40.26 A 0.74 0.74 0 0 1 10.79 41 A 0.74 0.74 0 0 1 10.049999999999999 41.74 L 8.299999999999999 41.74" fill="none"></path></g>
+        <text x="11.25" y="41.90" fill="white" font-size="3.0" font-weight="900" font-style="italic">IETARY</text>
+      </g>
+    </g>
+  
+            </g>
+          </svg>
+
+          <!-- Center Node -->
+          <button id="center-node" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[52%] h-[52%] bg-white/95 backdrop-blur-lg rounded-full border border-slate-200 shadow-2xl flex flex-col items-center justify-center p-4 transition-all duration-300 hover:scale-[1.02] cursor-pointer outline-none focus:outline-none">
+            <div id="center-content" class="w-full h-full flex flex-col items-center justify-center fade-in">
+              <!-- Center content injected via JS -->
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Left Column: Details -->
+      <div class="flex flex-col justify-center h-full fade-in">
+        <h2 class="font-bold text-[#007A59] mb-6 tracking-tight text-2xl sm:text-3xl lg:text-4xl leading-loose">
+          حوّل عيادتك للطب التجديدي المتقدم <br class="hidden sm:block" />
+          عبر <span class="bg-[#CDB06A] text-white px-3 py-1.5 rounded-md mx-1 inline-block mt-3 leading-normal">برنامج الهندسة الألمانية للخلايا الجذعية والببتيدات</span>
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg mb-6 leading-relaxed">
+          أضف حلول الببتيدات المتقدمة والعلاجات الخلوية إلى ممارستك الطبية، ووسّع خدمات عيادتك من خلال نظام الهندسة الألمانية للعلاج بطب الخلايا الجذعية والببتيدات.
+        </p>
+
+        <div class="flex items-start gap-3 bg-[#007A59]/5 border border-[#007A59]/10 rounded-xl p-4 mb-8 max-w-lg">
+          <svg class="w-5 h-5 text-[#007A59] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+          <p class="text-sm font-medium text-[#007A59] leading-relaxed">
+            انقر أو مرر مؤشر الماوس فوق الأجزاء التفاعلية لاستكشاف كل مرحلة من مراحل نموذجنا السريري.
+          </p>
+        </div>
+
+        <div class="relative bg-white/60 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-100 min-h-[300px] transition-all duration-300">
+          <div id="stage-number-bg" class="absolute left-6 top-6 text-7xl sm:text-8xl font-black opacity-[0.04] transition-all duration-500 font-sans italic text-[#007A59]">5D</div>
+
+          <div id="details-content" class="fade-in">
+            <!-- Dynamic Content Injected Here via JS -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const stages = [{"number":"01","title":"Discovery","subtitle":"التقييم والتشخيص","description":"تتضمن مرحلة الاكتشاف تشخيصاً شاملاً وتقييماً للأسباب الجذرية. وهذا يشكل الأساس لكل رحلة مريض في OXYZ.","details":["ملف صحي شامل","اختبارات تشخيصية متقدمة","تحديد الأسباب الجذرية","تأسيس خط أساس شخصي"],"color":"#007A59","iconType":"discovery"},{"number":"02","title":"Detox","subtitle":"التنظيف والتحسين","description":"تركز مرحلة الديتوكس على تقليل العبء الجهازي وتحسين البيئة الداخلية، وتهيئة الجسم للتدخلات التجديدية.","details":["تقليل العبء الجهازي","تحسين البيئة الداخلية","بروتوكولات التنظيف الخلوي","التحضير للتجديد"],"color":"#115E4C","iconType":"detox"},{"number":"03","title":"Defence","subtitle":"الدعم والتقوية","description":"تركز مرحلة الدفاع على دعم المناعة والإصلاح والمرونة. تضمن هذه المرحلة دعم استراتيجيات التجديد بنظام دفاع داخلي قوي.","details":["تحسين نظام المناعة","آليات الإصلاح الخلوي","بناء المرونة","استعادة الاستقرار الفسيولوجي"],"color":"#CDB06A","iconType":"defence"},{"number":"04","title":"Dynamic","subtitle":"التنشيط والتجديد","description":"تمثل المرحلة الديناميكية مرحلة التنشيط التجديدي، حيث تدعم التدخلات المستهدفة تجديد الخلايا والحيوية ونتائج مكافحة الشيخوخة.","details":["تجديد واستعادة الخلايا","تعزيز الطاقة والحيوية","تدخلات مكافحة الشيخوخة","تحسين الأداء"],"color":"#788A53","iconType":"dynamic"},{"number":"05","title":"Dietary","subtitle":"تحسين نمط الحياة","description":"تضمن المرحلة الغذائية استدامة المكاسب التجديدية على المدى الطويل من خلال التغذية الشخصية وتحسين نمط الحياة والدعم المستمر.","details":["استراتيجيات التغذية الشخصية","تحسين نمط الحياة","دعم تكوين العادات","تخطيط الصيانة على المدى الطويل"],"color":"#5A7343","iconType":"dietary"}];
+    const overviewStage = {"number":"5D","title":"OXYZ Medical Model","subtitle":"النموذج الطبي البيولوجي خماسي الأبعاد","description":"أضف حلول الببتيدات المتقدمة والعلاجات الخلوية إلى ممارستك الطبية، ووسّع خدمات عيادتك من خلال نظام الهندسة الألمانية للعلاج بطب الخلايا الجذعية والببتيدات. يضمن هذا الإطار الوضوح الطبي قبل التدخل، والتطبيق التجديدي المسؤول، ورحلات المريض المتسقة عبر جميع المراكز.","details":["الوضوح الطبي: تشخيص شامل قبل أي تدخل","التطبيق المسؤول: بروتوكولات تجديدية قائمة على الأدلة","رحلات متسقة: رعاية مرضى موحدة عبر جميع المراكز","الصيانة التكاملية: دعم مستمر للتغذية ونمط الحياة"],"color":"#007A59","iconType":"overview"};
+    const parsedIcons = {"discovery":"<svg viewBox=\"0 0 100 100\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"28\" y=\"26\" width=\"44\" height=\"54\" rx=\"5\" fill=\"none\"/><path d=\"M 43 26 L 45 16 L 55 16 L 57 26\" fill=\"currentColor\" fill-opacity=\"0.15\"/><rect x=\"40\" y=\"20\" width=\"20\" height=\"6\" rx=\"1.5\" fill=\"none\"/><path d=\"M 36 42 L 41 47 L 51 37\" stroke-width=\"4\" fill=\"none\"/><line x1=\"56\" y1=\"41\" x2=\"70\" y2=\"41\" stroke-width=\"4\" fill=\"none\"/><line x1=\"56\" y1=\"47\" x2=\"66\" y2=\"47\" stroke-width=\"4\" fill=\"none\"/><rect x=\"34\" y=\"56\" width=\"32\" height=\"16\" rx=\"3\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 37 64 L 40 64 L 43 59 L 46 69 L 49 61 L 52 67 L 55 64 L 63 64\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"70\" cy=\"24\" r=\"12\" stroke=\"white\" stroke-width=\"1\" fill=\"white\"/><path d=\"M 64 24 L 68 28 L 76 20\" stroke=\"#007A59\" stroke-width=\"3\" fill=\"none\"/></svg>","detox":"<svg viewBox=\"0 0 100 100\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"50\" cy=\"18\" r=\"7\" fill=\"none\"/><path d=\"M 25 31 C 25 31 25 27 28 27 L 43 27 C 46 27 47 31 50 31 C 53 31 54 27 57 27 L 72 27 C 75 27 75 31 75 31 L 75 33 C 75 33 75 35 72 35 L 61 35 C 59 35 58 36 58 38 L 58 66 M 42 66 L 42 38 C 42 36 41 35 39 35 L 28 35 C 25 35 25 33 25 33 Z\" fill=\"none\"/><path d=\"M 47 68 L 47 44 A 3 3 0 0 1 50 41 A 3 3 0 0 1 53 44 L 53 68\" fill=\"none\"/><path d=\"M 30 40 L 30 48 M 26 44 L 34 44\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 30 54 L 30 62 M 26 58 L 34 58\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 70 40 L 70 48 M 66 44 L 74 44\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 70 54 L 70 62 M 66 58 L 74 58\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"50\" cy=\"68\" r=\"14\" stroke=\"white\" stroke-width=\"1\" fill=\"white\"/><path d=\"M 41 68 L 47 74 L 59 62\" stroke=\"#115E4C\" stroke-width=\"4.5\" fill=\"none\"/></svg>","defence":"<svg viewBox=\"0 0 100 100\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 50 18 C 59 18 72 15 72 32 C 72 52 50 72 50 75 C 50 72 28 52 28 32 C 28 15 41 18 50 18 Z\" fill=\"none\"/><path d=\"M 50 25 C 56 25 64 23 64 34 C 64 48 50 62 50 64 C 50 62 36 48 36 34 C 36 23 44 25 50 25 Z\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 50 36 L 50 50 M 43 43 L 57 43\" stroke-width=\"5\" fill=\"none\"/><line x1=\"20\" y1=\"28\" x2=\"11\" y2=\"23\" fill=\"none\"/><line x1=\"16\" y1=\"43\" x2=\"6\" y2=\"43\" fill=\"none\"/><line x1=\"20\" y1=\"58\" x2=\"11\" y2=\"63\" fill=\"none\"/><line x1=\"80\" y1=\"28\" x2=\"89\" y2=\"23\" fill=\"none\"/><line x1=\"84\" y1=\"43\" x2=\"94\" y2=\"43\" fill=\"none\"/><line x1=\"80\" y1=\"58\" x2=\"89\" y2=\"63\" fill=\"none\"/><path d=\"M 62 10 L 62 18 M 58 14 L 66 14\" stroke-width=\"3\" fill=\"none\"/><path d=\"M 34 76 L 34 84 M 30 80 L 38 80\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"37\" cy=\"13\" r=\"3.5\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"69\" cy=\"18\" r=\"1.2\" stroke=\"none\" fill=\"currentColor\"/><circle cx=\"54\" cy=\"83\" r=\"3.5\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"44\" cy=\"83\" r=\"1.2\" stroke=\"none\" fill=\"currentColor\"/><path d=\"M 19 14 C 16.5 14 15 16 15 18 C 15 20.5 16.5 22 19 22 C 21.5 22 23 20.5 23 18 C 23 16 21.5 14 19 14 Z\" stroke-width=\"3\" fill=\"none\"/><line x1=\"16\" y1=\"15\" x2=\"11\" y2=\"10\" stroke-width=\"3\" fill=\"none\"/><line x1=\"22\" y1=\"15\" x2=\"27\" y2=\"10\" stroke-width=\"3\" fill=\"none\"/><line x1=\"15\" y1=\"19\" x2=\"10\" y2=\"21\" stroke-width=\"3\" fill=\"none\"/><line x1=\"23\" y1=\"19\" x2=\"28\" y2=\"21\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"76\" cy=\"65\" r=\"5\" stroke-width=\"3\" fill=\"none\"/><line x1=\"72.5\" y1=\"61.5\" x2=\"68\" y2=\"57\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"66.5\" cy=\"55.5\" r=\"2\" stroke-width=\"2.5\" fill=\"none\"/><line x1=\"79.5\" y1=\"61.5\" x2=\"84\" y2=\"57\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"85.5\" cy=\"55.5\" r=\"2\" stroke-width=\"2.5\" fill=\"none\"/><line x1=\"81\" y1=\"65\" x2=\"87\" y2=\"65\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"89\" cy=\"65\" r=\"2\" stroke-width=\"2.5\" fill=\"none\"/><line x1=\"79.5\" y1=\"68.5\" x2=\"84\" y2=\"73\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"85.5\" cy=\"74.5\" r=\"2\" stroke-width=\"2.5\" fill=\"none\"/><line x1=\"72.5\" y1=\"68.5\" x2=\"68\" y2=\"73\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"66.5\" cy=\"74.5\" r=\"2\" stroke-width=\"2.5\" fill=\"none\"/><circle cx=\"74\" cy=\"64\" r=\"0.75\" stroke=\"none\" fill=\"currentColor\"/><circle cx=\"77\" cy=\"66\" r=\"0.75\" stroke=\"none\" fill=\"currentColor\"/></svg>","dynamic":"<svg viewBox=\"0 0 100 100\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"50\" cy=\"50\" r=\"8\" stroke=\"none\" fill=\"currentColor\"/><ellipse cx=\"50\" cy=\"50\" rx=\"36\" ry=\"12\" transform=\"rotate(30 50 50)\" stroke-width=\"4\" fill=\"none\"/><ellipse cx=\"50\" cy=\"50\" rx=\"36\" ry=\"12\" transform=\"rotate(90 50 50)\" stroke-width=\"4\" fill=\"none\"/><ellipse cx=\"50\" cy=\"50\" rx=\"36\" ry=\"12\" transform=\"rotate(150 50 50)\" stroke-width=\"4\" fill=\"none\"/><circle cx=\"78\" cy=\"66\" r=\"4.5\" stroke=\"none\" fill=\"currentColor\"/><circle cx=\"50\" cy=\"14\" r=\"4.5\" stroke=\"none\" fill=\"currentColor\"/><circle cx=\"22\" cy=\"66\" r=\"4.5\" stroke=\"none\" fill=\"currentColor\"/></svg>","dietary":"<svg viewBox=\"0 0 100 100\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 16 15 Q 16 18 19 18 Q 16 18 16 21 Q 16 18 13 18 Q 16 18 Z\" stroke=\"none\" fill=\"currentColor\"/><path d=\"M 23 17 Q 23 20 26 20 Q 23 20 23 23 Q 23 20 20 20 Q 23 20 Z\" stroke=\"none\" fill=\"currentColor\"/><path d=\"M 12 22 Q 12 24 14 24 Q 12 24 12 26 Q 12 24 10 24 Q 12 24 Z\" stroke=\"none\" fill=\"currentColor\"/><rect x=\"25\" y=\"16\" width=\"18\" height=\"19\" rx=\"3\" fill=\"none\"/><rect x=\"27\" y=\"10\" width=\"14\" height=\"6\" rx=\"1\" fill=\"none\"/><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"16\" stroke-width=\"1.6\" fill=\"none\"/><line x1=\"34\" y1=\"10\" x2=\"34\" y2=\"16\" stroke-width=\"1.6\" fill=\"none\"/><line x1=\"38\" y1=\"10\" x2=\"38\" y2=\"16\" stroke-width=\"1.6\" fill=\"none\"/><rect x=\"28\" y=\"21\" width=\"12\" height=\"6\" stroke-width=\"1.6\" fill=\"none\"/><line x1=\"28\" y1=\"30\" x2=\"40\" y2=\"30\" stroke-width=\"1.6\" fill=\"none\"/><line x1=\"28\" y1=\"32\" x2=\"40\" y2=\"32\" stroke-width=\"1.6\" fill=\"none\"/><g transform=\"translate(24, 28) rotate(30)\"><path d=\"M -5 -0.6 L -5 -2.5 A 5 5 0 0 1 5 -2.5 L 5 -0.6 Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M 5 0.6 L 5 2.5 A 5 5 0 0 1 -5 2.5 L -5 0.6 Z\" fill=\"currentColor\" stroke=\"none\"/></g><g transform=\"translate(17, 33) rotate(45)\"><path d=\"M -0.6 -6 A 6 6 0 0 0 -0.6 6 Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M 0.6 6 A 6 6 0 0 0 0.6 -6 Z\" fill=\"currentColor\" stroke=\"none\"/></g><rect x=\"24\" y=\"50\" width=\"48\" height=\"6\" rx=\"3\" fill=\"none\"/><rect x=\"27\" y=\"56\" width=\"6\" height=\"4\" rx=\"1.5\" fill=\"none\"/><rect x=\"67\" y=\"56\" width=\"6\" height=\"4\" rx=\"1.5\" fill=\"none\"/><rect x=\"55\" y=\"41\" width=\"9\" height=\"9\" rx=\"2\" fill=\"none\"/><circle cx=\"59.5\" cy=\"45.5\" r=\"2.2\" stroke=\"none\" fill=\"currentColor\"/><rect x=\"34\" y=\"42\" width=\"19\" height=\"4\" rx=\"2\" fill=\"none\"/><path d=\"M 59 41 C 70 41 74 34 74 26 C 74 18 64 21 61 28\" fill=\"none\"/><g transform=\"translate(58, 26) rotate(45)\"><rect x=\"-2\" y=\"-12\" width=\"4\" height=\"4\" rx=\"0.5\" stroke-width=\"1.8\" fill=\"none\"/><rect x=\"-4\" y=\"-8\" width=\"8\" height=\"3\" rx=\"0.5\" stroke-width=\"1.8\" fill=\"none\"/><rect x=\"-6\" y=\"-5\" width=\"12\" height=\"12\" rx=\"1\" stroke-width=\"2.2\" fill=\"none\"/><circle cx=\"0\" cy=\"9\" r=\"4.5\" stroke=\"none\" fill=\"currentColor\"/><rect x=\"-2.5\" y=\"13.5\" width=\"5\" height=\"4\" rx=\"0.5\" stroke-width=\"1.8\" fill=\"none\"/></g></svg>","overview":"<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"0.85\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 5 18.6 L 7.2 4.2\" fill=\"none\"/><path d=\"M 7.2 4.2 L 11.5 4.2 A 8.2 8.2 0 0 1 19.7 12 A 8.2 8.2 0 0 1 11.5 19.8 L 2.0 19.8\" fill=\"none\"/><path d=\"M 6.8 16.8 L 9 6\" fill=\"none\"/><path d=\"M 9 6 L 11.5 6 A 6.4 6.4 0 0 1 17.9 12 A 6.4 6.4 0 0 1 11.5 18 L 2.0 18\" fill=\"none\"/><path d=\"M 8.6 15 L 10.8 7.8\" fill=\"none\"/><path d=\"M 10.8 7.8 L 11.5 7.8 A 4.6 4.6 0 0 1 16.1 12 A 4.6 4.6 0 0 1 11.5 16.2 L 2.0 16.2\" fill=\"none\"/></svg>"};
+
+    let activeIndex = -1;
+    let hoveredIndex = null;
+
+    function renderDetails(stage) {
+      const detailsHtml = stage.details.map(detail => `
+        <div class="flex items-start gap-2.5">
+          <span class="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0" style="background-color: ${stage.color}"></span>
+          <span class="text-xs sm:text-sm text-slate-600 font-medium leading-tight">${detail}</span>
+        </div>
+      `).join('');
+
+      return `
+        <div class="flex items-center gap-4 mb-4">
+          <div class="p-3 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center justify-center w-14 h-14" style="box-shadow: 0 8px 20px -4px rgba(0,122,89,0.15); color: ${stage.color}">
+            ${parsedIcons[stage.iconType]}
+          </div>
+          <div>
+            <div class="mt-0.5">
+              <span class="text-sm sm:text-base font-bold text-[#007A59] tracking-wide select-none">${stage.title}</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-slate-500 font-medium text-sm mb-2">${stage.subtitle}</p>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">${stage.description}</p>
+        <div class="grid gap-3 sm:grid-cols-2">${detailsHtml}</div>
+      `;
+    }
+
+    function renderCenter(stage) {
+      if (stage.number === "5D") {
+        return `<div class="absolute inset-[4%] flex items-center justify-center">
+                  <img src="https://international.oxyzhealth.com/images/5D/5D.png" alt="5D Model Logo" class="w-full h-full object-contain select-none pointer-events-none" style="transform: scale(2.8);" />
+                </div>`;
+      }
+      return `
+        <div class="text-center flex flex-col items-center justify-center">
+          <span class="text-4xl sm:text-5xl font-black tracking-tighter italic leading-none" style="color: ${stage.color}">
+            ${stage.number}
+          </span>
+          <span class="text-sm font-bold mt-1 text-slate-800 uppercase tracking-widest">${stage.title}</span>
+          <span class="text-[8px] sm:text-[9px] font-medium text-slate-400 max-w-[110px] leading-tight mt-1 text-center truncate">
+            ${stage.subtitle}
+          </span>
+        </div>
+      `;
+    }
+
+    function updateView() {
+      const displayIndex = hoveredIndex !== null ? hoveredIndex : activeIndex;
+      const stage = displayIndex === -1 ? overviewStage : stages[displayIndex];
+
+      document.getElementById('stage-number-bg').innerText = stage.number;
+      
+      const contentEl = document.getElementById('details-content');
+      contentEl.innerHTML = renderDetails(stage);
+      
+      const centerEl = document.getElementById('center-content');
+      centerEl.innerHTML = renderCenter(stage);
+
+      stages.forEach((s, idx) => {
+        const isHighlighted = hoveredIndex === idx || (hoveredIndex === null && activeIndex === idx);
+        const wedgeVisual = document.getElementById(`wedge-visual-${idx}`);
+        
+        const angleDeg = -90 + idx * 72;
+        const dx = Math.cos(angleDeg * Math.PI / 180);
+        const dy = Math.sin(angleDeg * Math.PI / 180);
+
+        if (isHighlighted) {
+          wedgeVisual.style.transform = `translate(${(dx * 3.5).toFixed(2)}px, ${(dy * 3.5).toFixed(2)}px)`;
+          wedgeVisual.style.filter = "url(#shadow-glow)";
+          wedgeVisual.style.opacity = "1.0";
+        } else {
+          wedgeVisual.style.transform = "translate(0px, 0px)";
+          wedgeVisual.style.filter = "none";
+          wedgeVisual.style.opacity = "0.88";
+        }
+      });
+    }
+
+    // Attach event listeners
+    stages.forEach((stage, idx) => {
+      const g = document.getElementById(`wedge-${idx}`);
+      g.addEventListener("mouseenter", () => { hoveredIndex = idx; updateView(); });
+      g.addEventListener("mouseleave", () => { hoveredIndex = null; updateView(); });
+      g.addEventListener("click", () => { activeIndex = idx; hoveredIndex = idx; updateView(); });
+    });
+
+    document.getElementById('center-node').addEventListener("mouseenter", () => { hoveredIndex = null; updateView(); });
+    document.getElementById('center-node').addEventListener("click", () => { activeIndex = -1; hoveredIndex = null; updateView(); });
+    document.getElementById('wheel-container').addEventListener("mouseleave", () => { hoveredIndex = null; updateView(); });
+
+    // Initial render
+    updateView();
+  </script>
+</body>
+</html>
