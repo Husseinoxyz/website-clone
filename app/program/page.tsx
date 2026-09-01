@@ -32,7 +32,7 @@ const singlePackage = {
   title: "Executive Delegate Package: Global Regenerative Medicine Summit",
   price: "$3,000",
   priceNote: "per person",
-  deadline: "Deadline: 15 October 2026",
+  deadline: null,
   features: packageFeatures,
   registerType: "silver-tier-standard",
 };
@@ -131,7 +131,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-2xl font-extrabold text-[#007A59] mb-3">
-                  20 - 24 November 2026
+                  10 October 2026
                 </p>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   4 nights premium accommodation included for Executive Delegate Package participants.

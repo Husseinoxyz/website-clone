@@ -78,7 +78,7 @@ export default function RegistrationSuccessPage() {
             <div className="bg-teal-dark text-secondary-foreground rounded-lg p-6 mb-8">
               <p className="font-medium">
                 Remember to save the date:{" "}
-                <span className="text-gold font-bold">20 - 24 November 2026</span>
+                <span className="text-gold font-bold">10 October 2026</span>
               </p>
               <p className="text-sm text-secondary-foreground/80 mt-2">
                 Global Regenerative Medicine Summit 2026, Malaysia

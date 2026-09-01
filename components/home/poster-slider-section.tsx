@@ -185,7 +185,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
           </span>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
           <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3.5 py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
-            {isArabic ? <><span dir="ltr">20 - 24</span> نوفمبر 2026 • كوالالمبور، ماليزيا</> : "Nov 20 - 24, 2026 • Kuala Lumpur, Malaysia"}
+            {isArabic ? <><span dir="ltr">10</span> أكتوبر 2026 • كوالالمبور، ماليزيا</> : "Oct 10, 2026 • Kuala Lumpur, Malaysia"}
           </span>
         </div>
       </div>

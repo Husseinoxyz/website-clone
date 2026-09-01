@@ -41,7 +41,7 @@ export default function ArabicPage() {
               ادخل عالم الخلايا الجذعية والطب البيولوجي وعلاجات الببتيدات. وانقلها إلى عيادتك.
             </p>
             <div className="flex items-center justify-center gap-3 text-[#007A59] mb-10 text-lg md:text-xl font-bold tracking-wide">
-              <span><span dir="ltr">20 - 24</span> نوفمبر 2026</span>
+              <span><span dir="ltr">10</span> أكتوبر 2026</span>
               <span className="text-[#CDB06A]">•</span>
               <span>كوالالمبور، ماليزيا</span>
             </div>

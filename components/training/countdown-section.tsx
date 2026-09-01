@@ -24,7 +24,7 @@ const floatingStyles = `
   }
 `;
 
-const TARGET_DATE = new Date("2026-10-15T00:00:00Z");
+const TARGET_DATE = new Date("2026-10-10T00:00:00Z");
 
 type Countdown = {
   days: string;
@@ -91,14 +91,11 @@ export function CountdownSection() {
             {/* Left Column - Countdown Info */}
             <div className="py-14 sm:py-16 text-white">
               <p className="text-sm uppercase tracking-[0.25em] text-white/70">
-                Registration Deadline
+                Training Date
               </p>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-                15 October 2026
+                10 October 2026
               </h2>
-              <p className="mt-3 text-white/80">
-                Training date: 20 - 24 November 2026
-              </p>
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
               {[
                 { label: "Days", value: countdown.days },
@@ -127,7 +124,7 @@ export function CountdownSection() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Dates</p>
-                  <p className="font-bold text-sm sm:text-base text-white">20 – 24 Nov 2026</p>
+                  <p className="font-bold text-sm sm:text-base text-white">10 Oct 2026</p>
                 </div>
               </div>
               <div className="group flex items-center gap-3 rounded-xl bg-black/60 border border-white/10 px-4 py-3.5 hover:border-gold/20 transition-all duration-300">

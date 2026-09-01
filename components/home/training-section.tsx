@@ -134,7 +134,7 @@ export function TrainingSection() {
                   <Calendar className="h-6 w-6 text-gold" />
                   <div>
                     <p className="text-sm text-[#007A59]">Date</p>
-                    <p className="font-semibold text-[#007A59]">November 2026</p>
+                    <p className="font-semibold text-[#007A59]">October 10, 2026</p>
                   </div>
                 </div>
                 <div className="animate-on-scroll stagger-2 scale-in flex items-center gap-3 bg-muted rounded-lg p-4 hover:shadow-md transition-shadow">

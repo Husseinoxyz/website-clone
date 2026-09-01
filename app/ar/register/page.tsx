@@ -194,7 +194,7 @@ function ArabicRegistrationContent() {
             سجل الآن في أكاديمية الطب التجديدي
           </h1>
           <p className="text-lg text-teal-800 font-semibold max-w-2xl mx-auto">
-            انضم إلينا في كوالالمبور (<span dir="ltr">20 - 24</span> نوفمبر 2026) وانقل أحدث التقنيات إلى عيادتك.
+            انضم إلينا في كوالالمبور (<span dir="ltr">10</span> أكتوبر 2026) وانقل أحدث التقنيات إلى عيادتك.
           </p>
         </div>
       </section>

@@ -253,7 +253,7 @@ const registrationTypes = [
     tierKey: "silver" as const,
     price: 3000,
     priceId: "price_package_i_standard",
-    deadline: "Deadline: 15 October 2026",
+    deadline: null,
     standardPrice: null,
   },
 ];
