@@ -8,7 +8,6 @@ import { StatsFeaturesSection } from "@/components/home/stats-features-section";
 import { ClinicalMachinesSection } from "@/components/home/clinical-machines-section";
 import { CountdownSection } from "@/components/home/countdown-section";
 import { ImageCardSliderSection } from "@/components/home/image-card-slider-section";
-import { MedicalEcosystemSection } from "@/components/home/medical-ecosystem-section";
 import { FiveDModelSection } from "@/components/home/five-d-model-section";
 import { GlobalSection } from "@/components/home/global-section";
 import { WhyOXYZSection } from "@/components/home/why-oxyz-section";
@@ -18,7 +17,6 @@ import { RegistrationCTASection } from "@/components/home/registration-cta-secti
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
 import { MedicalTechnologyGallerySection } from "@/components/home/medical-technology-gallery-section";
 import { CTASection } from "@/components/home/cta-section";
-import { DrGiselaSection } from "@/components/home/dr-gisela-section";
 
 export default function HomePage() {
   return (
@@ -33,9 +31,7 @@ export default function HomePage() {
         {/* <ClinicalMachinesSection /> */}
         <CountdownSection />
         <ImageCardSliderSection />
-        <MedicalEcosystemSection />
         <GlobalSection />
-        <DrGiselaSection />
         <WhyOXYZSection />
         <FiveDModelSection />
         <TrainingSection />

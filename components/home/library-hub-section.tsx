@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { QuoteSection } from "./quote-section";
+import { DrGiselaSection } from "./dr-gisela-section";
+import { MedicalEcosystemSection } from "./medical-ecosystem-section";
 
 const isYouTubeUrl = (url: string) => {
   return url.includes("youtube.com") || url.includes("youtu.be");
@@ -219,6 +221,12 @@ export function LibraryHubSection() {
 
       {/* Quote Section in between */}
       <QuoteSection />
+
+      {/* Dr Gisele Section inserted here */}
+      <DrGiselaSection />
+
+      {/* Medical Ecosystem Section inserted here */}
+      <MedicalEcosystemSection />
 
       {/* Second Half (OXYZ Activities) */}
       <div className="w-full max-w-none px-4 sm:px-6 lg:px-10 pt-16 sm:pt-24">
