@@ -68,9 +68,15 @@ export function DrGiselaSection() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
                 Meet one of our Primary speakers
               </span>
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] mb-6 leading-tight">
-                Meet Dr. Gisele
-              </h2>
+              <div className="flex flex-wrap items-center gap-4 mb-6 mt-1">
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
+                  Meet Dr. Gisele
+                </h2>
+                <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
+                  <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
+                  <span className="text-sm uppercase tracking-widest">Brazil</span>
+                </div>
+              </div>
               <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
                 Pioneering the future of regenerative medicine and aesthetic clinical applications. With international expertise and a commitment to excellence, Dr. Gisele brings advanced biological medicine protocols directly to your practice.
               </p>
