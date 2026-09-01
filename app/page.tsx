@@ -18,6 +18,7 @@ import { RegistrationCTASection } from "@/components/home/registration-cta-secti
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
 import { MedicalTechnologyGallerySection } from "@/components/home/medical-technology-gallery-section";
 import { CTASection } from "@/components/home/cta-section";
+import { DrGiselaSection } from "@/components/home/dr-gisela-section";
 
 export default function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function HomePage() {
         <ImageCardSliderSection />
         <MedicalEcosystemSection />
         <GlobalSection />
+        <DrGiselaSection />
         <WhyOXYZSection />
         <FiveDModelSection />
         <TrainingSection />
