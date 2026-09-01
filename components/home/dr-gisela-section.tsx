@@ -61,23 +61,43 @@ export function DrGiselaSection() {
 
       <section className="py-20 lg:py-32 bg-gradient-to-b from-white via-[#FAF6ED]/30 to-white overflow-hidden border-b border-slate-100 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Mobile Title (Only visible on sm/md, hidden on lg) */}
+          <div className="lg:hidden animate-on-scroll mb-8">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
+              Meet one of our Primary speakers
+            </span>
+            <div className="flex flex-wrap items-center gap-4 mt-1">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
+                Meet Dr. Gisele
+              </h2>
+              <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
+                <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
+                <span className="text-sm uppercase tracking-widest">Brazil</span>
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
-            {/* Left Content */}
+
+            {/* Left Content (Text + Button on Mobile. Title + Text + Button on PC) */}
             <div className="order-2 lg:order-1 animate-on-scroll">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
-                Meet one of our Primary speakers
-              </span>
-              <div className="flex flex-wrap items-center gap-4 mb-6 mt-1">
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
-                  Meet Dr. Gisele
-                </h2>
-                <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
-                  <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
-                  <span className="text-sm uppercase tracking-widest">Brazil</span>
+              {/* Desktop Title (Hidden on mobile, visible on lg) */}
+              <div className="hidden lg:block">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
+                  Meet one of our Primary speakers
+                </span>
+                <div className="flex flex-wrap items-center gap-4 mb-6 mt-1">
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
+                    Meet Dr. Gisele
+                  </h2>
+                  <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
+                    <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
+                    <span className="text-sm uppercase tracking-widest">Brazil</span>
+                  </div>
                 </div>
               </div>
-              <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
+
+              <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed lg:mt-0 mt-4">
                 Pioneering the future of regenerative medicine and aesthetic clinical applications. With international expertise and a commitment to excellence, Dr. Gisele brings advanced biological medicine protocols directly to your practice.
               </p>
               
@@ -93,7 +113,7 @@ export function DrGiselaSection() {
             </div>
 
             {/* Right Images (Creative 3-image layout) */}
-            <div className="order-1 lg:order-2 relative h-[500px] sm:h-[600px] w-full animate-on-scroll delay-200">
+            <div className="order-1 lg:order-2 relative h-[500px] sm:h-[600px] w-full animate-on-scroll delay-200 mt-2 lg:mt-0">
               {/* Decorative Background blob */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#E6F3EF] rounded-full blur-[100px] opacity-60 -z-10" />
 
