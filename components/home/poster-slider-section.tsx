@@ -9,8 +9,8 @@ const posterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/Slider Posts/PC View/Post 1.jpg",
-    mobileImage: "/images/Slider Posts/Phone View/Post 1.jpg",
+    image: "/images/Slider Posts/PC View/Post 1_Eng_Pc Size_10_10_2026.png",
+    mobileImage: "/images/Slider Posts/Phone View/Post 1_ENG_Phone _Size_10_10_2026.png",
   },
   {
     id: 2,
@@ -42,8 +42,8 @@ const arabicPosterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/Slider Posts/PC View/AR/Post 1.jpg",
-    mobileImage: "/images/Slider Posts/Phone View/AR/Post 1.jpg",
+    image: "/images/Slider Posts/PC View/AR/Post 1_AR_Pc Size_10_10_2026.png",
+    mobileImage: "/images/Slider Posts/Phone View/AR/Post 1_AR_Phone Size_10_10_2026.png",
   },
   {
     id: 2,
