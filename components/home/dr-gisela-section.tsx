@@ -123,7 +123,7 @@ export function DrGiselaSection() {
                   src="/images/Dr%20Gisele%20p2.png"
                   alt="Dr. Gisele Professional Profile"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   unoptimized
                 />
