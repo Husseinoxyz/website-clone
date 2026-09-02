@@ -120,7 +120,7 @@ export function DrGiselaSection() {
               {/* Main large image */}
               <div className="absolute right-0 top-0 w-3/4 h-[75%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white z-10 transition-transform duration-700 hover:scale-[1.02]">
                 <Image
-                  src="/images/Dr%20Gisele%20P1.png"
+                  src="/images/Dr%20Gisele%20p2.png"
                   alt="Dr. Gisele Professional Profile"
                   fill
                   className="object-cover object-top"
@@ -132,7 +132,7 @@ export function DrGiselaSection() {
               {/* Bottom left smaller image */}
               <div className="absolute left-0 bottom-4 w-1/2 h-[45%] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white z-30 transition-transform duration-700 hover:scale-105">
                 <Image
-                  src="/images/Dr%20Gisele%20p2.png"
+                  src="/images/Dr%20Gisele%20P1.png"
                   alt="Dr. Gisele Clinical Work"
                   fill
                   className="object-cover object-top"
