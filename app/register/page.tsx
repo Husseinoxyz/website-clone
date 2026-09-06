@@ -18,8 +18,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Check, Shield, CreditCard, ArrowRight, ClipboardCheck, X } from "lucide-react";
+import { Check, Shield, CreditCard, ArrowRight, ClipboardCheck, X, ChevronsUpDown } from "lucide-react";
 import Loading from "./loading";
+import { countriesWithCodes } from "@/lib/countries";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -55,110 +58,6 @@ function useScrollAnimation() {
   }, []);
 }
 
-const countryCodes = [
-  { code: "+1", country: "USA" },
-  { code: "+7", country: "Russia" },
-  { code: "+20", country: "Egypt" },
-  { code: "+27", country: "South Africa" },
-  { code: "+30", country: "Greece" },
-  { code: "+31", country: "Netherlands" },
-  { code: "+32", country: "Belgium" },
-  { code: "+33", country: "France" },
-  { code: "+34", country: "Spain" },
-  { code: "+36", country: "Hungary" },
-  { code: "+39", country: "Italy" },
-  { code: "+40", country: "Romania" },
-  { code: "+41", country: "Switzerland" },
-  { code: "+43", country: "Austria" },
-  { code: "+44", country: "United Kingdom" },
-  { code: "+45", country: "Denmark" },
-  { code: "+46", country: "Sweden" },
-  { code: "+47", country: "Norway" },
-  { code: "+48", country: "Poland" },
-  { code: "+49", country: "Germany" },
-  { code: "+51", country: "Peru" },
-  { code: "+52", country: "Mexico" },
-  { code: "+53", country: "Cuba" },
-  { code: "+54", country: "Argentina" },
-  { code: "+55", country: "Brazil" },
-  { code: "+56", country: "Chile" },
-  { code: "+57", country: "Colombia" },
-  { code: "+58", country: "Venezuela" },
-  { code: "+60", country: "Malaysia" },
-  { code: "+61", country: "Australia" },
-  { code: "+62", country: "Indonesia" },
-  { code: "+63", country: "Philippines" },
-  { code: "+64", country: "New Zealand" },
-  { code: "+65", country: "Singapore" },
-  { code: "+66", country: "Thailand" },
-  { code: "+81", country: "Japan" },
-  { code: "+82", country: "South Korea" },
-  { code: "+84", country: "Vietnam" },
-  { code: "+86", country: "China" },
-  { code: "+90", country: "Turkey" },
-  { code: "+91", country: "India" },
-  { code: "+92", country: "Pakistan" },
-  { code: "+93", country: "Afghanistan" },
-  { code: "+94", country: "Sri Lanka" },
-  { code: "+95", country: "Myanmar" },
-  { code: "+98", country: "Iran" },
-  { code: "+212", country: "Morocco" },
-  { code: "+213", country: "Algeria" },
-  { code: "+216", country: "Tunisia" },
-  { code: "+218", country: "Libya" },
-  { code: "+220", country: "Gambia" },
-  { code: "+221", country: "Senegal" },
-  { code: "+233", country: "Ghana" },
-  { code: "+234", country: "Nigeria" },
-  { code: "+251", country: "Ethiopia" },
-  { code: "+254", country: "Kenya" },
-  { code: "+256", country: "Uganda" },
-  { code: "+260", country: "Zambia" },
-  { code: "+263", country: "Zimbabwe" },
-  { code: "+971", country: "UAE" },
-  { code: "+972", country: "Israel" },
-  { code: "+973", country: "Bahrain" },
-  { code: "+974", country: "Qatar" },
-  { code: "+975", country: "Bhutan" },
-  { code: "+976", country: "Mongolia" },
-  { code: "+977", country: "Nepal" },
-  { code: "+994", country: "Azerbaijan" },
-  { code: "+995", country: "Georgia" },
-  { code: "+998", country: "Uzbekistan" },
-];
-
-const countries = [
-  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
-  "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
-  "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
-  "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
-  "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde",
-  "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
-  "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark",
-  "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt",
-  "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji",
-  "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece",
-  "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
-  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
-  "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya",
-  "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
-  "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia",
-  "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
-  "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
-  "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal",
-  "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
-  "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay",
-  "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
-  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
-  "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
-  "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
-  "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka",
-  "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan",
-  "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago",
-  "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
-  "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
-  "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-];
 
 const packageFeatures = [
   // Silver Tier Features
@@ -258,6 +157,22 @@ const registrationTypes = [
   },
 ];
 
+const uniqueCountryCodes: typeof countriesWithCodes = [];
+const seenCodes = new Set();
+const majorIso = ["US", "RU", "GB", "CN", "IN", "MY", "SG", "AU", "DE", "FR", "IT", "JP", "ZA", "EG", "NG", "BR", "MX"];
+countriesWithCodes.forEach(c => {
+  if (majorIso.includes(c.iso) && !seenCodes.has(c.code)) {
+    uniqueCountryCodes.push(c);
+    seenCodes.add(c.code);
+  }
+});
+countriesWithCodes.forEach(c => {
+  if (!seenCodes.has(c.code)) {
+    uniqueCountryCodes.push(c);
+    seenCodes.add(c.code);
+  }
+});
+
 function RegistrationContent() {
   useScrollAnimation();
   
@@ -270,12 +185,13 @@ function RegistrationContent() {
 
   const requestedCountry = searchParams.get("country");
   const initialCountry =
-    countries.find(
-      (c) => c.toLowerCase() === requestedCountry?.toLowerCase()
-    ) || "";
+    countriesWithCodes.find(
+      (c) => c.name.toLowerCase() === requestedCountry?.toLowerCase()
+    )?.name || "";
 
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
+  const [countryOpen, setCountryOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -303,12 +219,13 @@ function RegistrationContent() {
           const updates: Partial<typeof prev> = {};
           
           if (data.country_calling_code) {
-            const exists = countryCodes.some((c) => c.code === data.country_calling_code);
+            const exists = countriesWithCodes.some((c) => c.code === data.country_calling_code);
             if (exists) updates.countryCode = data.country_calling_code;
           }
           
           if (data.country_name) {
-            if (countries.includes(data.country_name)) {
+            const countryExists = countriesWithCodes.some((c) => c.name === data.country_name);
+            if (countryExists) {
               updates.country = data.country_name;
             }
           }
@@ -333,7 +250,16 @@ function RegistrationContent() {
   };
 
   const handleSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => {
+      const updates: any = { [name]: value };
+      if (name === "country") {
+        const selectedCountry = countriesWithCodes.find((c) => c.name === value);
+        if (selectedCountry) {
+          updates.countryCode = selectedCountry.code;
+        }
+      }
+      return { ...prev, ...updates };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -593,6 +519,58 @@ function RegistrationContent() {
                       />
                     </div>
                     <div>
+                      <Label htmlFor="country" className="text-sm font-medium text-[#007A59]">Country *</Label>
+                      <Popover open={countryOpen} onOpenChange={setCountryOpen}>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={countryOpen}
+                            className="w-full mt-2 justify-between border-slate-200 focus:border-gold focus:ring-gold font-normal"
+                          >
+                            {formData.country
+                              ? formData.country
+                              : "Select your country"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] sm:w-[400px] p-0" align="start">
+                          <Command>
+                            <CommandInput placeholder="Search country..." />
+                            <CommandList>
+                              <CommandEmpty>No country found.</CommandEmpty>
+                              <CommandGroup>
+                                {countriesWithCodes.map((country) => (
+                                  <CommandItem
+                                    key={country.name}
+                                    value={country.name}
+                                    onSelect={(currentValue) => {
+                                      const selectedCountry = countriesWithCodes.find(
+                                        (c) => c.name.toLowerCase() === currentValue.toLowerCase()
+                                      );
+                                      if (selectedCountry) {
+                                        handleSelectChange("country", selectedCountry.name);
+                                      }
+                                      setCountryOpen(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={`mr-2 h-4 w-4 ${
+                                        formData.country === country.name
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      }`}
+                                    />
+                                    {country.name}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                    <div className="sm:col-span-2">
                       <Label htmlFor="phone" className="text-sm font-medium text-[#007A59]">Phone Number *</Label>
                       <div className="flex gap-2 mt-2">
                         <Select
@@ -600,12 +578,14 @@ function RegistrationContent() {
                           onValueChange={(value) => handleSelectChange("countryCode", value)}
                         >
                           <SelectTrigger className="w-32 border-slate-200 focus:border-gold focus:ring-gold">
-                            <span className="truncate">{formData.countryCode === "+1" ? "+1 USA" : formData.countryCode || "+1"}</span>
+                            <span className="truncate">
+                              {countriesWithCodes.find((c) => c.code === formData.countryCode)?.iso || ""} {formData.countryCode || "+1"}
+                            </span>
                           </SelectTrigger>
                           <SelectContent className="max-h-60">
-                            {countryCodes.map((item) => (
-                              <SelectItem key={item.code} value={item.code}>
-                                {item.code} {item.country}
+                            {uniqueCountryCodes.map((item) => (
+                              <SelectItem key={item.iso + item.code} value={item.code}>
+                                {item.iso} {item.code} ({item.name})
                               </SelectItem>
                             ))}
                           </SelectContent>
@@ -621,24 +601,6 @@ function RegistrationContent() {
                           className="flex-1 border-slate-200 focus:border-gold focus:ring-gold"
                         />
                       </div>
-                    </div>
-                    <div className="sm:col-span-2">
-                      <Label htmlFor="country" className="text-sm font-medium text-[#007A59]">Country *</Label>
-                      <Select
-                        value={formData.country}
-                        onValueChange={(value) => handleSelectChange("country", value)}
-                      >
-                        <SelectTrigger className="mt-2 border-slate-200 focus:border-gold focus:ring-gold">
-                          <SelectValue placeholder="Select your country" />
-                        </SelectTrigger>
-                        <SelectContent className="max-h-60">
-                          {countries.map((country) => (
-                            <SelectItem key={country} value={country}>
-                              {country}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
                     </div>
                   </div>
                 </div>

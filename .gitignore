@@ -21,6 +21,8 @@ public/images/*
 !public/images/faq.gif
 !public/images/tesimonials/
 !public/images/tesimonials/**
+!public/images/Slider Posts/
+!public/images/Slider Posts/**
 !public/images/sliderpost phone/
 !public/images/sliderpost phone/**
 !public/images/slides poster/
