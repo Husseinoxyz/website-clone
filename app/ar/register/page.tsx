@@ -15,33 +15,40 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Check, Shield, CreditCard, ArrowLeft, ArrowRight } from "lucide-react";
+import { Check, Shield, CreditCard, ArrowLeft, ArrowRight, ChevronsUpDown } from "lucide-react";
 import Link from "next/link";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Readex_Pro } from "next/font/google";
+import { countriesWithCodes } from "@/lib/countries";
 
 const readexPro = Readex_Pro({ subsets: ["arabic"] });
 
 const countries = [
-  "أفغانستان", "ألبانيا", "الجزائر", "أندورا", "أنغولا", "أنتيغوا وبربودا", "الأرجنتين", "أرمينيا", "أستراليا", "النمسا", "أذربيجان", "جزر البهاما", "البحرين", "بنغلاديش", "باربادوس", "بيلاروسيا", "بلجيكا", "بليز", "بنين", "بوتان", "بوليفيا", "البوسنة والهرسك", "بوتسوانا", "البرازيل", "بروناي", "بلغاريا", "بوركينا فاسو", "بوروندي", "كابو فيردي", "كمبوديا", "الكاميرون", "كندا", "جمهورية أفريقيا الوسطى", "تشاد", "تشيلي", "الصين", "كولومبيا", "جزر القمر", "الكونغو", "كوستاريكا", "كرواتيا", "كوبا", "قبرص", "التشيك", "الدنمارك", "جيبوتي", "دومينيكا", "جمهورية الدومينيكان", "تيمور الشرقية", "الإكوادور", "مصر", "السلفادور", "غينيا الاستوائية", "إريتريا", "إستونيا", "إسواتيني", "إثيوبيا", "فيجي", "فنلندا", "فرنسا", "الغابون", "غامبيا", "جورجيا", "ألمانيا", "غانا", "اليونان", "غرينادا", "غواتيمالا", "غينيا", "غينيا بيساو", "غويانا", "هايتي", "هندوراس", "المجر", "آيسلندا", "الهند", "إندونيسيا", "إيران", "العراق", "أيرلندا", "إيطاليا", "جامايكا", "اليابان", "الأردن", "كازاخستان", "كينيا", "كيريباتي", "الكويت", "قيرغيزستان", "لاوس", "لاتفيا", "لبنان", "ليسوتو", "ليبيريا", "ليبيا", "ليختنشتاين", "ليتوانيا", "لوكسمبورغ", "مدغشقر", "مالاوي", "ماليزيا", "المالديف", "مالي", "مالطا", "جزر مارشال", "موريتانيا", "موريشيوس", "المكسيك", "ميكرونيزيا", "مولدوفا", "موناكو", "منغوليا", "الجبل الأسود", "المغرب", "موزمبيق", "ميانمار", "ناميبيا", "ناورو", "نيبال", "هولندا", "نيوزيلندا", "نيكاراغوا", "النيجر", "نيجيريا", "كوريا الشمالية", "مقدونيا الشمالية", "النرويج", "عمان", "باكستان", "بالاو", "فلسطين", "بنما", "بابوا غينيا الجديدة", "باراغواي", "بيرو", "الفلبين", "بولندا", "البرتغال", "قطر", "رومانيا", "روسيا", "رواندا", "سانت كيتس ونيفيس", "سانت لوسيا", "سانت فينسنت والغرينادين", "ساموا", "سان مارينو", "ساو تومي وبرينسيب", "السعودية", "السنغال", "صربيا", "سيشل", "سيراليون", "سنغافورة", "سلوفاكيا", "سلوفينيا", "جزر سليمان", "الصومال", "جنوب أفريقيا", "كوريا الجنوبية", "جنوب السودان", "إسبانيا", "سريلانكا", "السودان", "سورينام", "السويد", "سويسرا", "سوريا", "تايوان", "طاجيكستان", "تنزانيا", "تايلاند", "توغو", "تونغا", "ترينيداد وتوباغو", "تونس", "تركيا", "تركمانستان", "توفالو", "أوغندا", "أوكرانيا", "الإمارات العربية المتحدة", "المملكة المتحدة", "الولايات المتحدة", "أوروغواي", "أوزبكستان", "فانواتو", "الفاتيكان", "فنزويلا", "فيتنام", "اليمن", "زامبيا", "زيمبابوي", "أخرى"
+  "أفغانستان", "ألبانيا", "الجزائر", "أندورا", "أنغولا", "أنتيغوا وبربودا", "الأرجنتين", "أرمينيا", "أستراليا", "النمسا", "أذربيجان", "جزر البهاما", "البحرين", "بنغلاديش", "باربادوس", "بيلاروسيا", "بلجيكا", "بليز", "بنين", "بوتان", "بوليفيا", "البوسنة والهرسك", "بوتسوانا", "البرازيل", "بروناي", "بلغاريا", "بوركينا فاسو", "بوروندي", "كابو فيردي", "كمبوديا", "الكاميرون", "كندا", "جمهورية أفريقيا الوسطى", "تشاد", "تشيلي", "الصين", "كولومبيا", "جزر القمر", "الكونغو", "كوستاريكا", "كرواتيا", "كوبا", "قبرص", "التشيك", "الدنمارك", "جيبوتي", "دومينيكا", "جمهورية الدومينيكان", "تيمور الشرقية", "الإكوادور", "مصر", "السلفادور", "غينيا الاستوائية", "إريتريا", "إستونيا", "إسواتيني", "إثيوبيا", "فيجي", "فنلندا", "فرنسا", "الغابون", "غامبيا", "جورجيا", "ألمانيا", "غانا", "اليونان", "غرينادا", "غواتيمالا", "غينيا", "غينيا بيساو", "غويانا", "هايتي", "هندوراس", "المجر", "آيسلندا", "الهند", "إندونيسيا", "إيران", "العراق", "أيرلندا", "إيطاليا", "ساحل العاج", "جامايكا", "اليابان", "الأردن", "كازاخستان", "كينيا", "كيريباتي", "الكويت", "قيرغيزستان", "لاوس", "لاتفيا", "لبنان", "ليسوتو", "ليبيريا", "ليبيا", "ليختنشتاين", "ليتوانيا", "لوكسمبورغ", "مدغشقر", "مالاوي", "ماليزيا", "المالديف", "مالي", "مالطا", "جزر مارشال", "موريتانيا", "موريشيوس", "المكسيك", "ميكرونيزيا", "مولدوفا", "موناكو", "منغوليا", "الجبل الأسود", "المغرب", "موزمبيق", "ميانمار", "ناميبيا", "ناورو", "نيبال", "هولندا", "نيوزيلندا", "نيكاراغوا", "النيجر", "نيجيريا", "كوريا الشمالية", "مقدونيا الشمالية", "النرويج", "عمان", "باكستان", "بالاو", "فلسطين", "بنما", "بابوا غينيا الجديدة", "باراغواي", "بيرو", "الفلبين", "بولندا", "البرتغال", "قطر", "رومانيا", "روسيا", "رواندا", "سانت كيتس ونيفيس", "سانت لوسيا", "سانت فينسنت والغرينادين", "ساموا", "سان مارينو", "ساو تومي وبرينسيب", "السعودية", "السنغال", "صربيا", "سيشل", "سيراليون", "سنغافورة", "سلوفاكيا", "سلوفينيا", "جزر سليمان", "الصومال", "جنوب أفريقيا", "كوريا الجنوبية", "جنوب السودان", "إسبانيا", "سريلانكا", "السودان", "سورينام", "السويد", "سويسرا", "سوريا", "تايوان", "طاجيكستان", "تنزانيا", "تايلاند", "توغو", "تونغا", "ترينيداد وتوباغو", "تونس", "تركيا", "تركمانستان", "توفالو", "أوغندا", "أوكرانيا", "الإمارات العربية المتحدة", "المملكة المتحدة", "الولايات المتحدة", "أوروغواي", "أوزبكستان", "فانواتو", "الفاتيكان", "فنزويلا", "فيتنام", "اليمن", "زامبيا", "زيمبابوي", "أخرى"
 ];
 
-const countryCodes = [
-  { code: "+966", country: "السعودية" },
-  { code: "+971", country: "الإمارات" },
-  { code: "+965", country: "الكويت" },
-  { code: "+974", country: "قطر" },
-  { code: "+973", country: "البحرين" },
-  { code: "+968", country: "عمان" },
-  { code: "+20", country: "مصر" },
-  { code: "+962", country: "الأردن" },
-  { code: "+964", country: "العراق" },
-  { code: "+212", country: "المغرب" },
-  { code: "+213", country: "الجزائر" },
-  { code: "+216", country: "تونس" },
-  { code: "+961", country: "لبنان" },
-  { code: "+60", country: "ماليزيا" },
-  { code: "+1", country: "أخرى" },
-];
+const uniqueCountryCodes: typeof countriesWithCodes = [];
+const seenCodes = new Set();
+const majorIso = ["US", "RU", "GB", "CN", "IN", "MY", "SG", "AU", "DE", "FR", "IT", "JP", "ZA", "EG", "NG", "BR", "MX"];
+countriesWithCodes.forEach(c => {
+  if (majorIso.includes(c.iso) && !seenCodes.has(c.code)) {
+    uniqueCountryCodes.push(c);
+    seenCodes.add(c.code);
+  }
+});
+countriesWithCodes.forEach(c => {
+  if (!seenCodes.has(c.code)) {
+    uniqueCountryCodes.push(c);
+    seenCodes.add(c.code);
+  }
+});
+
+const countryCodes = uniqueCountryCodes.map(c => {
+  const index = countriesWithCodes.indexOf(c);
+  const arabicName = index !== -1 && index < countries.length ? countries[index] : c.name;
+  return { code: c.code, country: arabicName };
+});
 
 const registrationTypes = [
   {
@@ -85,6 +92,7 @@ function ArabicRegistrationContent() {
 
   const [selectedType, setSelectedType] = useState(initialType);
   const [isLoading, setIsLoading] = useState(false);
+  const [countryOpen, setCountryOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -146,7 +154,21 @@ function ArabicRegistrationContent() {
   };
 
   const handleSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => {
+      const updates: any = { [name]: value };
+      if (name === "country") {
+        const selectedCountry = countryCodes.find((c) => c.country === value);
+        if (selectedCountry) {
+          updates.countryCode = selectedCountry.code;
+        } else {
+          const countryIndex = countries.indexOf(value);
+          if (countryIndex !== -1 && countryIndex < countriesWithCodes.length) {
+            updates.countryCode = countriesWithCodes[countryIndex].code;
+          }
+        }
+      }
+      return { ...prev, ...updates };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -208,38 +230,38 @@ function ArabicRegistrationContent() {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Personal Details */}
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-base text-gray-700">الاسم الأول *</Label>
+              {/* Personal Information */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
+                <h2 className="text-2xl font-bold text-[#007A59] mb-6 text-right">
+                  المعلومات الشخصية
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-6" dir="rtl">
+                  <div>
+                    <Label htmlFor="firstName" className="text-sm font-medium text-[#007A59]">الاسم الأول *</Label>
                     <Input
                       id="firstName"
                       name="firstName"
                       required
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="bg-gray-50/50 border-gray-200 text-right h-12"
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right"
                       placeholder="أدخل الاسم الأول"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-base text-gray-700">اسم العائلة *</Label>
+                  <div>
+                    <Label htmlFor="lastName" className="text-sm font-medium text-[#007A59]">اسم العائلة *</Label>
                     <Input
                       id="lastName"
                       name="lastName"
                       required
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="bg-gray-50/50 border-gray-200 text-right h-12"
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right"
                       placeholder="أدخل اسم العائلة"
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-base text-gray-700">البريد الإلكتروني *</Label>
+                  <div>
+                    <Label htmlFor="email" className="text-sm font-medium text-[#007A59]">البريد الإلكتروني *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -247,25 +269,80 @@ function ArabicRegistrationContent() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="bg-gray-50/50 border-gray-200 h-12 text-left"
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-left"
                       dir="ltr"
                       placeholder="email@example.com"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-base text-gray-700">رقم الهاتف (واتساب) *</Label>
-                    <div className="flex gap-2" dir="rtl">
+                  <div>
+                    <Label htmlFor="country" className="text-sm font-medium text-[#007A59]">الدولة *</Label>
+                    <div dir="rtl">
+                      <Popover open={countryOpen} onOpenChange={setCountryOpen}>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={countryOpen}
+                            className="mt-2 w-full justify-between border-slate-200 focus:border-gold focus:ring-gold font-normal"
+                          >
+                            {formData.country
+                              ? formData.country
+                              : "اختر الدولة"}
+                            <ChevronsUpDown className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] sm:w-[400px] p-0" align="start">
+                          <Command dir="rtl">
+                            <CommandInput placeholder="ابحث عن دولة..." />
+                            <CommandList>
+                              <CommandEmpty>لم يتم العثور على دولة.</CommandEmpty>
+                              <CommandGroup>
+                                {countries.map((country) => (
+                                  <CommandItem
+                                    key={country}
+                                    value={country}
+                                    onSelect={(currentValue) => {
+                                      const selectedCountry = countries.find(
+                                        (c) => c === currentValue
+                                      );
+                                      handleSelectChange("country", selectedCountry || currentValue);
+                                      setCountryOpen(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={`ml-2 h-4 w-4 ${
+                                        formData.country === country
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      }`}
+                                    />
+                                    {country}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Label htmlFor="phone" className="text-sm font-medium text-[#007A59]">رقم الهاتف (واتساب) *</Label>
+                    <div className="flex gap-2 mt-2" dir="rtl">
                       <Select
                         value={formData.countryCode}
                         onValueChange={(val) => handleSelectChange("countryCode", val)}
                       >
-                        <SelectTrigger className="w-[150px] bg-gray-50/50 border-gray-200 h-12" dir="ltr">
+                        <SelectTrigger className="w-[150px] border-slate-200 focus:border-gold focus:ring-gold flex justify-between items-center" dir="ltr">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent dir="ltr">
                           {countryCodes.map((c) => (
                             <SelectItem key={c.country} value={c.code}>
-                              {c.code} ({c.country})
+                              <div className="flex items-center gap-1">
+                                <span dir="ltr">{"\u200E"}{c.code}</span>
+                                <span dir="rtl">({c.country})</span>
+                              </div>
                             </SelectItem>
                           ))}
                         </SelectContent>
@@ -277,55 +354,40 @@ function ArabicRegistrationContent() {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="flex-1 bg-gray-50/50 border-gray-200 h-12 text-left"
+                        className="flex-1 border-slate-200 focus:border-gold focus:ring-gold text-right"
+                        dir="ltr"
                         placeholder="رقم الجوال"
                       />
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="country" className="text-base text-gray-700">الدولة *</Label>
-                    <Select
-                      value={formData.country}
-                      onValueChange={(val) => handleSelectChange("country", val)}
-                      required
-                    >
-                      <SelectTrigger className="bg-gray-50/50 border-gray-200 text-right h-12" dir="rtl">
-                        <SelectValue placeholder="اختر الدولة" />
-                      </SelectTrigger>
-                      <SelectContent dir="rtl">
-                        {countries.map((c) => (
-                          <SelectItem key={c} value={c}>
-                            {c}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="organization" className="text-base text-gray-700">العيادة / جهة العمل</Label>
+              {/* Professional Information */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
+                <h2 className="text-2xl font-bold text-[#007A59] mb-6 text-right">
+                  المعلومات المهنية
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-6" dir="rtl">
+                  <div>
+                    <Label htmlFor="organization" className="text-sm font-medium text-[#007A59]">العيادة / جهة العمل</Label>
                     <Input
                       id="organization"
                       name="organization"
                       value={formData.organization}
                       onChange={handleInputChange}
-                      className="bg-gray-50/50 border-gray-200 text-right h-12"
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right"
                       placeholder="اسم العيادة أو المستشفى"
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="role" className="text-base text-gray-700">المسمى الوظيفي / المهنة *</Label>
+                  <div>
+                    <Label htmlFor="role" className="text-sm font-medium text-[#007A59]">المسمى الوظيفي / المهنة *</Label>
                     <Select
                       value={formData.role}
                       onValueChange={(val) => handleSelectChange("role", val)}
                       required
                     >
-                      <SelectTrigger className="bg-gray-50/50 border-gray-200 text-right h-12" dir="rtl">
+                      <SelectTrigger className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right w-full flex justify-between items-center" dir="rtl">
                         <SelectValue placeholder="اختر المسمى الوظيفي" />
                       </SelectTrigger>
                       <SelectContent dir="rtl">
@@ -338,30 +400,29 @@ function ArabicRegistrationContent() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="specialization" className="text-base text-gray-700">التخصص / مجال العمل *</Label>
+                  <div className="sm:col-span-2">
+                    <Label htmlFor="specialization" className="text-sm font-medium text-[#007A59]">التخصص / مجال العمل *</Label>
                     <Input
                       id="specialization"
                       name="specialization"
                       required
                       value={formData.specialization}
                       onChange={handleInputChange}
-                      className="bg-gray-50/50 border-gray-200 text-right h-12"
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right w-full"
                       placeholder="مثال: الطب التجديدي، مكافحة الشيخوخة، التجميل"
                     />
                   </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="interest" className="text-base text-gray-700">مجالات الاهتمام في التدريب</Label>
-                  <Textarea
-                    id="interest"
-                    name="interest"
-                    value={formData.interest}
-                    onChange={handleInputChange}
-                    className="bg-gray-50/50 border-gray-200 text-right min-h-[100px] resize-none"
-                    placeholder="ما الذي تأمل تعلمه أو تحقيقه في هذا التدريب؟"
-                  />
+                  <div className="sm:col-span-2">
+                    <Label htmlFor="interest" className="text-sm font-medium text-[#007A59]">مجالات الاهتمام في التدريب</Label>
+                    <Textarea
+                      id="interest"
+                      name="interest"
+                      value={formData.interest}
+                      onChange={handleInputChange}
+                      className="mt-2 border-slate-200 focus:border-gold focus:ring-gold text-right min-h-[100px] resize-none w-full"
+                      placeholder="ما الذي تأمل تعلمه أو تحقيقه في هذا التدريب؟"
+                    />
+                  </div>
                 </div>
               </div>
 
