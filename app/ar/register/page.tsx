@@ -328,12 +328,12 @@ function ArabicRegistrationContent() {
                   </div>
                   <div className="sm:col-span-2">
                     <Label htmlFor="phone" className="text-sm font-medium text-[#007A59]">رقم الهاتف (واتساب) *</Label>
-                    <div className="flex gap-2 mt-2" dir="rtl">
+                    <div className="flex flex-col gap-3 mt-2" dir="rtl">
                       <Select
                         value={formData.countryCode}
                         onValueChange={(val) => handleSelectChange("countryCode", val)}
                       >
-                        <SelectTrigger className="w-[150px] border-slate-200 focus:border-gold focus:ring-gold flex justify-between items-center" dir="ltr">
+                        <SelectTrigger className="border-slate-200 focus:border-gold focus:ring-gold flex justify-between items-center w-full" dir="ltr">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
                         <SelectContent dir="ltr">
