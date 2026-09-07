@@ -333,7 +333,7 @@ function ArabicRegistrationContent() {
                         value={formData.countryCode}
                         onValueChange={(val) => handleSelectChange("countryCode", val)}
                       >
-                        <SelectTrigger className="border-slate-200 focus:border-gold focus:ring-gold flex justify-between items-center w-full" dir="ltr">
+                        <SelectTrigger className="border-slate-200 focus:border-gold focus:ring-gold flex justify-between items-center w-full text-right" dir="rtl">
                           <SelectValue placeholder="Code" />
                         </SelectTrigger>
                         <SelectContent dir="ltr">
