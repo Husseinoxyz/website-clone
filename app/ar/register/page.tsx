@@ -305,11 +305,10 @@ function ArabicRegistrationContent() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="organization" className="text-base text-gray-700">العيادة / جهة العمل *</Label>
+                    <Label htmlFor="organization" className="text-base text-gray-700">العيادة / جهة العمل</Label>
                     <Input
                       id="organization"
                       name="organization"
-                      required
                       value={formData.organization}
                       onChange={handleInputChange}
                       className="bg-gray-50/50 border-gray-200 text-right h-12"

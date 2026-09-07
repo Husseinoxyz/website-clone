@@ -612,13 +612,12 @@ function RegistrationContent() {
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="organization" className="text-sm font-medium text-[#007A59]">Organization/Clinic *</Label>
+                      <Label htmlFor="organization" className="text-sm font-medium text-[#007A59]">Organization/Clinic</Label>
                       <Input
                         id="organization"
                         name="organization"
                         value={formData.organization}
                         onChange={handleInputChange}
-                        required
                         className="mt-2 border-slate-200 focus:border-gold focus:ring-gold"
                       />
                     </div>
