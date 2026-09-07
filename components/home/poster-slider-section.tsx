@@ -9,8 +9,8 @@ const posterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/Slider Posts/PC View/Post 1_Eng_Pc Size_10_10_2026.png",
-    mobileImage: "/images/Slider Posts/Phone View/Post 1_ENG_Phone _Size_10_10_2026.png",
+    image: "/images/Slider Posts/PC View/Post 1.jpg",
+    mobileImage: "/images/Slider Posts/Phone View/Post 1.jpg",
   },
   {
     id: 2,
@@ -42,8 +42,8 @@ const arabicPosterSlides = [
   {
     id: 1,
     title: "OXYZ Poster 1",
-    image: "/images/Slider Posts/PC View/AR/Post 1_AR_Pc Size_10_10_2026.png",
-    mobileImage: "/images/Slider Posts/Phone View/AR/Post 1_AR_Phone Size_10_10_2026.png",
+    image: "/images/Slider Posts/PC View/AR/Post 1.jpg",
+    mobileImage: "/images/Slider Posts/Phone View/AR/Post 1.jpg",
   },
   {
     id: 2,
@@ -185,7 +185,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
           </span>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
           <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3.5 py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
-            {isArabic ? <><span dir="ltr">10</span> أكتوبر 2026 • كوالالمبور، ماليزيا</> : "Oct 10, 2026 • Kuala Lumpur, Malaysia"}
+            {isArabic ? "24-20 نوفمبر 2026 • كوالالمبور، ماليزيا" : "Nov 20-24, 2026 • Kuala Lumpur, Malaysia"}
           </span>
         </div>
       </div>

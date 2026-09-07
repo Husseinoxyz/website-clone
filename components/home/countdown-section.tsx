@@ -85,7 +85,7 @@ export function CountdownSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-600 text-xs border-t border-b border-slate-200/60 py-4 mb-6 max-w-xl mx-auto">
             <div className="flex items-center justify-center gap-2">
               <Calendar className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
-              <span>October 10, 2026</span>
+              <span>November 20-24, 2026</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <Clock className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />

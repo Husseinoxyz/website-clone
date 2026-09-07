@@ -94,7 +94,7 @@ export function CountdownSection() {
                 Training Date
               </p>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-                10 October 2026
+                20-24 November 2026
               </h2>
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
               {[
