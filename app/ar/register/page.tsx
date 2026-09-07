@@ -231,8 +231,8 @@ function ArabicRegistrationContent() {
 
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Personal Information */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
-                <h2 className="text-2xl font-bold text-[#007A59] mb-6 text-right whitespace-nowrap">
+              <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-lg border-2 border-slate-100" dir="rtl">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#007A59] mb-6 whitespace-nowrap">
                   المعلومات الشخصية
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6" dir="rtl">
@@ -364,8 +364,8 @@ function ArabicRegistrationContent() {
               </div>
 
               {/* Professional Information */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-100">
-                <h2 className="text-2xl font-bold text-[#007A59] mb-6 text-right whitespace-nowrap">
+              <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-lg border-2 border-slate-100" dir="rtl">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#007A59] mb-6 whitespace-nowrap">
                   المعلومات المهنية
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6" dir="rtl">
