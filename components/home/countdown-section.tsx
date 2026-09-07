@@ -17,7 +17,7 @@ export function CountdownSection() {
 
   useEffect(() => {
     setMounted(true);
-    const targetDate = new Date("2026-10-10T09:00:00").getTime();
+    const targetDate = new Date("2026-11-20T09:00:00").getTime();
 
     const calculateTime = () => {
       const now = new Date().getTime();
