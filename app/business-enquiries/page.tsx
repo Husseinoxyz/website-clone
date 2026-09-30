@@ -167,7 +167,7 @@ export default function BusinessEnquiriesPage() {
                     </p>
                     <div className="h-px w-16 bg-[#D4AF37]/30" />
                     <p>
-                      We work alongside our partners beyond the symposium to help translate knowledge into clinical excellence, better patient outcomes and sustainable practice growth—because our mission is not simply to educate healthcare professionals, but to help them build successful regenerative medicine practices.
+                      We work alongside our partners beyond the symposium to help translate knowledge into clinical excellence, better patient outcomes and sustainable practice growth, because our mission is not simply to educate healthcare professionals, but to help them build successful regenerative medicine practices.
                     </p>
                   </div>
                 </div>
@@ -476,12 +476,12 @@ export default function BusinessEnquiriesPage() {
                     { label: "Full Summit Experience", ed: "✓", sp: "✓", coe: "✓" },
                     { label: "International Certification", ed: "✓", sp: "✓", coe: "✓" },
                     { label: "Medical Centre Immersion", ed: "✓", sp: "✓", coe: "✓" },
-                    { label: "Clinical Starter Suite", ed: "—", sp: "✓", coe: "✓" },
-                    { label: "Private Clinical Consultation", ed: "—", sp: "✓", coe: "✓" },
-                    { label: "Business Development Support", ed: "—", sp: "✓", coe: "✓" },
-                    { label: "Advanced Clinical Technology", ed: "—", "sp": "—", coe: "✓" },
-                    { label: "Staff Training & Integration", ed: "—", "sp": "—", coe: "✓" },
-                    { label: "Executive Growth Strategy", ed: "—", "sp": "—", coe: "✓" },
+                    { label: "Clinical Starter Suite", ed: "✕", sp: "✓", coe: "✓" },
+                    { label: "Private Clinical Consultation", ed: "✕", sp: "✓", coe: "✓" },
+                    { label: "Business Development Support", ed: "✕", sp: "✓", coe: "✓" },
+                    { label: "Advanced Clinical Technology", ed: "✕", "sp": "✕", coe: "✓" },
+                    { label: "Staff Training & Integration", ed: "✕", "sp": "✕", coe: "✓" },
+                    { label: "Executive Growth Strategy", ed: "✕", "sp": "✕", coe: "✓" },
                   ].map((row, idx) => (
                     <tr key={idx} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
                       <td className="p-2 py-3 md:p-4 pr-1">{row.label}</td>

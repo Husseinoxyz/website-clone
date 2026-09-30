@@ -149,7 +149,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-2xl font-extrabold text-[#CDB06A] mb-3">
-                  80 - 100 Selected Professionals
+                  80 to 100 Selected Professionals
                 </p>
                 <ul className="space-y-2 text-slate-600 text-sm sm:text-base leading-relaxed">
                   <li className="flex items-center gap-2">

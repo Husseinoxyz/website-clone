@@ -118,7 +118,7 @@ export function HeroSection() {
             <Image
               key={src}
               src={src}
-              alt="Medical training - professionals collaborating in regenerative medicine"
+              alt="Medical training: professionals collaborating in regenerative medicine"
               fill
               priority={index === 0}
               sizes="(max-width: 1024px) 100vw, 50vw"

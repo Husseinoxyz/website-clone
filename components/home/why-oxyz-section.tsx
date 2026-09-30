@@ -157,7 +157,7 @@ export function WhyOXYZSection() {
               <div className="relative z-10">
                 <p className="text-slate-700 font-serif italic text-lg sm:text-xl leading-relaxed mb-8">
                   Regenerative medicine demands responsibility. Business
-                  opportunities should emerge from medical mastery — not replace
+                  opportunities should emerge from medical mastery, not replace
                   it. OXYZ is not designed for rapid commercialization. It is
                   designed for sustainable medical excellence.
                 </p>

@@ -106,7 +106,7 @@ const packageFeatures = [
     platinum: true,
   },
   {
-    name: "Direct referral agreement (15–20% commission scheme)",
+    name: "Direct referral agreement (15 to 20% commission scheme)",
     silver: false,
     gold: true,
     platinum: true,
@@ -131,13 +131,13 @@ const packageFeatures = [
     platinum: true,
   },
   {
-    name: "3–6 post-event training sessions for lead staff/nurses",
+    name: "3 to 6 post-event training sessions for lead staff/nurses",
     silver: false,
     gold: false,
     platinum: true,
   },
   {
-    name: "Elite Dealership status (30–35% margin, security deposit waived)",
+    name: "Elite Dealership status (30 to 35% margin, security deposit waived)",
     silver: false,
     gold: false,
     platinum: true,

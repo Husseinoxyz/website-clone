@@ -164,7 +164,7 @@ export default function GoldTierPage() {
               </Accordion>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#0f312b]">PLUS - The Clinical Integration Suite (Gold Tier)</h3>
+              <h3 className="text-xl font-bold text-[#0f312b]">PLUS: The Clinical Integration Suite (Gold Tier)</h3>
               <Accordion type="multiple" className="mt-4 w-full">
                 {goldInclusions.map((item, index) => (
                   <AccordionItem key={item.title} value={`gold-${index}`} className="border-[#c9ab5a]">

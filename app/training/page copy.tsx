@@ -287,19 +287,20 @@ export default function TrainingPage() {
                   The Medical Imperative
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Regenerative medicine is redefining modern healthcare —
-                  shifting the focus from symptom management to cellular repair,
-                  biological optimization, and long-term patient outcomes.
+                  Regenerative medicine is redefining modern healthcare by
+                  moving beyond symptom management and focusing on cellular
+                  repair, tissue function, and better long-term patient
+                  outcomes.
                 </p>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  However, true regenerative medicine requires medical
-                  discipline, ethical application, structured clinical systems,
-                  and responsible scaling.
+                  To achieve this responsibly, regenerative medicine requires
+                  medical discipline, ethical practice, structured clinical
+                  protocols, and careful implementation.
                 </p>
                 <div className="bg-background rounded-lg p-6 border-l-4 border-gold">
                   <p className="text-teal font-medium italic">
                     This training exists to address how regenerative medicine
-                    should be practiced, integrated, and expanded — not as a
+                    should be practiced, integrated, and expanded, not as a
                     trend, but as a sustainable medical framework.
                   </p>
                 </div>
@@ -407,7 +408,7 @@ export default function TrainingPage() {
                   Scientific & Medical Focus
                 </h2>
                 <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-                  The emphasis is on medical depth, clarity, and governance —
+                  The emphasis is on medical depth, clarity, and governance,
                   not promotional medicine.
                 </p>
                 <ul className="space-y-4">

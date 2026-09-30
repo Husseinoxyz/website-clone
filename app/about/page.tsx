@@ -238,7 +238,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-slate-700 text-lg sm:text-xl mb-6 leading-relaxed">
                   At OXYZ, we believe the future of medicine lies in
-                  regeneration, prevention, and biological optimization —
+                  regeneration, prevention, and biological optimization,
                   delivered through disciplined medical practice and structured
                   clinical systems.
                 </p>

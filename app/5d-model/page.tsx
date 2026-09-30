@@ -121,7 +121,7 @@ export default function FiveDModelPage() {
                   The OXYZ 5D Regenerative Medical Model
                 </h1>
                 <p className="text-xl text-white/90 leading-relaxed mb-6">
-                  At the core of OXYZ lies the 5D Regenerative Medical Model — a
+                  At the core of OXYZ lies the 5D Regenerative Medical Model, a
                   structured framework guiding patient care, clinical decisions,
                   and operational consistency.
                 </p>
@@ -245,7 +245,7 @@ export default function FiveDModelPage() {
                   A Model Built for Medical Consistency
                 </h2>
                 <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-                  The OXYZ 5D Model is not a flexible concept — it is a
+                  The OXYZ 5D Model is not a flexible concept. It is a
                   standardised clinical system. Across all OXYZ-aligned
                   practices, it ensures:
                 </p>
@@ -300,7 +300,7 @@ export default function FiveDModelPage() {
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Regenerative medicine carries responsibility. Structure ensures
-                innovation serves patients — not trends.
+                innovation serves patients, not trends.
               </p>
               <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
                 The OXYZ 5D Biological Regenerative Medical Model reflects our

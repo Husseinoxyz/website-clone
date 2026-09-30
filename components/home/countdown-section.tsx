@@ -89,7 +89,7 @@ export function CountdownSection() {
             </div>
             <div className="flex items-center justify-center gap-2">
               <Clock className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
-              <span>09:00 AM - 05:00 PM</span>
+              <span>09:00 AM to 05:00 PM</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <MapPin className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />

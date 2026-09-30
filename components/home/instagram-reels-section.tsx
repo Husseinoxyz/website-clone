@@ -69,7 +69,7 @@ const defaultReels: ReelItem[] = [
     id: "clip-2",
     src: "https://www.youtube.com/embed/VfkXACyh5Ws",
     doctor: "Dr. Michelle",
-    title: "BioResource Scanner – 3D Quantum Medicine Cellular Screening and Technology",
+    title: "BioResource Scanner: 3D Quantum Medicine Cellular Screening and Technology",
     subtitle: "Featured Preview Clip 2",
     platform: "youtube",
     aspect: "landscape",

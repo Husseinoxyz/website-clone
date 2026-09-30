@@ -157,7 +157,7 @@ export function MedicalEcosystemSection() {
                   <feature.icon className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-0.5" />
                   <div className="text-sm sm:text-base">
                     <span className="font-semibold text-[#005744]">{feature.title}</span>
-                    <span className="text-[#005744]/80"> — {feature.description}</span>
+                    <span className="text-[#005744]/80">: {feature.description}</span>
                   </div>
                 </div>
               ))}

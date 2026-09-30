@@ -372,7 +372,7 @@ export default function PastTrainingsPage() {
                 </h2>
                 <p className="text-xl sm:text-2xl text-gold mb-6 leading-relaxed">
                   Organized by OXYZ Health International, each training focuses
-                  on medical depth, professional exchange, and alignment — not
+                  on medical depth, professional exchange, and alignment, not
                   mass attendance.
                 </p>
                 <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">

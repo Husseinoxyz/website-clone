@@ -152,7 +152,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
-                  20 - 24 November 2026
+                  20 to 24 November 2026
                 </p>
                 <p className="text-muted-foreground">
                   4 nights accommodation included for Package I, II, and III
@@ -167,7 +167,7 @@ export default function ProgramPage() {
                   </h2>
                 </div>
                 <p className="text-3xl font-bold text-teal mb-2">
-                  80 - 100 Selected Professionals
+                  80 to 100 Selected Professionals
                 </p>
                 <p className="text-muted-foreground mb-4">
                   Intentionally limited to ensure:

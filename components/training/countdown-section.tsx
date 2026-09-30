@@ -143,7 +143,7 @@ export function CountdownSection() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Capacity</p>
-                  <p className="font-bold text-sm sm:text-base text-white">80 - 100 Participants</p>
+                  <p className="font-bold text-sm sm:text-base text-white">80 to 100 Participants</p>
                   <p className="text-xs text-white/70">Limited to ensure quality</p>
                 </div>
               </div>
