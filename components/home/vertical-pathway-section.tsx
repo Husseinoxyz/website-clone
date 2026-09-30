@@ -68,7 +68,7 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
       onClick={handlePlayClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative h-[380px] xs:h-[420px] sm:h-[480px] lg:h-[540px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-slate-200/80 cursor-pointer"
+      className="group relative h-[250px] sm:h-[480px] lg:h-[540px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-slate-200/80 cursor-pointer"
     >
 
       {/* Background Poster Image */}
@@ -115,14 +115,14 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
       <Link
         href={item.link}
         onClick={(e) => e.stopPropagation()}
-        className="absolute bottom-0 left-0 right-0 z-20 p-4 sm:p-5 pb-6 sm:pb-8 flex flex-col items-center justify-end text-center w-full transition-transform duration-300 group-hover:-translate-y-1"
+        className="absolute bottom-0 left-0 right-0 z-20 p-3 sm:p-5 pb-4 sm:pb-8 flex flex-col items-center justify-end text-center w-full transition-transform duration-300 group-hover:-translate-y-1"
       >
         {item.type === "conferences" && (
           <>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
               OXYZ
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
+            <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
               BUSINESS TALK
             </h3>
           </>
@@ -130,13 +130,13 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
 
         {item.type === "onsite" && (
           <>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
               OXYZ
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-wider text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
+            <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-wider text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
               AESTHETIC
             </h3>
-            <span className="text-xs sm:text-sm font-bold tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
+            <span className="text-[10px] sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
               MEDICINE
             </span>
           </>
@@ -144,13 +144,13 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
 
         {item.type === "handson" && (
           <>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
               OXYZ
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
+            <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
               CLINICAL
             </h3>
-            <span className="text-xs sm:text-sm font-extrabold tracking-[0.3em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
+            <span className="text-[10px] sm:text-sm font-extrabold tracking-[0.15em] sm:tracking-[0.3em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
               CERTIFICATIONS
             </span>
           </>
@@ -161,10 +161,10 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#CDB06A] uppercase mb-0.5 drop-shadow-md">
               REGENERATIVE
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
+            <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
               MEDICINE
             </h3>
-            <span className="text-xs sm:text-sm font-extrabold tracking-[0.35em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
+            <span className="text-[10px] sm:text-sm font-extrabold tracking-[0.15em] sm:tracking-[0.35em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
               TRAINING
             </span>
           </>
@@ -172,13 +172,13 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
 
         {item.type === "online" && (
           <>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] text-[#CDB06A] uppercase mb-2 drop-shadow-md">
               OXYZ
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-[0.15em] text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
+            <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-[0.15em] text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
               ONLINE
             </h3>
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
+            <span className="text-[10px] sm:text-sm font-semibold tracking-[0.15em] sm:tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
               LEARNING
             </span>
           </>
@@ -192,10 +192,10 @@ export function VerticalPathwaySection() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
-    <section className="bg-white pt-4 sm:pt-6 pb-16 sm:pb-24 border-b border-slate-100 overflow-hidden w-full">
+    <section className="bg-white py-14 sm:py-24 border-b border-slate-100 overflow-hidden w-full">
       <div className="w-full max-w-none px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-sm">
             OXYZ ACADEMY
           </div>
@@ -203,12 +203,12 @@ export function VerticalPathwaySection() {
             Advancing Regenerative Medicine Through Education & Innovation
           </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-            A complete physician development platform combining international certification, hands-on clinical training, modern biological medicine protocols, and clinic implementation strategies.
+            International certification, hands-on clinical training and clinic implementation in one physician development platform.
           </p>
         </div>
 
         {/* 4 ISSCA-Style Vertical Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {pathways.map((item) => (
             <PathwayCard key={item.id} item={item} onPlayClick={setActiveVideo} />
           ))}

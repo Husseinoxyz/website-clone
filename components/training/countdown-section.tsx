@@ -124,7 +124,7 @@ export function CountdownSection() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Dates</p>
-                  <p className="font-bold text-sm sm:text-base text-white">10 Oct 2026</p>
+                  <p className="font-bold text-sm sm:text-base text-white">20-24 Nov 2026</p>
                 </div>
               </div>
               <div className="group flex items-center gap-3 rounded-xl bg-black/60 border border-white/10 px-4 py-3.5 hover:border-gold/20 transition-all duration-300">
@@ -182,7 +182,7 @@ export function CountdownSection() {
               </div>
 
               <div className="bg-black/40 backdrop-blur rounded-2xl px-5 py-4 text-center mb-6">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">
+                <h3 className="text-lg sm:text-2xl font-extrabold text-white leading-tight">
                   Raise Your Nation's Flag
                 </h3>
                 <p className="mt-2 text-sm text-white/90">

@@ -22,7 +22,7 @@ export function RegistrationCTASection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance font-sans">
             Secure Your Place for Global Regenerative Medicine Summit 2026
           </h2>
@@ -52,7 +52,7 @@ export function RegistrationCTASection() {
                   Executive Delegate Package
                 </div>
                 
-                <h3 className="text-3xl font-extrabold text-[#007A59] tracking-wide uppercase font-sans mb-2">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#007A59] tracking-wide uppercase font-sans mb-2">
                   GLOBAL REGENERATIVE MEDICINE SUMMIT
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium">

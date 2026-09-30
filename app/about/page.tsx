@@ -154,7 +154,7 @@ export default function AboutPage() {
       <Header />
       <main className="bg-white text-slate-800">
         {/* Hero - Matching Home Style */}
-        <section className="relative w-full min-h-[85vh] flex items-center justify-center">
+        <section className="relative w-full min-h-[75vh] sm:min-h-[85vh] flex items-center justify-center">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -170,7 +170,7 @@ export default function AboutPage() {
           </div>
 
           {/* Content Container */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 sm:pt-32 sm:pb-24">
             <div className="max-w-3xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 shadow-md border border-[#007A59]/30">
@@ -180,13 +180,13 @@ export default function AboutPage() {
               {/* Main Title */}
               <h1 className="font-extrabold leading-[1.1] text-[#CDB06A] text-4xl sm:text-5xl md:text-6xl tracking-tight">
                 About Us
-                <span className="block text-xl sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
+                <span className="block text-lg sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
                   Building Global Medical Ecosystems
                 </span>
               </h1>
 
               {/* Description */}
-              <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-6 mb-10 font-light max-w-xl">
+              <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-5 mb-8 sm:mt-6 sm:mb-10 font-light max-w-xl">
                 A globally positioned regenerative and medical wellness ecosystem built on scientific integrity, structured systems, and long-term partnership.
               </p>
 
@@ -216,10 +216,10 @@ export default function AboutPage() {
         </section>
 
         {/* Mission Statement Banner */}
-        <section className="py-16 bg-[#007A59] text-white relative overflow-hidden shadow-inner">
+        <section className="py-10 sm:py-16 bg-[#007A59] text-white relative overflow-hidden shadow-inner">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center animate-on-scroll relative z-10">
-            <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light leading-relaxed">
               We do not operate as a single clinic or product brand.
               <span className="block mt-2 font-bold text-[#CDB06A]">
                 We build medical ecosystems.
@@ -229,23 +229,23 @@ export default function AboutPage() {
         </section>
 
         {/* Philosophy */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#007A59] mb-6 tracking-tight">
                   The Future of Medicine
                 </h2>
-                <p className="text-slate-700 text-lg sm:text-xl mb-6 leading-relaxed">
+                <p className="text-slate-700 text-lg sm:text-xl mb-4 sm:mb-6 leading-relaxed">
                   At OXYZ, we believe the future of medicine lies in
                   regeneration, prevention, and biological optimization,
                   delivered through disciplined medical practice and structured
                   clinical systems.
                 </p>
-                <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
+                <p className="text-slate-600 text-base sm:text-lg mb-5 sm:mb-8 leading-relaxed">
                   Modern healthcare must move beyond symptom control toward:
                 </p>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 sm:space-y-4">
                   {philosophy.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${idx + 1} flex items-center gap-3`}>
                       <CheckCircle2 className="h-5 w-5 text-[#CDB06A] flex-shrink-0" />
@@ -253,11 +253,6 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-                  OXYZ was established to ensure regenerative medicine is
-                  practiced responsibly, consistently, and sustainably across
-                  all environments in which it is delivered.
-                </p>
               </div>
               <div className="relative animate-on-scroll slide-in-right scale-in flex justify-center">
                 <div className="relative p-2 bg-white rounded-3xl shadow-2xl border border-slate-100">
@@ -275,26 +270,25 @@ export default function AboutPage() {
         </section>
 
         {/* Global Structure */}
-        <section className="py-24 bg-white border-t border-slate-100">
+        <section className="py-14 sm:py-24 bg-white border-t border-slate-100">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#007A59] mb-6 tracking-tight">
                 A Globally Structured Organization
               </h2>
               <p className="text-slate-600 text-lg sm:text-xl leading-relaxed">
-                OXYZ operates through a deliberately structured international
-                footprint, ensuring scientific governance, operational
-                integrity, and scalability.
+                An international footprint built for scientific governance and
+                consistent standards.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
               {locations.map((location, idx) => (
                 <div
                   key={location.country}
-                  className={`animate-on-scroll stagger-${idx + 1} scale-in bg-slate-50 rounded-2xl p-8 border border-slate-200/60 shadow-sm hover:shadow-md hover:border-[#CDB06A]/40 transition-all duration-300`}
+                  className={`animate-on-scroll stagger-${idx + 1} scale-in bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200/60 shadow-sm hover:shadow-md hover:border-[#CDB06A]/40 transition-all duration-300`}
                 >
-                  <div className="w-12 h-12 bg-[#007A59]/10 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-[#007A59]/10 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                     <MapPin className="h-6 w-6 text-[#007A59]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#007A59] mb-3">
@@ -304,26 +298,20 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-
-            <p className="text-center text-[#007A59] text-base sm:text-lg font-semibold max-w-lg mx-auto animate-on-scroll">
-              This structure enables OXYZ to maintain medical consistency while
-              supporting international expansion.
-            </p>
           </div>
         </section>
 
         {/* Medical Foundation */}
-        <section className="py-24 bg-slate-50 text-slate-800 border-y border-slate-100">
+        <section className="py-14 sm:py-24 bg-slate-50 text-slate-800 border-y border-slate-100">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
                   Our Medical Foundation
                 </h2>
                 <p className="text-slate-600 text-lg sm:text-xl mb-8 leading-relaxed">
-                  OXYZ&apos;s clinical philosophy is grounded in integrative and
-                  regenerative medicine, combining conventional medical science
-                  with evidence-based complementary approaches.
+                  Integrative and regenerative medicine, combining conventional
+                  science with evidence-based complementary approaches.
                 </p>
                 <p className="text-slate-700 font-semibold text-lg mb-4">
                   Our work spans:
@@ -332,7 +320,7 @@ export default function AboutPage() {
                   {medicalFoundation.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${idx + 1} flex items-start gap-3`}>
                       <div className="w-2 h-2 rounded-full bg-[#CDB06A] mt-2 flex-shrink-0" />
-                      <span className="text-slate-600 text-lg">{item}</span>
+                      <span className="text-slate-600 text-base sm:text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -342,8 +330,7 @@ export default function AboutPage() {
                   Clinical Pathways
                 </h2>
                 <p className="text-slate-600 text-lg sm:text-xl mb-8 leading-relaxed">
-                  All OXYZ clinical pathways are designed with foundational
-                  principles that ensure the highest standards of care.
+                  Every OXYZ clinical pathway is built on three principles.
                 </p>
                 <div className="space-y-4">
                   {clinicalPrinciples.map((principle, idx) => (
@@ -364,9 +351,9 @@ export default function AboutPage() {
         </section>
 
         {/* Beyond Clinics */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="relative order-2 lg:order-1 animate-on-scroll slide-in-left scale-in flex justify-center">
                 <div className="relative p-2 bg-white rounded-3xl shadow-2xl border border-slate-100">
                   <Image
@@ -383,10 +370,9 @@ export default function AboutPage() {
                   Beyond Clinics: A Medical Ecosystem
                 </h2>
                 <p className="text-slate-600 text-lg sm:text-xl mb-6 leading-relaxed">
-                  OXYZ extends beyond clinical care into a complete medical
-                  ecosystem, supporting structured collaboration with medical
-                  professionals, scientifically grounded product platforms,
-                  international education, and scalable medical business models.
+                  Beyond clinical care, OXYZ connects professional collaboration,
+                  science-based products, international education and scalable
+                  medical business models.
                 </p>
                 <div className="bg-[#007A59]/5 rounded-2xl p-6 border-l-4 border-[#CDB06A] shadow-sm">
                   <p className="text-slate-700 text-base sm:text-lg font-medium italic font-serif">
@@ -399,27 +385,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Commitment */}
-        <section className="py-24 bg-slate-50 border-y border-slate-100">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center animate-on-scroll scale-in">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#007A59] mb-6 tracking-tight">
-                Our Commitment
-              </h2>
-              <p className="text-slate-600 text-lg sm:text-xl mb-8 leading-relaxed font-light">
-                OXYZ collaborates selectively. We work only with professionals
-                and organizations who share our commitment to medical integrity,
-                patient-centered outcomes, structured systems and governance,
-                and long-term impact over short-term gain.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* The OXYZ Difference */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#007A59] mb-6 tracking-tight">
                   The OXYZ Difference
@@ -437,7 +407,7 @@ export default function AboutPage() {
                     Sustainable Excellence
                   </p>
                   <p className="text-slate-100 text-sm sm:text-base leading-relaxed">
-                    OXYZ is not designed for rapid commercialization. It is built for long-term medical excellence and sustainable clinical integrity.
+                    OXYZ collaborates selectively, with professionals who share our commitment to medical integrity and long-term impact over short-term gain.
                   </p>
                 </div>
               </div>
@@ -457,7 +427,7 @@ export default function AboutPage() {
         </section>
 
         {/* Direction */}
-        <section className="py-28 text-white relative overflow-hidden">
+        <section className="py-16 sm:py-28 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
@@ -474,12 +444,11 @@ export default function AboutPage() {
                 Our Direction
               </h2>
               <p className="text-slate-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed font-light">
-                As regenerative medicine continues to redefine global
-                healthcare, OXYZ remains committed to shaping its future through
-                responsible clinical application, knowledge transfer and
-                education, and ethical expansion and collaboration.
+                OXYZ is shaping the future of regenerative medicine through
+                responsible clinical application, education and ethical
+                collaboration.
               </p>
-              <p className="text-lg sm:text-xl text-[#CDB06A] font-semibold mb-10 tracking-wide">
+              <p className="text-lg sm:text-xl text-[#CDB06A] font-semibold mb-8 sm:mb-10 tracking-wide">
                 We invite like-minded medical professionals to explore this journey with us.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

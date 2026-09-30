@@ -50,7 +50,7 @@ export default function ProgramPage() {
       <main className="bg-slate-50/50">
         
         {/* Hero - Matching Premium Website Aesthetics */}
-        <section className="relative w-full min-h-[85vh] flex items-center justify-center">
+        <section className="relative w-full min-h-[75vh] sm:min-h-[85vh] flex items-center justify-center">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -66,7 +66,7 @@ export default function ProgramPage() {
           </div>
 
           {/* Content Container */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 sm:pt-32 sm:pb-24">
             <div className="max-w-3xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 shadow-md border border-[#007A59]/30">
@@ -76,13 +76,13 @@ export default function ProgramPage() {
               {/* Main Title */}
               <h1 className="font-extrabold leading-[1.1] text-[#CDB06A] text-4xl sm:text-5xl md:text-6xl tracking-tight">
                 Program Overview
-                <span className="block text-xl sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
+                <span className="block text-lg sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
                   Executive Delegate Registration Package
                 </span>
               </h1>
 
               {/* Description */}
-              <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-6 mb-10 font-light max-w-xl">
+              <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-5 mb-8 sm:mt-6 sm:mb-10 font-light max-w-xl">
                 Comprehensive details for the Global Regenerative Medicine Summit 2026 Executive Delegate Tier.
               </p>
 
@@ -117,16 +117,16 @@ export default function ProgramPage() {
         </section>
 
         {/* Event Details */}
-        <section className="py-16 bg-white border-y border-slate-100">
+        <section className="py-10 sm:py-16 bg-white border-y border-slate-100">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
               {/* Card 1 */}
-              <div className="bg-slate-50/60 border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-slate-50/60 border border-slate-100 rounded-3xl p-6 sm:p-8 relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-[#007A59]/10 rounded-2xl">
                     <Calendar className="h-6 w-6 text-[#007A59]" />
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-800">
+                  <h2 className="text-lg sm:text-2xl font-bold text-slate-800">
                     Training Dates
                   </h2>
                 </div>
@@ -139,12 +139,12 @@ export default function ProgramPage() {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-slate-50/60 border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-slate-50/60 border border-slate-100 rounded-3xl p-6 sm:p-8 relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-[#CDB06A]/10 rounded-2xl">
                     <Clock className="h-6 w-6 text-[#CDB06A]" />
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-slate-800">
+                  <h2 className="text-lg sm:text-2xl font-bold text-slate-800">
                     Participant Capacity
                   </h2>
                 </div>
@@ -171,12 +171,12 @@ export default function ProgramPage() {
         </section>
 
         {/* Package Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100 text-slate-800 relative overflow-hidden">
+        <section className="py-14 sm:py-24 bg-slate-50 border-b border-slate-100 text-slate-800 relative overflow-hidden">
           {/* Subtle background glow effect */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#007A59]/5 blur-[130px] rounded-full pointer-events-none" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">
                 Registration Package
               </h2>
@@ -187,7 +187,7 @@ export default function ProgramPage() {
 
             {/* Single Centered Executive Delegate Package Card */}
             <div className="max-w-2xl mx-auto">
-              <div className="relative flex flex-col rounded-[24px] border-2 border-[#007A59] bg-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-300/40">
+              <div className="relative flex flex-col rounded-[24px] border-2 border-[#007A59] bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-300/40">
                 
                 {/* Floating Price Badge */}
                 <div className="absolute -top-10 right-6 sm:right-10 z-20">
@@ -211,7 +211,7 @@ export default function ProgramPage() {
                 {/* Card Content */}
                 <div className="flex-1 flex flex-col pt-6">
                   <div className="border-b border-slate-100 pb-5 mb-6">
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-[#007A59]">
+                    <h3 className="text-lg sm:text-2xl font-extrabold text-[#007A59]">
                       {singlePackage.title}
                     </h3>
                     <p className="text-xs sm:text-sm font-semibold text-slate-500 mt-1.5">
@@ -253,13 +253,13 @@ export default function ProgramPage() {
         </section>
 
         {/* What's Included details */}
-        <section className="py-24 bg-white border-b border-slate-100">
+        <section className="py-14 sm:py-24 bg-white border-b border-slate-100">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-slate-800 mb-6">
               Program Inclusions
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              Full curriculum breakdown and course details are available upon request. Our team will provide the most current program details, benefits, and eligibility guidance based on your medical profile.
+              The full curriculum is available on request. Our team will share program details and eligibility guidance for your profile.
             </p>
             <div className="flex justify-center">
               <Link
@@ -277,7 +277,7 @@ export default function ProgramPage() {
         </section>
 
         {/* Important Information */}
-        <section className="py-20 bg-slate-50/50">
+        <section className="py-12 sm:py-20 bg-slate-50/50">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3.5 mb-8">
               <div className="p-2.5 bg-[#007A59]/10 rounded-xl">
@@ -307,7 +307,7 @@ export default function ProgramPage() {
         <InstagramReelsSection />
 
         {/* CTA */}
-        <section className="py-28 relative overflow-hidden">
+        <section className="py-16 sm:py-28 relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"

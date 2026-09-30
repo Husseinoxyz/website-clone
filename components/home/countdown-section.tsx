@@ -43,7 +43,7 @@ export function CountdownSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#FAF6ED] via-[#FAF6ED] to-[#F5EEDC] py-20 lg:py-24 text-slate-900 border-y border-slate-100">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#FAF6ED] via-[#FAF6ED] to-[#F5EEDC] py-12 sm:py-20 lg:py-24 text-slate-900 border-y border-slate-100">
       {/* Background World Map Image */}
       <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none mix-blend-multiply">
         <Image
@@ -64,7 +64,7 @@ export function CountdownSection() {
       <div className="relative mx-auto max-w-5xl px-6 sm:px-8 z-10 text-center">
         
         {/* Section Header */}
-        <div className="mb-10">
+        <div className="mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light tracking-wide text-slate-800 uppercase">
             UPCOMING EVENTS
             <span className="block mt-1.5 text-xl sm:text-2xl md:text-3xl font-sans font-semibold text-[#007A59] tracking-[0.2em] not-italic">2026</span>
@@ -73,7 +73,7 @@ export function CountdownSection() {
         </div>
 
         {/* Event Details Card */}
-        <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md border border-[#CDB06A]/20 rounded-[24px] p-6 sm:p-8 shadow-xl mb-10">
+        <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md border border-[#CDB06A]/20 rounded-[24px] p-5 sm:p-8 shadow-xl mb-8 sm:mb-10">
           <h3 className="text-lg sm:text-xl font-bold text-[#007A59] mb-3">
             Global Regenerative Medicine Summit 2026
           </h3>
@@ -82,7 +82,7 @@ export function CountdownSection() {
           </p>
 
           {/* Quick Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-600 text-xs border-t border-b border-slate-200/60 py-4 mb-6 max-w-xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-600 text-xs border-t border-b border-slate-200/60 py-3 sm:py-4 mb-5 sm:mb-6 gap-y-2.5 max-w-xl mx-auto">
             <div className="flex items-center justify-center gap-2">
               <Calendar className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
               <span>November 20-24, 2026</span>

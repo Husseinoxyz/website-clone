@@ -149,8 +149,8 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
 
   const gridColsClass =
     reels.length === 2
-      ? "grid gap-8 sm:grid-cols-2 lg:grid-cols-2"
-      : "grid gap-8 sm:grid-cols-2 lg:grid-cols-3";
+      ? "grid gap-5 sm:gap-8 sm:grid-cols-2 lg:grid-cols-2"
+      : "grid gap-5 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <>
@@ -187,22 +187,16 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
         }
       `}</style>
       
-      <section id="video-preview" className="py-24 bg-gradient-to-b from-white to-slate-50">
+      <section id="video-preview" className="py-14 sm:py-24 bg-gradient-to-b from-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 animate-on-scroll">
             <div className="mb-4" />
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4 text-balance">
               Experience the Symposium
             </h2>
-            <p className="text-gold text-xl leading-relaxed">
+            <p className="text-gold text-lg sm:text-xl leading-relaxed">
               Get a firsthand look at the depth, quality, and practical insights our regenerative medicine summit delivers.
             </p>
-          </div>
-
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-slate-700 mb-6 border-b pb-2">
-              Exclusive Preview
-            </h3>
           </div>
 
           <div className={gridColsClass}>
@@ -250,7 +244,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                     </div>
                   </div>
 
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wider text-gold">
                         {reel.doctor}
@@ -261,7 +255,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                     </div>
                     <button
                       onClick={() => openVideo(reel)}
-                      className="mt-6 inline-flex items-center text-sm font-semibold text-[#007A59] hover:text-gold transition-colors duration-200"
+                      className="mt-4 sm:mt-6 inline-flex items-center text-sm font-semibold text-[#007A59] hover:text-gold transition-colors duration-200"
                     >
                       Watch Full Video
                       <ArrowRight className="ml-2 h-4 w-4" />

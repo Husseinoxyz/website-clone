@@ -292,7 +292,7 @@ export default function PastTrainingsPage() {
       <Header />
       <main>
         {/* Hero - Enhanced */}
-        <section className="relative w-full min-h-screen">
+        <section className="relative w-full min-h-[90vh] sm:min-h-screen">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -309,7 +309,7 @@ export default function PastTrainingsPage() {
           </div>
 
           {/* Content Container - Positioned at bottom */}
-          <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
+          <div className="relative z-10 flex items-end min-h-[90vh] sm:min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
             <div className="max-w-4xl w-full">
               
               {/* Main Title */}
@@ -328,8 +328,8 @@ export default function PastTrainingsPage() {
               </div>
 
               {/* Description */}
-              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A glimpse into our medical and professional community. The Global Regenerative Medicine Summit Series brings together medical professionals, clinic owners, and healthcare leaders from different regions.
+              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
+                Doctors, clinic owners and healthcare leaders from around the world, brought together by the Global Regenerative Medicine Summit Series.
               </p>
 
               {/* CTA Buttons */}
@@ -363,21 +363,16 @@ export default function PastTrainingsPage() {
         </section>
 
         {/* Introduction */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6 text-balance">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#007A59] mb-6 text-balance">
                   Building Professional Excellence
                 </h2>
-                <p className="text-xl sm:text-2xl text-gold mb-6 leading-relaxed">
-                  Organized by OXYZ Health International, each training focuses
-                  on medical depth, professional exchange, and alignment, not
-                  mass attendance.
-                </p>
-                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
-                  Each edition is curated to maintain professional quality and
-                  meaningful interaction.
+                <p className="text-lg sm:text-2xl text-gold mb-6 sm:mb-8 leading-relaxed">
+                  Each OXYZ training is curated for medical depth and
+                  professional exchange, not mass attendance.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {highlights.map((item, idx) => (
@@ -410,22 +405,22 @@ export default function PastTrainingsPage() {
         </section>
 
         {/* Gallery */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
-                  2025 International Training
+              <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#007A59] mb-6">
+                  Training Highlights
                 </h2>
-                <p className="text-xl sm:text-2xl text-gold">
-                  Moments from our past events showcasing global participation and professional exchange
+                <p className="text-lg sm:text-2xl text-gold">
+                  Moments from our past international trainings
                 </p>
               </div>
             </div>
 
-            <div className="mb-12 animate-on-scroll">
+            <div className="mb-8 sm:mb-12 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-3xl font-semibold text-[#007A59] mb-6">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#007A59] mb-4 sm:mb-6">
                   2025 International Training
                 </h3>
               </div>
@@ -459,7 +454,7 @@ export default function PastTrainingsPage() {
 
             <div className="animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h3 className="text-3xl font-semibold text-[#007A59] mb-6">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#007A59] mb-4 sm:mb-6">
                   2023 International Training
                 </h3>
               </div>
@@ -493,17 +488,15 @@ export default function PastTrainingsPage() {
         </section>
 
         {/* Global Participation */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div className="animate-on-scroll slide-in-left">
-                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#007A59] mb-6">
                   Global Participation
                 </h2>
-                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
-                  Participants have included professionals from across the
-                  globe, representing diverse healthcare systems and medical
-                  specialties.
+                <p className="text-lg sm:text-2xl text-gold mb-8 leading-relaxed">
+                  Professionals from diverse healthcare systems and specialties.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {regions.map((region, idx) => (
@@ -518,12 +511,12 @@ export default function PastTrainingsPage() {
                 </div>
               </div>
               <div className="animate-on-scroll slide-in-right">
-                <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-6">
+                <h2 className="text-3xl sm:text-5xl font-bold text-[#007A59] mb-6">
                   Scientific Exchange & Collaboration
                 </h2>
-                <p className="text-xl sm:text-2xl text-gold mb-8 leading-relaxed">
-                  Our trainings emphasize the core principles of responsible
-                  regenerative medicine and structured clinical practice.
+                <p className="text-lg sm:text-2xl text-gold mb-8 leading-relaxed">
+                  Responsible regenerative medicine and structured clinical
+                  practice.
                 </p>
                 <ul className="space-y-4">
                   {emphases.map((item, idx) => (
@@ -542,65 +535,40 @@ export default function PastTrainingsPage() {
         </section>
 
         {/* More Than an Event */}
-        <section className="py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground">
+        <section className="py-14 sm:py-24 bg-gradient-to-br from-teal-dark to-teal text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl sm:text-5xl font-bold text-gold mb-6 animate-on-scroll">
+              <h2 className="text-3xl sm:text-5xl font-bold text-gold mb-6 animate-on-scroll">
                 More Than an Event
               </h2>
-              <p className="text-xl sm:text-2xl text-gold mb-12 leading-relaxed animate-on-scroll">
+              <p className="text-lg sm:text-2xl text-gold leading-relaxed animate-on-scroll">
                 For many participants, the training serves as a starting point
                 for collaboration, a platform for continued medical exchange,
                 and a gateway into the OXYZ ecosystem.
               </p>
-
-              <div className="grid sm:grid-cols-3 gap-8">
-                <div className="animate-on-scroll stagger-1 scale-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all">
-                  <h3 className="text-xl font-bold text-gold mb-3">
-                    Starting Point
-                  </h3>
-                  <p className="text-gold text-base">
-                    A launching pad for meaningful professional collaboration
-                  </p>
-                </div>
-                <div className="animate-on-scroll stagger-2 scale-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all">
-                  <h3 className="text-xl font-bold text-gold mb-3">
-                    Platform
-                  </h3>
-                  <p className="text-gold text-base">
-                    For continued medical exchange and knowledge sharing
-                  </p>
-                </div>
-                <div className="animate-on-scroll stagger-3 scale-in bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all">
-                  <h3 className="text-xl font-bold text-gold mb-3">Gateway</h3>
-                  <p className="text-gold text-base">
-                    Into the broader OXYZ health ecosystem
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* Stats - With Animated Counters */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 animate-on-scroll">
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#007A59] mb-4">
+            <div className="text-center mb-8 sm:mb-12 animate-on-scroll">
+              <h2 className="text-3xl sm:text-5xl font-bold text-[#007A59] mb-4">
                 Our Impact
               </h2>
-              <p className="text-xl sm:text-2xl text-gold">
+              <p className="text-lg sm:text-2xl text-gold">
                 Numbers that reflect our global reach and influence
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
               {stats.map((stat, index) => (
                 <div 
                   key={stat.label} 
-                  className={`animate-on-scroll stagger-${index + 1} scale-in group text-center p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border-2 border-slate-100 hover:border-gold/30 transition-all hover:shadow-lg`}
+                  className={`animate-on-scroll stagger-${index + 1} scale-in group text-center p-5 sm:p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border-2 border-slate-100 hover:border-gold/30 transition-all hover:shadow-lg`}
                 >
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2000} />
-                  <p className="text-[#007A59] text-lg font-medium">{stat.label}</p>
+                  <p className="text-[#007A59] text-sm sm:text-lg font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -610,7 +578,7 @@ export default function PastTrainingsPage() {
         <InstagramReelsSection reels={pastTrainingTestimonials} />
 
         {/* Looking Ahead */}
-        <section className="py-24 text-secondary-foreground relative overflow-hidden">
+        <section className="py-14 sm:py-24 text-secondary-foreground relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
@@ -622,14 +590,13 @@ export default function PastTrainingsPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl p-12 text-center">
+            <div className="rounded-2xl p-6 sm:p-12 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 animate-on-scroll">
                 Looking Ahead
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-on-scroll">
-                Building on previous editions, the OXYZ International Training
-                2026 will continue to strengthen medical credibility,
-                professional networks, and structured collaboration pathways.
+                The 2026 Summit builds on every previous edition. Join us in
+                Kuala Lumpur.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll scale-in">
                 <Link href="/training">
@@ -656,9 +623,9 @@ export default function PastTrainingsPage() {
         </section>
 
         {/* Footer Quote */}
-        <section className="py-12 bg-gradient-to-b from-slate-50 to-white border-t border-border">
+        <section className="py-8 sm:py-12 bg-gradient-to-b from-slate-50 to-white border-t border-border">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-muted-foreground italic text-lg animate-on-scroll">
+            <p className="text-muted-foreground italic text-base sm:text-lg animate-on-scroll">
               "OXYZ trainings are built on alignment, professionalism, and
               long-term impact."
             </p>

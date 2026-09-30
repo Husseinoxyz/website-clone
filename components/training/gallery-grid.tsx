@@ -34,13 +34,13 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {images.map((src, index) => (
           <button
             key={src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group bg-slate-100"
+            className="relative aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group bg-slate-100"
             aria-label={`${alt} ${index + 1}`}
           >
             <Image

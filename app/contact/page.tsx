@@ -215,7 +215,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Hero Section - Enhanced */}
-        <section className="relative w-full min-h-screen">
+        <section className="relative w-full min-h-[65vh] sm:min-h-screen">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -232,11 +232,11 @@ export default function ContactPage() {
           </div>
 
           {/* Content Container - Positioned at bottom */}
-          <div className="relative z-10 flex items-end min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20">
+          <div className="relative z-10 flex items-end min-h-[65vh] sm:min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-10 sm:pb-16 md:pb-20 lg:pb-24 pt-24 sm:pt-20">
             <div className="max-w-4xl w-full">
               
               {/* Badge */}
-              <div className="mb-6 animate-fade-in-up opacity-0 animation-delay-100">
+              <div className="mb-4 sm:mb-6 animate-fade-in-up opacity-0 animation-delay-100">
                 <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
                   <MessageCircle className="h-4 w-4" />
                   Contact Us
@@ -256,8 +256,8 @@ export default function ContactPage() {
               </div>
 
               {/* Description */}
-              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                Whether you have questions about the training, partnership opportunities, or want to learn more about our regenerative medicine ecosystem, we're here to help.
+              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
+                Questions about the training or partnership opportunities? We're here to help.
               </p>
 
               {/* CTA Buttons */}
@@ -291,18 +291,16 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Info & Form */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               {/* Contact Information */}
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl font-bold text-[#007A59] mb-4">
                   Get In Touch
                 </h2>
                 <p className="text-lg text-gold mb-10 leading-relaxed">
-                  Whether you have questions about the training, partnership
-                  opportunities, or want to learn more about our regenerative
-                  medicine ecosystem, we&apos;re here to help.
+                  Reach us by email, WhatsApp or the form below.
                 </p>
 
                 <div className="space-y-6">

@@ -94,7 +94,7 @@ export function TrainingSection() {
         }
       `}</style>
       
-      <section className="py-24 bg-background relative overflow-hidden">
+      <section className="py-14 sm:py-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 -z-20">
           <Image
             src="/images/sym/symposium_hero.jpg"
@@ -110,7 +110,7 @@ export function TrainingSection() {
           <div className="absolute inset-0 opacity-40 bg-[linear-gradient(135deg,rgba(0,0,0,0.04)_0%,rgba(0,0,0,0.04)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.04)_50%,rgba(0,0,0,0.04)_75%,transparent_75%,transparent_100%)] bg-[length:24px_24px]" />
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Content */}
             <div className="animate-on-scroll slide-in-left">
               <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-4 text-balance">
@@ -119,7 +119,7 @@ export function TrainingSection() {
               <p className="text-xl text-[#007A59] font-semibold mb-6">
                 A Medical & Strategic Alignment Platform
               </p>
-              <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed max-w-2xl">
+              <p className="text-gold text-lg sm:text-2xl mb-6 leading-relaxed max-w-2xl">
                 An invitation-only forum for doctors and healthcare leaders to
                 align on clinical standards, systems, and long-term collaboration.
               </p>

@@ -130,16 +130,16 @@ export default function WhyWorkWithUsPage() {
         {/* Hero Section */}
         <section className="relative w-full overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-            <div className="relative flex items-center bg-teal px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1 text-white">
+            <div className="relative flex items-center bg-teal px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-0 order-2 lg:order-1 text-white">
               <div className="mx-auto max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm mb-6">
                   <Handshake className="w-4 h-4" />
                   <span>Partnership Opportunities</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
                   Why Work With Us
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-6 sm:mb-8">
                   Join the premier global network dedicated to advancing regenerative medicine
                   and transforming patient outcomes worldwide.
                 </p>
@@ -157,7 +157,7 @@ export default function WhyWorkWithUsPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
+            <div className="relative min-h-[220px] sm:min-h-[360px] lg:min-h-[70vh] order-1 lg:order-2">
               <Image
                 src="/images/partnership-hero.jpg"
                 alt="Partnership"
@@ -172,12 +172,12 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-muted">
+        <section className="py-10 sm:py-16 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-gold mb-2">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold mb-2">
                     {stat.value}
                   </div>
                   <div className="text-muted-foreground">{stat.label}</div>
@@ -188,9 +188,9 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20">
+        <section className="py-12 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Partnership Benefits
               </h2>
@@ -222,9 +222,9 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-20 bg-muted">
+        <section className="py-12 sm:py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 How Partnership Works
               </h2>
@@ -270,9 +270,9 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* Partnership Tiers */}
-        <section className="py-20">
+        <section className="py-12 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Partnership Tiers
               </h2>
@@ -332,9 +332,9 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 bg-muted">
+        <section className="py-12 sm:py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Partner Success Stories
               </h2>
@@ -367,7 +367,7 @@ export default function WhyWorkWithUsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-teal text-white">
+        <section className="py-12 sm:py-20 bg-teal text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Target className="w-16 h-16 mx-auto mb-6 text-gold" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">

@@ -148,7 +148,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
   return (
     <section className="bg-white w-full relative overflow-hidden border-b border-slate-100 pt-20 pb-0">
       {/* Top Banner Notice */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#005c43] via-[#007A59] to-[#004d37] text-white py-3 px-4 text-center font-bold text-[11px] sm:text-xs md:text-sm tracking-wider flex items-center justify-center gap-2.5 shadow-md w-full border-b border-[#CDB06A]/20">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#005c43] via-[#007A59] to-[#004d37] text-white py-2.5 sm:py-3 px-4 text-center font-bold text-[11px] sm:text-xs md:text-sm tracking-wider flex items-center justify-center gap-2.5 shadow-md w-full border-b border-[#CDB06A]/20">
         <style jsx>{`
           @keyframes shimmer {
             0% { background-position: -200% 0; }
@@ -164,9 +164,9 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
         {/* Animated ambient light glow behind text */}
         <div className="absolute inset-0 shimmer-bg pointer-events-none" />
 
-        <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-3.5 gap-y-2 leading-relaxed max-w-7xl mx-auto">
-          <Calendar className="h-4 w-4 text-[#CDB06A] shrink-0 animate-bounce" />
-          <span className="text-white/95 font-bold text-lg">
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-3.5 gap-y-1.5 leading-relaxed max-w-7xl mx-auto">
+          <Calendar className="hidden sm:block h-4 w-4 text-[#CDB06A] shrink-0" />
+          <span className="text-white/95 font-semibold text-sm sm:text-base md:text-lg leading-snug">
             {isArabic ? (
               <>
                 ادخل عالم الخلايا الجذعية، الطب البيولوجي وعلاجات الببتيدات.{" "}
@@ -184,14 +184,14 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
             )}
           </span>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
-          <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3.5 py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
+          <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
             {isArabic ? "24-20 نوفمبر 2026 • كوالالمبور، ماليزيا" : "Nov 20-24, 2026 • Kuala Lumpur, Malaysia"}
           </span>
         </div>
       </div>
 
       <div className="relative w-full overflow-hidden group">
-        <div className="relative w-full min-h-[500px] md:min-h-[650px] lg:min-h-[720px] bg-[#FAF6ED] flex flex-col items-center justify-start pt-0 pb-10 md:pb-14">
+        <div className="relative w-full min-h-[500px] md:min-h-[650px] lg:min-h-[720px] bg-[#FAF6ED] flex flex-col items-center justify-start pt-0 pb-12 md:pb-14">
           {/* Blurred Background Layer - Current slide image blurred */}
           <div className="absolute inset-0 overflow-hidden select-none pointer-events-none">
             <Image
@@ -205,7 +205,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
             <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
           </div>
 
-          <div className="relative w-full max-w-[1550px] mx-auto flex flex-col items-center justify-start gap-3 sm:gap-6 px-4 sm:px-6 md:px-8 z-10 pt-2 md:pt-4">
+          <div className="relative w-full max-w-[1550px] mx-auto flex flex-col items-center justify-start gap-4 sm:gap-6 px-4 sm:px-6 md:px-8 z-10 pt-3 md:pt-4">
             <div
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
@@ -223,7 +223,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
             </div>
 
             {/* Register & Discover Buttons */}
-            <div className="z-20 flex flex-row items-center gap-4 w-max mt-2">
+            <div className="z-20 flex flex-row items-center gap-3 sm:gap-4 w-max">
               <Link href="/register">
                 <button
                   type="button"

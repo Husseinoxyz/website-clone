@@ -115,12 +115,12 @@ export default function FiveDModelPage() {
         {/* Hero */}
         <section className="relative w-full pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
-            <div className="relative flex items-center bg-gold px-4 sm:px-6 lg:px-8 py-16 lg:py-0 order-2 lg:order-1">
+            <div className="relative flex items-center bg-gold px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-0 order-2 lg:order-1">
               <div className="mx-auto max-w-2xl">
-                <h1 className="text-4xl sm:text-5xl font-bold text-teal mb-6">
+                <h1 className="text-3xl sm:text-5xl font-bold text-teal mb-4 sm:mb-6">
                   The OXYZ 5D Regenerative Medical Model
                 </h1>
-                <p className="text-xl text-white/90 leading-relaxed mb-6">
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
                   At the core of OXYZ lies the 5D Regenerative Medical Model, a
                   structured framework guiding patient care, clinical decisions,
                   and operational consistency.
@@ -131,7 +131,7 @@ export default function FiveDModelPage() {
               </div>
             </div>
 
-            <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[80vh] order-1 lg:order-2">
+            <div className="relative min-h-[240px] sm:min-h-[420px] lg:min-h-[80vh] order-1 lg:order-2">
               <Image
                 src="/images/5d_hero.png"
                 alt="The OXYZ 5D Regenerative Medical Model"
@@ -146,33 +146,32 @@ export default function FiveDModelPage() {
         </section>
 
         {/* Introduction */}
-        <section className="py-24 bg-background">
+        <section className="py-14 sm:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
                 One Model. Consistent Outcomes.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                This framework ensures every OXYZ-aligned practice delivers
-                consistent, reproducible, and scalable medical outcomes. Medical
-                clarity before intervention, responsible regenerative
-                application, and consistent patient journeys across all centers.
+                Medical clarity before intervention, responsible regenerative
+                application and consistent patient journeys across every
+                OXYZ-aligned practice.
               </p>
             </div>
           </div>
         </section>
 
         {/* The 5 Stages */}
-        <section className="py-24 bg-[#F7F4ED]">
+        <section className="py-14 sm:py-24 bg-[#F7F4ED]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 The Five Dimensions
               </h2>
             </div>
 
           </div>
-          <div className="space-y-10">
+          <div className="space-y-4 sm:space-y-10">
             {stages.map((stage, index) => {
               const isEven = index % 2 === 0;
 
@@ -182,7 +181,7 @@ export default function FiveDModelPage() {
                   className="grid gap-0 overflow-hidden bg-[#FCFBF8] border-y border-[#E9E1CF] lg:grid-cols-12"
                 >
                   <div
-                    className={`relative min-h-[220px] sm:min-h-[260px] ${isEven
+                    className={`relative min-h-[160px] sm:min-h-[260px] ${isEven
                         ? "order-2 lg:order-1 lg:col-span-5 lg:col-start-1"
                         : "order-2 lg:order-3 lg:col-span-5 lg:col-start-8"
                       }`}
@@ -197,12 +196,13 @@ export default function FiveDModelPage() {
                     <div className="absolute inset-0 bg-teal/20 mix-blend-multiply" />
                   </div>
                   <div
-                    className={`order-3 lg:order-2 px-6 py-8 sm:px-10 sm:py-10 ${isEven
+                    className={`order-3 lg:order-2 px-5 py-6 sm:px-10 sm:py-10 ${isEven
                         ? "lg:col-span-5 lg:col-start-6"
                         : "lg:col-span-5 lg:col-start-3"
                       }`}
                   >
                     <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+                      <span className="lg:hidden">{stage.number} · </span>
                       {stage.title}
                     </p>
                     <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-teal">
@@ -211,7 +211,7 @@ export default function FiveDModelPage() {
                     <p className="mt-4 text-sm sm:text-base text-foreground/80 leading-relaxed">
                       {stage.description}
                     </p>
-                    <ul className="mt-6 space-y-2 text-sm text-foreground/80">
+                    <ul className="mt-4 sm:mt-6 space-y-2 text-sm text-foreground/80">
                       {stage.details.map((detail) => (
                         <li key={detail} className="flex items-start gap-3">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-teal flex-shrink-0" />
@@ -221,7 +221,7 @@ export default function FiveDModelPage() {
                     </ul>
                   </div>
                   <div
-                    className={`flex items-center justify-center min-h-[220px] sm:min-h-[260px] ${isEven
+                    className={`hidden lg:flex items-center justify-center min-h-[260px] ${isEven
                         ? "order-1 lg:order-3 lg:col-span-2 lg:col-start-11"
                         : "order-1 lg:order-1 lg:col-span-2 lg:col-start-1"
                       } ${isEven ? "bg-teal" : "bg-gold"}`}
@@ -237,17 +237,16 @@ export default function FiveDModelPage() {
         </section>
 
         {/* Medical Consistency */}
-        <section className="py-24 bg-teal-dark text-secondary-foreground">
+        <section className="py-14 sm:py-24 bg-teal-dark text-secondary-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   A Model Built for Medical Consistency
                 </h2>
-                <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-                  The OXYZ 5D Model is not a flexible concept. It is a
-                  standardised clinical system. Across all OXYZ-aligned
-                  practices, it ensures:
+                <p className="text-base sm:text-lg text-secondary-foreground/80 mb-6 sm:mb-8 leading-relaxed">
+                  A standardised clinical system that ensures, across every
+                  OXYZ-aligned practice:
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit) => (
@@ -259,18 +258,13 @@ export default function FiveDModelPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-secondary-foreground/80 mt-8 leading-relaxed">
-                  This consistency allows regenerative medicine to be delivered
-                  responsibly at scale, without dilution of standards.
-                </p>
               </div>
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-secondary-foreground mb-6">
                   A Platform for Growth
                 </h2>
-                <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-                  The 5D Regenerative Model also functions as the foundation for
-                  institutional growth and expansion:
+                <p className="text-base sm:text-lg text-secondary-foreground/80 mb-6 sm:mb-8 leading-relaxed">
+                  The same model is the foundation for institutional growth:
                 </p>
                 <ul className="space-y-4">
                   {platforms.map((platform) => (
@@ -282,39 +276,29 @@ export default function FiveDModelPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-secondary-foreground/80 mt-8 leading-relaxed">
-                  By structuring regenerative medicine correctly, OXYZ enables
-                  both clinical excellence and institutional expansion.
-                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Our Commitment */}
-        <section className="py-24 bg-background">
+        <section className="py-14 sm:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 Our Commitment
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                 Regenerative medicine carries responsibility. Structure ensures
                 innovation serves patients, not trends.
               </p>
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                The OXYZ 5D Biological Regenerative Medical Model reflects our
-                commitment to medical integrity, patient-centred outcomes,
-                ethical practice, and sustainable, long-term healthcare
-                development.
-              </p>
 
-              <div className="bg-muted rounded-lg p-8 mb-12">
-                <div className="flex flex-wrap justify-center gap-4">
+              <div className="bg-muted rounded-lg p-4 sm:p-8 mb-8 sm:mb-12">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                   {stages.map((stage) => (
                     <div
                       key={stage.title}
-                      className={`${stage.color} text-foreground px-6 py-3 rounded-full font-semibold`}
+                      className={`${stage.color} text-foreground px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-full font-semibold`}
                     >
                       {stage.title}
                     </div>

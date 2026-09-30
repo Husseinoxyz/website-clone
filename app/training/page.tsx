@@ -78,22 +78,22 @@ const pathways = [
   {
     title: "Clients Collaboration",
     description:
-      "For professionals with direct access to clients requiring regenerative or holistic medical care, seeking structured, ethical referral into advanced clinical environments.",
+      "Structured, ethical referral of clients into advanced regenerative care.",
   },
   {
     title: "Clinical Product Integration",
     description:
-      "For clinics and practitioners with active client bases, looking to integrate science-backed regenerative and wellness products as part of ongoing clinical care.",
+      "Science-backed regenerative and wellness products for ongoing clinical care.",
   },
   {
     title: "Territory-Based Distribution",
     description:
-      "For organizations with proven regulatory, importation, and regional marketing capabilities, capable of developing medical brands responsibly within defined territories.",
+      "Responsible regional development of medical brands for qualified distributors.",
   },
   {
     title: "Licensed OXYZ Regenerative Centers",
     description:
-      "For doctors and clinic groups seeking to expand or transform their practice by adopting the OXYZ 5D Biological Regenerative Medical Model.",
+      "Transform your practice with the OXYZ 5D Biological Regenerative Medical Model.",
   },
 ];
 
@@ -206,7 +206,7 @@ export default function TrainingPage() {
       <Header />
       <main>
         {/* Hero Section - Matching Home Style */}
-        <section className="relative w-full min-h-screen">
+        <section className="relative w-full min-h-[90vh] sm:min-h-screen">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -223,7 +223,7 @@ export default function TrainingPage() {
           </div>
 
           {/* Content Container - Vertically & Horizontally Centered */}
-          <div className="relative z-10 flex items-center justify-center text-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pt-36 pb-20">
+          <div className="relative z-10 flex items-center justify-center text-center min-h-[90vh] sm:min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pt-28 sm:pt-36 pb-14 sm:pb-20">
             <div className="max-w-3xl w-full mx-auto">
               
               {/* Main Title */}
@@ -276,26 +276,26 @@ export default function TrainingPage() {
         <CountdownSection />
 
         {/* Medical Imperative */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                   The Medical Imperative
                 </h2>
-                <p className="text-gold text-xl sm:text-2xl mb-6 leading-relaxed">
+                <p className="text-gold text-lg sm:text-2xl mb-6 leading-relaxed">
                   Regenerative medicine is redefining modern healthcare by
                   moving beyond symptom management and focusing on cellular
                   repair, tissue function, and better long-term patient
                   outcomes.
                 </p>
-                <p className="text-gold text-xl sm:text-2xl mb-8 leading-relaxed">
+                <p className="text-gold text-lg sm:text-2xl mb-8 leading-relaxed">
                   To achieve this responsibly, regenerative medicine requires
                   medical discipline, ethical practice, structured clinical
                   protocols, and careful implementation.
                 </p>
-                <div className="bg-white rounded-lg p-6 border-l-4 border-gold shadow-sm">
-                  <p className="text-[#007A59] text-lg sm:text-xl font-medium italic">
+                <div className="bg-white rounded-lg p-5 sm:p-6 border-l-4 border-gold shadow-sm">
+                  <p className="text-[#007A59] text-base sm:text-xl font-medium italic">
                     This training exists to address how regenerative medicine
                     should be practiced, integrated, and expanded, not as a
                     trend, but as a sustainable medical framework.
@@ -337,7 +337,7 @@ export default function TrainingPage() {
 
 
         {/* Who Is This For */}
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-14 sm:py-24 bg-background relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/about/Global_Presence.jpg"
@@ -349,7 +349,7 @@ export default function TrainingPage() {
             <div className="absolute inset-0 bg-black/40" />
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
                 Who This Training Is For
               </h2>
@@ -359,16 +359,16 @@ export default function TrainingPage() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-10 sm:mb-16">
               {whoIsFor.map((item, idx) => (
                 <div
                   key={item.text}
-                  className={`animate-on-scroll stagger-${idx + 1} scale-in bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                  className={`animate-on-scroll stagger-${idx + 1} scale-in bg-white rounded-xl p-4 sm:p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
                 >
-                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-8 w-8 text-gold" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <item.icon className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />
                   </div>
-                  <p className="font-medium text-teal">{item.text}</p>
+                  <p className="text-sm sm:text-base font-medium text-teal">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -397,14 +397,14 @@ export default function TrainingPage() {
 
 
         {/* Scientific Focus */}
-        <section className="py-24 bg-white text-slate-800">
+        <section className="py-14 sm:py-24 bg-white text-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
                   Scientific & Medical Focus
                 </h2>
-                <p className="text-[#B8964A] text-xl sm:text-2xl mb-8 leading-relaxed font-medium">
+                <p className="text-[#B8964A] text-lg sm:text-2xl mb-8 leading-relaxed font-medium">
                   The emphasis is on medical depth, clarity, and governance,
                   not promotional medicine.
                 </p>
@@ -412,7 +412,7 @@ export default function TrainingPage() {
                   {scientificFocus.map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-start gap-3`}>
                       <CheckCircle2 className="h-6 w-6 text-[#CDB06A] flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-600 text-lg">
+                      <span className="text-slate-600 text-base sm:text-lg">
                         {item}
                       </span>
                     </li>
@@ -477,16 +477,14 @@ export default function TrainingPage() {
 
 
         {/* Strategic Pathways */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
                 Strategic Pathways Exploration
               </h2>
-              <p className="text-gold text-xl sm:text-2xl leading-relaxed">
-                When regenerative medicine is practiced with integrity, natural
-                ecosystems emerge. This training introduces how medical
-                expertise can evolve into structured collaboration pathways.
+              <p className="text-gold text-lg sm:text-2xl leading-relaxed">
+                How medical expertise can grow into structured collaboration.
               </p>
             </div>
 
@@ -494,12 +492,12 @@ export default function TrainingPage() {
               {pathways.map((pathway, idx) => (
                 <div
                   key={pathway.title}
-                  className={`animate-on-scroll stagger-${(idx % 4) + 1} scale-in bg-gradient-to-br from-slate-50 to-white rounded-xl p-8 border-2 border-slate-100 hover:border-gold/50 transition-all duration-300 hover:shadow-lg`}
+                  className={`animate-on-scroll stagger-${(idx % 4) + 1} scale-in bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 sm:p-8 border-2 border-slate-100 hover:border-gold/50 transition-all duration-300 hover:shadow-lg`}
                 >
                   <h3 className="text-xl font-bold text-teal mb-3">
                     {pathway.title}
                   </h3>
-                  <p className="text-gold text-lg">{pathway.description}</p>
+                  <p className="text-gold text-base sm:text-lg">{pathway.description}</p>
                 </div>
               ))}
             </div>
@@ -527,7 +525,7 @@ export default function TrainingPage() {
         </section>
 
         {/* Training 2025 Overview */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="py-14 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
@@ -535,10 +533,9 @@ export default function TrainingPage() {
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                     2025 Training Overview
                   </h2>
-                  <p className="text-gold text-xl sm:text-2xl max-w-2xl">
-                    A look back at our 2025 medical alignment forum, featuring
-                    focused clinical sessions, international collaboration, and
-                    practical regenerative discussions.
+                  <p className="text-gold text-lg sm:text-2xl max-w-2xl">
+                    Clinical sessions and international collaboration from our
+                    2025 forum.
                   </p>
                 </div>
                 <Link href="/past-trainings">
@@ -591,7 +588,7 @@ export default function TrainingPage() {
 
 
         {/* Training 2023 Overview */}
-        <section className="py-24 bg-white">
+        <section className="py-14 sm:py-24 bg-white">
           <div className="w-full">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
@@ -599,10 +596,8 @@ export default function TrainingPage() {
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
                     2023 Training Overview
                   </h2>
-                  <p className="text-gold text-xl sm:text-2xl max-w-2xl">
-                    Highlights from the 2023 training focused on medical
-                    governance, structured clinical frameworks, and ecosystem
-                    building.
+                  <p className="text-gold text-lg sm:text-2xl max-w-2xl">
+                    Highlights from our 2023 training on clinical frameworks.
                   </p>
                 </div>
                 <Link href="/past-trainings">
@@ -654,7 +649,7 @@ export default function TrainingPage() {
 
 
         {/* CTA */}
-        <section className="py-24 text-secondary-foreground relative overflow-hidden">
+        <section className="py-14 sm:py-24 text-secondary-foreground relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
@@ -666,13 +661,12 @@ export default function TrainingPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl p-12 text-center animate-on-scroll">
+            <div className="rounded-2xl p-2 sm:p-12 text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
                 Ready to Join Summit 2026?
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
-                This training is intended for professionals seeking depth,
-                alignment, and long-term impact. Apply now to secure your place.
+                Seats are limited. Apply now to secure your place.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/register">

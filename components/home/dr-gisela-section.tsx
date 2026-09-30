@@ -59,10 +59,10 @@ export function DrGiselaSection() {
         .delay-300 { transition-delay: 300ms; }
       `}</style>
 
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-white via-[#FAF6ED]/30 to-white overflow-hidden border-b border-slate-100 relative">
+      <section className="py-14 sm:py-20 lg:py-32 bg-gradient-to-b from-white via-[#FAF6ED]/30 to-white overflow-hidden border-b border-slate-100 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Mobile Title (Only visible on sm/md, hidden on lg) */}
-          <div className="lg:hidden animate-on-scroll mb-8">
+          <div className="lg:hidden animate-on-scroll mb-6">
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
               Meet one of our Primary speakers
             </span>
@@ -113,7 +113,7 @@ export function DrGiselaSection() {
             </div>
 
             {/* Right Images (Creative 3-image layout) */}
-            <div className="order-1 lg:order-2 relative h-[500px] sm:h-[600px] w-full animate-on-scroll delay-200 mt-2 lg:mt-0">
+            <div className="order-1 lg:order-2 relative h-[360px] sm:h-[600px] w-full animate-on-scroll delay-200 mt-2 lg:mt-0">
               {/* Decorative Background blob */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#E6F3EF] rounded-full blur-[100px] opacity-60 -z-10" />
 

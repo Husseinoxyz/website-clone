@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="relative py-24 text-secondary-foreground overflow-hidden">
+    <section className="relative py-16 sm:py-24 text-secondary-foreground overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg-2.jpg"

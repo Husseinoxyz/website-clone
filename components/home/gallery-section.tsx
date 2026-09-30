@@ -182,27 +182,26 @@ export function GallerySection() {
         }
       `}</style>
 
-      <section className="py-24 bg-gradient-to-b from-[#FAF6ED] via-white to-slate-50">
+      <section className="py-14 sm:py-24 bg-gradient-to-b from-[#FAF6ED] via-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 animate-on-scroll">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
               Past International Training Highlights
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              A glimpse into our medical and professional community. The OXYZ
-              International Stem Cell Training Series brings together medical professionals,
-              clinic owners, and healthcare leaders from different regions.
+              The OXYZ International Stem Cell Training Series brings together
+              doctors, clinic owners and healthcare leaders from around the world.
             </p>
           </div>
 
           {/* Gallery Grid (Styled as separated rounded banners) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-16 animate-on-scroll">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8 mb-10 sm:mb-16 animate-on-scroll">
             {galleryImages.map((image, index) => (
               <button
                 key={index}
                 type="button"
                 onClick={() => setSelectedImage(image)}
-                className="relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-[24px] border border-slate-200/80 shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
+                className={`${index === galleryImages.length - 1 && galleryImages.length % 2 === 1 ? "hidden md:block " : ""}relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl sm:rounded-[24px] border border-slate-200/80 shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl`}
               >
                 <div className="aspect-[4/3] relative">
                   <Image
@@ -223,8 +222,8 @@ export function GallerySection() {
           </div>
 
           {/* Participants Info */}
-          <div className="bg-white border border-[#CDB06A]/30 rounded-2xl p-8 mb-12 shadow-xl animate-on-scroll">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div className="bg-white border border-[#CDB06A]/30 rounded-2xl p-6 sm:p-8 mb-10 sm:mb-12 shadow-xl animate-on-scroll">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div className="animate-on-scroll stagger-1 scale-in">
                 <AnimatedCounter value={6} suffix="+" duration={2000} />
                 <p className="text-slate-600 mt-2 font-medium">Continents Represented</p>

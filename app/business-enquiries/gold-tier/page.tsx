@@ -147,7 +147,7 @@ export default function GoldTierPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <h2 className="mt-2 text-3xl font-bold text-[#0f312b] sm:text-5xl">What You Receive in Gold Tier</h2>
 
-          <div className="mt-8 grid gap-12 lg:grid-cols-2">
+          <div className="mt-8 grid gap-8 lg:gap-12 lg:grid-cols-2">
             <div>
               <h3 className="text-xl font-bold text-[#0f312b]">Everything in the Global Regenerative Medicine Summit Package (Silver Tier)</h3>
               <Accordion type="multiple" className="mt-4 w-full">

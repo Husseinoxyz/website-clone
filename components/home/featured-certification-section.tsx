@@ -24,7 +24,7 @@ export function FeaturedCertificationSection() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 mx-auto max-w-3xl min-h-[420px] sm:min-h-[480px] md:min-h-[520px] flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-12">
+      <div className="relative z-10 mx-auto max-w-3xl min-h-[360px] sm:min-h-[480px] md:min-h-[520px] flex flex-col justify-center items-center text-center p-6 sm:p-10 md:p-12">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#CDB06A] tracking-tight leading-tight mb-2 font-sans drop-shadow-lg">
           Stem Cell & Biological Medicine Certification
