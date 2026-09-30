@@ -210,7 +210,7 @@ function ArabicRegistrationContent() {
         <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <Link href="/ar" className="inline-flex items-center text-teal-700 hover:text-teal-950 font-medium transition-colors mb-6">
-            <ArrowRight className="ml-2 h-4 w-4" /> العودة للصفحة الرئيسية
+            <ArrowLeft className="me-2 h-4 w-4" /> العودة للصفحة الرئيسية
           </Link>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-[#CDB06A] drop-shadow-sm">
             سجل الآن في أكاديمية الطب التجديدي

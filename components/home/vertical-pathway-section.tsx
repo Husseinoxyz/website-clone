@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Play, X } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 const pathways = [
   {
@@ -41,6 +42,7 @@ const pathways = [
 ];
 
 function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlayClick: (url: string) => void }) {
+  const { t, isAr } = useLang();
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -104,10 +106,10 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
       <div className="absolute top-3.5 left-3.5 z-30">
         <button
           onClick={handlePlayClick}
-          aria-label="Play video"
+          aria-label={t("Play video", "تشغيل الفيديو")}
           className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-[#CDB06A] text-white flex items-center justify-center shadow-lg transition-all duration-300 transform scale-100 active:scale-95 group-hover:bg-[#007A59]/90 group-hover:border-white"
         >
-          <Play className="h-4 w-4 fill-white text-white ml-0.5" />
+          <Play className="h-4 w-4 fill-white text-white ms-0.5" />
         </button>
       </div>
 
@@ -123,7 +125,7 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
               OXYZ
             </span>
             <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
-              BUSINESS TALK
+              {t("BUSINESS TALK", "حوارات الأعمال")}
             </h3>
           </>
         )}
@@ -134,10 +136,10 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
               OXYZ
             </span>
             <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-wider text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
-              AESTHETIC
+              {t("AESTHETIC", "الطب")}
             </h3>
             <span className="text-[10px] sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
-              MEDICINE
+              {t("MEDICINE", "التجميلي")}
             </span>
           </>
         )}
@@ -148,10 +150,10 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
               OXYZ
             </span>
             <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
-              CLINICAL
+              {t("CLINICAL", "الشهادات")}
             </h3>
             <span className="text-[10px] sm:text-sm font-extrabold tracking-[0.15em] sm:tracking-[0.3em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
-              CERTIFICATIONS
+              {t("CERTIFICATIONS", "السريرية")}
             </span>
           </>
         )}
@@ -159,13 +161,13 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
         {item.type === "diploma" && (
           <>
             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#CDB06A] uppercase mb-0.5 drop-shadow-md">
-              REGENERATIVE
+              {t("REGENERATIVE", "تدريب")}
             </span>
             <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-tight text-white font-sans drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
-              MEDICINE
+              {t("MEDICINE", "الطب")}
             </h3>
             <span className="text-[10px] sm:text-sm font-extrabold tracking-[0.15em] sm:tracking-[0.35em] text-[#CDB06A] uppercase drop-shadow-md mt-1">
-              TRAINING
+              {t("TRAINING", "التجديدي")}
             </span>
           </>
         )}
@@ -176,10 +178,10 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
               OXYZ
             </span>
             <h3 className="text-lg sm:text-3xl lg:text-2xl xl:text-3xl font-black uppercase tracking-[0.15em] text-white font-sans mb-1 drop-shadow-2xl group-hover:text-[#CDB06A] transition-colors duration-300">
-              ONLINE
+              {t("ONLINE", "التعلّم")}
             </h3>
             <span className="text-[10px] sm:text-sm font-semibold tracking-[0.15em] sm:tracking-[0.3em] text-white/90 uppercase drop-shadow-md">
-              LEARNING
+              {t("LEARNING", "عن بُعد")}
             </span>
           </>
         )}
@@ -189,6 +191,7 @@ function PathwayCard({ item, onPlayClick }: { item: (typeof pathways)[0]; onPlay
 }
 
 export function VerticalPathwaySection() {
+  const { t, isAr } = useLang();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
@@ -197,13 +200,16 @@ export function VerticalPathwaySection() {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-sm">
-            OXYZ ACADEMY
+            {t("OXYZ ACADEMY", "أكاديمية OXYZ")}
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#CDB06A] tracking-tight mb-4">
-            Advancing Regenerative Medicine Through Education & Innovation
+            {t("Advancing Regenerative Medicine Through Education & Innovation", "نرتقي بالطب التجديدي عبر التعليم والابتكار")}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-            International certification, hands-on clinical training and clinic implementation in one physician development platform.
+            {t(
+              "International certification, hands-on clinical training and clinic implementation in one physician development platform.",
+              "شهادات دولية، وتدريب سريري عملي، ودعم لتطبيق الطب التجديدي في عيادتك، ضمن منصة واحدة لتطوير الأطباء."
+            )}
           </p>
         </div>
 
@@ -227,7 +233,7 @@ export function VerticalPathwaySection() {
             <button
               onClick={() => setActiveVideo(null)}
               className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/65 text-white hover:text-white/80 flex items-center justify-center transition-colors"
-              aria-label="Close video player"
+              aria-label={t("Close video player", "إغلاق مشغّل الفيديو")}
             >
               <X className="h-5 w-5" />
             </button>

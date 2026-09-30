@@ -9,6 +9,8 @@ import { GalleryGrid } from "@/components/training/gallery-grid";
 import { GalleryLoadMore } from "@/components/training/gallery-load-more";
 import { ArrowRight, Sparkles, Camera, Globe, Users, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp";
+import { useLang } from "@/lib/i18n";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -85,12 +87,13 @@ const gallery2023 = Array.from({ length: 12 }, (_, index) => {
 });
 
 const stats = [
-  { icon: Globe, value: "6", label: "Continents" },
-  { icon: Users, value: "100+", label: "Professionals" },
-  { icon: Camera, value: "20+", label: "Countries" },
+  { icon: Globe, value: "6", label: "Continents", labelAr: "قارات" },
+  { icon: Users, value: "100+", label: "Professionals", labelAr: "مهني" },
+  { icon: Camera, value: "20+", label: "Countries", labelAr: "دولة" },
 ];
 
 export default function GalleryPage() {
+  const { t, isAr } = useLang();
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   useScrollAnimation();
 
@@ -161,7 +164,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/gallery_hero.jpg"
-              alt="OXYZ training gathering"
+              alt={t("OXYZ training gathering", "لقاء تدريب OXYZ")}
               fill
               priority
               sizes="100vw"
@@ -180,7 +183,7 @@ export default function GalleryPage() {
               <div className="mb-4 sm:mb-6 animate-fade-in-up opacity-0 animation-delay-100">
                 <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
                   <Sparkles className="h-4 w-4" />
-                  Gallery
+                  {t("Gallery", "معرض الصور")}
                 </div>
               </div>
 
@@ -188,20 +191,23 @@ export default function GalleryPage() {
               <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
                 <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    Moments from the
+                    {t("Moments from the", "لحظات من")}
                   </span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-                    OXYZ Trainings
+                    {t("OXYZ Trainings", "تدريبات OXYZ")}
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                    A Visual Archive of Clinical Excellence
+                    {t("A Visual Archive of Clinical Excellence", "أرشيف مصوّر للتميّز السريري")}
                   </span>
                 </h1>
               </div>
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                Clinical exchange and the global community shaping regenerative medicine.
+                {t(
+                  "Clinical exchange and the global community shaping regenerative medicine.",
+                  "تبادل سريري ومجتمع عالمي يرسم ملامح الطب التجديدي."
+                )}
               </p>
 
               {/* Stats */}
@@ -211,7 +217,7 @@ export default function GalleryPage() {
                     <stat.icon className="h-5 w-5 text-gold" />
                     <div className="flex items-baseline gap-1">
                       <span className="text-xl font-bold text-white">{stat.value}</span>
-                      <span className="text-sm">{stat.label}</span>
+                      <span className="text-sm">{isAr ? stat.labelAr : stat.label}</span>
                     </div>
                   </div>
                 ))}
@@ -219,17 +225,17 @@ export default function GalleryPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
-                <Link href="/register" className="w-full sm:w-auto">
+                <Link href={isAr ? "/ar/register" : "/register"} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
                   >
-                    Register for 2026
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register for 2026", "سجّل في قمة 2026")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -239,7 +245,7 @@ export default function GalleryPage() {
                     variant="outline"
                     className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
                   >
-                    Request Scientific Program
+                    {t("Request Scientific Program", "اطلب البرنامج العلمي")}
                   </Button>
                 </Link>
               </div>
@@ -254,16 +260,18 @@ export default function GalleryPage() {
               <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between animate-on-scroll">
                 <div className="max-w-2xl">
                   <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4">
-                    Clinical depth meets strategic connection
+                    {t("Clinical depth meets strategic connection", "حيث يلتقي العمق السريري بالتواصل الاستراتيجي")}
                   </h2>
                   <p className="text-lg sm:text-2xl text-gold leading-relaxed">
-                    Each frame captures collaboration, discussion, and the
-                    standards that define the OXYZ ecosystem.
+                    {t(
+                      "Each frame captures collaboration, discussion, and the standards that define the OXYZ ecosystem.",
+                      "كل صورة توثّق التعاون والنقاش والمعايير التي تميّز منظومة OXYZ."
+                    )}
                   </p>
                 </div>
                 <div className="flex items-center gap-4 text-sm text-[#007A59]">
                   <span className="h-2 w-2 rounded-full bg-gold" />
-                  Updated with the latest international training highlights.
+                  {t("Updated with the latest international training highlights.", "محدَّث بأحدث لقطات التدريبات الدولية.")}
                 </div>
               </div>
             </div>
@@ -271,11 +279,11 @@ export default function GalleryPage() {
             <div className="mt-10 sm:mt-16 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h3 className="text-xl sm:text-2xl font-semibold text-[#007A59] mb-4 sm:mb-6">
-                  2025 International Training
+                  {t("2025 International Training", "التدريب الدولي 2025")}
                 </h3>
               </div>
               <GalleryLoadMore
-                alt="2025 training highlight"
+                alt={t("2025 training highlight", "من تدريب 2025")}
                 images={gallery2025.map((image) => image.src)}
                 initialCount={12}
               />
@@ -364,11 +372,11 @@ export default function GalleryPage() {
             <div className="mt-10 sm:mt-16 animate-on-scroll">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h3 className="text-xl sm:text-2xl font-semibold text-[#007A59] mb-4 sm:mb-6">
-                  2023 International Training
+                  {t("2023 International Training", "التدريب الدولي 2023")}
                 </h3>
               </div>
               <GalleryGrid
-                alt="2023 training highlight"
+                alt={t("2023 training highlight", "من تدريب 2023")}
                 images={gallery2023.map((image) => image.src)}
               />
             </div>
@@ -381,19 +389,20 @@ export default function GalleryPage() {
             <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-6 animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59]">
-                  Where strategy, science, and trust converge
+                  {t("Where strategy, science, and trust converge", "حيث تلتقي الاستراتيجية والعلم والثقة")}
                 </h2>
                 <p className="text-lg sm:text-2xl text-gold leading-relaxed">
-                  OXYZ international trainings are designed for meaningful exchange and
-                  clinical alignment, not mass attendance. The result is a
-                  focused environment where relationships are built with depth.
+                  {t(
+                    "OXYZ international trainings are designed for meaningful exchange and clinical alignment, not mass attendance. The result is a focused environment where relationships are built with depth.",
+                    "صُمّمت تدريبات OXYZ الدولية لتبادل هادف وتوافق سريري، لا لحضور جماهيري؛ فتكون النتيجة بيئة مركّزة تُبنى فيها العلاقات بعمق."
+                  )}
                 </p>
                 <div className="flex flex-wrap gap-3 text-sm">
                   {[
-                    "Clinical Standards",
-                    "Partner Alignment",
-                    "Executive Forums",
-                    "Medical Workshops",
+                    t("Clinical Standards", "المعايير السريرية"),
+                    t("Partner Alignment", "التوافق مع الشركاء"),
+                    t("Executive Forums", "ملتقيات تنفيذية"),
+                    t("Medical Workshops", "ورش عمل طبية"),
                   ].map((tag, idx) => (
                     <span
                       key={tag}
@@ -409,7 +418,7 @@ export default function GalleryPage() {
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <Image
                     src="/images/sym/home_g_4.jpg"
-                    alt="Strategic collaboration meeting"
+                    alt={t("Strategic collaboration meeting", "اجتماع للتعاون الاستراتيجي")}
                     width={640}
                     height={480}
                     className="h-full w-full object-cover"
@@ -425,7 +434,7 @@ export default function GalleryPage() {
                       >
                         <Image
                           src={src}
-                          alt="OXYZ training highlight"
+                          alt={t("OXYZ training highlight", "من تدريبات OXYZ")}
                           fill
                           className="object-cover hover:scale-105 transition-transform duration-300"
                         />
@@ -443,7 +452,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
-              alt="Next chapter background"
+              alt=""
               fill
               className="object-cover"
               sizes="100vw"
@@ -453,19 +462,22 @@ export default function GalleryPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Be Part of Summit 2026
+                {t("Be Part of Summit 2026", "كن جزءاً من قمة 2026")}
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8">
-                Register your interest and join the next cohort of leaders shaping the future of regenerative medicine.
+                {t(
+                  "Register your interest and join the next cohort of leaders shaping the future of regenerative medicine.",
+                  "سجّل اهتمامك وانضم إلى الدفعة القادمة من القادة الذين يرسمون مستقبل الطب التجديدي."
+                )}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <Button 
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link href="/past-trainings">
@@ -474,7 +486,7 @@ export default function GalleryPage() {
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-semibold px-8 bg-transparent"
                   >
-                    View Past Trainings
+                    {t("View Past Trainings", "شاهد التدريبات السابقة")}
                   </Button>
                 </Link>
               </div>
@@ -498,7 +510,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&controls=1&modestbranding=1&loop=1&playlist=${selectedVideo}&fs=1`}
-                title="Video Player"
+                title={t("Video Player", "مشغّل الفيديو")}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

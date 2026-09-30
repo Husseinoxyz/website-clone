@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useLang } from "@/lib/i18n";
 
 const doctors = [
   {
@@ -27,6 +28,7 @@ const doctors = [
 ];
 
 export function QuoteSection() {
+  const { t, isAr } = useLang();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeState, setFadeState] = useState("opacity-100 translate-x-0");
 
@@ -91,7 +93,7 @@ export function QuoteSection() {
             <div className={`absolute -bottom-8 sm:-bottom-12 lg:-bottom-16 left-0 right-0 mx-auto lg:left-auto lg:right-0 lg:mx-0 w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[460px] h-[288px] sm:h-[340px] lg:h-[500px] transition-all duration-500 ease-in-out ${fadeState}`}>
               <Image
                 src={currentDoctor.image}
-                alt={currentDoctor.name}
+                alt={t(currentDoctor.name, "طبيب من فريق OXYZ")}
                 fill
                 className="object-contain object-bottom scale-[1.15] sm:scale-[1.25] lg:scale-[1.45] origin-bottom"
                 sizes="(max-w-768px) 100vw, 460px"
@@ -108,14 +110,17 @@ export function QuoteSection() {
 
               <div className="flex flex-col gap-5">
                 <blockquote className="text-lg sm:text-xl lg:text-2xl font-serif italic font-light leading-relaxed text-slate-800 tracking-wide text-balance">
-                  &ldquo;Our mission is to enable physicians worldwide to provide safe regenerative medicine at the point of care, bringing tomorrow's medical innovations to patients today.&rdquo;
+                  {t(
+                    "“Our mission is to enable physicians worldwide to provide safe regenerative medicine at the point of care, bringing tomorrow's medical innovations to patients today.”",
+                    "«رسالتنا تمكين الأطباء حول العالم من تقديم طب تجديدي آمن في موقع الرعاية، لتصل ابتكارات الغد الطبية إلى المرضى اليوم.»"
+                  )}
                 </blockquote>
 
                 {/* Author Info */}
                 <div className="block mt-1">
                   <cite className="not-italic">
                     <span className="block font-bold text-lg text-[#007A59] tracking-wider mb-0.5">
-                      OXYZ INTERNATIONAL
+                      {t("OXYZ INTERNATIONAL", "OXYZ الدولية")}
                     </span>
                   </cite>
                 </div>

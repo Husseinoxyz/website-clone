@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, MousePointerClick } from "lucide-react";
+import { ArrowRight, MousePointerClick } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 import { useEffect, useState, useRef } from "react";
 
 // Custom Brand D Icon Component (Slanted 3-line concentric letter D, matching the brand asset exactly)
@@ -484,7 +485,9 @@ const contentPositions = [
   }
 ];
 
-export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) {
+export function FiveDModelSection({ isArabic: isArabicProp }: { isArabic?: boolean }) {
+  const { isAr } = useLang();
+  const isArabic = isArabicProp ?? isAr;
   const [activeIndex, setActiveIndex] = useState(-1); // Defaults to -1 (Overview)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -757,7 +760,7 @@ export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) 
                       <div className="mt-0.5">
                         {displayedStage.number === "5D" ? (
                           <span className="text-sm sm:text-base font-bold text-[#007A59] tracking-wide select-none">
-                            OXYZ Medical Model
+                            {isArabic ? "النموذج الطبي من OXYZ" : "OXYZ Medical Model"}
                           </span>
                         ) : (
                           renderBrandTitle(displayedStage.title, true, displayedStage.color, true)
@@ -784,7 +787,7 @@ export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) 
             </div>
 
             {/* Right Column: Responsive Interactive Segmented Cycle Diagram */}
-            <div className="relative flex items-center justify-center p-4 animate-on-scroll">
+            <div className="relative flex items-center justify-center p-4 animate-on-scroll" dir="ltr">
               <div
                 className="relative w-full max-w-[460px] aspect-square"
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -956,7 +959,7 @@ export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) 
                       <div className="absolute inset-[4%] flex items-center justify-center">
                         <img
                           src="/images/5D/5D.png"
-                          alt="5D Model Logo"
+                          alt={isArabic ? "شعار نموذج 5D" : "5D Model Logo"}
                           className="w-full h-full object-contain select-none pointer-events-none"
                           style={{ transform: "scale(2.8)" }}
                         />
@@ -999,11 +1002,7 @@ export function FiveDModelSection({ isArabic = false }: { isArabic?: boolean }) 
                 ) : (
                   "Explore the 5D Model"
                 )}
-                {isArabic ? (
-                  <ArrowLeft className="mr-2 h-5 w-5 animate-pulse" />
-                ) : (
-                  <ArrowRight className="ml-2 h-5 w-5 animate-pulse" />
-                )}
+                <ArrowRight className="ms-2 h-5 w-5 animate-pulse" />
               </Button>
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 mt-4 font-medium tracking-wide">

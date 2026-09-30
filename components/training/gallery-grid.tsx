@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 type GalleryGridProps = {
   images: string[];
@@ -10,6 +11,7 @@ type GalleryGridProps = {
 };
 
 export function GalleryGrid({ images, alt }: GalleryGridProps) {
+  const { t, isAr } = useLang();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
             {/* Centered "VIEW HIGHLIGHT" pill button */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="bg-[#007A59] text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full tracking-widest uppercase shadow-lg">
-                View Highlight
+                {t("View Highlight", "عرض الصورة")}
               </span>
             </div>
           </button>
@@ -68,7 +70,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
             type="button"
             onClick={() => setActiveIndex(null)}
             className="absolute top-6 right-6 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-            aria-label="Close gallery"
+            aria-label={t("Close gallery", "إغلاق المعرض")}
           >
             <X className="h-5 w-5" />
           </button>
@@ -80,7 +82,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
               )
             }
             className="absolute left-4 sm:left-8 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-            aria-label="Previous image"
+            aria-label={t("Previous image", "الصورة السابقة")}
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -102,7 +104,7 @@ export function GalleryGrid({ images, alt }: GalleryGridProps) {
               )
             }
             className="absolute right-4 sm:right-8 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-            aria-label="Next image"
+            aria-label={t("Next image", "الصورة التالية")}
           >
             <ChevronRight className="h-6 w-6" />
           </button>

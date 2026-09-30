@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 import { useEffect } from "react";
+import { useLang } from "@/lib/i18n";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -41,6 +42,7 @@ function useScrollAnimation() {
 }
 
 export function TrainingSection() {
+  const { t, isAr } = useLang();
   useScrollAnimation();
 
   return (
@@ -98,7 +100,7 @@ export function TrainingSection() {
         <div className="absolute inset-0 -z-20">
           <Image
             src="/images/sym/symposium_hero.jpg"
-            alt="OXYZ Training background"
+            alt=""
             fill
             className="object-cover blur-sm"
             sizes="100vw"
@@ -114,41 +116,43 @@ export function TrainingSection() {
             {/* Content */}
             <div className="animate-on-scroll slide-in-left">
               <h2 className="text-3xl sm:text-4xl font-bold text-gold mb-4 text-balance">
-                Global Regenerative Medicine Summit 2026
+                {t("Global Regenerative Medicine Summit 2026", "القمة العالمية للطب التجديدي 2026")}
               </h2>
               <p className="text-xl text-[#007A59] font-semibold mb-6">
-                A Medical & Strategic Alignment Platform
+                {t("A Medical & Strategic Alignment Platform", "منصة للتوافق الطبي والاستراتيجي")}
               </p>
               <p className="text-gold text-lg sm:text-2xl mb-6 leading-relaxed max-w-2xl">
-                An invitation-only forum for doctors and healthcare leaders to
-                align on clinical standards, systems, and long-term collaboration.
+                {t(
+                  "An invitation-only forum for doctors and healthcare leaders to align on clinical standards, systems, and long-term collaboration.",
+                  "ملتقى حصري بدعوة خاصة يجمع الأطباء وقادة الرعاية الصحية للتوافق على المعايير السريرية والأنظمة والتعاون طويل الأمد."
+                )}
               </p>
               <ul className="grid gap-3 text-sm text-gold mb-8 max-w-xl">
-                <li>Clinical protocol alignment and case standards.</li>
-                <li>Operational frameworks for multi-center consistency.</li>
-                <li>Strategic partner onboarding with clear governance.</li>
+                <li>{t("Clinical protocol alignment and case standards.", "توحيد البروتوكولات السريرية ومعايير الحالات.")}</li>
+                <li>{t("Operational frameworks for multi-center consistency.", "أطر تشغيلية تضمن الاتساق بين المراكز المتعددة.")}</li>
+                <li>{t("Strategic partner onboarding with clear governance.", "انضمام الشركاء الاستراتيجيين وفق حوكمة واضحة.")}</li>
               </ul>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-8">
                 <div className="animate-on-scroll stagger-1 scale-in flex items-center gap-3 bg-muted rounded-lg p-4 hover:shadow-md transition-shadow">
                   <Calendar className="h-6 w-6 text-gold" />
                   <div>
-                    <p className="text-sm text-[#007A59]">Date</p>
-                    <p className="font-semibold text-[#007A59]">November 20-24, 2026</p>
+                    <p className="text-sm text-[#007A59]">{t("Date", "التاريخ")}</p>
+                    <p className="font-semibold text-[#007A59]">{t("November 20-24, 2026", "20-24 نوفمبر 2026")}</p>
                   </div>
                 </div>
                 <div className="animate-on-scroll stagger-2 scale-in flex items-center gap-3 bg-muted rounded-lg p-4 hover:shadow-md transition-shadow">
                   <MapPin className="h-6 w-6 text-gold" />
                   <div>
-                    <p className="text-sm text-[#007A59]">Location</p>
-                    <p className="font-semibold text-[#007A59]">Malaysia</p>
+                    <p className="text-sm text-[#007A59]">{t("Location", "المكان")}</p>
+                    <p className="font-semibold text-[#007A59]">{t("Malaysia", "ماليزيا")}</p>
                   </div>
                 </div>
                 <div className="animate-on-scroll stagger-3 scale-in flex items-center gap-3 bg-muted rounded-lg p-4 hover:shadow-md transition-shadow">
                   <Users className="h-6 w-6 text-gold" />
                   <div>
-                    <p className="text-sm text-[#007A59]">Capacity</p>
-                    <p className="font-semibold text-[#007A59]">80-100</p>
+                    <p className="text-sm text-[#007A59]">{t("Capacity", "عدد المقاعد")}</p>
+                    <p className="font-semibold text-[#007A59]">{t("80-100", "80-100 مشارك")}</p>
                   </div>
                 </div>
               </div>
@@ -156,16 +160,16 @@ export function TrainingSection() {
               <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll">
                 <Link href="/training">
                   <Button className="bg-gold hover:bg-gold-dark text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                    Explore More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    {t("Explore More", "اكتشف المزيد")}
+                    <ArrowRight className="ms-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <Button
                     variant="outline"
                     className="border-teal text-[#007A59] hover:bg-teal hover:text-secondary-foreground font-semibold bg-transparent"
                   >
-                    Register Now
+                    {t("Register Now", "سجّل الآن")}
                   </Button>
                 </Link>
               </div>
@@ -173,13 +177,13 @@ export function TrainingSection() {
 
             {/* Image */}
             <Link
-              href="/register?type=silver-tier-standard"
+              href={isAr ? "/ar/register" : "/register?type=silver-tier-standard"}
               className="relative block animate-on-scroll slide-in-right scale-in"
             >
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/sym/symposium_hero.jpg"
-                  alt="OXYZ Training"
+                  alt={t("OXYZ Training", "تدريب OXYZ")}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -187,8 +191,8 @@ export function TrainingSection() {
               </div>
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -left-6 bg-gold text-white rounded-xl p-6 shadow-2xl hover:shadow-3xl transition-shadow">
-                <p className="text-sm font-medium">Executive Delegate Package</p>
-                <p className="text-2xl font-bold">USD 3,000</p>
+                <p className="text-sm font-medium">{t("Executive Delegate Package", "باقة المندوب التنفيذي")}</p>
+                <p className="text-2xl font-bold">{t("USD 3,000", "3,000 دولار أمريكي")}</p>
               </div>
             </Link>
           </div>

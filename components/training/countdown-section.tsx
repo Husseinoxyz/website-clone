@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 const floatingStyles = `
   @keyframes gentleFloat {
@@ -25,6 +27,9 @@ const floatingStyles = `
 `;
 
 const TARGET_DATE = new Date("2026-11-20T00:00:00Z");
+
+// Arabic country names for flag images (e.g. "br" -> "البرازيل").
+const arabicRegionNames = new Intl.DisplayNames(["ar"], { type: "region" });
 
 type Countdown = {
   days: string;
@@ -52,6 +57,7 @@ const getCountdown = (): Countdown => {
 };
 
 export function CountdownSection() {
+  const { t, isAr } = useLang();
   const [mounted, setMounted] = useState(false);
   const [countdown, setCountdown] = useState<Countdown>({
     days: "00",
@@ -78,7 +84,7 @@ export function CountdownSection() {
         <div className="absolute inset-0">
           <Image
             src="/images/count_down.jpg"
-            alt="Countdown background"
+            alt=""
             fill
             className="object-cover"
             sizes="100vw"
@@ -91,17 +97,17 @@ export function CountdownSection() {
             {/* Left Column - Countdown Info */}
             <div className="py-14 sm:py-16 text-white">
               <p className="text-sm uppercase tracking-[0.25em] text-white/70">
-                Training Date
+                {t("Training Date", "موعد التدريب")}
               </p>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-                20-24 November 2026
+                {t("20-24 November 2026", "20-24 نوفمبر 2026")}
               </h2>
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
               {[
-                { label: "Days", value: countdown.days },
-                { label: "Hours", value: countdown.hours },
-                { label: "Minutes", value: countdown.minutes },
-                { label: "Seconds", value: countdown.seconds },
+                { label: t("Days", "يوم"), value: countdown.days },
+                { label: t("Hours", "ساعة"), value: countdown.hours },
+                { label: t("Minutes", "دقيقة"), value: countdown.minutes },
+                { label: t("Seconds", "ثانية"), value: countdown.seconds },
               ].map((unit) => (
                 <div
                    key={unit.label}
@@ -123,8 +129,8 @@ export function CountdownSection() {
                   <Calendar className="h-4.5 w-4.5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Dates</p>
-                  <p className="font-bold text-sm sm:text-base text-white">20-24 Nov 2026</p>
+                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">{t("Dates", "التاريخ")}</p>
+                  <p className="font-bold text-sm sm:text-base text-white">{t("20-24 Nov 2026", "20-24 نوفمبر 2026")}</p>
                 </div>
               </div>
               <div className="group flex items-center gap-3 rounded-xl bg-black/60 border border-white/10 px-4 py-3.5 hover:border-gold/20 transition-all duration-300">
@@ -132,9 +138,9 @@ export function CountdownSection() {
                   <MapPin className="h-4.5 w-4.5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Location</p>
-                  <p className="font-bold text-sm sm:text-base text-white">Malaysia</p>
-                  <p className="text-xs text-white/70">Kuala Lumpur</p>
+                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">{t("Location", "المكان")}</p>
+                  <p className="font-bold text-sm sm:text-base text-white">{t("Malaysia", "ماليزيا")}</p>
+                  <p className="text-xs text-white/70">{t("Kuala Lumpur", "كوالالمبور")}</p>
                 </div>
               </div>
               <div className="group flex items-center gap-3 rounded-xl bg-black/60 border border-white/10 px-4 py-3.5 hover:border-gold/20 transition-all duration-300">
@@ -142,26 +148,26 @@ export function CountdownSection() {
                   <Users className="h-4.5 w-4.5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">Capacity</p>
-                  <p className="font-bold text-sm sm:text-base text-white">80 to 100 Participants</p>
-                  <p className="text-xs text-white/70">Limited to ensure quality</p>
+                  <p className="text-[10px] uppercase tracking-wider text-white/60 font-semibold mb-0.5">{t("Capacity", "عدد المقاعد")}</p>
+                  <p className="font-bold text-sm sm:text-base text-white">{t("80 to 100 Participants", "من 80 إلى 100 مشارك")}</p>
+                  <p className="text-xs text-white/70">{t("Limited to ensure quality", "عدد محدود لضمان الجودة")}</p>
                 </div>
               </div>
             </div>
 
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <Button className="bg-[#007A59] hover:bg-[#006046] text-white font-bold px-8 py-6 rounded-xl shadow-lg transition-all hover:scale-105">
-                    Register Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
+                <Link href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)} target="_blank" rel="noreferrer">
                   <Button
                     variant="outline"
                     className="border-gold text-gold hover:bg-gold hover:text-white font-bold px-8 py-6 rounded-xl bg-transparent transition-all hover:scale-105"
                   >
-                    Request More Details
+                    {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                   </Button>
                 </Link>
               </div>
@@ -170,23 +176,23 @@ export function CountdownSection() {
             {/* Mobile - Country Flags Grid */}
             <div className="lg:hidden pb-4">
               <div className="flex flex-col items-center gap-3 mb-6">
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <button className="text-center text-sm font-bold text-white uppercase tracking-wide bg-black/40 hover:bg-[#CDB06A] backdrop-blur rounded-full px-5 py-2.5 transition-all duration-300 active:scale-95 cursor-pointer border border-white/10">
-                    🌍 Represent Your Country
+                    {t("🌍 Represent Your Country", "🌍 مثّل بلدك")}
                   </button>
                 </Link>
                 <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur rounded-full px-3.5 py-1.5 border border-[#CDB06A]/40 shadow-lg">
                   <span className="text-sm">🔥</span>
-                  <span className="text-xs font-bold text-white whitespace-nowrap">Registering...</span>
+                  <span className="text-xs font-bold text-white whitespace-nowrap">{t("Registering...", "التسجيل جارٍ...")}</span>
                 </div>
               </div>
 
               <div className="bg-black/40 backdrop-blur rounded-2xl px-5 py-4 text-center mb-6">
                 <h3 className="text-lg sm:text-2xl font-extrabold text-white leading-tight">
-                  Raise Your Nation's Flag
+                  {t("Raise Your Nation's Flag", "ارفع علم بلدك")}
                 </h3>
                 <p className="mt-2 text-sm text-white/90">
-                  Represent your country at this event
+                  {t("Represent your country at this event", "مثّل بلدك في هذه الفعالية")}
                 </p>
               </div>
 
@@ -211,23 +217,23 @@ export function CountdownSection() {
                 ].map((flag) => (
                   <Link
                     key={flag.code}
-                    href={`/register?country=${encodeURIComponent(flag.name)}`}
+                    href={isAr ? "/ar/register" : `/register?country=${encodeURIComponent(flag.name)}`}
                     className="group relative flex flex-col items-center"
                   >
                     <div className="absolute -top-2 -right-1 z-10 bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-[10px] shadow-lg border-2 border-white/80">
                       {flag.count}
                     </div>
                     <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg border-2 border-white/80 active:scale-95 transition-transform duration-200">
-                      <img src={`https://flagcdn.com/w320/${flag.code}.jpg`} alt={flag.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={`https://flagcdn.com/w320/${flag.code}.jpg`} alt={isAr ? arabicRegionNames.of(flag.code.toUpperCase()) : flag.name} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </Link>
                 ))}
               </div>
 
-              <Link href="/register" className="block">
+              <Link href={isAr ? "/ar/register" : "/register"} className="block">
                 <button className="relative group w-full px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all duration-300 active:scale-95 bg-gradient-to-r from-[#CDB06A] via-[#C4A458] to-[#B8964A]">
                   <span className="relative flex items-center justify-center gap-2">
-                    Join Now
+                    {t("Join Now", "انضم الآن")}
                     <ArrowRight className="h-5 w-5" />
                   </span>
                 </button>
@@ -237,15 +243,15 @@ export function CountdownSection() {
             {/* Right Column - Orbital Flags */}
             <div className="hidden lg:block relative py-14 sm:py-16">
               <div className="flex flex-col items-center gap-2 mb-4">
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <button className="text-center text-sm sm:text-base font-bold text-white uppercase tracking-wide bg-black/40 hover:bg-[#CDB06A] backdrop-blur rounded-full px-5 py-2.5 w-fit transition-all duration-300 hover:scale-105 cursor-pointer border border-white/10 hover:border-[#CDB06A]">
-                    🌍 Represent Your Country
+                    {t("🌍 Represent Your Country", "🌍 مثّل بلدك")}
                   </button>
                 </Link>
                 <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur rounded-full px-3.5 py-1.5 border border-[#CDB06A]/40 shadow-lg">
                   <span className="text-sm">🔥</span>
                   <span className="text-xs font-bold text-white whitespace-nowrap">
-                    Registering...
+                    {t("Registering...", "التسجيل جارٍ...")}
                   </span>
                 </div>
               </div>
@@ -258,27 +264,27 @@ export function CountdownSection() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CDB06A] opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#CDB06A]" />
                     </span>
-                    <span className="text-[11px] uppercase tracking-[0.2em] text-white font-semibold">Registering Now</span>
+                    <span className="text-[11px] uppercase tracking-[0.2em] text-white font-semibold">{t("Registering Now", "التسجيل مفتوح الآن")}</span>
                   </div>
 
                   {/* Headline */}
                   <div className="bg-black/40 backdrop-blur rounded-2xl px-4 py-3">
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                      Raise Your Nation's Flag
+                      {t("Raise Your Nation's Flag", "ارفع علم بلدك")}
                     </h3>
                     <p className="mt-2 text-sm text-white/90">
-                      Represent your country at this event
+                      {t("Represent your country at this event", "مثّل بلدك في هذه الفعالية")}
                     </p>
                   </div>
 
                   {/* Button - Main Focus */}
-                  <Link href="/register" className="w-full">
+                  <Link href={isAr ? "/ar/register" : "/register"} className="w-full">
                     <button className="relative group w-full px-8 py-3.5 rounded-full font-bold text-white text-lg shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl bg-gradient-to-r from-[#CDB06A] via-[#C4A458] to-[#B8964A]">
                       {/* Button shine effect */}
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       <span className="relative flex items-center justify-center gap-2">
-                        Join Now
+                        {t("Join Now", "انضم الآن")}
                         <ArrowRight className="h-5 w-5" />
                       </span>
                     </button>
@@ -290,82 +296,82 @@ export function CountdownSection() {
 
                 {/* Fixed positioned flags */}
                 {/* USA - Top Right */}
-                <Link href="/register?country=United%20States" className="group absolute w-14 h-14 flag-float z-10" style={{ right: '40px', top: '20px', animationDelay: '0ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=United%20States"} className="group absolute w-14 h-14 flag-float z-10" style={{ right: '40px', top: '20px', animationDelay: '0ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">8</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/us.jpg" alt="USA" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/us.jpg" alt={t("USA", "الولايات المتحدة")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* Saudi Arabia - Right */}
-                <Link href="/register?country=Saudi%20Arabia" className="group absolute w-14 h-14 flag-float z-10" style={{ right: '10px', top: '50%', transform: 'translateY(-50%)', animationDelay: '150ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=Saudi%20Arabia"} className="group absolute w-14 h-14 flag-float z-10" style={{ right: '10px', top: '50%', transform: 'translateY(-50%)', animationDelay: '150ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">7</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/sa.jpg" alt="Saudi" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/sa.jpg" alt={t("Saudi", "السعودية")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* UAE - Bottom Right */}
-                <Link href="/register?country=United%20Arab%20Emirates" className="group absolute w-14 h-14 flag-float z-10" style={{ right: '40px', bottom: '20px', animationDelay: '300ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=United%20Arab%20Emirates"} className="group absolute w-14 h-14 flag-float z-10" style={{ right: '40px', bottom: '20px', animationDelay: '300ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">6</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/ae.jpg" alt="UAE" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/ae.jpg" alt={t("UAE", "الإمارات")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* Brazil - Bottom */}
-                <Link href="/register?country=Brazil" className="group absolute w-14 h-14 flag-float z-10" style={{ left: '50%', bottom: '10px', transform: 'translateX(-50%)', animationDelay: '450ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=Brazil"} className="group absolute w-14 h-14 flag-float z-10" style={{ left: '50%', bottom: '10px', transform: 'translateX(-50%)', animationDelay: '450ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">5</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/br.jpg" alt="Brazil" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/br.jpg" alt={t("Brazil", "البرازيل")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* Germany - Bottom Left */}
-                <Link href="/register?country=Germany" className="group absolute w-14 h-14 flag-float z-10" style={{ left: '40px', bottom: '20px', animationDelay: '600ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=Germany"} className="group absolute w-14 h-14 flag-float z-10" style={{ left: '40px', bottom: '20px', animationDelay: '600ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">4</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/de.jpg" alt="Germany" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/de.jpg" alt={t("Germany", "ألمانيا")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* UK - Left */}
-                <Link href="/register?country=United%20Kingdom" className="group absolute w-14 h-14 flag-float z-10" style={{ left: '10px', top: '50%', transform: 'translateY(-50%)', animationDelay: '750ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=United%20Kingdom"} className="group absolute w-14 h-14 flag-float z-10" style={{ left: '10px', top: '50%', transform: 'translateY(-50%)', animationDelay: '750ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">3</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/gb.jpg" alt="UK" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/gb.jpg" alt={t("UK", "المملكة المتحدة")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* Indonesia - Top Left */}
-                <Link href="/register?country=Indonesia" className="group absolute w-14 h-14 flag-float z-10" style={{ left: '40px', top: '20px', animationDelay: '900ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=Indonesia"} className="group absolute w-14 h-14 flag-float z-10" style={{ left: '40px', top: '20px', animationDelay: '900ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">2</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/id.jpg" alt="Indonesia" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/id.jpg" alt={t("Indonesia", "إندونيسيا")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
                 {/* Kenya - Top */}
-                <Link href="/register?country=Kenya" className="group absolute w-14 h-14 flag-float z-10" style={{ left: '50%', top: '10px', transform: 'translateX(-50%)', animationDelay: '1050ms' }}>
+                <Link href={isAr ? "/ar/register" : "/register?country=Kenya"} className="group absolute w-14 h-14 flag-float z-10" style={{ left: '50%', top: '10px', transform: 'translateX(-50%)', animationDelay: '1050ms' }}>
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-30">
                     <div className="bg-gradient-to-br from-[#CDB06A] to-[#B8964A] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white/80">1</div>
                   </div>
                   <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                    <img src="https://flagcdn.com/w320/ke.jpg" alt="Kenya" className="w-full h-full object-cover" loading="lazy" />
+                    <img src="https://flagcdn.com/w320/ke.jpg" alt={t("Kenya", "كينيا")} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </Link>
 
@@ -392,7 +398,7 @@ export function CountdownSection() {
                       </div>
                     </div>
                     <div className="relative w-10 h-10 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110 cursor-pointer border-2 border-white/80 group-hover:border-[#CDB06A]">
-                      <img src={`https://flagcdn.com/w320/${flag.code}.jpg`} alt={flag.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={`https://flagcdn.com/w320/${flag.code}.jpg`} alt={isAr ? arabicRegionNames.of(flag.code.toUpperCase()) : flag.name} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </Link>
                 ))}

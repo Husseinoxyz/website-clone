@@ -344,3 +344,38 @@
     margin: 0;
   }
 }
+
+/* ---------- Arabic / RTL ---------- */
+html[lang="ar"] body,
+html[lang="ar"] .font-sans,
+html[lang="ar"] .font-serif {
+  font-family: var(--font-readex), "Readex Pro", system-ui, sans-serif;
+}
+
+/* Arabic is cursive: letter-spacing breaks the joins, and there is no true italic */
+html[lang="ar"] * {
+  letter-spacing: 0 !important;
+}
+html[lang="ar"] .italic,
+html[lang="ar"] em,
+html[lang="ar"] blockquote {
+  font-style: normal;
+}
+html[lang="ar"] body {
+  line-height: 1.7;
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  line-height: 1.45;
+}
+
+/* Directional icons point the reading direction */
+[dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] .lucide-arrow-left,
+[dir="rtl"] .lucide-chevron-right,
+[dir="rtl"] .lucide-chevron-left,
+[dir="rtl"] .lucide-arrow-up-right {
+  transform: scaleX(-1);
+}

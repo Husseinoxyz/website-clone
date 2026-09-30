@@ -93,7 +93,7 @@ export function ClinicalMachinesSection() {
 
         {/* Section Header */}
         <div className="mb-8 border-b border-slate-200/50 pb-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-[#007A59] tracking-wide border-l-4 border-[#CDB06A] pl-3">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#007A59] tracking-wide border-s-4 border-[#CDB06A] ps-3">
             OXYZ Medical Technology Gallery
           </h3>
         </div>
@@ -185,7 +185,7 @@ export function ClinicalMachinesSection() {
 
               {/* Lined Paper Note Card */}
               <div
-                className="relative bg-[#FEFCF5] border border-slate-200/80 rounded-2xl p-5 shadow-inner text-left mb-6 overflow-hidden min-h-[140px]"
+                className="relative bg-[#FEFCF5] border border-slate-200/80 rounded-2xl p-5 shadow-inner text-start mb-6 overflow-hidden min-h-[140px]"
                 style={{
                   backgroundImage: "repeating-linear-gradient(transparent, transparent 27px, #e8e2cf 28px)"
                 }}
@@ -194,10 +194,10 @@ export function ClinicalMachinesSection() {
                 <div className="absolute left-6 top-0 bottom-0 w-[1px] bg-red-300/60" />
 
                 {/* Content aligned to lined background */}
-                <div className="pl-6 pt-1 font-serif italic text-slate-700 text-sm leading-[28px] tracking-wide">
+                <div className="ps-6 pt-1 font-serif italic text-slate-700 text-sm leading-[28px] tracking-wide">
                   <TypewriterText text={selectedMachine.notes} />
                   {/* Blinking typewriter cursor */}
-                  <span className="inline-block w-2 h-4 ml-1 bg-[#CDB06A] animate-pulse" />
+                  <span className="inline-block w-2 h-4 ms-1 bg-[#CDB06A] animate-pulse" />
                 </div>
               </div>
 

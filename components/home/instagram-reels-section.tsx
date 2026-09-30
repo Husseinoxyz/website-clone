@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Play, X, ArrowRight } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 function getYouTubeThumbnail(embedUrl: string) {
   const id = embedUrl.split("/").pop();
@@ -48,8 +49,10 @@ type ReelItem = {
   id: string;
   src: string;
   title: string;
+  titleAr?: string;
   subtitle: string;
   doctor: string;
+  doctorAr?: string;
   poster?: string;
   platform?: "mp4" | "youtube";
   aspect?: "portrait" | "landscape";
@@ -60,7 +63,9 @@ const defaultReels: ReelItem[] = [
     id: "clip-1",
     src: "https://www.youtube.com/embed/tKywBK98HmU",
     doctor: "Dr. Gisele",
+    doctorAr: "د. جيزيل",
     title: "From Cells to Systems: The Evolution of Regenerative Medicine",
+    titleAr: "من الخلايا إلى الأنظمة: تطوّر الطب التجديدي",
     subtitle: "Featured Preview Clip 1",
     platform: "youtube",
     aspect: "landscape",
@@ -69,7 +74,9 @@ const defaultReels: ReelItem[] = [
     id: "clip-2",
     src: "https://www.youtube.com/embed/VfkXACyh5Ws",
     doctor: "Dr. Michelle",
+    doctorAr: "د. ميشيل",
     title: "BioResource Scanner: 3D Quantum Medicine Cellular Screening and Technology",
+    titleAr: "جهاز BioResource Scanner: تقنية الفحص الخلوي ثلاثي الأبعاد بالطب الكمّي",
     subtitle: "Featured Preview Clip 2",
     platform: "youtube",
     aspect: "landscape",
@@ -78,7 +85,9 @@ const defaultReels: ReelItem[] = [
     id: "clip-3",
     src: "https://www.youtube.com/embed/Bu4K5wwKxTo",
     doctor: "Dr. Mohammad Abdelqader",
+    doctorAr: "د. محمد عبد القادر",
     title: "Are Stem Cells Safe? Do They Behave Like Cancer Cells",
+    titleAr: "هل الخلايا الجذعية آمنة؟ وهل تتصرّف كالخلايا السرطانية؟",
     subtitle: "Featured Preview Clip 3 (Q&A)",
     platform: "youtube",
     aspect: "landscape",
@@ -86,6 +95,7 @@ const defaultReels: ReelItem[] = [
 ];
 
 export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelItem[] }) {
+  const { t, isAr } = useLang();
   useScrollAnimation();
   const [activeVideo, setActiveVideo] = useState<ReelItem | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -192,10 +202,13 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 animate-on-scroll">
             <div className="mb-4" />
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-4 text-balance">
-              Experience the Symposium
+              {t("Experience the Symposium", "عِش تجربة الملتقى")}
             </h2>
             <p className="text-gold text-lg sm:text-xl leading-relaxed">
-              Get a firsthand look at the depth, quality, and practical insights our regenerative medicine summit delivers.
+              {t(
+                "Get a firsthand look at the depth, quality, and practical insights our regenerative medicine summit delivers.",
+                "اطّلع عن قرب على عمق المحتوى وجودته والرؤى العملية التي تقدّمها قمتنا للطب التجديدي."
+              )}
             </p>
           </div>
 
@@ -213,7 +226,7 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                       <div className="h-full w-full absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity duration-300 overflow-hidden">
                         <Image
                           src={getYouTubeThumbnail(reel.src)}
-                          alt={reel.title}
+                          alt={isAr && reel.titleAr ? reel.titleAr : reel.title}
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -234,31 +247,31 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
                     {/* Dark overlay & Play button */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
                       <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-gold text-[#007A59] group-hover:text-white flex items-center justify-center shadow-lg transition-all duration-300 transform group-hover:scale-110">
-                        <Play className="h-8 w-8 fill-current ml-1" />
+                        <Play className="h-8 w-8 fill-current ms-1" />
                       </div>
                     </div>
                     
                     {/* Duration badge or status */}
                     <div className="absolute bottom-3 right-3 bg-black/60 text-white px-2 py-1 text-xs rounded font-medium">
-                      Preview
+                      {t("Preview", "مقتطف")}
                     </div>
                   </div>
 
                   <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wider text-gold">
-                        {reel.doctor}
+                        {isAr && reel.doctorAr ? reel.doctorAr : reel.doctor}
                       </span>
                       <h4 className="text-lg font-bold text-slate-800 mt-2 line-clamp-3 leading-snug">
-                        {reel.title}
+                        {isAr && reel.titleAr ? reel.titleAr : reel.title}
                       </h4>
                     </div>
                     <button
                       onClick={() => openVideo(reel)}
                       className="mt-4 sm:mt-6 inline-flex items-center text-sm font-semibold text-[#007A59] hover:text-gold transition-colors duration-200"
                     >
-                      Watch Full Video
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      {t("Watch Full Video", "شاهد الفيديو كاملاً")}
+                      <ArrowRight className="ms-2 h-4 w-4" />
                     </button>
                   </div>
                 </div>
@@ -272,15 +285,18 @@ export function InstagramReelsSection({ reels = defaultReels }: { reels?: ReelIt
             <div className="absolute -left-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
             
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Ready for the Full Experience?
+              {t("Ready for the Full Experience?", "هل أنت مستعد للتجربة الكاملة؟")}
             </h3>
             <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              Unlock the full training to access every session, in-depth explanations, real-world examples, and the complete learning experience.
+              {t(
+                "Unlock the full training to access every session, in-depth explanations, real-world examples, and the complete learning experience.",
+                "احصل على التدريب الكامل للوصول إلى جميع الجلسات والشروحات المعمّقة والأمثلة الواقعية وتجربة التعلّم المتكاملة."
+              )}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <button className="bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  Unlock Full Training
+                  {t("Unlock Full Training", "احصل على التدريب الكامل")}
                 </button>
               </Link>
             </div>

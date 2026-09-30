@@ -21,13 +21,13 @@ export function TrainingCtaStrip() {
             <Link href="/register">
               <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
                 Register Now
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ms-2 h-4 w-4" />
               </Button>
             </Link>
             <Link href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you." target="_blank" rel="noreferrer">
               <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-foreground font-semibold">
                 Request More Details
-                <MessageCircle className="ml-2 h-4 w-4" />
+                <MessageCircle className="ms-2 h-4 w-4" />
               </Button>
             </Link>
           </div>

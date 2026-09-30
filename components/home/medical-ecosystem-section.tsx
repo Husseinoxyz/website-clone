@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Activity, Shield, Stethoscope, FlaskConical } from "lucide-react";
 import { useEffect } from "react";
+import { useLang } from "@/lib/i18n";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -43,26 +44,35 @@ const features = [
   {
     icon: Activity,
     title: "Preventive & Medical Wellness",
+    titleAr: "الطب الوقائي والعافية الطبية",
     description: "Root-cause diagnostics and long-term functional outcomes",
+    descriptionAr: "تشخيص الأسباب الجذرية ونتائج وظيفية طويلة الأمد",
   },
   {
     icon: Shield,
     title: "Regenerative & Cell-Based Medicine",
+    titleAr: "الطب التجديدي والعلاجات الخلوية",
     description: "Cellular repair and biological optimization",
+    descriptionAr: "الإصلاح الخلوي والتحسين البيولوجي",
   },
   {
     icon: Stethoscope,
     title: "Integrated Medical Aesthetics",
+    titleAr: "الطب التجميلي المتكامل",
     description: "Within integrative and regenerative medical frameworks",
+    descriptionAr: "ضمن أطر الطب التكاملي والتجديدي",
   },
   {
     icon: FlaskConical,
     title: "Science-Backed Product Platforms",
+    titleAr: "منصات منتجات مدعومة علمياً",
     description: "Developed as clinical support tools",
+    descriptionAr: "مطوّرة كأدوات داعمة للممارسة السريرية",
   },
 ];
 
 export function MedicalEcosystemSection() {
+  const { t, isAr } = useLang();
   useScrollAnimation();
 
   return (
@@ -140,12 +150,13 @@ export function MedicalEcosystemSection() {
           {/* Content */}
           <div className="w-full lg:w-7/12 animate-on-scroll slide-in-right flex flex-col justify-center py-4 lg:py-0">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#005744] mb-4 leading-tight">
-              A Medical-First Ecosystem
+              {t("A Medical-First Ecosystem", "منظومة تضع الطب أولاً")}
             </h2>
             <p className="text-base sm:text-lg text-[#005744]/90 mb-6 leading-relaxed">
-              Regenerative medicine demands discipline, ethics, and structure.
-              OXYZ integrates multiple medical disciplines through structured
-              clinical and operational systems.
+              {t(
+                "Regenerative medicine demands discipline, ethics, and structure. OXYZ integrates multiple medical disciplines through structured clinical and operational systems.",
+                "يتطلّب الطب التجديدي الانضباط والأخلاقيات والتنظيم. وتجمع OXYZ تخصصات طبية متعددة ضمن أنظمة سريرية وتشغيلية منظّمة."
+              )}
             </p>
             
             <div className="space-y-3 mb-6">
@@ -156,8 +167,8 @@ export function MedicalEcosystemSection() {
                 >
                   <feature.icon className="h-5 w-5 text-[#007A59] flex-shrink-0 mt-0.5" />
                   <div className="text-sm sm:text-base">
-                    <span className="font-semibold text-[#005744]">{feature.title}</span>
-                    <span className="text-[#005744]/80">: {feature.description}</span>
+                    <span className="font-semibold text-[#005744]">{isAr ? feature.titleAr : feature.title}</span>
+                    <span className="text-[#005744]/80">{isAr ? "، " : ": "}{isAr ? feature.descriptionAr : feature.description}</span>
                   </div>
                 </div>
               ))}
@@ -168,8 +179,8 @@ export function MedicalEcosystemSection() {
                 <Button 
                   className="bg-[#007A59] hover:bg-[#006048] text-white font-semibold text-sm sm:text-base px-6 py-2.5 h-auto shadow-md hover:shadow-lg transition-all hover:scale-105"
                 >
-                  About OXYZ
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  {t("About OXYZ", "تعرّف على OXYZ")}
+                  <ArrowRight className="ms-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
             </div>

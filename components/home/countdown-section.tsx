@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, MapPin, Clock } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 export function CountdownSection() {
+  const { t, isAr } = useLang();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -48,7 +50,7 @@ export function CountdownSection() {
       <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none mix-blend-multiply">
         <Image
           src="/images/world-map.jpg"
-          alt="World Map Background"
+          alt=""
           fill
           className="object-cover"
           priority
@@ -66,7 +68,7 @@ export function CountdownSection() {
         {/* Section Header */}
         <div className="mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light tracking-wide text-slate-800 uppercase">
-            UPCOMING EVENTS
+            {t("UPCOMING EVENTS", "الفعاليات القادمة")}
             <span className="block mt-1.5 text-xl sm:text-2xl md:text-3xl font-sans font-semibold text-[#007A59] tracking-[0.2em] not-italic">2026</span>
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-[#CDB06A] to-[#007A59] mx-auto mt-4 rounded-full" />
@@ -75,25 +77,28 @@ export function CountdownSection() {
         {/* Event Details Card */}
         <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md border border-[#CDB06A]/20 rounded-[24px] p-5 sm:p-8 shadow-xl mb-8 sm:mb-10">
           <h3 className="text-lg sm:text-xl font-bold text-[#007A59] mb-3">
-            Global Regenerative Medicine Summit 2026
+            {t("Global Regenerative Medicine Summit 2026", "القمة العالمية للطب التجديدي 2026")}
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 mb-6 max-w-xl mx-auto leading-relaxed">
-            3-Day Intensive Hands-on Training in Stem Cell & Biological Medicine. Secure your presence among global medical experts.
+            {t(
+              "3-Day Intensive Hands-on Training in Stem Cell & Biological Medicine. Secure your presence among global medical experts.",
+              "تدريب عملي مكثّف لمدة 3 أيام في الخلايا الجذعية والطب البيولوجي. احجز مكانك بين نخبة الخبراء الطبيين من حول العالم."
+            )}
           </p>
 
           {/* Quick Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-600 text-xs border-t border-b border-slate-200/60 py-3 sm:py-4 mb-5 sm:mb-6 gap-y-2.5 max-w-xl mx-auto">
             <div className="flex items-center justify-center gap-2">
               <Calendar className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
-              <span>November 20-24, 2026</span>
+              <span>{t("November 20-24, 2026", "20-24 نوفمبر 2026")}</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <Clock className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
-              <span>09:00 AM to 05:00 PM</span>
+              <span>{t("09:00 AM to 05:00 PM", "من 9:00 صباحاً حتى 5:00 مساءً")}</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <MapPin className="h-4.5 w-4.5 text-[#CDB06A] shrink-0" />
-              <span>Kuala Lumpur, Malaysia</span>
+              <span>{t("Kuala Lumpur, Malaysia", "كوالالمبور، ماليزيا")}</span>
             </div>
           </div>
 
@@ -106,7 +111,7 @@ export function CountdownSection() {
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-0.5">
                   {timeLeft.days.toString().padStart(2, "0")}
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">Days</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">{t("Days", "يوم")}</span>
               </div>
 
               {/* Hours Box */}
@@ -114,7 +119,7 @@ export function CountdownSection() {
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-0.5">
                   {timeLeft.hours.toString().padStart(2, "0")}
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">Hours</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">{t("Hours", "ساعة")}</span>
               </div>
 
               {/* Minutes Box */}
@@ -122,7 +127,7 @@ export function CountdownSection() {
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-0.5">
                   {timeLeft.minutes.toString().padStart(2, "0")}
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">Mins</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">{t("Mins", "دقيقة")}</span>
               </div>
 
               {/* Seconds Box */}
@@ -130,22 +135,22 @@ export function CountdownSection() {
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#007A59] mb-0.5 animate-pulse">
                   {timeLeft.seconds.toString().padStart(2, "0")}
                 </span>
-                <span className="text-[9px] sm:text-[10px] text-[#007A59]/80 font-bold uppercase tracking-wider">Secs</span>
+                <span className="text-[9px] sm:text-[10px] text-[#007A59]/80 font-bold uppercase tracking-wider">{t("Secs", "ثانية")}</span>
               </div>
 
             </div>
           ) : (
             <div className="text-base font-bold text-[#007A59]">
-              {mounted && timeLeft.isExpired ? "Registration Closed" : "Loading Countdown..."}
+              {mounted && timeLeft.isExpired ? t("Registration Closed", "انتهى التسجيل") : t("Loading Countdown...", "جارٍ تحميل العدّ التنازلي...")}
             </div>
           )}
         </div>
 
         {/* Call to action */}
         <div>
-          <Link href="/register">
+          <Link href={isAr ? "/ar/register" : "/register"}>
             <button className="bg-[#007A59] hover:bg-[#006046] text-white font-bold px-8 py-3 text-sm sm:text-base rounded-full shadow-lg hover:shadow-[#007A59]/20 hover:scale-105 transition-all duration-300 tracking-wide">
-              Register For Event
+              {t("Register For Event", "سجّل في الفعالية")}
             </button>
           </Link>
         </div>

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useLang } from "@/lib/i18n";
 
 function useScrollAnimation() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function useScrollAnimation() {
 }
 
 export function DrGiselaSection() {
+  const { t, isAr } = useLang();
   useScrollAnimation();
 
   return (
@@ -64,15 +66,15 @@ export function DrGiselaSection() {
           {/* Mobile Title (Only visible on sm/md, hidden on lg) */}
           <div className="lg:hidden animate-on-scroll mb-6">
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
-              Meet one of our Primary speakers
+              {t("Meet one of our Primary speakers", "تعرّف على إحدى المتحدثات الرئيسيات")}
             </span>
             <div className="flex flex-wrap items-center gap-4 mt-1">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
-                Meet Dr. Gisele
+                {t("Meet Dr. Gisele", "تعرّف على د. جيزيل")}
               </h2>
               <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
-                <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
-                <span className="text-sm uppercase tracking-widest">Brazil</span>
+                <img src="https://flagcdn.com/w40/br.png" alt="" width="28" height="20" className="rounded-[2px] shadow-sm" />
+                <span className="text-sm uppercase tracking-widest">{t("Brazil", "البرازيل")}</span>
               </div>
             </div>
           </div>
@@ -84,30 +86,33 @@ export function DrGiselaSection() {
               {/* Desktop Title (Hidden on mobile, visible on lg) */}
               <div className="hidden lg:block">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-[#CDB06A]/10 text-[#CDB06A] font-bold text-sm tracking-widest uppercase mb-6 border border-[#CDB06A]/20">
-                  Meet one of our Primary speakers
+                  {t("Meet one of our Primary speakers", "تعرّف على إحدى المتحدثات الرئيسيات")}
                 </span>
                 <div className="flex flex-wrap items-center gap-4 mb-6 mt-1">
                   <h2 className="text-4xl sm:text-5xl font-extrabold text-[#007A59] leading-tight">
-                    Meet Dr. Gisele
+                    {t("Meet Dr. Gisele", "تعرّف على د. جيزيل")}
                   </h2>
                   <div className="flex items-center gap-2.5 bg-[#007A59]/10 text-[#007A59] px-4 py-2 rounded-full border border-[#007A59]/20 font-bold shadow-sm">
-                    <img src="https://flagcdn.com/w40/br.png" alt="Brazil Flag" width="28" height="20" className="rounded-[2px] shadow-sm" />
-                    <span className="text-sm uppercase tracking-widest">Brazil</span>
+                    <img src="https://flagcdn.com/w40/br.png" alt="" width="28" height="20" className="rounded-[2px] shadow-sm" />
+                    <span className="text-sm uppercase tracking-widest">{t("Brazil", "البرازيل")}</span>
                   </div>
                 </div>
               </div>
 
               <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed lg:mt-0 mt-4">
-                Pioneering the future of regenerative medicine and aesthetic clinical applications. With international expertise and a commitment to excellence, Dr. Gisele brings advanced biological medicine protocols directly to your practice.
+                {t(
+                  "Pioneering the future of regenerative medicine and aesthetic clinical applications. With international expertise and a commitment to excellence, Dr. Gisele brings advanced biological medicine protocols directly to your practice.",
+                  "رائدة في مستقبل الطب التجديدي وتطبيقاته السريرية التجميلية. بخبرتها الدولية والتزامها بالتميّز، تنقل د. جيزيل بروتوكولات الطب البيولوجي المتقدّمة مباشرةً إلى ممارستك."
+                )}
               </p>
               
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <Button 
                   size="lg"
                   className="bg-[#CDB06A] hover:bg-[#B8964A] text-white font-semibold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 rounded-full px-8 py-6 text-lg"
                 >
-                  Join the Program
-                  <ArrowRight className="ml-2 h-6 w-6" />
+                  {t("Join the Program", "انضم إلى البرنامج")}
+                  <ArrowRight className="ms-2 h-6 w-6" />
                 </Button>
               </Link>
             </div>
@@ -121,7 +126,7 @@ export function DrGiselaSection() {
               <div className="absolute right-0 top-0 w-3/4 h-[75%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white z-10 transition-transform duration-700 hover:scale-[1.02]">
                 <Image
                   src="/images/Dr%20Gisele%20p2.png"
-                  alt="Dr. Gisele Professional Profile"
+                  alt={t("Dr. Gisele professional profile", "الملف المهني لـ د. جيزيل")}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -133,7 +138,7 @@ export function DrGiselaSection() {
               <div className="absolute left-0 bottom-4 w-1/2 h-[45%] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white z-30 transition-transform duration-700 hover:scale-105">
                 <Image
                   src="/images/Dr%20Gisele%20P1.png"
-                  alt="Dr. Gisele Clinical Work"
+                  alt={t("Dr. Gisele clinical work", "د. جيزيل خلال عملها السريري")}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 50vw, 25vw"
@@ -145,7 +150,7 @@ export function DrGiselaSection() {
               <div className="absolute right-8 bottom-[-20px] w-[40%] h-[40%] rounded-[24px] overflow-hidden shadow-2xl border-4 border-white z-20 transition-transform duration-700 hover:scale-105">
                 <Image
                   src="/images/Dr%20Gisele%20p3.png"
-                  alt="Dr. Gisele Portrait"
+                  alt={t("Dr. Gisele portrait", "صورة د. جيزيل")}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 50vw, 25vw"

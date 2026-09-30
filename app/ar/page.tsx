@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { CheckCircle2, BookOpen, Clock, Award, ChevronLeft } from "lucide-react";
+import { CheckCircle2, BookOpen, Clock, Award, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PosterSliderSection } from "@/components/home/poster-slider-section";
 import { FiveDModelSection } from "@/components/home/five-d-model-section";
@@ -392,7 +392,7 @@ export default function ArabicPage() {
               <Button size="lg" className="bg-gold hover:bg-gold/90 text-black font-semibold text-lg px-12 py-6 rounded-full shadow-lg shadow-gold/20" asChild>
                 <Link href="/ar/register">
                   ابدأ التسجيل الآن
-                  <ChevronLeft className="w-5 h-5 mr-2" />
+                  <ChevronRight className="w-5 h-5 ms-2" />
                 </Link>
               </Button>
             </div>

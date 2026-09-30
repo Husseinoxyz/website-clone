@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, X } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -100,47 +101,58 @@ const galleryImages = [
   {
     src: "/images/sym/home_g_1.jpg",
     alt: "International doctors at training",
+    altAr: "أطباء من دول مختلفة خلال التدريب",
   },
   {
     src: "/images/sym/home_g_2.jpg",
     alt: "Clinical discussion session",
+    altAr: "جلسة نقاش سريري",
   },
   {
     src: "/images/sym/home_g_3.jpg",
     alt: "Professional networking event",
+    altAr: "لقاء للتواصل المهني",
   },
   {
     src: "/images/sym/home_g_4.jpg",
     alt: "Medical presentation",
+    altAr: "عرض طبي",
   },
   {
     src: "/images/sym/home_g_5.jpg",
     alt: "Strategic collaboration meeting",
+    altAr: "اجتماع للتعاون الاستراتيجي",
   },
   {
     src: "/images/sym/home_g_6.jpg",
     alt: "Training attendees",
+    altAr: "المشاركون في التدريب",
   },
   {
     src: "/images/sym/home_g_7.jpg",
     alt: "Conference networking moment",
+    altAr: "لحظة تواصل خلال المؤتمر",
   },
   {
     src: "/images/sym/home_g_8.jpg",
     alt: "Clinical workshop session",
+    altAr: "ورشة عمل سريرية",
   },
   {
     src: "/images/sym/home_g_9.jpg",
     alt: "Panel discussion",
+    altAr: "جلسة حوارية",
   },
 ];
 
 export function GallerySection() {
+  const { t, isAr } = useLang();
   useScrollAnimation();
 
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
+    altAr: string;
   } | null>(null);
 
   return (
@@ -186,11 +198,13 @@ export function GallerySection() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 animate-on-scroll">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6 text-balance">
-              Past International Training Highlights
+              {t("Past International Training Highlights", "أبرز محطات التدريبات الدولية السابقة")}
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              The OXYZ International Stem Cell Training Series brings together
-              doctors, clinic owners and healthcare leaders from around the world.
+              {t(
+                "The OXYZ International Stem Cell Training Series brings together doctors, clinic owners and healthcare leaders from around the world.",
+                "تجمع سلسلة تدريبات OXYZ الدولية للخلايا الجذعية أطباء وأصحاب عيادات وقادة في الرعاية الصحية من مختلف أنحاء العالم."
+              )}
             </p>
           </div>
 
@@ -206,14 +220,14 @@ export function GallerySection() {
                 <div className="aspect-[4/3] relative">
                   <Image
                     src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
+                    alt={isAr ? image.altAr : image.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                     <span className="text-white bg-[#007A59]/90 text-xs font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-wider">
-                      View Highlight
+                      {t("View Highlight", "عرض الصورة")}
                     </span>
                   </div>
                 </div>
@@ -226,19 +240,19 @@ export function GallerySection() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div className="animate-on-scroll stagger-1 scale-in">
                 <AnimatedCounter value={6} suffix="+" duration={2000} />
-                <p className="text-slate-600 mt-2 font-medium">Continents Represented</p>
+                <p className="text-slate-600 mt-2 font-medium">{t("Continents Represented", "قارات مُمثَّلة")}</p>
               </div>
               <div className="animate-on-scroll stagger-2 scale-in">
                 <AnimatedCounter value={100} suffix="+" duration={2000} />
-                <p className="text-slate-600 mt-2 font-medium">Medical Professionals</p>
+                <p className="text-slate-600 mt-2 font-medium">{t("Medical Professionals", "من الكوادر الطبية")}</p>
               </div>
               <div className="animate-on-scroll stagger-3 scale-in">
                 <AnimatedCounter value={50} suffix="+" duration={2000} />
-                <p className="text-slate-600 mt-2 font-medium">Clinical Topics Covered</p>
+                <p className="text-slate-600 mt-2 font-medium">{t("Clinical Topics Covered", "موضوعاً سريرياً")}</p>
               </div>
               <div className="animate-on-scroll stagger-4 scale-in">
                 <AnimatedCounter value={20} suffix="+" duration={2000} />
-                <p className="text-slate-600 mt-2 font-medium">Countries Attended</p>
+                <p className="text-slate-600 mt-2 font-medium">{t("Countries Attended", "دولة مشاركة")}</p>
               </div>
             </div>
           </div>
@@ -249,8 +263,8 @@ export function GallerySection() {
                 size="lg"
                 className="bg-[#CDB06A] hover:bg-[#B8964A] text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
-                View More Past Event Highlights
-                <ArrowRight className="ml-2 h-5 w-5" />
+                {t("View More Past Event Highlights", "شاهد المزيد من الفعاليات السابقة")}
+                <ArrowRight className="ms-2 h-5 w-5" />
               </Button>
             </Link>
           </div>
@@ -261,7 +275,7 @@ export function GallerySection() {
             className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
             role="dialog"
             aria-modal="true"
-            aria-label={selectedImage.alt}
+            aria-label={isAr ? selectedImage.altAr : selectedImage.alt}
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-w-5xl w-full">
@@ -269,14 +283,14 @@ export function GallerySection() {
                 type="button"
                 className="absolute -top-12 right-0 text-white hover:text-gold"
                 onClick={() => setSelectedImage(null)}
-                aria-label="Close image"
+                aria-label={t("Close image", "إغلاق الصورة")}
               >
                 <X className="h-6 w-6" />
               </button>
               <div className="relative w-full aspect-[4/3] bg-black">
                 <Image
                   src={selectedImage.src}
-                  alt={selectedImage.alt}
+                  alt={isAr ? selectedImage.altAr : selectedImage.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   className="object-contain"

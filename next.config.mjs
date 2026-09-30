@@ -57,6 +57,13 @@ const nextConfig = {
         destination: "/past-trainings",
         permanent: true,
       },
+      // Visitors who chose Arabic get the Arabic registration form.
+      {
+        source: "/register",
+        has: [{ type: "cookie", key: "lang", value: "ar" }],
+        destination: "/ar/register",
+        permanent: false,
+      },
     ];
   },
 };

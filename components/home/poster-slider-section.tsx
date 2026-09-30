@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLang } from "@/lib/i18n";
 import { ChevronLeft, ChevronRight, Award, Calendar } from "lucide-react";
 
 const posterSlides = [
@@ -72,7 +73,9 @@ const arabicPosterSlides = [
 ];
 
 
-export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }) {
+export function PosterSliderSection({ isArabic: isArabicProp }: { isArabic?: boolean }) {
+  const { isAr } = useLang();
+  const isArabic = isArabicProp ?? isAr;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -185,7 +188,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
           </span>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
           <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
-            {isArabic ? "24-20 نوفمبر 2026 • كوالالمبور، ماليزيا" : "Nov 20-24, 2026 • Kuala Lumpur, Malaysia"}
+            {isArabic ? "20-24 نوفمبر 2026 • كوالالمبور، ماليزيا" : "Nov 20-24, 2026 • Kuala Lumpur, Malaysia"}
           </span>
         </div>
       </div>
@@ -224,12 +227,12 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
 
             {/* Register & Discover Buttons */}
             <div className="z-20 flex flex-row items-center gap-3 sm:gap-4 w-max">
-              <Link href="/register">
+              <Link href={isArabic ? "/ar/register" : "/register"}>
                 <button
                   type="button"
                   className="rounded-full bg-[#007A59] hover:bg-[#006046] text-white font-bold px-6 sm:px-8 py-3 text-sm sm:text-base shadow-2xl transition-all duration-300 hover:scale-105 whitespace-nowrap"
                 >
-                  Register Now
+                  {isArabic ? "سجّل الآن" : "Register Now"}
                 </button>
               </Link>
               <Link href="/training">
@@ -237,7 +240,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
                   type="button"
                   className="rounded-full bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-6 sm:px-8 py-3 text-sm sm:text-base shadow-2xl transition-all duration-300 hover:scale-105 whitespace-nowrap"
                 >
-                  Discover Now
+                  {isArabic ? "اكتشف المزيد" : "Discover Now"}
                 </button>
               </Link>
             </div>
@@ -246,14 +249,14 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
           {/* Navigation Arrows - Only visible on desktop/larger screens (hidden md:flex) */}
           <button
             onClick={handlePrev}
-            aria-label="Previous Slide"
+            aria-label={isArabic ? "الشريحة السابقة" : "Previous Slide"}
             className="hidden md:flex absolute left-4 lg:left-8 top-[45%] -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 hover:bg-white text-[#007A59] items-center justify-center shadow-lg transition-all hover:scale-110 focus:outline-none z-20 border border-slate-200"
           >
             <ChevronLeft className="h-7 w-7" />
           </button>
           <button
             onClick={handleNext}
-            aria-label="Next Slide"
+            aria-label={isArabic ? "الشريحة التالية" : "Next Slide"}
             className="hidden md:flex absolute right-4 lg:right-8 top-[45%] -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 hover:bg-white text-[#007A59] items-center justify-center shadow-lg transition-all hover:scale-110 focus:outline-none z-20 border border-slate-200"
           >
             <ChevronRight className="h-7 w-7" />
@@ -267,7 +270,7 @@ export function PosterSliderSection({ isArabic = false }: { isArabic?: boolean }
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-6 bg-[#CDB06A]" : "w-2 bg-white/60"
                   }`}
-                aria-label={`Go to slide ${idx + 1}`}
+                aria-label={isArabic ? `الانتقال إلى الشريحة ${idx + 1}` : `Go to slide ${idx + 1}`}
               />
             ))}
           </div>

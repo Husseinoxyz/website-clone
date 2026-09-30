@@ -160,7 +160,7 @@ export function LibraryHubSection() {
 
         {/* Featured Videos Subtitle */}
         <div className="mb-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-wide border-l-4 border-[#CDB06A] pl-3">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-wide border-s-4 border-[#CDB06A] ps-3">
             Featured Videos
           </h3>
         </div>
@@ -200,7 +200,7 @@ export function LibraryHubSection() {
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-full bg-[#007A59]/90 text-white flex items-center justify-center shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
-                    <Play className="h-6 w-6 fill-white text-white ml-0.5" />
+                    <Play className="h-6 w-6 fill-white text-white ms-0.5" />
                   </div>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export function LibraryHubSection() {
       <div className="w-full max-w-none px-4 sm:px-6 lg:px-10 pt-16 sm:pt-24">
         {/* Interviews Subtitle */}
         <div className="mb-6 border-b border-slate-100 pb-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-wide border-l-4 border-[#CDB06A] pl-3">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-wide border-s-4 border-[#CDB06A] ps-3">
             OXYZ Activities
           </h3>
         </div>

@@ -1,9 +1,12 @@
+"use client";
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { InstagramReelsSection } from "@/components/home/instagram-reels-section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp";
 import {
   ArrowRight,
   Calendar,
@@ -12,6 +15,7 @@ import {
   Check,
   X,
 } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 const packageFeatures = [
   "4 nights hotel stay (single occupancy, breakfast included)",
@@ -24,6 +28,18 @@ const packageFeatures = [
   "6 Months of Post-Event Clinical Mentoring & Case Support",
   "AI in Regenerative Medicine integration training",
   "and more...",
+];
+
+const packageFeaturesAr = [
+  "إقامة 4 ليالٍ في الفندق (غرفة فردية مع الإفطار)",
+  "دخول كامل إلى جميع جلسات التدريب على مدى 3 أيام",
+  "جميع الوجبات الرسمية وحفل العشاء الختامي",
+  "شهادة مشتركة: أكاديمية OXYZ وDFGTT (ألمانيا)",
+  "شهادة معتمدة دولياً (الخلايا الجذعية والطب البيولوجي والببتيدات)",
+  "6 أشهر من دعم تطوير الأعمال ونمو العيادة",
+  "6 أشهر من الإرشاد السريري ومتابعة الحالات بعد الفعالية",
+  "تدريب على دمج الذكاء الاصطناعي في الطب التجديدي",
+  "والمزيد...",
 ];
 
 const singlePackage = {
@@ -43,7 +59,14 @@ const importantInfo = [
   "Registration deadline is strictly enforced based on seating and hotel availability",
 ];
 
+const importantInfoAr = [
+  "حضور منتقى: تخضع جميع طلبات التسجيل للمراجعة والتأكيد",
+  "تُعطى الأولوية للملاءمة الطبية والتوافق السريري",
+  "يُطبَّق الموعد النهائي للتسجيل بصرامة وفقاً لتوفّر المقاعد والغرف الفندقية",
+];
+
 export default function ProgramPage() {
+  const { t, isAr } = useLang();
   return (
     <>
       <Header />
@@ -55,7 +78,7 @@ export default function ProgramPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/program_hero.jpg"
-              alt="Training program overview"
+              alt={t("Training program overview", "نظرة عامة على البرنامج التدريبي")}
               fill
               priority
               sizes="100vw"
@@ -70,35 +93,38 @@ export default function ProgramPage() {
             <div className="max-w-3xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-[#007A59] text-white font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6 shadow-md border border-[#007A59]/30">
-                EXECUTIVE DELEGATE PACKAGE
+                {t("EXECUTIVE DELEGATE PACKAGE", "باقة المندوب التنفيذي")}
               </div>
               
               {/* Main Title */}
               <h1 className="font-extrabold leading-[1.1] text-[#CDB06A] text-4xl sm:text-5xl md:text-6xl tracking-tight">
-                Program Overview
+                {t("Program Overview", "نظرة عامة على البرنامج")}
                 <span className="block text-lg sm:text-2xl md:text-3xl font-light mt-4 text-white/95 tracking-wide">
-                  Executive Delegate Registration Package
+                  {t("Executive Delegate Registration Package", "باقة تسجيل المندوب التنفيذي")}
                 </span>
               </h1>
 
               {/* Description */}
               <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mt-5 mb-8 sm:mt-6 sm:mb-10 font-light max-w-xl">
-                Comprehensive details for the Global Regenerative Medicine Summit 2026 Executive Delegate Tier.
+                {t(
+                  "Comprehensive details for the Global Regenerative Medicine Summit 2026 Executive Delegate Tier.",
+                  "كل تفاصيل باقة المندوب التنفيذي في القمة العالمية للطب التجديدي 2026."
+                )}
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Link href="/register" className="w-full sm:w-auto">
+                <Link href={isAr ? "/ar/register" : "/register"} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 py-6 rounded-xl shadow-lg transition-all hover:scale-105"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -108,7 +134,7 @@ export default function ProgramPage() {
                     variant="outline"
                     className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold px-8 py-6 rounded-xl bg-transparent transition-all hover:scale-105"
                   >
-                    Request Scientific Program
+                    {t("Request Scientific Program", "اطلب البرنامج العلمي")}
                   </Button>
                 </Link>
               </div>
@@ -127,14 +153,17 @@ export default function ProgramPage() {
                     <Calendar className="h-6 w-6 text-[#007A59]" />
                   </div>
                   <h2 className="text-lg sm:text-2xl font-bold text-slate-800">
-                    Training Dates
+                    {t("Training Dates", "مواعيد التدريب")}
                   </h2>
                 </div>
                 <p className="text-2xl font-extrabold text-[#007A59] mb-3">
-                  20-24 November 2026
+                  {t("20-24 November 2026", "20-24 نوفمبر 2026")}
                 </p>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  4 nights premium accommodation included for Executive Delegate Package participants.
+                  {t(
+                    "4 nights premium accommodation included for Executive Delegate Package participants.",
+                    "تشمل باقة المندوب التنفيذي إقامة فاخرة لمدة 4 ليالٍ."
+                  )}
                 </p>
               </div>
 
@@ -145,24 +174,24 @@ export default function ProgramPage() {
                     <Clock className="h-6 w-6 text-[#CDB06A]" />
                   </div>
                   <h2 className="text-lg sm:text-2xl font-bold text-slate-800">
-                    Participant Capacity
+                    {t("Participant Capacity", "عدد المشاركين")}
                   </h2>
                 </div>
                 <p className="text-2xl font-extrabold text-[#CDB06A] mb-3">
-                  80 to 100 Selected Professionals
+                  {t("80 to 100 Selected Professionals", "من 80 إلى 100 مهني مختار")}
                 </p>
                 <ul className="space-y-2 text-slate-600 text-sm sm:text-base leading-relaxed">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#CDB06A] rounded-full" />
-                    High-quality scientific exchange
+                    {t("High-quality scientific exchange", "تبادل علمي عالي الجودة")}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#CDB06A] rounded-full" />
-                    Meaningful professional networking
+                    {t("Meaningful professional networking", "تواصل مهني هادف")}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#CDB06A] rounded-full" />
-                    Direct engagement with faculty and OXYZ leadership
+                    {t("Direct engagement with faculty and OXYZ leadership", "تواصل مباشر مع المحاضرين وقيادة OXYZ")}
                   </li>
                 </ul>
               </div>
@@ -178,10 +207,10 @@ export default function ProgramPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">
-                Registration Package
+                {t("Registration Package", "باقة التسجيل")}
               </h2>
               <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
-                Review inclusions and secure your place at the upcoming training program.
+                {t("Review inclusions and secure your place at the upcoming training program.", "اطّلع على محتويات الباقة واحجز مكانك في البرنامج التدريبي القادم.")}
               </p>
             </div>
 
@@ -193,9 +222,9 @@ export default function ProgramPage() {
                 <div className="absolute -top-10 right-6 sm:right-10 z-20">
                   <div className="h-24 w-28 rounded-2xl bg-gradient-to-br from-[#007A59] to-[#006046] shadow-lg flex items-center justify-center border-2 border-[#007A59]">
                     <div className="text-center leading-tight">
-                      <div className="text-2xl font-black text-white">{singlePackage.price}</div>
+                      <div className="text-2xl font-black text-white">{t(singlePackage.price, "3,000 $")}</div>
                       <div className="text-[9px] font-bold uppercase tracking-widest text-[#CDB06A] mt-0.5">
-                        {singlePackage.priceNote}
+                        {t(singlePackage.priceNote, "للشخص")}
                       </div>
                     </div>
                   </div>
@@ -204,7 +233,7 @@ export default function ProgramPage() {
                 {/* VIP Badge */}
                 <div className="absolute -top-4 left-6 sm:left-10 z-10">
                   <span className="inline-flex items-center gap-2 rounded-full bg-[#007A59] px-5 py-1.5 text-xs font-black tracking-widest text-white shadow-md border border-[#007A59]/30">
-                    {singlePackage.badge}
+                    {t(singlePackage.badge, "المندوب التنفيذي")}
                   </span>
                 </div>
 
@@ -212,23 +241,23 @@ export default function ProgramPage() {
                 <div className="flex-1 flex flex-col pt-6">
                   <div className="border-b border-slate-100 pb-5 mb-6">
                     <h3 className="text-lg sm:text-2xl font-extrabold text-[#007A59]">
-                      {singlePackage.title}
+                      {t(singlePackage.title, "باقة المندوب التنفيذي: القمة العالمية للطب التجديدي")}
                     </h3>
                     <p className="text-xs sm:text-sm font-semibold text-slate-500 mt-1.5">
                       {singlePackage.deadline}
                     </p>
                   </div>
 
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">What's Included:</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{t("What’s Included:", "ما تشمله الباقة:")}</h4>
                   <ul className="space-y-4 mb-8 flex-1">
-                    {singlePackage.features.map((feature, i) => {
-                      const isLast = i === singlePackage.features.length - 1;
+                    {(isAr ? packageFeaturesAr : singlePackage.features).map((feature, i, list) => {
+                      const isLast = i === list.length - 1;
                       return (
                         <li key={i} className="flex items-start gap-3">
                           {!isLast ? (
                             <Check className="h-5 w-5 text-[#CDB06A] flex-shrink-0 mt-0.5" />
                           ) : (
-                            <span className="text-gold font-bold text-lg leading-none select-none flex-shrink-0 mt-0.5 mr-1">+</span>
+                            <span className="text-gold font-bold text-lg leading-none select-none flex-shrink-0 mt-0.5 me-1">+</span>
                           )}
                           <span className={`text-sm sm:text-base leading-relaxed ${isLast ? "text-[#007A59] font-bold italic" : "text-slate-600"}`}>
                             {feature}
@@ -238,12 +267,12 @@ export default function ProgramPage() {
                     })}
                   </ul>
 
-                  <Link href={`/register?type=${singlePackage.registerType}`} className="block">
+                  <Link href={isAr ? "/ar/register" : `/register?type=${singlePackage.registerType}`} className="block">
                     <Button
                       className="w-full rounded-xl bg-[#007A59] hover:bg-[#006046] border border-[#007A59] text-white font-extrabold py-6 shadow-md hover:shadow-lg transition-all uppercase tracking-wider text-xs sm:text-sm"
                     >
-                      REGISTER NOW
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      {t("REGISTER NOW", "سجّل الآن")}
+                      <ArrowRight className="ms-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -256,20 +285,23 @@ export default function ProgramPage() {
         <section className="py-14 sm:py-24 bg-white border-b border-slate-100">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-slate-800 mb-6">
-              Program Inclusions
+              {t("Program Inclusions", "محتوى البرنامج")}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              The full curriculum is available on request. Our team will share program details and eligibility guidance for your profile.
+              {t(
+                "The full curriculum is available on request. Our team will share program details and eligibility guidance for your profile.",
+                "المنهج الكامل متاح عند الطلب. سيزوّدك فريقنا بتفاصيل البرنامج ومعايير الأهلية المناسبة لملفك المهني."
+              )}
             </p>
             <div className="flex justify-center">
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
               >
                 <Button className="bg-[#007A59] hover:bg-[#006046] text-white text-base font-semibold px-8 py-5 rounded-xl shadow-md transition-all hover:scale-105">
-                  Request More Details
-                  <ArrowRight className="ml-2 h-4.5 w-4.5" />
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
+                  <ArrowRight className="ms-2 h-4.5 w-4.5" />
                 </Button>
               </Link>
             </div>
@@ -284,12 +316,12 @@ export default function ProgramPage() {
                 <Info className="h-6 w-6 text-[#007A59]" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">
-                Important Information
+                {t("Important Information", "معلومات مهمة")}
               </h2>
             </div>
             
             <ul className="space-y-4">
-              {importantInfo.map((info, idx) => (
+              {(isAr ? importantInfoAr : importantInfo).map((info, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-4 bg-white border border-slate-100 rounded-2xl p-5 shadow-sm"
@@ -311,7 +343,7 @@ export default function ProgramPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
-              alt="Program next steps background"
+              alt=""
               fill
               className="object-cover"
               sizes="100vw"
@@ -320,29 +352,29 @@ export default function ProgramPage() {
           </div>
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-white z-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">
-              Next Steps
+              {t("Next Steps", "الخطوات التالية")}
             </h2>
             <p className="text-slate-200 text-base sm:text-lg mb-8 max-w-xl mx-auto font-light leading-relaxed">
-              Ready to secure your place? Choose your tier and begin your application.
+              {t("Ready to secure your place? Choose your tier and begin your application.", "هل أنت مستعد لحجز مكانك؟ اختر باقتك وابدأ طلبك.")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/register?type=silver-tier-standard" className="w-full sm:w-auto">
+              <Link href={isAr ? "/ar/register" : "/register?type=silver-tier-standard"} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="w-full bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 py-5 rounded-xl shadow-lg transition-all hover:scale-105"
                 >
-                  Register Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  {t("Register Now", "سجّل الآن")}
+                  <ArrowRight className="ms-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full sm:w-auto"
               >
                 <Button size="lg" variant="ghost" className="w-full px-8 text-white hover:text-[#CDB06A] font-semibold text-base hover:bg-transparent">
-                  Request More Details
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                 </Button>
               </Link>
             </div>

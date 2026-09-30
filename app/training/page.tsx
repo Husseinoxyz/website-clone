@@ -20,6 +20,8 @@ import {
   Network,
 } from "lucide-react";
 import { useEffect } from "react";
+import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp";
+import { useLang } from "@/lib/i18n";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -56,13 +58,14 @@ function useScrollAnimation() {
 }
 
 const whoIsFor = [
-  { icon: Stethoscope, text: "Medical doctors & specialists" },
+  { icon: Stethoscope, text: "Medical doctors & specialists", textAr: "الأطباء والأخصائيون" },
   {
     icon: GraduationCap,
     text: "Regenerative, integrative & anti-aging practitioners",
+    textAr: "ممارسو الطب التجديدي والتكاملي وطب مكافحة الشيخوخة",
   },
-  { icon: Building2, text: "Clinic owners & healthcare investors" },
-  { icon: Network, text: "Medical distributors & ecosystem builders" },
+  { icon: Building2, text: "Clinic owners & healthcare investors", textAr: "أصحاب العيادات والمستثمرون في الرعاية الصحية" },
+  { icon: Network, text: "Medical distributors & ecosystem builders", textAr: "موزّعو المنتجات الطبية وبُناة المنظومات الصحية" },
 ];
 
 const scientificFocus = [
@@ -74,30 +77,48 @@ const scientificFocus = [
   "Medical responsibility in emerging regenerative fields",
 ];
 
+const scientificFocusAr = [
+  "صحة الخلايا ومفاهيم الشيخوخة البيولوجية",
+  "مبادئ العلاجات التجديدية والعلاجات القائمة على الخلايا",
+  "أطر طبية وقائية تركّز على إطالة العمر الصحي",
+  "دمج الطب التجديدي في الممارسة السريرية الفعلية",
+  "اختيار المرضى وسلامتهم والتفكير في النتائج طويلة الأمد",
+  "المسؤولية الطبية في مجالات الطب التجديدي الناشئة",
+];
+
 const pathways = [
   {
     title: "Clients Collaboration",
+    titleAr: "التعاون في إحالة المرضى",
+    descriptionAr: "إحالة منظّمة وأخلاقية للمرضى إلى بيئات رعاية تجديدية متقدّمة.",
     description:
       "Structured, ethical referral of clients into advanced regenerative care.",
   },
   {
     title: "Clinical Product Integration",
+    titleAr: "دمج المنتجات السريرية",
+    descriptionAr: "منتجات تجديدية وعلاجية مدعومة علمياً ضمن الرعاية السريرية المستمرة.",
     description:
       "Science-backed regenerative and wellness products for ongoing clinical care.",
   },
   {
     title: "Territory-Based Distribution",
+    titleAr: "التوزيع الإقليمي",
+    descriptionAr: "تطوير مسؤول للعلامات الطبية على المستوى الإقليمي للموزّعين المؤهَّلين.",
     description:
       "Responsible regional development of medical brands for qualified distributors.",
   },
   {
     title: "Licensed OXYZ Regenerative Centers",
+    titleAr: "مراكز OXYZ التجديدية المرخّصة",
+    descriptionAr: "طوّر ممارستك باعتماد نموذج OXYZ الطبي البيولوجي التجديدي 5D.",
     description:
       "Transform your practice with the OXYZ 5D Biological Regenerative Medical Model.",
   },
 ];
 
 export default function TrainingPage() {
+  const { t, isAr } = useLang();
   useScrollAnimation();
 
   return (
@@ -211,7 +232,7 @@ export default function TrainingPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/register_hero.jpg"
-              alt="Global Regenerative Medicine Summit 2026"
+              alt={t("Global Regenerative Medicine Summit 2026", "القمة العالمية للطب التجديدي 2026")}
               fill
               priority
               sizes="100vw"
@@ -230,32 +251,35 @@ export default function TrainingPage() {
               <div className="mb-6 sm:mb-8 text-center animate-fade-in-up opacity-0 animation-delay-200">
                 <h1 className="font-bold leading-[1.15] text-[#CDB06A] text-center">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
-                    Global Regenerative Medicine Summit 2026
+                    {t("Global Regenerative Medicine Summit 2026", "القمة العالمية للطب التجديدي 2026")}
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide text-center">
-                    Regenerative Medicine & Strategic Collaboration
+                    {t("Regenerative Medicine & Strategic Collaboration", "الطب التجديدي والتعاون الاستراتيجي")}
                   </span>
                 </h1>
               </div>
 
               {/* Description - reduced and clean */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto text-center animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                A premier invitation-only medical platform for doctors, clinic owners, and healthcare leaders seeking clinical excellence in regenerative medicine.
+                {t(
+                  "A premier invitation-only medical platform for doctors, clinic owners, and healthcare leaders seeking clinical excellence in regenerative medicine.",
+                  "منصة طبية رائدة بدعوة خاصة، للأطباء وأصحاب العيادات وقادة الرعاية الصحية الساعين إلى التميّز السريري في الطب التجديدي."
+                )}
               </p>
 
               {/* CTA Buttons - Centered */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
-                <Link href="/register" className="w-full sm:w-auto">
+                <Link href={isAr ? "/ar/register" : "/register"} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -265,7 +289,7 @@ export default function TrainingPage() {
                     variant="outline"
                     className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
                   >
-                    Request Scientific Program
+                    {t("Request Scientific Program", "اطلب البرنامج العلمي")}
                   </Button>
                 </Link>
               </div>
@@ -281,35 +305,37 @@ export default function TrainingPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
-                  The Medical Imperative
+                  {t("The Medical Imperative", "الضرورة الطبية")}
                 </h2>
                 <p className="text-gold text-lg sm:text-2xl mb-6 leading-relaxed">
-                  Regenerative medicine is redefining modern healthcare by
-                  moving beyond symptom management and focusing on cellular
-                  repair, tissue function, and better long-term patient
-                  outcomes.
+                  {t(
+                    "Regenerative medicine is redefining modern healthcare by moving beyond symptom management and focusing on cellular repair, tissue function, and better long-term patient outcomes.",
+                    "يُعيد الطب التجديدي تعريف الرعاية الصحية الحديثة، إذ يتجاوز معالجة الأعراض ليركّز على إصلاح الخلايا ووظائف الأنسجة وتحسين نتائج المرضى على المدى الطويل."
+                  )}
                 </p>
                 <p className="text-gold text-lg sm:text-2xl mb-8 leading-relaxed">
-                  To achieve this responsibly, regenerative medicine requires
-                  medical discipline, ethical practice, structured clinical
-                  protocols, and careful implementation.
+                  {t(
+                    "To achieve this responsibly, regenerative medicine requires medical discipline, ethical practice, structured clinical protocols, and careful implementation.",
+                    "ولتحقيق ذلك بمسؤولية، يتطلّب الطب التجديدي انضباطاً طبياً وممارسة أخلاقية وبروتوكولات سريرية منظّمة وتطبيقاً مدروساً."
+                  )}
                 </p>
-                <div className="bg-white rounded-lg p-5 sm:p-6 border-l-4 border-gold shadow-sm">
+                <div className="bg-white rounded-lg p-5 sm:p-6 border-s-4 border-gold shadow-sm">
                   <p className="text-[#007A59] text-base sm:text-xl font-medium italic">
-                    This training exists to address how regenerative medicine
-                    should be practiced, integrated, and expanded, not as a
-                    trend, but as a sustainable medical framework.
+                    {t(
+                      "This training exists to address how regenerative medicine should be practiced, integrated, and expanded, not as a trend, but as a sustainable medical framework.",
+                      "صُمّم هذا التدريب ليوضّح كيف يُمارَس الطب التجديدي ويُدمَج ويُوسَّع، لا بوصفه موضة عابرة، بل إطاراً طبياً مستداماً."
+                    )}
                   </p>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link href="/register">
+                  <Link href={isAr ? "/ar/register" : "/register"}>
                     <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                      Register Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      {t("Register Now", "سجّل الآن")}
+                      <ArrowRight className="ms-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -317,7 +343,7 @@ export default function TrainingPage() {
                       variant="outline"
                       className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
                     >
-                      Request More Details
+                      {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                     </Button>
                   </Link>
                 </div>
@@ -325,7 +351,7 @@ export default function TrainingPage() {
               <div className="relative aspect-square animate-on-scroll slide-in-right scale-in">
                 <Image
                   src="/images/about/Our_Philosophy.jpg"
-                  alt="Medical imperative"
+                  alt={t("Medical imperative", "الضرورة الطبية")}
                   width={600}
                   height={520}
                   className="rounded-2xl shadow-2xl h-full w-full object-cover"
@@ -341,7 +367,7 @@ export default function TrainingPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/about/Global_Presence.jpg"
-              alt="Ideal Participants background"
+              alt=""
               fill
               className="object-cover"
               sizes="100vw"
@@ -351,11 +377,13 @@ export default function TrainingPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance">
-                Who This Training Is For
+                {t("Who This Training Is For", "لمن هذا التدريب؟")}
               </h2>
               <p className="text-lg text-white/80 leading-relaxed">
-                This training is curated for professionals who meet both
-                medical and strategic readiness.
+                {t(
+                  "This training is curated for professionals who meet both medical and strategic readiness.",
+                  "صُمّم هذا التدريب للمهنيين المستعدين طبياً واستراتيجياً."
+                )}
               </p>
             </div>
 
@@ -368,19 +396,19 @@ export default function TrainingPage() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                     <item.icon className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />
                   </div>
-                  <p className="text-sm sm:text-base font-medium text-teal">{item.text}</p>
+                  <p className="text-sm sm:text-base font-medium text-teal">{isAr ? item.textAr : item.text}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-wrap justify-center gap-3 animate-on-scroll">
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                  Register Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {t("Register Now", "سجّل الآن")}
+                  <ArrowRight className="ms-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -388,7 +416,7 @@ export default function TrainingPage() {
                   variant="outline"
                   className="border-gold text-white hover:bg-gold hover:text-foreground font-semibold bg-transparent"
                 >
-                  Request More Details
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                 </Button>
               </Link>
             </div>
@@ -402,14 +430,16 @@ export default function TrainingPage() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
-                  Scientific & Medical Focus
+                  {t("Scientific & Medical Focus", "المحاور العلمية والطبية")}
                 </h2>
                 <p className="text-[#B8964A] text-lg sm:text-2xl mb-8 leading-relaxed font-medium">
-                  The emphasis is on medical depth, clarity, and governance,
-                  not promotional medicine.
+                  {t(
+                    "The emphasis is on medical depth, clarity, and governance, not promotional medicine.",
+                    "ينصبّ التركيز على العمق الطبي والوضوح والحوكمة، لا على الطب الترويجي."
+                  )}
                 </p>
                 <ul className="space-y-4">
-                  {scientificFocus.map((item, idx) => (
+                  {(isAr ? scientificFocusAr : scientificFocus).map((item, idx) => (
                     <li key={item} className={`animate-on-scroll stagger-${(idx % 4) + 1} flex items-start gap-3`}>
                       <CheckCircle2 className="h-6 w-6 text-[#CDB06A] flex-shrink-0 mt-0.5" />
                       <span className="text-slate-600 text-base sm:text-lg">
@@ -421,44 +451,44 @@ export default function TrainingPage() {
               </div>
               <div className="animate-on-scroll slide-in-right">
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#007A59] mb-6">
-                  Training Format
+                  {t("Training Format", "صيغة التدريب")}
                 </h2>
                 <div className="space-y-4">
-                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-l-4 border-l-[#CDB06A]">
+                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-s-4 border-s-[#CDB06A]">
                     <h3 className="text-xl font-semibold text-[#007A59] mb-2">
-                      Physical Training
+                      {t("Physical Training", "التدريب الحضوري")}
                     </h3>
                     <ul className="space-y-2 text-slate-600 text-lg">
-                      <li>Medical & Scientific Sessions</li>
-                      <li>Clinical Case Discussions</li>
-                      <li>Live Treatment Observation*</li>
-                      <li>Strategic Networking</li>
+                      <li>{t("Medical & Scientific Sessions", "جلسات طبية وعلمية")}</li>
+                      <li>{t("Clinical Case Discussions", "مناقشة حالات سريرية")}</li>
+                      <li>{t("Live Treatment Observation*", "مشاهدة علاجات مباشرة*")}</li>
+                      <li>{t("Strategic Networking", "تواصل استراتيجي")}</li>
                     </ul>
                     <p className="text-xs text-slate-500 mt-3">
-                      *Subject to ethical standards and regulatory compliance
+                      {t("*Subject to ethical standards and regulatory compliance", "*وفقاً للمعايير الأخلاقية والمتطلبات التنظيمية")}
                     </p>
                   </div>
-                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-l-4 border-l-[#CDB06A]">
+                  <div className="bg-[#007A59]/5 rounded-xl p-6 border border-[#007A59]/15 border-s-4 border-s-[#CDB06A]">
                     <h3 className="text-xl font-semibold text-[#007A59] mb-2">
-                      Participants Will Gain
+                      {t("Participants Will Gain", "ما سيحصل عليه المشاركون")}
                     </h3>
                     <ul className="space-y-2 text-slate-600 text-lg">
-                      <li>Direct engagement with OXYZ leadership</li>
-                      <li>Interaction with international professionals</li>
-                      <li>Exposure to structured frameworks</li>
-                      <li>Priority for alignment discussions</li>
+                      <li>{t("Direct engagement with OXYZ leadership", "تواصل مباشر مع قيادة OXYZ")}</li>
+                      <li>{t("Interaction with international professionals", "تفاعل مع مهنيين من مختلف الدول")}</li>
+                      <li>{t("Exposure to structured frameworks", "الاطلاع على أطر عمل منظّمة")}</li>
+                      <li>{t("Priority for alignment discussions", "أولوية في نقاشات الشراكة")}</li>
                     </ul>
                   </div>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link href="/register">
+                  <Link href={isAr ? "/ar/register" : "/register"}>
                     <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                      Register Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      {t("Register Now", "سجّل الآن")}
+                      <ArrowRight className="ms-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link
-                    href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                    href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -466,7 +496,7 @@ export default function TrainingPage() {
                       variant="outline"
                       className="border-[#007A59] text-[#007A59] hover:bg-[#007A59] hover:text-white font-semibold bg-transparent"
                     >
-                      Request More Details
+                      {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                     </Button>
                   </Link>
                 </div>
@@ -481,10 +511,10 @@ export default function TrainingPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-6 text-balance">
-                Strategic Pathways Exploration
+                {t("Strategic Pathways Exploration", "استكشاف المسارات الاستراتيجية")}
               </h2>
               <p className="text-gold text-lg sm:text-2xl leading-relaxed">
-                How medical expertise can grow into structured collaboration.
+                {t("How medical expertise can grow into structured collaboration.", "كيف تتحوّل الخبرة الطبية إلى تعاون منظّم.")}
               </p>
             </div>
 
@@ -495,21 +525,21 @@ export default function TrainingPage() {
                   className={`animate-on-scroll stagger-${(idx % 4) + 1} scale-in bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 sm:p-8 border-2 border-slate-100 hover:border-gold/50 transition-all duration-300 hover:shadow-lg`}
                 >
                   <h3 className="text-xl font-bold text-teal mb-3">
-                    {pathway.title}
+                    {isAr ? pathway.titleAr : pathway.title}
                   </h3>
-                  <p className="text-gold text-base sm:text-lg">{pathway.description}</p>
+                  <p className="text-gold text-base sm:text-lg">{isAr ? pathway.descriptionAr : pathway.description}</p>
                 </div>
               ))}
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                  Register Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {t("Register Now", "سجّل الآن")}
+                  <ArrowRight className="ms-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -517,7 +547,7 @@ export default function TrainingPage() {
                   variant="outline"
                   className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
                 >
-                  Request More Details
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                 </Button>
               </Link>
             </div>
@@ -531,16 +561,15 @@ export default function TrainingPage() {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
                 <div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2025 Training Overview
+                    {t("2025 Training Overview", "نظرة على تدريب 2025")}
                   </h2>
                   <p className="text-gold text-lg sm:text-2xl max-w-2xl">
-                    Clinical sessions and international collaboration from our
-                    2025 forum.
+                    {t("Clinical sessions and international collaboration from our 2025 forum.", "جلسات سريرية وتعاون دولي من ملتقى 2025.")}
                   </p>
                 </div>
                 <Link href="/past-trainings">
                   <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
-                    View Full Gallery
+                    {t("View Full Gallery", "عرض المعرض كاملاً")}
                   </Button>
                 </Link>
               </div>
@@ -548,7 +577,7 @@ export default function TrainingPage() {
 
             <div className="animate-on-scroll">
               <GalleryGrid
-                alt="Training 2025 gallery"
+                alt={t("Training 2025 gallery", "صور تدريب 2025")}
                 images={[
                   "/images/sym/home_g_1.jpg",
                   "/images/sym/home_g_2.jpg",
@@ -564,14 +593,14 @@ export default function TrainingPage() {
             </div>
             
             <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                  Register Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {t("Register Now", "سجّل الآن")}
+                  <ArrowRight className="ms-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -579,7 +608,7 @@ export default function TrainingPage() {
                   variant="outline"
                   className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
                 >
-                  Request More Details
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                 </Button>
               </Link>
             </div>
@@ -594,15 +623,15 @@ export default function TrainingPage() {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 animate-on-scroll">
                 <div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-teal mb-3">
-                    2023 Training Overview
+                    {t("2023 Training Overview", "نظرة على تدريب 2023")}
                   </h2>
                   <p className="text-gold text-lg sm:text-2xl max-w-2xl">
-                    Highlights from our 2023 training on clinical frameworks.
+                    {t("Highlights from our 2023 training on clinical frameworks.", "أبرز محطات تدريب 2023 حول الأطر السريرية.")}
                   </p>
                 </div>
                 <Link href="/past-trainings">
                   <Button variant="outline" className="border-teal text-teal hover:bg-teal hover:text-white">
-                    View Full Gallery
+                    {t("View Full Gallery", "عرض المعرض كاملاً")}
                   </Button>
                 </Link>
               </div>
@@ -610,7 +639,7 @@ export default function TrainingPage() {
 
             <div className="animate-on-scroll">
               <GalleryGrid
-                alt="Training 2023 gallery"
+                alt={t("Training 2023 gallery", "صور تدريب 2023")}
                 images={[
                   "/images/sym/012.png",
                   "/images/sym/02.jpg",
@@ -623,14 +652,14 @@ export default function TrainingPage() {
             </div>
             
             <div className="mt-10 flex flex-wrap justify-center gap-3 animate-on-scroll">
-              <Link href="/register">
+              <Link href={isAr ? "/ar/register" : "/register"}>
                 <Button className="bg-gold hover:bg-gold-dark text-white font-semibold">
-                  Register Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {t("Register Now", "سجّل الآن")}
+                  <ArrowRight className="ms-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link
-                href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -638,7 +667,7 @@ export default function TrainingPage() {
                   variant="outline"
                   className="border-teal text-teal hover:bg-teal hover:text-secondary-foreground font-semibold"
                 >
-                  Request More Details
+                  {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                 </Button>
               </Link>
             </div>
@@ -653,7 +682,7 @@ export default function TrainingPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg-2.jpg"
-              alt="Training CTA background"
+              alt=""
               fill
               className="object-cover"
               sizes="100vw"
@@ -663,23 +692,23 @@ export default function TrainingPage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl p-2 sm:p-12 text-center animate-on-scroll">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-balance">
-                Ready to Join Summit 2026?
+                {t("Ready to Join Summit 2026?", "هل أنت مستعد للانضمام إلى قمة 2026؟")}
               </h2>
               <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Seats are limited. Apply now to secure your place.
+                {t("Seats are limited. Apply now to secure your place.", "المقاعد محدودة. قدّم طلبك الآن لتضمن مكانك.")}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/register">
+                <Link href={isAr ? "/ar/register" : "/register"}>
                   <Button
                     size="lg"
                     className="bg-gold hover:bg-gold-dark text-white font-semibold px-8"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -688,7 +717,7 @@ export default function TrainingPage() {
                     variant="outline"
                     className="border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-semibold px-8 bg-transparent"
                   >
-                    Request More Details
+                    {t("Request More Details", "اطلب مزيداً من التفاصيل")}
                   </Button>
                 </Link>
               </div>

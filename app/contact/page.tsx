@@ -19,6 +19,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Clock, Mail, MapPin, Phone, Send, CheckCircle, ArrowRight, MessageCircle } from "lucide-react"
+import { useLang } from "@/lib/i18n"
+import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp"
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -55,78 +57,79 @@ function useScrollAnimation() {
 }
 
 const countryCodes = [
-  { code: "+1", label: "USA" },
-  { code: "+7", label: "Russia" },
-  { code: "+20", label: "Egypt" },
-  { code: "+27", label: "South Africa" },
-  { code: "+30", label: "Greece" },
-  { code: "+31", label: "Netherlands" },
-  { code: "+32", label: "Belgium" },
-  { code: "+33", label: "France" },
-  { code: "+34", label: "Spain" },
-  { code: "+36", label: "Hungary" },
-  { code: "+39", label: "Italy" },
-  { code: "+40", label: "Romania" },
-  { code: "+41", label: "Switzerland" },
-  { code: "+43", label: "Austria" },
-  { code: "+44", label: "United Kingdom" },
-  { code: "+45", label: "Denmark" },
-  { code: "+46", label: "Sweden" },
-  { code: "+47", label: "Norway" },
-  { code: "+48", label: "Poland" },
-  { code: "+49", label: "Germany" },
-  { code: "+51", label: "Peru" },
-  { code: "+52", label: "Mexico" },
-  { code: "+53", label: "Cuba" },
-  { code: "+54", label: "Argentina" },
-  { code: "+55", label: "Brazil" },
-  { code: "+56", label: "Chile" },
-  { code: "+57", label: "Colombia" },
-  { code: "+58", label: "Venezuela" },
-  { code: "+60", label: "Malaysia" },
-  { code: "+61", label: "Australia" },
-  { code: "+62", label: "Indonesia" },
-  { code: "+63", label: "Philippines" },
-  { code: "+64", label: "New Zealand" },
-  { code: "+65", label: "Singapore" },
-  { code: "+66", label: "Thailand" },
-  { code: "+81", label: "Japan" },
-  { code: "+82", label: "South Korea" },
-  { code: "+84", label: "Vietnam" },
-  { code: "+86", label: "China" },
-  { code: "+90", label: "Turkey" },
-  { code: "+91", label: "India" },
-  { code: "+92", label: "Pakistan" },
-  { code: "+93", label: "Afghanistan" },
-  { code: "+94", label: "Sri Lanka" },
-  { code: "+95", label: "Myanmar" },
-  { code: "+98", label: "Iran" },
-  { code: "+212", label: "Morocco" },
-  { code: "+213", label: "Algeria" },
-  { code: "+216", label: "Tunisia" },
-  { code: "+218", label: "Libya" },
-  { code: "+220", label: "Gambia" },
-  { code: "+221", label: "Senegal" },
-  { code: "+233", label: "Ghana" },
-  { code: "+234", label: "Nigeria" },
-  { code: "+251", label: "Ethiopia" },
-  { code: "+254", label: "Kenya" },
-  { code: "+256", label: "Uganda" },
-  { code: "+260", label: "Zambia" },
-  { code: "+263", label: "Zimbabwe" },
-  { code: "+971", label: "UAE" },
-  { code: "+972", label: "Israel" },
-  { code: "+973", label: "Bahrain" },
-  { code: "+974", label: "Qatar" },
-  { code: "+975", label: "Bhutan" },
-  { code: "+976", label: "Mongolia" },
-  { code: "+977", label: "Nepal" },
-  { code: "+994", label: "Azerbaijan" },
-  { code: "+995", label: "Georgia" },
-  { code: "+998", label: "Uzbekistan" },
+  { code: "+1", label: "USA", labelAr: "الولايات المتحدة" },
+  { code: "+7", label: "Russia", labelAr: "روسيا" },
+  { code: "+20", label: "Egypt", labelAr: "مصر" },
+  { code: "+27", label: "South Africa", labelAr: "جنوب أفريقيا" },
+  { code: "+30", label: "Greece", labelAr: "اليونان" },
+  { code: "+31", label: "Netherlands", labelAr: "هولندا" },
+  { code: "+32", label: "Belgium", labelAr: "بلجيكا" },
+  { code: "+33", label: "France", labelAr: "فرنسا" },
+  { code: "+34", label: "Spain", labelAr: "إسبانيا" },
+  { code: "+36", label: "Hungary", labelAr: "هنغاريا" },
+  { code: "+39", label: "Italy", labelAr: "إيطاليا" },
+  { code: "+40", label: "Romania", labelAr: "رومانيا" },
+  { code: "+41", label: "Switzerland", labelAr: "سويسرا" },
+  { code: "+43", label: "Austria", labelAr: "النمسا" },
+  { code: "+44", label: "United Kingdom", labelAr: "المملكة المتحدة" },
+  { code: "+45", label: "Denmark", labelAr: "الدانمرك" },
+  { code: "+46", label: "Sweden", labelAr: "السويد" },
+  { code: "+47", label: "Norway", labelAr: "النرويج" },
+  { code: "+48", label: "Poland", labelAr: "بولندا" },
+  { code: "+49", label: "Germany", labelAr: "ألمانيا" },
+  { code: "+51", label: "Peru", labelAr: "بيرو" },
+  { code: "+52", label: "Mexico", labelAr: "المكسيك" },
+  { code: "+53", label: "Cuba", labelAr: "كوبا" },
+  { code: "+54", label: "Argentina", labelAr: "الأرجنتين" },
+  { code: "+55", label: "Brazil", labelAr: "البرازيل" },
+  { code: "+56", label: "Chile", labelAr: "تشيلي" },
+  { code: "+57", label: "Colombia", labelAr: "كولومبيا" },
+  { code: "+58", label: "Venezuela", labelAr: "فنزويلا" },
+  { code: "+60", label: "Malaysia", labelAr: "ماليزيا" },
+  { code: "+61", label: "Australia", labelAr: "أستراليا" },
+  { code: "+62", label: "Indonesia", labelAr: "إندونيسيا" },
+  { code: "+63", label: "Philippines", labelAr: "الفلبين" },
+  { code: "+64", label: "New Zealand", labelAr: "نيوزيلندا" },
+  { code: "+65", label: "Singapore", labelAr: "سنغافورة" },
+  { code: "+66", label: "Thailand", labelAr: "تايلاند" },
+  { code: "+81", label: "Japan", labelAr: "اليابان" },
+  { code: "+82", label: "South Korea", labelAr: "كوريا الجنوبية" },
+  { code: "+84", label: "Vietnam", labelAr: "فيتنام" },
+  { code: "+86", label: "China", labelAr: "الصين" },
+  { code: "+90", label: "Turkey", labelAr: "تركيا" },
+  { code: "+91", label: "India", labelAr: "الهند" },
+  { code: "+92", label: "Pakistan", labelAr: "باكستان" },
+  { code: "+93", label: "Afghanistan", labelAr: "أفغانستان" },
+  { code: "+94", label: "Sri Lanka", labelAr: "سريلانكا" },
+  { code: "+95", label: "Myanmar", labelAr: "ميانمار (بورما)" },
+  { code: "+98", label: "Iran", labelAr: "إيران" },
+  { code: "+212", label: "Morocco", labelAr: "المغرب" },
+  { code: "+213", label: "Algeria", labelAr: "الجزائر" },
+  { code: "+216", label: "Tunisia", labelAr: "تونس" },
+  { code: "+218", label: "Libya", labelAr: "ليبيا" },
+  { code: "+220", label: "Gambia", labelAr: "غامبيا" },
+  { code: "+221", label: "Senegal", labelAr: "السنغال" },
+  { code: "+233", label: "Ghana", labelAr: "غانا" },
+  { code: "+234", label: "Nigeria", labelAr: "نيجيريا" },
+  { code: "+251", label: "Ethiopia", labelAr: "إثيوبيا" },
+  { code: "+254", label: "Kenya", labelAr: "كينيا" },
+  { code: "+256", label: "Uganda", labelAr: "أوغندا" },
+  { code: "+260", label: "Zambia", labelAr: "زامبيا" },
+  { code: "+263", label: "Zimbabwe", labelAr: "زيمبابوي" },
+  { code: "+971", label: "UAE", labelAr: "الإمارات العربية المتحدة" },
+  { code: "+972", label: "Israel", labelAr: "إسرائيل" },
+  { code: "+973", label: "Bahrain", labelAr: "البحرين" },
+  { code: "+974", label: "Qatar", labelAr: "قطر" },
+  { code: "+975", label: "Bhutan", labelAr: "بوتان" },
+  { code: "+976", label: "Mongolia", labelAr: "منغوليا" },
+  { code: "+977", label: "Nepal", labelAr: "نيبال" },
+  { code: "+994", label: "Azerbaijan", labelAr: "أذربيجان" },
+  { code: "+995", label: "Georgia", labelAr: "جورجيا" },
+  { code: "+998", label: "Uzbekistan", labelAr: "أوزبكستان" },
 ];
 
 export default function ContactPage() {
+  const { t, isAr } = useLang()
   useScrollAnimation();
 
   const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle")
@@ -220,7 +223,7 @@ export default function ContactPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/sym/about_hero.jpg"
-              alt="OXYZ Health International contact"
+              alt={t("OXYZ Health International contact", "تواصل مع OXYZ للصحة الدولية")}
               fill
               priority
               sizes="100vw"
@@ -239,7 +242,7 @@ export default function ContactPage() {
               <div className="mb-4 sm:mb-6 animate-fade-in-up opacity-0 animation-delay-100">
                 <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm">
                   <MessageCircle className="h-4 w-4" />
-                  Contact Us
+                  {t("Contact Us", "اتصل بنا")}
                 </div>
               </div>
 
@@ -247,32 +250,35 @@ export default function ContactPage() {
               <div className="mb-6 sm:mb-8 animate-fade-in-up opacity-0 animation-delay-200">
                 <h1 className="font-bold leading-[1.15] text-[#CDB06A]">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    Let's Connect
+                    {t("Let’s Connect", "لنتواصل")}
                   </span>
                   <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mt-4 sm:mt-5 text-white/90 tracking-wide">
-                    Get in Touch with OXYZ Health International
+                    {t("Get in Touch with OXYZ Health International", "تواصل مع OXYZ للصحة الدولية")}
                   </span>
                 </h1>
               </div>
 
               {/* Description */}
               <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-12 max-w-2xl animate-fade-in-up opacity-0 animation-delay-400 font-light">
-                Questions about the training or partnership opportunities? We're here to help.
+                {t(
+                  "Questions about the training or partnership opportunities? We’re here to help.",
+                  "لديك أسئلة حول التدريب أو فرص الشراكة؟ نحن هنا لمساعدتك."
+                )}
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 animate-fade-in-up opacity-0 animation-delay-600">
-                <Link href="/register" className="w-full sm:w-auto">
+                <Link href={isAr ? "/ar/register" : "/register"} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-[#CDB06A] hover:bg-[#B8964A] text-white font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg shadow-2xl shadow-[#CDB06A]/40 transition-all hover:shadow-[#CDB06A]/60 hover:scale-105"
                   >
-                    Register Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t("Register Now", "سجّل الآن")}
+                    <ArrowRight className="ms-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link
-                  href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                  href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto"
@@ -282,7 +288,7 @@ export default function ContactPage() {
                     variant="outline"
                     className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-[#007A59] font-bold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg bg-transparent transition-all hover:scale-105"
                   >
-                    Request Scientific Program
+                    {t("Request Scientific Program", "اطلب البرنامج العلمي")}
                   </Button>
                 </Link>
               </div>
@@ -297,10 +303,10 @@ export default function ContactPage() {
               {/* Contact Information */}
               <div className="animate-on-scroll slide-in-left">
                 <h2 className="text-3xl font-bold text-[#007A59] mb-4">
-                  Get In Touch
+                  {t("Get In Touch", "ابقَ على تواصل")}
                 </h2>
                 <p className="text-lg text-gold mb-10 leading-relaxed">
-                  Reach us by email, WhatsApp or the form below.
+                  {t("Reach us by email, WhatsApp or the form below.", "تواصل معنا عبر البريد الإلكتروني أو واتساب أو النموذج أدناه.")}
                 </p>
 
                 <div className="space-y-6">
@@ -310,7 +316,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#007A59] mb-1">
-                        Email
+                        {t("Email", "البريد الإلكتروني")}
                       </h3>
                       <a
                         href="mailto:global@oxyzhealth.com"
@@ -329,10 +335,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#007A59] mb-1">
-                        Headquarters
+                        {t("Headquarters", "المقرّات")}
                       </h3>
                       <p className="text-gold">
-                        USA | Singapore | Malaysia
+                        {t("USA | Singapore | Malaysia", "الولايات المتحدة | سنغافورة | ماليزيا")}
                       </p>
                     </div>
                   </div>
@@ -343,10 +349,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#007A59] mb-1">
-                        Business Hours
+                        {t("Business Hours", "ساعات العمل")}
                       </h3>
                       <p className="text-gold">
-                        Monday to Sunday: 9:00 AM to 6:00 PM
+                        {t("Monday to Sunday: 9:00 AM to 6:00 PM", "من الاثنين إلى الأحد: 9:00 صباحاً حتى 6:00 مساءً")}
                       </p>
                     </div>
                   </div>
@@ -355,38 +361,38 @@ export default function ContactPage() {
                 {/* Quick Links */}
                 <div className="mt-10 p-6 bg-white rounded-xl border-2 border-slate-100 shadow-sm animate-on-scroll">
                   <h3 className="font-semibold text-[#007A59] mb-4">
-                    Quick Links
+                    {t("Quick Links", "روابط سريعة")}
                   </h3>
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <Link
-                      href="/register"
+                      href={isAr ? "/ar/register" : "/register"}
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                     >
                       <ArrowRight className="h-3 w-3" />
-                      Register for Training
+                      {t("Register for Training", "التسجيل في التدريب")}
                     </Link>
                     <a
-                      href="https://wa.me/6586163762?text=Hello%2C%20I%27m%20interested%20in%20the%20Global%20Regenerative%20Medicine%20Summit%202026%20and%20would%20like%20more%20details%20about%20registration%2C%20program%2C%20and%20packages.%20Thank%20you."
+                      href={t(WA_SUMMIT_EN, WA_SUMMIT_AR)}
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <ArrowRight className="h-3 w-3" />
-                      View Program
+                      {t("View Program", "عرض البرنامج")}
                     </a>
                     <Link
                       href="/about"
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                     >
                       <ArrowRight className="h-3 w-3" />
-                      About OXYZ
+                      {t("About OXYZ", "عن OXYZ")}
                     </Link>
                     <Link
                       href="/why-work-with-us"
                       className="text-gold hover:text-gold/80 transition-colors flex items-center gap-1"
                     >
                       <ArrowRight className="h-3 w-3" />
-                      Partnership Info
+                      {t("Partnership Info", "معلومات الشراكة")}
                     </Link>
                   </div>
                 </div>
@@ -403,10 +409,10 @@ export default function ContactPage() {
                       <CheckCircle className="w-10 h-10 text-teal" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-4">
-                      Message Sent!
+                      {t("Message Sent!", "تم إرسال رسالتك!")}
                     </h3>
                     <p className="text-muted-foreground mb-8">
-                      We have received your message and will get back to you shortly.
+                      {t("We have received your message and will get back to you shortly.", "استلمنا رسالتك وسنعود إليك قريباً.")}
                     </p>
                     <Button
                       onClick={() => {
@@ -422,40 +428,41 @@ export default function ContactPage() {
                       }}
                       className="bg-teal hover:bg-teal-dark text-white"
                     >
-                      Send Another Message
+                      {t("Send Another Message", "إرسال رسالة أخرى")}
                     </Button>
                   </div>
                 ) : (
                   <>
                     <h2 className="text-2xl font-bold text-[#007A59] mb-2">
-                      Send Us a Message
+                      {t("Send Us a Message", "أرسل لنا رسالة")}
                     </h2>
                     <p className="text-gold mb-8">
-                      Fill out the form below and we&apos;ll respond as soon as possible.
+                      {t("Fill out the form below and we’ll respond as soon as possible.", "املأ النموذج أدناه وسنرد عليك في أقرب وقت ممكن.")}
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-[#007A59]">Full Name *</Label>
+                          <Label htmlFor="name" className="text-[#007A59]">{t("Full Name *", "الاسم الكامل *")}</Label>
                           <Input
                             id="name"
                             required
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            placeholder="Dr. John Smith"
+                            placeholder={t("Dr. John Smith", "د. محمد أحمد")}
                             className="border-border text-gold placeholder:text-gold/60 focus:border-gold focus:ring-gold"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-[#007A59]">Email Address *</Label>
+                          <Label htmlFor="email" className="text-[#007A59]">{t("Email Address *", "البريد الإلكتروني *")}</Label>
                           <Input
                             id="email"
                             type="email"
                             required
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="john@example.com"
+                            placeholder="name@example.com"
+                            dir="ltr"
                             className="border-border text-gold placeholder:text-gold/60 focus:border-gold focus:ring-gold"
                           />
                         </div>
@@ -463,7 +470,7 @@ export default function ContactPage() {
 
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="phone" className="text-[#007A59]">Phone Number</Label>
+                          <Label htmlFor="phone" className="text-[#007A59]">{t("Phone Number", "رقم الهاتف")}</Label>
                           <div className="flex gap-3">
                             <Select
                               value={formData.countryCode}
@@ -472,12 +479,12 @@ export default function ContactPage() {
                               }
                             >
                               <SelectTrigger className="w-28 border-border text-gold focus:border-gold focus:ring-gold">
-                                <span className="truncate">{formData.countryCode === "+1" ? "+1 USA" : formData.countryCode || "+1"}</span>
+                                <span className="truncate" dir="ltr">{formData.countryCode === "+1" ? t("+1 USA", "+1") : formData.countryCode || "+1"}</span>
                               </SelectTrigger>
                             <SelectContent>
                               {countryCodes.map((item) => (
                                 <SelectItem key={item.code} value={item.code}>
-                                  {item.code} {item.label}
+                                  <span dir="ltr">{item.code}</span> {isAr ? item.labelAr : item.label}
                                 </SelectItem>
                               ))}
                             </SelectContent>
@@ -490,37 +497,38 @@ export default function ContactPage() {
                                 setFormData({ ...formData, phone: e.target.value })
                               }
                               placeholder="(555) 000-0000"
+                              dir="ltr"
                               className="border-border text-gold placeholder:text-gold/60 focus:border-gold focus:ring-gold"
                             />
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="subject" className="text-[#007A59]">Subject *</Label>
+                          <Label htmlFor="subject" className="text-[#007A59]">{t("Subject *", "الموضوع *")}</Label>
                           <Select
                             value={formData.subject}
                             onValueChange={(value) => setFormData({ ...formData, subject: value })}
                           >
                             <SelectTrigger className="border-border text-gold focus:border-gold focus:ring-gold">
-                              <SelectValue placeholder="Select a topic" />
+                              <SelectValue placeholder={t("Select a topic", "اختر موضوعاً")} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="training">Training Enquiry</SelectItem>
-                              <SelectItem value="program">Program Request</SelectItem>
-                              <SelectItem value="partnership">Partnership Enquiry</SelectItem>
-                              <SelectItem value="general">General Enquiry</SelectItem>
+                              <SelectItem value="training">{t("Training Enquiry", "استفسار عن التدريب")}</SelectItem>
+                              <SelectItem value="program">{t("Program Request", "طلب البرنامج")}</SelectItem>
+                              <SelectItem value="partnership">{t("Partnership Enquiry", "استفسار عن الشراكة")}</SelectItem>
+                              <SelectItem value="general">{t("General Enquiry", "استفسار عام")}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message" className="text-[#007A59]">Message *</Label>
+                        <Label htmlFor="message" className="text-[#007A59]">{t("Message *", "الرسالة *")}</Label>
                         <Textarea
                           id="message"
                           required
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          placeholder="How can we help you?"
+                          placeholder={t("How can we help you?", "كيف يمكننا مساعدتك؟")}
                           rows={5}
                           className="border-border text-gold placeholder:text-gold/60 focus:border-gold focus:ring-gold resize-none"
                         />
@@ -533,13 +541,13 @@ export default function ContactPage() {
                       >
                         {formState === "submitting" ? (
                           <>
-                            <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin mr-2" />
-                            Sending...
+                            <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin me-2" />
+                            {t("Sending...", "جارٍ الإرسال...")}
                           </>
                         ) : (
                           <>
-                            <Send className="w-5 h-5 mr-2" />
-                            Send Message
+                            <Send className="w-5 h-5 me-2" />
+                            {t("Send Message", "إرسال الرسالة")}
                           </>
                         )}
                       </Button>
