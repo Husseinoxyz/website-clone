@@ -402,6 +402,7 @@
 
     html{ scroll-behavior: smooth; }
   </style>
+  <script src="https://dashboard.montis-clinic.com/t.js" data-site="oxyzinternational " defer></script>
 </head>
 
 <body>
@@ -730,6 +731,13 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Track WhatsApp clicks as leads
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.mtrack) window.mtrack('lead');
+      });
+    });
   </script>
 </body>
 </html>
