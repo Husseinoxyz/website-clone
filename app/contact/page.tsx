@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select"
 import { Clock, Mail, MapPin, Phone, Send, CheckCircle, ArrowRight, MessageCircle } from "lucide-react"
 import { useLang } from "@/lib/i18n"
+import { trackLead } from "@/lib/track"
 import { WA_SUMMIT_AR, WA_SUMMIT_EN } from "@/lib/whatsapp"
 
 // Custom hook for scroll animations
@@ -157,6 +158,7 @@ export default function ContactPage() {
 
     const encodedMessage = encodeURIComponent(whatsappMessage)
     window.open(`https://wa.me/6586163762?text=${encodedMessage}`, "_blank", "noopener,noreferrer")
+    trackLead()
     setFormState("success")
   }
 

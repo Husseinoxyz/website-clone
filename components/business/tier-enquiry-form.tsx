@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { CheckCircle, Send } from "lucide-react"
+import { trackLead } from "@/lib/track"
 
 type TierEnquiryFormProps = {
   tierName: string
@@ -62,6 +63,7 @@ export function TierEnquiryForm({
 
     const encodedPayload = encodeURIComponent(payload)
     window.open(`https://wa.me/6586163762?text=${encodedPayload}`, "_blank", "noopener,noreferrer")
+    trackLead()
     setStatus("success")
   }
 

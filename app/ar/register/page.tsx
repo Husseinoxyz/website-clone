@@ -21,6 +21,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Readex_Pro } from "next/font/google";
 import { countriesWithCodes } from "@/lib/countries";
+import { trackLead } from "@/lib/track";
 
 const readexPro = Readex_Pro({ subsets: ["arabic"] });
 
@@ -191,6 +192,7 @@ function ArabicRegistrationContent() {
       const data = await response.json();
 
       if (data.url) {
+        trackLead();
         window.location.href = data.url;
       } else {
         console.error("Failed to create checkout session", data);

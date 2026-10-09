@@ -23,6 +23,7 @@ import Loading from "./loading";
 import { countriesWithCodes } from "@/lib/countries";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { trackLead } from "@/lib/track";
 
 // Custom hook for scroll animations
 function useScrollAnimation() {
@@ -281,6 +282,7 @@ function RegistrationContent() {
       const data = await response.json();
 
       if (data.url) {
+        trackLead();
         window.location.href = data.url;
       } else {
         console.error("Failed to create checkout session", {

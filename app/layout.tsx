@@ -54,6 +54,9 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} translate="no">
+      <head>
+        <script src="https://dashboard.montis-clinic.com/t.js" data-site="oxyzinternational" defer></script>
+      </head>
       <body className={`${poppins.variable} ${readexPro.variable} font-sans antialiased`}>
         <LanguageProvider initialLang={lang}>
           {children}
