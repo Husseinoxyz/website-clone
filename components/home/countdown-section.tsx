@@ -150,7 +150,7 @@ export function CountdownSection() {
         <div>
           <Link href={isAr ? "/ar/register" : "/register"}>
             <button className="bg-[#007A59] hover:bg-[#006046] text-white font-bold px-8 py-3 text-sm sm:text-base rounded-full shadow-lg hover:shadow-[#007A59]/20 hover:scale-105 transition-all duration-300 tracking-wide">
-              {t("Register For Event", "سجّل في الفعالية")}
+              {t("Register For Event", "سجّل في الدورة التدريبية")}
             </button>
           </Link>
         </div>
