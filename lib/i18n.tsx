@@ -31,11 +31,14 @@ export function LanguageProvider({
     setLangState(next);
   }, []);
 
-  // The dedicated /ar pages are always Arabic. This is derived from the path
-  // rather than saved, so leaving an /ar page restores the visitor's choice.
+  // /ar URLs are always Arabic. Arriving on one (e.g. from a search result) also
+  // saves Arabic, so the visitor stays in Arabic on the pages they open next.
   const pathname = usePathname();
   const onArPath = pathname === "/ar" || pathname?.startsWith("/ar/");
   const lang: Lang = onArPath ? "ar" : savedLang;
+  useEffect(() => {
+    if (onArPath) setLang("ar");
+  }, [onArPath, setLang]);
 
   // Keep <html lang/dir> in sync when the language is switched on the client.
   useEffect(() => {

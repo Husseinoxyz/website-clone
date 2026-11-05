@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import { localizedHref } from "@/lib/i18n-config";
 
 const footerLinks = {
   training: [
     { name: "Overview", nameAr: "نظرة عامة", href: "/training" },
     { name: "Program Details", nameAr: "تفاصيل البرنامج", href: "/program" },
-    { name: "Registration", nameAr: "التسجيل", href: "/register", hrefAr: "/ar/register" },
+    { name: "Registration", nameAr: "التسجيل", href: "/register" },
     { name: "Past Trainings", nameAr: "الدورات السابقة", href: "/past-trainings" },
   ],
   company: [
@@ -21,11 +22,11 @@ const footerLinks = {
   ],
 };
 
-type FooterLink = { name: string; nameAr: string; href: string; hrefAr?: string };
+type FooterLink = { name: string; nameAr: string; href: string };
 
 export function Footer() {
-  const { isAr, t } = useLang();
-  const linkHref = (link: FooterLink) => (isAr && link.hrefAr ? link.hrefAr : link.href);
+  const { isAr, lang, t } = useLang();
+  const linkHref = (link: FooterLink) => localizedHref(link.href, lang);
 
   return (
     <footer className="bg-teal-dark text-secondary-foreground">
@@ -78,7 +79,7 @@ export function Footer() {
               {footerLinks.company.map((link: FooterLink) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    href={linkHref(link)}
                     className="text-sm text-secondary-foreground/80 hover:text-gold transition-colors"
                   >
                     {isAr ? link.nameAr : link.name}

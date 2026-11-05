@@ -3,10 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
 import { useLang } from "@/lib/i18n";
-
-// Pages that have a dedicated route per language.
-const EN_TO_AR: Record<string, string> = { "/register": "/ar/register" };
-const AR_TO_EN: Record<string, string> = { "/ar": "/", "/ar/register": "/register" };
+import { localizedHref } from "@/lib/i18n-config";
 
 export function LanguageToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useLang();
@@ -17,8 +14,11 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
 
   const onClick = () => {
     setLang(switchTo);
-    const target = switchTo === "ar" ? EN_TO_AR[pathname] : AR_TO_EN[pathname];
-    if (target) router.push(target);
+    const onArPath = pathname === "/ar" || pathname.startsWith("/ar/");
+    const target = switchTo === "ar" ? localizedHref(pathname, "ar") : onArPath ? pathname.slice(3) || "/" : pathname;
+    if (target !== pathname) router.push(target, { scroll: false });
+    // Reload server-rendered parts such as the tab title in the new language.
+    router.refresh();
   };
 
   return (

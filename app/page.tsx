@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { PageJsonLd, pageMetadata } from "@/lib/seo";
 import { Footer } from "@/components/footer";
 import { PosterSliderSection } from "@/components/home/poster-slider-section";
 import { VerticalPathwaySection } from "@/components/home/vertical-pathway-section";
@@ -20,9 +21,12 @@ import { CTASection } from "@/components/home/cta-section";
 // ClinicalMachinesSection,
 // MedicalTechnologyGallerySection
 
+export const generateMetadata = () => pageMetadata("/");
+
 export default function HomePage() {
   return (
     <>
+      <PageJsonLd path="/" />
       <Header />
       <main>
         {/* 1. Hero + event essentials */}

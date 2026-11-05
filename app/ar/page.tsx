@@ -9,20 +9,16 @@ import { FiveDModelSection } from "@/components/home/five-d-model-section";
 import { Readex_Pro } from "next/font/google";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 
-import type { Metadata } from "next";
+import { PageJsonLd, pageMetadata } from "@/lib/seo";
 
 const readexPro = Readex_Pro({ subsets: ["arabic"], display: 'swap' });
 
-export const metadata: Metadata = {
-  title: 'القمة العالمية للطب التجديدي 2026',
-  other: {
-    google: 'notranslate'
-  }
-};
+export const generateMetadata = () => pageMetadata("/");
 
 export default function ArabicPage() {
   return (
     <>
+      <PageJsonLd path="/" />
       <Header />
       <main dir="rtl" className={`min-h-screen bg-slate-50 ${readexPro.className}`}>
 

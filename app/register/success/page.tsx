@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
+import { noIndex } from "@/lib/seo";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle2, Mail, Calendar, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = noIndex("Registration Successful");
 
 export default function RegistrationSuccessPage() {
   return (

@@ -76,6 +76,8 @@ const arabicPosterSlides = [
 export function PosterSliderSection({ isArabic: isArabicProp }: { isArabic?: boolean }) {
   const { isAr } = useLang();
   const isArabic = isArabicProp ?? isAr;
+  // The /ar page passes isArabic and has its own h1.
+  const Heading = isArabicProp === undefined ? "h1" : "p";
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -169,7 +171,7 @@ export function PosterSliderSection({ isArabic: isArabicProp }: { isArabic?: boo
 
         <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-3.5 gap-y-1.5 leading-relaxed max-w-7xl mx-auto">
           <Calendar className="hidden sm:block h-4 w-4 text-[#CDB06A] shrink-0" />
-          <span className="text-white/95 font-semibold text-sm sm:text-base md:text-lg leading-snug">
+          <Heading className="text-white/95 font-semibold text-sm sm:text-base md:text-lg leading-snug">
             {isArabic ? (
               <>
                 ادخل عالم الخلايا الجذعية، الطب البيولوجي وعلاجات الببتيدات.{" "}
@@ -185,7 +187,7 @@ export function PosterSliderSection({ isArabic: isArabicProp }: { isArabic?: boo
                 </span>
               </>
             )}
-          </span>
+          </Heading>
           <span className="hidden md:inline text-white/30 font-light px-1">|</span>
           <span className="inline-flex items-center gap-1.5 bg-black/25 text-[#CDB06A] px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] md:text-xs border border-[#CDB06A]/25 font-black shadow-inner tracking-widest uppercase">
             {isArabic ? "20-24 نوفمبر 2026 • كوالالمبور، ماليزيا" : "Nov 20-24, 2026 • Kuala Lumpur, Malaysia"}

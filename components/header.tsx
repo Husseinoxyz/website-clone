@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { localizedHref } from "@/lib/i18n-config";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -30,7 +31,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const pathname = usePathname();
-  const { isAr: isArabic, t } = useLang();
+  const { isAr: isArabic, lang, t } = useLang();
   const registerHref = isArabic ? "/ar/register" : "/register";
   const onRegisterPage = pathname === "/register" || pathname === "/ar/register";
 
@@ -78,7 +79,7 @@ export function Header() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={localizedHref(item.href, lang)}
                 className="group relative whitespace-nowrap px-2.5 py-2 text-[13px] 2xl:px-3.5 2xl:text-sm font-semibold text-[#007A59] transition-colors duration-200 hover:text-gold"
               >
                 <span className="relative z-10">{isArabic ? item.nameAr : item.name}</span>
@@ -124,7 +125,7 @@ export function Header() {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={localizedHref(item.href, lang)}
                   className="rounded-full px-4 py-2 text-base font-medium text-[#007A59] hover:text-gold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
