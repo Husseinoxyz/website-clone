@@ -273,7 +273,7 @@ export default function BusinessEnquiriesPage() {
               <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden animate-on-scroll flex flex-col">
                 <div className="grid lg:grid-cols-2">
                   <div className="relative min-h-[200px] sm:min-h-[300px] lg:h-auto w-full overflow-hidden">
-                    <Image src="/images/sym/06.jpg" alt={t("Executive Delegate", "المندوب التنفيذي")} fill className="object-cover object-[50%_30%] animate-image" />
+                    <Image src="/images/sym/home_g_2.jpg" alt={t("Executive Delegate", "المندوب التنفيذي")} fill className="object-cover object-[50%_30%] animate-image" />
                   </div>
                   <div className="p-6 sm:p-8 lg:p-12 lg:py-16 flex flex-col justify-center">
                     <div className="self-start px-4 py-1.5 bg-[#007A59] text-white font-semibold rounded-full text-xs mb-4 uppercase tracking-widest shadow-sm">
